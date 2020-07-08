@@ -1,0 +1,66 @@
+@charset "utf-8";
+
+.wrap {
+    width: 70%;
+    min-width: 1200px;
+    height: auto;
+    margin: 0 15% 0 15%;
+}
+/*게시판 영역*/
+.admin_borad_wrap {
+    margin: 50px 0 50px 0;
+    width: 100%;
+    height: 600px;
+}
+/*게시판 제목(처리대기중인 고객문의)*/
+.admin_borad_head {
+    width: 100%;
+    height:30px;
+    font-weight: bold;
+    font-size: 18px;
+    margin: 100px 0 20px 0;
+}
+/*게시판*/
+.admin_borad {
+    width: 100%;
+    height: auto;
+    border-collapse: collapse;
+    border: 1px solid #999;
+    table-layout: fixed;
+}
+/*게시판 항목*/
+.admin_borad>tbody>tr>th{
+    background-color: #444;
+    color: whitesmoke;
+    height: 40px;
+    font-weight: bold;
+    font-size: 18px;
+}
+/*게시판 목록*/
+.admin_borad>tbody>tr>td{
+    border-bottom: 1px solid #999;
+    height: 40px;
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+.tbl_txt {
+    text-align: center;
+    font-size: 16px;
+}
+.tbl_txt_num {
+    width: 10%;
+}
+.tbl_txt_head {
+    width: 50%;
+}
+.tbl_txt_head>a {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    text-decoration: none;
+    color: #000;
+}
+.tbl_txt_date {
+    width: 20%;
+}
