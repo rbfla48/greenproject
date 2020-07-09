@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>admin_sales</title>
+    <link rel="stylesheet" href="./menu.css" type="text/css"><!--상단header-->
+    <link rel="stylesheet" href="./admin_sales.css" type="text/css">
+    <link rel="stylesheet" href="./footer.css" type="text/css"><!--하단footer-->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons"><!--구글머터리얼-->
+</head>
+<body>
+    <div><!--메뉴바-->
+        <header>
+            <!--화면 상단 마이페이지, 장바구니 시작-->
+            <div id="top">
+                <ul>
+                    <li id="mypage"><a href="#">마이페이지</a></li>
+                    <li id="cart"><a href="#">장바구니</a></li>
+                </ul>
+            </div>
+            <!--화면 상단 마이페이지, 장바구니 끝-->
+
+            <hr id="hl"> <!--top, nav 분리 줄-->
+        </header>
+            <nav>
+                <!--logo 시작-->
+                <div id="logo">
+                    <img src="../image/logo/gclogo_.png" alt="greencar_logo">
+                </div>
+                <!--logo 끝-->
+
+                <!-- 네비게이션 바 시작-->
+                <div id="middle">
+                    <ul>
+                        
+                        <li id="notice"> <a href="#">공지사항</a></li>
+                        <li id="vl">|</li>
+                        <li id="products"> <a href="#">상품페이지</a></li>
+                        <li id="vl">|</li>
+                        <li id="community" > <a href="#">커뮤니티</a></li>
+                        <li id="vl">|</li>
+                        <li id="newsandissue" > <a href="#">뉴스&이슈</a></li>
+                        <li id="vl">|</li>
+                        <li id="user_advice" > <a href="#">고객지원</a></li>
+                        
+                    </ul>
+                </div>
+                <!--네비게이션 바 끝-->
+            </nav>
+    </div>
+    <!-------------------------------메뉴바END-------------------------------->
+
+    <section>
+        <div class="wrap"><!--컨텐츠영역-->
+            <div class="sales">
+                <h3>매출/정산관리</h3>
+            </div>
+    
+            <div class="check_box"> <!--체크박스 시작-->
+                기간:
+                <input type="date">
+                ~
+                <input type="date">
+           
+                <div class="cate">
+                    <input type="radio" class="chk_info" value="goods" checked="goods" name="sel"> 상품별
+                    <input type="radio" class="chk_info" value="brand" name="sel2"> 브랜드별
+        
+                    <button class="ask">
+                        조회
+                    </button>
+                </div>
+            </div><!--체크박스 끝-->
+    
+        <div class="graph"> <!-- 그래프 시작-->
+    
+        </div><!-- 그래프 끝-->
+    
+        <table class="result"><!-- 결과창 -->
+            <thead>
+                <tr class="hood">
+                    <th>No.</th>
+                    <th>구분</th>
+                    <th>매출액</th>
+                    <th>판매실적</th>
+                </tr>
+    
+            </thead>
+            <tbody>
+    
+            </tbody>
+            <tr class="result_body">
+                <td class="num">3</td>
+                <td class="result_brand">기아</td>
+                <td class="result_sales">8억</td>
+                <td class="result_car">50</td>
+            </tr>
+    
+            <tr>
+                <td class="num">2</td>
+                <td class="result_brand">현대</td>
+                <td class="result_sales">18억</td>
+                <td class="result_car">150</td>
+            </tr>
+    
+            <tr>
+                <td class="num">1</td>
+                <td class="result_brand">혼다</td>
+                <td class="result_sales">1억</td>
+                <td class="result_car">2</td>
+            </tr>
+    
+    
+        </table>
+    
+        </div>
+        </div>
+        </div> <!-- 결과창 -->
+    </div>
+        <!--wrap끝-->
+
+
+
+
+    </section>
+
+
+
+
+
+
+
+
+    <!-------------------------------footer시작------------------------------->
+    <!--하단 회사정보영역-->
+    <footer id="footer">
+        <!--상단회사명-->
+        <br>
+        <p><b>GREENCAR</b></p>
+        <hr>
+        <!--하단사업자정보-->
+        <p>사업자  김붕붕  |  사업자번호 211-31-64480 | 사업자 주소 : 서울특별시 관악구 청룡중앙길 42-1 | 02 - 1234 - 5678 </p>
+        <p>COPYRIGHT © GREEN COMPANY. ALL RIGHTS RESERVED.</p>
+        <!--하단영역end-->
+    </footer>
+    <script src="../js/such_id.js"></script>
+<!--메뉴바END-->

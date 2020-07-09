@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>comunity</title>
+    <link rel="stylesheet" href="./menu.css" type="text/css"><!--상단header-->
+    <link rel="stylesheet" href="./comunity_main.css" type="text/css">
+    <link rel="stylesheet" href="./footer.css" type="text/css"><!--하단footer-->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons"><!--구글머터리얼-->
+</head>
+<body>
+    <div><!--메뉴바-->
+        <header>
+            <!--화면 상단 마이페이지, 장바구니 시작-->
+            <div id="top">
+                <ul>
+                    <li id="mypage"><a href="#">마이페이지</a></li>
+                    <li id="cart"><a href="#">장바구니</a></li>
+                </ul>
+            </div>
+            <!--화면 상단 마이페이지, 장바구니 끝-->
+
+            <hr id="hl"> <!--top, nav 분리 줄-->
+        </header>
+            <nav>
+                <!--logo 시작-->
+                <div id="logo">
+                    <img src="../image/logo/gclogo_.png" alt="greencar_logo">
+                </div>
+                <!--logo 끝-->
+
+                <!-- 네비게이션 바 시작-->
+                <div id="middle">
+                    <ul>
+                        
+                        <li id="notice"> <a href="#">공지사항</a></li>
+                        <li id="vl">|</li>
+                        <li id="products"> <a href="#">상품페이지</a></li>
+                        <li id="vl">|</li>
+                        <li id="community" > <a href="#">커뮤니티</a></li>
+                        <li id="vl">|</li>
+                        <li id="newsandissue" > <a href="#">뉴스&이슈</a></li>
+                        <li id="vl">|</li>
+                        <li id="user_advice" > <a href="#">고객지원</a></li>
+                        
+                    </ul>
+                </div>
+                <!--네비게이션 바 끝-->
+            </nav>
+    </div>
+    <!-------------------------------메뉴바END-------------------------------->
+
+    <section>
+        <div class="board_list_wrap"> <!-- 전체 틀 시작-->
+
+            <div class="tap_hood"> <!--  게시판 윗대가리 -->
+                <select name="selection_subject">
+                    <option value="">말머리</option>
+                    <option value="riding">시승기</option>
+                    <option value="humor">유머</option>
+                    <option value="compare">견적/비교</option>
+                </select>
+            
+                <div class="my_write">
+                <a href="#">내가 쓴 글 </a>
+                <button  name="글쓰기" 
+                onclick="loavtio.href='comunity2.html'">
+                글쓰기
+                </button>
+                </div>
+            </div>
+             <!-- 게시판 윗대가리 끝-->
+             
+                
+             <table class="board_list">  <!-- 게시판 시작-->
+                 <caption>게시판 목록</caption>
+                <thead>
+                    <tr class="board_head">
+                        <th>말머리</th>
+                        <th>No.</th>
+                        <th>제목</th>
+                        <th>작성자</th>
+                        <th>작성일</th>
+                        <th>조회수</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td class="head_section">시승기</td>
+                        <td class="num"> 5</td>
+                        <td class="tit">
+                            <a href="#"> 간다간다 뿅간다
+                            </a>
+                            </td>
+    
+                        <td class="writer">장성규</td>
+                        <td>2020-07-01</td>
+                        <td>10</td>
+                    </tr>
+                    <tr>
+                        <td class="head_section">시승기</td>
+                        <td class="num"> 4</td>
+                        <td class="tit">
+                            <a href="#">간다간다 뿅간다
+                            </a>
+                            </td>
+                        <td>장성규</td>
+                        <td>2020-07-01</td>
+                        <td>10</td>
+                    </tr>
+                    <tr>
+                        <td class="head_section">시승기</td>
+                        <td class="num"> 3</td>
+                        <td class="tit"> <a href="#">간다간다 뿅간다
+                            </a>
+                        </td>
+                        <td>장성규</td>
+                        <td>2020-07-01</td>
+                        <td>10</td>
+                    </tr>
+                    <tr>
+                        <td class="head_section">시승기</td>
+                        <td class="num"> 2</td>
+                        <td class="tit"><a href="#">간다간다 뿅간다
+                        </a>
+                        </td>
+                        <td>장성규</td>
+                        <td>2020-07-01</td>
+                        <td>10</td>
+                    </tr>
+                    <tr>
+                        <td class="head_section">시승기</td>
+                        <td class="num"> 1</td>
+                        <td class="tit"><a href="#">간다간다 뿅간다
+                            </a>
+                        </td>
+                        <td>장성규</td>
+                        <td>2020-07-01</td>
+                        <td>10</td>
+                    </tr>
+                </tbody>
+                </table>    <!-- 게시판 끝-->
+                <!-- 게시판 밑대가리 시작-->
+    
+                <div class="paging">  <!-- 게시판 페이징 시작-->
+                    <a href="#">이전 페이지</a>
+                    <a href="#">1</a>
+                    <a href="#">2</a>
+                    <a href="#">3</a>
+                    <a href="#">4</a>
+                    <a href="#">다음 페이지</a>
+                    
+                         <!-- 게시판 페이징 끝-->
+                    
+                </div >
+                <div class="bottom"> <!-- 게시판 페이징 시작-->
+                <select name="selection_subject">
+                    <option value="sub_tit">제목</option>
+                    <option value="sub_tit_contents">제목+내용</option>
+                    <option value="sub_contents">내용</option>
+                    <option value="sub_writer">작성자</option>
+                </select>
+                <input type="text" name="text">
+                <button type="button" name="검색"> 검색
+                    
+                </button>
+            </div> <!--게시판 밑대가리 끝-->
+         </div>
+    
+
+
+
+
+    </section>
+
+
+
+
+
+
+
+
+    <!-------------------------------footer시작------------------------------->
+    <!--하단 회사정보영역-->
+    <footer id="footer">
+        <!--상단회사명-->
+        <br>
+        <p><b>GREENCAR</b></p>
+        <hr>
+        <!--하단사업자정보-->
+        <p>사업자  김붕붕  |  사업자번호 211-31-64480 | 사업자 주소 : 서울특별시 관악구 청룡중앙길 42-1 | 02 - 1234 - 5678 </p>
+        <p>COPYRIGHT © GREEN COMPANY. ALL RIGHTS RESERVED.</p>
+        <!--하단영역end-->
+    </footer>
+    <script src="../js/such_id.js"></script>
+<!--메뉴바END-->
