@@ -1,0 +1,101 @@
+  
+.mypage{
+    border: black;
+    background-color: #e4dcd3;
+    font-size: 15px;
+    float: left;
+    text-align: left;
+    margin: 0 0 0 130px;;
+    height: 40%;
+    width:200px;
+}
+
+.mypage span {
+    color:red;
+}
+/* 마이페이지 끝 */
+
+section {
+    width: 1200px;
+    margin: auto;
+}
+
+section #inquery_box {
+    display:flex;
+    flex-wrap: wrap;
+}
+
+section #inquery_box #inquery_text {
+    background-color: #e4dcd3;
+    width: 100px;
+    height: 40px;
+    text-align: center;
+    border-radius: 5px;
+    margin: auto 50px auto 10px;
+}
+
+section #inquery_box ul {
+    list-style: none;
+    display:block;
+    position:relative;
+    float:left;
+}
+
+section #inquery_title {
+    display:flex;
+    flex-wrap: wrap;
+}
+
+section #inquery_title #title_text {
+    background-color: #e4dcd3;
+    width: 100px;
+    height: 40px;
+    text-align: center;
+    border-radius: 5px;
+    margin: auto 50px auto 10px;
+}
+
+section #inquery_title #title_input {
+    width: 900px;
+}
+
+section #inquery_content {
+    margin-top :20px;
+    margin-left: 70px;
+    width: 1000px;
+    height: 500px;
+    border: solid black 1px;
+}
+
+section #btns {
+    margin-right: 150px;
+    float: right;
+}
+
+section #btns button{
+    width: 100px;
+    height: 30px;
+    background-color: #e4dcd3;
+    border-style: none;
+}
+
+.notice{
+    float: right;
+    margin: 120px 250px 0 0;
+    height: auto;
+    width:200px;
+    border: solid black 1px;
+}
+
+.notice h {
+    font-size: 25px;
+}
+
+.notice span {
+    padding-left: 30px;
+    font-size: 10pt;
+}
+
+.notice ul li a {
+    text-decoration: none;
+}

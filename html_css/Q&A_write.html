@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GreenCar Home</title>
+    <link rel="stylesheet" href="./menu.css" type="text/css"><!--상단header-->
+    <link rel="stylesheet" href="./Q&A_write.css" type="text/css">
+    <link rel="stylesheet" href="./footer.css" type="text/css"><!--하단footer-->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons"><!--구글머터리얼-->
+</head>
+<body>
+    <div><!--메뉴바-->
+        <header>
+            <!--화면 상단 마이페이지, 장바구니 시작-->
+            <div id="top">
+                <ul>
+                    <li id="mypage"><a href="#">마이페이지</a></li>
+                    <li id="cart"><a href="#">장바구니</a></li>
+                </ul>
+            </div>
+            <!--화면 상단 마이페이지, 장바구니 끝-->
+
+            <hr id="hl"> <!--top, nav 분리 줄-->
+        </header>
+            <nav>
+                <!--logo 시작-->
+                <div id="logo">
+                    <img src="./img/greencar_logo/gclogo_.png" alt="greencar_logo">
+                </div>
+                <!--logo 끝-->
+
+                <!-- 네비게이션 바 시작-->
+                <div id="middle">
+                    <ul>
+                        
+                        <li id="notice"> <a href="#">공지사항</a></li>
+                        <li id="vl">|</li>
+                        <li id="products"> <a href="#">상품페이지</a></li>
+                        <li id="vl">|</li>
+                        <li id="community" > <a href="#">커뮤니티</a></li>
+                        <li id="vl">|</li>
+                        <li id="newsandissue" > <a href="#">뉴스&이슈</a></li>
+                        <li id="vl">|</li>
+                        <li id="user_advice" > <a href="#">고객지원</a></li>
+                        
+                    </ul>
+                </div>
+                <!--네비게이션 바 끝-->
+            </nav>
+    </div>
+    <!-------------------------------메뉴바END-------------------------------->
+
+    <!--마이 페이지 시작-->
+    
+    <aside class="mypage">   
+        <ul>마이페이지</ul>
+        <ul>회원정보 수정</ul>
+        <ul>1:1 문의내역<span id="new"> new</span></ul>
+        <ul>내가쓴 글 보기<span id="how_much"> 5</span></ul>
+        <ul>회원탈퇴</ul>
+            
+        
+    </aside>  
+
+    <aside class="notice">   
+        <h>공지사항</h>
+        <span><a href="#">더보기</a></span>
+        <ul>
+            <li><a href="#">차사세요</a></li>
+            <li><a href="#">차사세요</a></li>
+            <li><a href="#">차사세요</a></li>
+            <li><a href="#">차사세요</a></li>
+            <li><a href="#">차사세요</a></li>
+        </ul>
+    </aside>
+    <!--마이 페이지 끝-->
+    <section>
+        <div id="inquery_box">
+            <div id="inquery_text">문의항목</div>
+            <div id="radio_btn">
+                <ul>
+                    <li>
+                        <input type="radio" name="inquery">
+                        <label>사이트 이용 문의</label>
+                    </li>
+                </ul>
+                <ul>
+                    <li>
+                        <input type="radio" name="inquery">
+                        <label>장애/오류</label>
+                    </li>
+                </ul>
+                <ul>
+                    <li>
+                        <input type="radio" name="inquery">
+                        <label>결제문의</label>
+                    </li>
+                </ul>
+                <ul>
+                    <li>
+                        <input type="radio" name="inquery">
+                        <label>기타문의</label>
+                    </li>
+                </ul>
+
+            </div>
+        </div>
+        <div id="inquery_title">
+            <div id="title_text">제목</div>
+            <input type="text" id="title_input" value="제목을 입력하세요">
+        </div>
+
+        <div id="inquery_content">
+            글쓰는 칸
+        </div>
+
+        <div id="btns">
+            <button id="go">작성하기</button>
+            <button id="back">취소하기</button>
+        </div>
+
+    </section>
+
+    
+
+    <!-------------------------------footer시작------------------------------->
+    <!--하단 회사정보영역-->
+    <footer id="footer">
+        <!--상단회사명-->
+        <br>
+        <p><b>GREENCAR</b></p>
+        <hr>
+        <!--하단사업자정보-->
+        <p>사업자  김붕붕  |  사업자번호 211-31-64480 | 사업자 주소 : 서울특별시 관악구 청룡중앙길 42-1 | 02 - 1234 - 5678 </p>
+        <p>COPYRIGHT © GREEN COMPANY. ALL RIGHTS RESERVED.</p>
+        <!--하단영역end-->
+    </footer>
+    <script src="../js/such_id.js"></script>
+<!--메뉴바END-->

@@ -1,0 +1,66 @@
+
+section {
+    width: 1200px;
+    margin: auto;
+}
+
+#customer_question {
+    display: flex;
+}
+
+#category {
+    margin-top: 20px;
+    margin-left: 980px;
+    height: 30px;
+}
+
+table * {
+    width: auto;
+    height: 10px;
+    text-align: center;
+}
+
+table {
+    border-collapse: collapse;
+}
+
+table #tb_top {
+    background-color: #e4dcd3;
+}
+table tr td {
+    border: solid grey 2px;
+}
+
+#tb_category {
+    width: 150px;
+    border: solid grey 2px;
+}
+
+#tb_title {
+    width: 800px;
+}
+
+#tb_date {
+    width: 150px;
+}
+
+#tb_customer {
+    width: 100px;
+}
+
+#paging_btn {
+    display:flex;
+    justify-content: center;
+}
+
+#paging_btn button {
+    border-style:none;
+    background-color: #e4dcd3;
+    width: 40px;
+    height: 40px;
+    margin-top :10px;
+    margin-left: 10px;
+}
+
+
+
