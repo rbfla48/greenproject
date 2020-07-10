@@ -224,11 +224,11 @@ nav #middle ul li a {
 .check {
     display:block;
     float: right;
-    border:5px solid white;
+    border:5px solid #e4dcd3;
     border-radius:100%;
     width: 50px;
     height: 50px;
-    margin: -50px 10px 0px 10px;
+    margin: -50px 0px 0px 10px;
 }
 
 .color_tag {
@@ -236,17 +236,30 @@ nav #middle ul li a {
     position:relative;
     float: right;
     font-size: 18px;
-    margin: 0px 50px 0px -80px;
+    letter-spacing: 10px;
+    margin: -50px 10px 0px -80px;
+    padding: 50px 10px 0px 5px;
 }
 
 .check::before {
     display:block;
     content:'';
-    background-color: #e4dcd3;
     border-radius:100%;
     width: 50px;
     height: 50px;
-    
+}
+
+/* 선택 (전) 라디오 색 */
+#check_1.check::before {
+    background-color: black;
+}
+
+#check_2.check::before {
+    background-color: gray;
+}
+
+#check_3.check::before {
+    background-color: red;
 }
 
 .color {
@@ -254,10 +267,12 @@ nav #middle ul li a {
     visibility:hidden;
 }
 
+/* 선택 (후) 테두리 */
 .color:checked ~ .check {
     border:5px solid white;
 }
 
+/* 선택 (후) 라디오 색 */
 #color_1:checked ~ .check::before {
     background: black;
 }
@@ -333,6 +348,7 @@ nav #middle ul li a {
     padding: 20px 0px 20px 10px;
     line-height: 10px;
 }
+
 
 /* --------------------------TAX 및 하단 ------------------------------------------------*/
 

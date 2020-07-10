@@ -204,7 +204,7 @@ nav #middle ul li a {
     border-radius:100%;
     width: 50px;
     height: 50px;
-    margin: -50px 10px 0px 10px;
+    margin: -50px 0px 0px 10px;
 }
 
 .color_tag {
@@ -212,7 +212,9 @@ nav #middle ul li a {
     position:relative;
     float: right;
     font-size: 18px;
-    margin: 0px 50px 0px -80px;
+    letter-spacing: 10px;
+    margin: -50px 10px 0px -80px;
+    padding: 50px 10px 0px 5px;
 }
 
 .check::before {
