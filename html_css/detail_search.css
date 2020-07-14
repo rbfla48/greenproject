@@ -10,7 +10,7 @@ section #car_detail_search {
 
 section #car_detail_search_box {
     width: 1200px;
-    height: 900px; /*다 만들고 수정필요*/
+    height: 900px; 
     border: grey solid 2px;
     padding: 20px 50px 0 50px;
 }
@@ -151,7 +151,6 @@ section #search_button {
     height: 50px;
     background-color: #e4dcd3;
     margin-top: 30px;
-    margin-bottom: 30px; /***footer와******/
     border-style: none;
     border-radius: 5px;
 }
