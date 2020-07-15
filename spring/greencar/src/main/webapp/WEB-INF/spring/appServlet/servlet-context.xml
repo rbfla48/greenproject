@@ -17,10 +17,14 @@
 
 	<!-- Resolves views selected for rendering by @Controllers to .jsp resources in the /WEB-INF/views directory -->
 	<beans:bean class="org.springframework.web.servlet.view.InternalResourceViewResolver">
+		
+		<!-- HomeController return값 앞뒤로 경로및 확장자 자동생성 -->
 		<beans:property name="prefix" value="/WEB-INF/views/" />
 		<beans:property name="suffix" value=".jsp" />
 	</beans:bean>
 	
+	<!-- spring에서 사용하는Bean을 일일이 xml에 선언하지 않고도 
+	필요한것이 Annotation을 자동으로 인식하게 하는역할-->
 	<context:component-scan base-package="com.greencar.spring" />
 	
 	
