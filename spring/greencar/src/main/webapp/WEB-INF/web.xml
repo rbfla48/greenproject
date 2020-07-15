@@ -23,6 +23,13 @@
 			<param-name>contextConfigLocation</param-name>
 			<param-value>/WEB-INF/spring/appServlet/*-context.xml</param-value>
 		</init-param>
+		
+		<!-- Spring Security Filter(웹서비스 메서드 설정공격==>파일생성/삭제/수정을 이용한 공격방지)-->
+		<init-param>
+         <param-name>dispatchOptionsRequest</param-name>
+         <param-value>true</param-value>
+      	</init-param>
+      
 		<load-on-startup>1</load-on-startup>
 	</servlet>
 		
@@ -63,5 +70,26 @@
         </web-resource-collection>
         <auth-constraint />
     </security-constraint>
-
+	
+	<!-- Spring Security Filter(웹서비스 메서드 설정공격==>파일생성/삭제/수정을 이용한 공격방지)-->
+    <filter>
+      <filter-name>springSecurityFilterChain</filter-name>
+      <filter-class>org.springframework.web.filter.DelegatingFilterProxy</filter-class>
+    </filter>
+    <filter-mapping>
+      <filter-name>springSecurityFilterChain</filter-name>
+      <url-pattern>/*</url-pattern>
+    </filter-mapping>
+    
+    <!-- page error patch(나중에 error파일추가)
+    <error-page>
+        <error-code>403</error-code>
+        <location>/WEB-INF/views/error/403.jsp</location>
+    </error-page>
+ 
+    <error-page>
+        <error-code>404</error-code>
+        <location>/WEB-INF/views/error/404.jsp</location>
+    </error-page>-->
+    
 </web-app>
