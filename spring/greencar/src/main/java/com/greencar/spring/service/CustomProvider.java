@@ -22,8 +22,8 @@ import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Component;
 
-import com.javateam.springSecuritySample1.vo.CustomUser;
-import com.javateam.springSecuritySample1.vo.Role;
+import com.greencar.spring.vo.CustomUser;
+import com.greencar.spring.vo.Role;
 
 import lombok.extern.java.Log;
 

@@ -8,7 +8,7 @@ import org.springframework.jdbc.core.BeanPropertyRowMapper;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.stereotype.Repository;
 
-import com.javateam.springSecuritySample1.vo.Users;
+import com.greencar.spring.vo.Users;
 
 import lombok.extern.slf4j.Slf4j;
 /*

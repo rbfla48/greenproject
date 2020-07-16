@@ -5,8 +5,8 @@ import org.apache.ibatis.session.SqlSession;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
-import com.javateam.springSecuritySample1.mapper.UserMapper;
-import com.javateam.springSecuritySample1.vo.Users;
+import com.greencar.spring.mapper.UserMapper;
+import com.greencar.spring.vo.Users;
 
 import lombok.extern.slf4j.Slf4j;
 
