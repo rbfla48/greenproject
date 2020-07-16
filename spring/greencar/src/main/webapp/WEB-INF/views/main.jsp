@@ -1,14 +1,14 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%>
-<!DOCTYPE html>
-<html lang="ko">
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+<%@ page session="false" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" language="java"%>
+<html>
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>GreenCar Home</title>
-    <link rel="stylesheet" href="/css/menu.css" type="text/css"><!--상단header-->
-    <link rel="stylesheet" href="/css/main.css" type="text/css">
-    <link rel="stylesheet" href="/css/footer.css" type="text/css"><!--하단footer-->
+    <link rel="stylesheet" href="<c:url value="css/menu.css"/>"><!--상단header-->
+    <link rel="stylesheet" href="<c:url value="css/main.css"/>">
+    <link rel="stylesheet" href="<c:url value="css/footer.css"/>"><!--하단footer-->
+    <link rel="stylesheet" href="<c:url value="js/main_detailsuch.js"/>"><!--하단footer-->
     <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons"><!--구글머터리얼-->
 </head>
 <body>
@@ -27,7 +27,7 @@
         <nav>
             <!--logo 시작-->
             <div id="logo">
-                <img src="../image/logo/gclogo_.png" alt="greencar_logo">
+                <img src="image/logo/gclogo_.png" alt="greencar_logo">
             </div>
             <!--logo 끝-->
 
