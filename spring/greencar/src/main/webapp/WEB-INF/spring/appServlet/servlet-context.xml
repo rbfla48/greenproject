@@ -7,22 +7,24 @@
 		http://www.springframework.org/schema/beans https://www.springframework.org/schema/beans/spring-beans.xsd
 		http://www.springframework.org/schema/context https://www.springframework.org/schema/context/spring-context.xsd">
 
-	<!-- DispatcherServlet Context: defines this servlet's request-processing infrastructure -->
+	<!--servlet-context ==> DispatcherServlet 을 설정하는파일-->
 	
-	<!-- Enables the Spring MVC @Controller programming model -->
+	<!-- @Controller를 사용할수있게 설정하는 태그 -->
 	<annotation-driven />
-
-	<!-- Handles HTTP GET requests for /resources/** by efficiently serving up static resources in the ${webappRoot}/resources directory -->
+	
+	<!-- 리소스내부에 있는파일을 사용할수있게 경로 지정하여 설정(img,css,js 등) -->
 	<resources mapping="/css/**" location="/resources/css/" /> 
 	<resources mapping="/image/**" location="/resources/image/" /> 
 	<resources mapping="/js/**" location="/resources/js/" /> 
 
-	<!-- Resolves views selected for rendering by @Controllers to .jsp resources in the /WEB-INF/views directory -->
 	<beans:bean class="org.springframework.web.servlet.view.InternalResourceViewResolver">
+		<!--@Controller가 붙은 클래스에는 접두사로 "/WEB-INF/views/"라는 경로 문자열을 붙여주고(prefix)
+		 접미사로는 ". jsp"라는 확장자 문자열을 자동으로 붙여주는 설정.(suffix) -->
 		<beans:property name="prefix" value="/WEB-INF/views/" />
 		<beans:property name="suffix" value=".jsp" />
 	</beans:bean>
 	
+	<!--@Controller가 붙은 클래스를 모두 탐색할 수 있는 설정 -->
 	<context:component-scan base-package="com.greencar.spring" />
 
 </beans:beans>

@@ -5,11 +5,11 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>GreenCar Home</title>
-    <link rel="stylesheet" href="<c:url value="css/menu.css"/>"><!--상단header-->
-    <link rel="stylesheet" href="<c:url value="css/main.css"/>">
-    <link rel="stylesheet" href="<c:url value="css/footer.css"/>"><!--하단footer-->
-    <link rel="stylesheet" href="<c:url value="js/main_detailsuch.js"/>"><!--하단footer-->
+    <link rel="stylesheet" href="<c:url value="/css/menu.css"/>"><!--상단header-->
+    <link rel="stylesheet" href="<c:url value="/css/main.css"/>">
+    <link rel="stylesheet" href="<c:url value="/css/footer.css"/>"><!--하단footer-->
     <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons"><!--구글머터리얼-->
+    <script type="text/javascript" src="<c:url value="/js/main_detailsuch.js"/>"></script><!--상세검색js-->
 </head>
 <body>
     <header>
@@ -27,7 +27,7 @@
         <nav>
             <!--logo 시작-->
             <div id="logo">
-                <img src="image/logo/gclogo_.png" alt="greencar_logo">
+                <img src="<c:url value="image/logo/gclogo_.png"/>" alt="greencar_logo">
             </div>
             <!--logo 끝-->
 
@@ -68,53 +68,53 @@
     <div class="wrap"><!--메인페이지-->
         
         <div class="slide_ad"><!--슬라이드광고-->
-                <img src="../image/other/ad_img_camaro.jpg" href="#" class="slide_ad_img">
+                <img src="<c:url value="/image/other/ad_img_camaro.jpg"/>" href="#" class="slide_ad_img">
         </div><!--슬라이드광고END-->
 
         <div class="select_car_brand"><!--브랜드선택창-->
                 <table>
                     <tr>
-                    <td><img src="../image/logo/audi.png" class="select_car_brand_img" alt="brand_logo">
+                    <td><img src="<c:url value="/image/logo/audi.png"/>" class="select_car_brand_img" alt="brand_logo">
                         <div class="select_car_brand_text">AUDI</div></td>
-                    <td><img src="../image/logo/benz.png" class="select_car_brand_img" alt="brand_logo">
+                    <td><img src="<c:url value="/image/logo/benz.png"/>" class="select_car_brand_img" alt="brand_logo">
                         <div class="select_car_brand_text">BENZ</div></td>
-                    <td><img src="../image/logo/cadillac.png" class="select_car_brand_img" alt="brand_logo">
+                    <td><img src="<c:url value="/image/logo/cadillac.png"/>" class="select_car_brand_img" alt="brand_logo">
                         <div class="select_car_brand_text">CADILLAC</div></td>
-                    <td><img src="../image/logo/chevrolet.png" class="select_car_brand_img" alt="brand_logo">
+                    <td><img src="<c:url value="/image/logo/chevrolet.png"/>" class="select_car_brand_img" alt="brand_logo">
                         <div class="select_car_brand_text">CHEVROLET</div></td>
-                    <td><img src="../image/logo/ferrari.png" class="select_car_brand_img" alt="brand_logo">
+                    <td><img src="<c:url value="/image/logo/ferrari.png"/>" class="select_car_brand_img" alt="brand_logo">
                         <div class="select_car_brand_text">FERRARI</div></td>
-                    <td><img src="../image/logo/ford.png" class="select_car_brand_img" alt="brand_logo">
+                    <td><img src="<c:url value="/image/logo/ford.png"/>" class="select_car_brand_img" alt="brand_logo">
                         <div class="select_car_brand_text">FORD</div></td>
-                    <td><img src="../image/logo/genesis.png" class="select_car_brand_img" alt="brand_logo">
+                    <td><img src="<c:url value="/image/logo/genesis.png"/>" class="select_car_brand_img" alt="brand_logo">
                         <div class="select_car_brand_text">GENESIS</div></td>
-                    <td><img src="../image/logo/honda.png" class="select_car_brand_img" alt="brand_logo">
+                    <td><img src="<c:url value="/image/logo/honda.png"/>" class="select_car_brand_img" alt="brand_logo">
                         <div class="select_car_brand_text">HONDA</div></td>
-                    <td><img src="../image/logo/hyundai.png" class="select_car_brand_img" alt="brand_logo">
+                    <td><img src="<c:url value="/image/logo/hyundai.png"/>" class="select_car_brand_img" alt="brand_logo">
                         <div class="select_car_brand_text">HYUNDAI</div></td>
-                    <td><img src="../image/logo/infiniti.png" class="select_car_brand_img" alt="brand_logo">
+                    <td><img src="<c:url value="/image/logo/infiniti.png"/>" class="select_car_brand_img" alt="brand_logo">
                         <div class="select_car_brand_text">INFINITI</div></td>
                     </tr>
                     <tr>
-                    <td><img src="../image/logo/jaguar.png" class="select_car_brand_img" alt="brand_logo">
+                    <td><img src="<c:url value="/image/logo/jaguar.png"/>" class="select_car_brand_img" alt="brand_logo">
                         <div class="select_car_brand_text">JAGUAR</div></td>
-                    <td><img src="../image/logo/kia.PNG" class="select_car_brand_img" alt="brand_logo">
+                    <td><img src="<c:url value="/image/logo/kia.PNG"/>" class="select_car_brand_img" alt="brand_logo">
                         <div class="select_car_brand_text">KIA</div></td>
-                    <td><img src="../image/logo/Lamborghini.png" class="select_car_brand_img" alt="brand_logo">
+                    <td><img src="<c:url value="/image/logo/Lamborghini.png"/>" class="select_car_brand_img" alt="brand_logo">
                         <div class="select_car_brand_text">LAMBORGHINI</div></td>
-                    <td><img src="../image/logo/lexus.png" class="select_car_brand_img" alt="brand_logo">
+                    <td><img src="<c:url value="/image/logo/lexus.png"/>" class="select_car_brand_img" alt="brand_logo">
                         <div class="select_car_brand_text">LEXUS</div></td>
-                    <td><img src="../image/logo/mini.png" class="select_car_brand_img" alt="brand_logo">
+                    <td><img src="<c:url value="/image/logo/mini.png"/>" class="select_car_brand_img" alt="brand_logo">
                         <div class="select_car_brand_text">MINI</div></td>
-                    <td><img src="../image/logo/ssangyong.png" class="select_car_brand_img" alt="brand_logo">
+                    <td><img src="<c:url value="/image/logo/ssangyong.png"/>" class="select_car_brand_img" alt="brand_logo">
                         <div class="select_car_brand_text">SSANGYONG</div></td>
-                    <td><img src="../image/logo/teslr.png" class="select_car_brand_img" alt="brand_logo">
+                    <td><img src="<c:url value="/image/logo/teslr.png"/>" class="select_car_brand_img" alt="brand_logo">
                         <div class="select_car_brand_text">TESLR</div></td>
-                    <td><img src="../image/logo/toyota.png" class="select_car_brand_img" alt="brand_logo">
+                    <td><img src="<c:url value="/image/logo/toyota.png"/>" class="select_car_brand_img" alt="brand_logo">
                         <div class="select_car_brand_text">TOYOTA</div></td>
-                    <td><img src="../image/logo/volkswagen.png" class="select_car_brand_img" alt="brand_logo">
+                    <td><img src="<c:url value="/image/logo/volkswagen.png"/>" class="select_car_brand_img" alt="brand_logo">
                         <div class="select_car_brand_text">VOLKSWAGEN</div></td>
-                    <td><img src="../image/logo/volvo.png" class="select_car_brand_img" alt="brand_logo">
+                    <td><img src="<c:url value="/image/logo/volvo.png"/>" class="select_car_brand_img" alt="brand_logo">
                         <div class="select_car_brand_text">VOLVO</div></td>
                     </tr>
                 </table>
@@ -210,7 +210,7 @@
                                 </table>
                             </div>
                             <div class="panel_result_img">
-                                <img src="../image/other/K3_img.png"><!--상세검색결과이미지-->
+                                <img src="<c:url value="/image/other/K3_img.png"/>"><!--상세검색결과이미지-->
                             </div>
                         </div><!--결과창 내부영역END-->
                         <span class="material-icons">keyboard_arrow_right</span>
@@ -226,7 +226,7 @@
             <hr style="width: 1450px; border: 0.1px solid #333;">
 
             <div class="recommend_car_head"><!--추천모델 제목-->
-                추천모델
+                	추천모델
             </div><!--추천모델제목END-->
 
             <div class="recommend_car"><!--추천모델 영역-->
@@ -239,7 +239,7 @@
                     </tr>
                     <tr>
                         <td>
-                            <img src="../image/other/K3_img.png" alt="car_img">
+                            <img src="<c:url value="/image/other/K3_img.png"/>" alt="car_img">
                         </td>
                         <td>
                             <h4>E-calss</h4>
@@ -249,7 +249,7 @@
                     </tr>
                     <tr>
                         <td>
-                            <img src="../image/other/K3_img.png" alt="car_img">
+                            <img src="<c:url value="/image/other/K3_img.png"/>" alt="car_img">
                         </td>
                         <td>
                             <h4>E-calss</h4>
@@ -259,7 +259,7 @@
                     </tr>
                     <tr>
                         <td>
-                            <img src="../image/other/K3_img.png" alt="car_img">
+                            <img src="<c:url value="/image/other/K3_img.png"/>" alt="car_img">
                         </td>
                         <td>
                             <h4>E-calss</h4>
@@ -269,7 +269,7 @@
                     </tr>
                     <tr>
                         <td>
-                            <img src="../image/other/K3_img.png" alt="car_img">
+                            <img src="<c:url value="/image/other/K3_img.png"/>" alt="car_img">
                         </td>
                         <td>
                             <h4>E-calss</h4>
@@ -279,7 +279,7 @@
                     </tr>
                     <tr>
                         <td>
-                            <img src="../image/other/K3_img.png" alt="car_img">
+                            <img src="<c:url value="/image/other/K3_img.png"/>" alt="car_img">
                         </td>
                         <td>
                             <h4>E-calss</h4>
@@ -297,7 +297,7 @@
                     </tr>
                     <tr>
                         <td>
-                            <img src="../image/other/K3_img.png" alt="car_img">
+                            <img src="<c:url value="/image/other/K3_img.png"/>" alt="car_img">
                         </td>
                         <td>
                             <h4>E-calss</h4>
@@ -307,7 +307,7 @@
                     </tr>
                     <tr>
                         <td>
-                            <img src="../image/other/K3_img.png" alt="car_img">
+                            <img src="<c:url value="/image/other/K3_img.png"/>" alt="car_img">
                         </td>
                         <td>
                             <h4>E-calss</h4>
@@ -317,7 +317,7 @@
                     </tr>
                     <tr>
                         <td>
-                            <img src="../image/other/K3_img.png" alt="car_img">
+                            <img src="<c:url value="/image/other/K3_img.png"/>" alt="car_img">
                         </td>
                         <td>
                             <h4>E-calss</h4>
@@ -327,7 +327,7 @@
                     </tr>
                     <tr>
                         <td>
-                            <img src="../image/other/K3_img.png" alt="car_img">
+                            <img src="<c:url value="/image/other/K3_img.png"/>" alt="car_img">
                         </td>
                         <td>
                             <h4>E-calss</h4>
@@ -337,7 +337,7 @@
                     </tr>
                     <tr>
                         <td>
-                            <img src="../image/other/K3_img.png" alt="car_img">
+                            <img src="<c:url value="/image/other/K3_img.png"/>" alt="car_img">
                         </td>
                         <td>
                             <h4>E-calss</h4>
@@ -355,7 +355,7 @@
                     </tr>
                     <tr>
                         <td>
-                            <img src="../image/other/K3_img.png" alt="car_img">
+                            <img src="<c:url value="/image/other/K3_img.png"/>" alt="car_img">
                         </td>
                         <td>
                             <h4>E-calss</h4>
@@ -365,7 +365,7 @@
                     </tr>
                     <tr>
                         <td>
-                            <img src="../image/other/K3_img.png" alt="car_img">
+                            <img src="<c:url value="/image/other/K3_img.png"/>" alt="car_img">
                         </td>
                         <td>
                             <h4>E-calss</h4>
@@ -375,7 +375,7 @@
                     </tr>
                     <tr>
                         <td>
-                            <img src="../image/other/K3_img.png" alt="car_img">
+                            <img src="<c:url value="/image/other/K3_img.png"/>" alt="car_img">
                         </td>
                         <td>
                             <h4>E-calss</h4>
@@ -385,7 +385,7 @@
                     </tr>
                     <tr>
                         <td>
-                            <img src="../image/other/K3_img.png" alt="car_img">
+                            <img src="<c:url value="/image/other/K3_img.png"/>" alt="car_img">
                         </td>
                         <td>
                             <h4>E-calss</h4>
@@ -395,7 +395,7 @@
                     </tr>
                     <tr>
                         <td>
-                            <img src="../image/other/K3_img.png" alt="car_img">
+                            <img src="<c:url value="/image/other/K3_img.png"/>" alt="car_img">
                         </td>
                         <td>
                             <h4>E-calss</h4>
@@ -416,7 +416,7 @@
 
             <div class="news_wrap"><!--포스트 전체영역-->
                 <div class="news_main"><!--메인포스트 영역-->
-                    <img src="../image/other/morning_img.jpg"><!--메인포스트이미지-->
+                    <img src="<c:url value="/image/other/morning_img.jpg"/>"><!--메인포스트이미지-->
                     <h3>기아자동차 모닝출시</h3>
                     <p class="news_main_text">2004년 2월 18일에 비스토의 후속 차종으로 출시되었다. 
                         출시 당시에는 대한민국의 경차 기준을 초과하여 소형차로 분류되었으나, 
@@ -435,7 +435,7 @@
                 <div class="news_sub_wrap"><!--우측 서브포스트 전체영역-->
 
                     <div class="news_sub"><!--서브포스트 1개 영역-->
-                        <img src="../image/other/morning_img.jpg"><!--서브포스트이미지-->
+                        <img src="<c:url value="/image/other/morning_img.jpg"/>"><!--서브포스트이미지-->
                             <div class="news_sub_textwrap"><!--서브포스트 텍스트영역(제목,본문)-->
                             <h3>기아자동차 모닝출시</h3>
                             <p class="news_sub_text">2004년 2월 18일에 비스토의 후속 차종으로 출시되었다. 
@@ -454,7 +454,7 @@
                     </div><!--서브포스트 1개 영역END-->
 
                     <div class="news_sub"><!--서브포스트 1개 영역-->
-                        <img src="../image/other/morning_img.jpg"><!--서브포스트이미지-->
+                        <img src="<c:url value="/image/other/morning_img.jpg"/>"><!--서브포스트이미지-->
                             <div class="news_sub_textwrap"><!--서브포스트 텍스트영역(제목,본문)-->
                             <h3>기아자동차 모닝출시</h3>
                             <p class="news_sub_text">2004년 2월 18일에 비스토의 후속 차종으로 출시되었다. 
@@ -473,7 +473,7 @@
                     </div>
 
                     <div class="news_sub"><!--서브포스트 1개 영역-->
-                        <img src="../image/other/morning_img.jpg"><!--서브포스트이미지-->
+                        <img src="<c:url value="/image/other/morning_img.jpg"/>"><!--서브포스트이미지-->
                             <div class="news_sub_textwrap"><!--서브포스트 텍스트영역(제목,본문)-->
                             <h3>기아자동차 모닝출시</h3>
                             <p class="news_sub_text">2004년 2월 18일에 비스토의 후속 차종으로 출시되었다. 
@@ -499,15 +499,15 @@
     <div class="common_goods"><!--최근 본 상품-->
         <div class="common_goods_name">최근 본 상품</div>
         <div class="common_goods_index" onclick="location.href='#'"><!--최근상품 1-->
-            <img src="../image/other/ad_img_camaro.jpg">
+            <img src="<c:url value="/image/other/ad_img_camaro.jpg"/>">
             <div class="common_goods_name">카마로SS</div>
         </div>
         <div class="common_goods_index" onclick="location.href='#'"><!--최근상품 2-->
-            <img src="../image/other/ad_img_camaro.jpg">
+            <img src="<c:url value="/image/other/ad_img_camaro.jpg"/>">
             <div class="common_goods_name">카마로SS</div>
         </div>
         <div class="common_goods_index" onclick="location.href='#'"><!--최근상품 3-->
-            <img src="../image/other/ad_img_camaro.jpg">
+            <img src="<c:url value="/image/other/ad_img_camaro.jpg"/>">
             <div class="common_goods_name">카마로SS</div>
         </div>
     </div>

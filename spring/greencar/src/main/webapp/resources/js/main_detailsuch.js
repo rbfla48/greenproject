@@ -3,9 +3,9 @@ window.onload  = function() {
     //panel_status 문자열로 접힘/펼쳐짐상태 정의
     var panel_status = "folded";//기본상태:접힘
 
-    var detail_btn = document.getElementById("detail_btn");
+    var detail_btn = document.querySelector("#detail_btn");
 
-    var panel = document.getElementById("panel");
+    var panel = document.querySelector("#panel");
     //패널 기본값
     panel.style.width = "100%";
     panel.style.height = "0";
@@ -15,7 +15,7 @@ window.onload  = function() {
     panel.style.transitionDelay = ".1s";
     panel.style.transitionDuration = ".5s";
 
-    //버튼클릭시 
+    //버튼클릭시 패널상태확인후 접힘혹은 닫힘
     detail_btn.onclick = function(e) {
     
         if (panel_status == "folded") {
