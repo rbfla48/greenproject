@@ -8,7 +8,8 @@
 		<param-name>contextConfigLocation</param-name>
 		<!-- 설정파일로 사용될 root-context.xml의 위치를 명시.
 			스프링프로젝트를 시작할때 root-context.xml의 설정정보를 읽어온다. -->
-		<param-value>/WEB-INF/spring/root-context.xml</param-value>
+		<!-- <param-value>/WEB-INF/spring/root-context.xml</param-value> -->
+		<param-value>classpath:config/context-*.xml</param-value>
 	</context-param>
 
 	<!-- ContextLoaderListener 와 DispatcherServlet 은 각각 webapplicationcontext 를 생성하는데

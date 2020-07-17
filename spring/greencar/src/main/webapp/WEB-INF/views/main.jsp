@@ -41,7 +41,7 @@
                     <li id="vl">|</li>
                     <li id="community" > <a href="#">커뮤니티</a></li>
                     <li id="vl">|</li>
-                    <li id="newsandissue" > <a href="#">뉴스&이슈</a></li>
+                    <li id="newsandissue" > <a href="#">뉴스|이슈</a></li>
                     <li id="vl">|</li>
                     <li id="user_advice" > <a href="#">고객지원</a></li>
                     
@@ -135,7 +135,13 @@
                                 <td>선호브랜드</td>
                                 <td>
                                     <select class="panel_option_one"><!--선호브랜드-->
-                                        <option>BMW</option>
+                                        <c:choose>
+                                        	<c:when test="${fn:length(list)>0}">
+                                        		<c:forEach items="${list }" var="row">
+                                        			<option>${row.brand_name }</option>
+                                        		</c:forEach>
+                                        	</c:when>
+                                        </c:choose>
                                     </select>
                                 </td>
                             </tr>
