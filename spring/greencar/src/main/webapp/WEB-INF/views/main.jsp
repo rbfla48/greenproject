@@ -1,5 +1,8 @@
-<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
-<%@ page session="false" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" language="java"%>
+<%@ page session="false" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" language="java" %>
+<!-- jstl taglib ==> jstl을 사용하려면 추가해야한다.-->
+<%@ taglib uri=“http://java.sun.com/jsp/jstl/core” prefix=“c” %>
+<%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions"  %>
+<!DOCTYPE html>
 <html>
 <head>
     <meta charset="UTF-8">
@@ -135,13 +138,6 @@
                                 <td>선호브랜드</td>
                                 <td>
                                     <select class="panel_option_one"><!--선호브랜드-->
-                                        <c:choose>
-                                        	<c:when test="${fn:length(list)>0}">
-                                        		<c:forEach items="${list }" var="row">
-                                        			<option>${row.brand_name }</option>
-                                        		</c:forEach>
-                                        	</c:when>
-                                        </c:choose>
                                     </select>
                                 </td>
                             </tr>
