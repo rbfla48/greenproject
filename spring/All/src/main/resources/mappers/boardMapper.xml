@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="boardMapper">
+
+	<insert id="insert">
+		INSERT INTO board_news( news_no
+		, news_title
+		,
+		news_text
+		)
+		VALUES( board_news_SEQ.NEXTVAL
+		, #{news_title}
+		, #{news_text}
+		)
+	</insert>
+
+	<select id="listPage" parameterType="com.javateam.news.vo.NewsCriteria" resultType="com.javateam.news.vo.NewsVO">
+		SELECT 
+		news_no
+		, news_TITLE
+		, news_text
+		
+		FROM (
+			select news_no,
+					news_title,
+					news_text,
+					ROW_NUMBER() OVER(ORDER BY news_no DESC) as RNUM
+					from board_news	
+		) board_news
+		
+		where RNUM between #{rowStart} and #{rowEnd}
+		ORDER BY news_no DESC
+	</select>
+	
+	<select id="listCount" resultType="int">
+	<![CDATA[
+		SELECT COUNT(news_no)
+		  FROM board_news
+		 WHERE news_no > 0
+	]]>
+	</select>
+	
+	<select id="read" parameterType="int" resultType="com.javateam.news.vo.NewsVO">
+		SELECT	news_no
+			  , news_title
+			  , news_text
+			  , REGDATE
+		 FROM board_news
+		 WHERE news_no = #{news_no}
+	</select>
+
+</mapper>
