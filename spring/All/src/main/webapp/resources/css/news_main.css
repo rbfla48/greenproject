@@ -14,6 +14,10 @@
 	flex-wrap: wrap;
 }
 
+a { text-decoration:none
+	!important
+}
+
 /* -----------------------------타이틀 라인 -------------------------------------------------*/
 /* 타이틀 (1) */
 .title_1 {
@@ -76,7 +80,6 @@
 .news_box {
 	width: 32%;
 	height: 400px;
-	border: 1px solid red;
 	display: flex;
 	flex-wrap: wrap;
 	margin: 5px;
@@ -89,7 +92,7 @@
 }
 
 /*메인포스트 제목*/
-.news_box>h3 {
+.title {
 	width: 100%; /*길이값 지정으로 inline-blok 길이제한*/
 	height: 10%;
 	font-size: 20px;
@@ -105,14 +108,14 @@
 .text {
 	width: 100%;
 	height: 40%;
-	font-size: 13px;
+	font-size: 15px;
 	white-space: normal;
 	word-break: normal;
 	word-wrap: break-word;
 	text-overflow: ellipsis;
 	line-height: 20px;
 	display: -webkit-box; /*여백삽입과같이 톺이의 유연성추가*/
-	-webkit-line-clamp: 5; /*표시할 줄갯수*/
+	-webkit-line-clamp: 4; /*표시할 줄갯수*/
 	-webkit-box-orient: vertical; /*플렉스박스의 방향설정*/
 	overflow: hidden;
 	text-overflow: clip;
@@ -124,7 +127,6 @@
 .paging {
 	width: 100%;
 	height: 5%;
-	border: 1px solid blue;
 	margin: 10px auto 10px auto;
 	text-align: center;
 	line-height: 60px;

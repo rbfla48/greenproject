@@ -16,6 +16,11 @@
 	<resources mapping="/resources/**" location="/resources/" />
 	<resources mapping="/css/**" location="/resources/css/" />
 	<resources mapping="/image/**" location="/resources/image/" />
+	<resources mapping="/js/**" location="/resources/js/" />
+	
+	<!-- webjars javascript path -->
+    <resources mapping="/webjars/**" location="classpath:/META-INF/resources/webjars/"/>
+	
 
 	<!-- Resolves views selected for rendering by @Controllers to .jsp resources in the /WEB-INF/views directory -->
 	<beans:bean class="org.springframework.web.servlet.view.InternalResourceViewResolver">
@@ -23,9 +28,15 @@
 		<beans:property name="suffix" value=".jsp" />
 	</beans:bean>
 	
-	<context:component-scan base-package="com.javateam.news" />
-	<context:component-scan base-package="com.javateam.news.dao" />
-	<context:component-scan base-package="com.javateam.news.vo" />
-	<context:component-scan base-package="com.javateam.news.service" />
+	<context:component-scan base-package="com.javateam.main" />
+	<context:component-scan base-package="com.javateam.main.dao.news" />
+	<context:component-scan base-package="com.javateam.main.vo.news" />
+	<context:component-scan base-package="com.javateam.main.service.news" />
+	<context:component-scan base-package="com.javateam.main.util.news" />
+	
+	<context:component-scan base-package="com.javateam.main" />
+	<context:component-scan base-package="com.javateam.main.dao.join" />
+	<context:component-scan base-package="com.javateam.main.vo.join" />
+	<context:component-scan base-package="com.javateam.main.service.join" />
 	
 </beans:beans>
