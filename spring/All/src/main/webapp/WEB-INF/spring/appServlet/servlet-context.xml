@@ -32,11 +32,13 @@
 	<context:component-scan base-package="com.javateam.main.dao.news" />
 	<context:component-scan base-package="com.javateam.main.vo.news" />
 	<context:component-scan base-package="com.javateam.main.service.news" />
-	<context:component-scan base-package="com.javateam.main.util.news" />
 	
-	<context:component-scan base-package="com.javateam.main" />
 	<context:component-scan base-package="com.javateam.main.dao.join" />
 	<context:component-scan base-package="com.javateam.main.vo.join" />
 	<context:component-scan base-package="com.javateam.main.service.join" />
+	
+	<context:component-scan base-package="com.javateam.main.dao.product" />
+	<context:component-scan base-package="com.javateam.main.vo.product" />
+	<context:component-scan base-package="com.javateam.main.service.product" />
 	
 </beans:beans>

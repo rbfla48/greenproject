@@ -28,7 +28,7 @@ public class NewsServiceImpl implements NewsService {
 	} // 뉴스 갯수 파악
 	/** 뉴스 세부 페이지 */
 	@Override
-	public NewsVO newsDetail(int news_no) throws Exception {
-		return dao.newsDetail(news_no);
+	public NewsVO newsDetail(int newsNo) throws Exception {
+		return dao.newsDetail(newsNo);
 	} // 뉴스 세부 페이지	
 }

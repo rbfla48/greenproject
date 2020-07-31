@@ -77,7 +77,7 @@
 		<!-- 타이틀 (2) 시작-->
 		<div id="title_2" class="title_2" name="title_2">
 			<div id="category_title" class="category_title" name="category_title">
-				<a href="${contextPath}/news/newsMain"> 카테고리</a>
+				<a> 카테고리</a>
 			</div>
 			<div id="category_1" class="category_field" name="category_1">
 				<span class="material-icons"> keyboard_arrow_right </span><a
@@ -105,7 +105,7 @@
 				<c:forEach items="${newsMain}" var="news" varStatus="vs">
 
 					<div id="news_1" class="news_box" name="news_1"
-						onclick="location.href='${contextPath}/news/newsDetailView?news_no=${news.news_no}';">
+						onclick="location.href='${contextPath}/news/newsDetailView?newsNo=${news.newsNo}';">
 
 						<!--  사진 시작 -->
 						<img src="<spring:url value='/resources/image/post${vs.count}.jpg'/>" />
@@ -113,13 +113,13 @@
 
 						<!--  제목 시작 -->
 						<h3 id="news_title_1" class="title" name="title_1">
-							<c:out value="${news.news_title}" />
+							<c:out value="${news.newsTitle}" />
 						</h3>
 						<!--  제목 끝 -->
 
 						<!--  내용 시작 -->
 						<p id="news_text_1" class="text" name="text_1">
-							<c:out value="${news.news_text}" />
+							<c:out value="${news.newsText}" />
 						</p>
 						<!--  내용 끝 -->
 

@@ -77,14 +77,6 @@ let passFlag = false;
 							확인하기</button></td>
 				</tr>
 				<!-- 이메일 끝-->
-
-				<tr>
-					<td class="td1"></td>
-					<td class="td2"></td>
-					<td class="td3"><span class="required_1">* 인증 되었습니다.</span></td>
-					<td class="td2"></td>
-				</tr>
-
 				<!-- 비밀번호 시작 -->
 				<tr>
 					<td class="td1"><span class="required_1">*</span></td>
@@ -100,7 +92,7 @@ let passFlag = false;
 					<td class="td1"></td>
 					<td class="td2"></td>
 					<td class="td3"><span class="required_2">*
-							영문대소문자/특수문자/숫자 조합하여 8~20자로 입력해 주세요.</span></td>
+							영문대소문자/특수문자/숫자 조합하여 8~20자로 입력.</span></td>
 					<td class="td2"></td>
 				</tr>
 
@@ -115,12 +107,6 @@ let passFlag = false;
 				</tr>
 				<!-- 재확인 끝-->
 
-				<tr>
-					<td class="td1"></td>
-					<td class="td2"></td>
-					<td class="td3"><span class="required_1">* 일치하지 않습니다.</span></td>
-					<td class="td2"></td>
-				</tr>
 
 				<!-- 닉네임 시작 -->
 				<tr>
@@ -138,8 +124,7 @@ let passFlag = false;
 				<tr>
 					<td class="td1"></td>
 					<td class="td2"></td>
-					<td class="td3"><span class="required_1">* 사용 가능한 닉네임
-							입니다.</span></td>
+					<td class="td3"><span class="required_2">* 영문/한글 조합하여 2자 이상 입력.</span></td>
 					<td class="td2"></td>
 				</tr>
 
@@ -164,13 +149,6 @@ let passFlag = false;
 					<td class="td2"></td>
 				</tr>
 				<!-- 생년월일 끝-->
-
-				<tr>
-					<td class="td1"></td>
-					<td class="td2"></td>
-					<td class="td3"><span class="required_3">글자 무효화</span></td>
-					<td class="td2"></td>
-				</tr>
 
 				<!-- 연락처 시작 -->
 				<tr>
@@ -201,13 +179,6 @@ let passFlag = false;
 						onclick="searchPost()"></td>
 				</tr>
 				<!-- 기본 주소 끝-->
-
-				<tr>
-					<td class="td1"></td>
-					<td class="td2"></td>
-					<td class="td3"><span class="required_3">글자 무효화</span></td>
-					<td class="td2"></td>
-				</tr>
 
 				<!-- 상세주소 시작 -->
 				<tr>

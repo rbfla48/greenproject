@@ -44,7 +44,7 @@ private static final Logger logger = LoggerFactory.getLogger(NewsController.clas
 	public String newsDetail(NewsVO newsVO, Model model) throws Exception{
 		logger.info("newsDetail");
 		
-		model.addAttribute("newsDetail", service.newsDetail(newsVO.getNews_no()));
+		model.addAttribute("newsDetail", service.newsDetail(newsVO.getNewsNo()));
 		
 		return "/news/newsDetailView";
 	} // 뉴스 세부 페이지

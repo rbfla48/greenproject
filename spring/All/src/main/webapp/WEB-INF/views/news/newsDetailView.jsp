@@ -78,7 +78,7 @@
 		<!-- 타이틀 (2) 시작-->
 		<div id="title_2" class="title_2" name="title_2">
 			<div id="category_title" class="category_title" name="category_title">
-				<a href="${contextPath}/news/newsMain"> 카테고리</a>
+				<a> 카테고리</a>
 			</div>
 			<div id="category_1" class="category_field" name="category_1">
 				<span class="material-icons"> keyboard_arrow_right </span><a
@@ -105,8 +105,8 @@
 			<!-- 포스트 1 시작-->
 			<div id="news_1" class="news_box" name="news_1">
 				<img src="<spring:url value='/resources/image/post1.jpg'/>" />
-				<h3><c:out value="${newsDetail.news_title}" /></h3>
-				<p id="news_text_1" class="text" name="text_1"><c:out value="${newsDetail.news_text}" /></p>
+				<h3><c:out value="${newsDetail.newsTitle}" /></h3>
+				<p id="news_text_1" class="text" name="text_1"><c:out value="${newsDetail.newsText}" /></p>
 
 			</div>
 			<!-- 포스트 1 끝-->

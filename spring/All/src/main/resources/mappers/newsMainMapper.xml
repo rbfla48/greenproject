@@ -38,7 +38,7 @@
 			  , news_text
 			  , REGDATE
 		 FROM board_news
-		 WHERE news_no = #{news_no}
+		 WHERE news_no = #{newsNo}
 	</select>
 
 

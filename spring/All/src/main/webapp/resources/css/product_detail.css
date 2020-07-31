@@ -1,0 +1,323 @@
+@charset "UTF-8";
+
+/* 전체 테두리 */
+.wrap {
+    height: 2775px;
+    width: 1200px;
+    color: #333;
+    line-height: 10px;
+    background-color: white;
+    border:1px solid black;
+    margin: 0px auto 30px auto;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+/* 첫째 줄*/
+.box_1 {
+    height: 500px;
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    margin-bottom: 50px;
+}
+/* -------------------사진 ---------------------------------------------------------------------*/
+
+/* 첫째줄 사진*/
+.picture_1 {
+    height: 500px; 
+    width: 60%;
+}
+
+.picture_2 {
+    height: 500px; 
+    width: 100%;
+    margin: 25px 0px 25px 0px;
+}
+
+.picture_3 {
+    height: 700px; 
+    width: 100%;
+    margin: 25px 0px 25px 0px;
+}
+
+/*전체 사진 사이즈 */
+#picture_main>img {
+    height: 100%;
+    width: 100%;
+}
+
+#picture_vr>img {
+    height: 100%;
+    width: 100%;
+}
+
+#picture_detail>img {
+    height: 100%;
+    width: 100%;
+}
+
+/* ------------------------내용---------------------------------------------------------------*/
+/* 박스 전체 */
+.info_detail {
+    height: 500px;
+    width: 35%;
+    margin: 0px auto 0px auto;
+    border-bottom: 3px double gray;
+}
+/* 제목 */
+.info_title {
+    text-align: center;
+    width: 100%;
+    height: 50px;
+    font-size: 23px;
+    font-weight: bold;
+    border-bottom: 3px double gray;
+    line-height: 10px;
+    padding-top: 20px;
+}
+/* 부제목 */
+.title_1 {
+    width: 100%;
+    height: 20px;
+    font-size: 18px;
+    font-weight: bold;
+    padding: 20px 0px 20px 20px;
+    line-height: 10px;
+}
+/* 내용*/
+.text_1 {
+    font-size: 13px;
+    padding: 20px 0px 20px 10px;
+    line-height: 10px;
+}
+
+/* -----------------------옵션창 -------------------------------------------------------------*/
+
+/* 옵션 전체 창*/
+.box_2 {
+    height: 900px;
+    width: 1200px;
+    background-color: #e4dcd3;
+    margin: 25px 0px 25px 0px;
+}
+
+.material-icons {
+    vertical-align: middle;
+    padding-left: 20px;
+}
+
+/* 옵션 선택 */
+.option_title {
+    text-align: left;
+    width: 100%;
+    height: 40px;
+    font-size: 23px;
+    font-weight: bold;
+    border-bottom: 3px double gray;
+    line-height: 10px;
+    padding-top: 20px;
+}
+
+/* 색상 선택 */
+.option_color {
+    width: 100%;
+    height: 80px;
+    font-size: 18px;
+    font-weight: bold;
+    line-height: 60px;
+    text-indent: 20px;
+}
+
+/* ---------------------라디오 -----------------------------------------------------------*/
+
+.check {
+    display:block;
+    float: right;
+    border:5px solid #e4dcd3;
+    border-radius:100%;
+    width: 50px;
+    height: 50px;
+    margin: -50px 0px 0px 10px;
+}
+
+.color_tag {
+    display:block;
+    position:relative;
+    float: right;
+    font-size: 18px;
+    letter-spacing: 10px;
+    margin: -50px 10px 0px -80px;
+    padding: 50px 10px 0px 5px;
+}
+
+.check::before {
+    display:block;
+    content:'';
+    border-radius:100%;
+    width: 50px;
+    height: 50px;
+}
+
+/* 선택 (전) 라디오 색 */
+#check_1.check::before {
+    background-color: black;
+}
+
+#check_2.check::before {
+    background-color: gray;
+}
+
+#check_3.check::before {
+    background-color: red;
+}
+
+.color {
+    position:absolute;
+    visibility:hidden;
+}
+
+/* 선택 (후) 테두리 */
+.color:checked ~ .check {
+    border:5px solid white;
+}
+
+/* 선택 (후) 라디오 색 */
+#color_1:checked ~ .check::before {
+    background: black;
+}
+
+#color_2:checked ~ .check::before {
+    background:gray;
+}
+
+#color_3:checked ~ .check::before {
+    background:red;
+}
+
+/* ---------------------1~3 옵션 박스 -----------------------------------------------------------*/
+
+/* 전체 박스 (옵션)*/
+.box_3 {
+    width: 100%;
+    height: 480px;
+    display: flex;
+    flex-wrap: wrap;
+    margin: 0px 0px 25px 0px;
+}
+
+/* 1~3 박스 */
+.option_select_n {
+    width: 30%;
+    height: 100%;
+    background-color: #dcccac;
+    margin: 0px auto 0px auto;
+}
+
+/* 1~3 박스 (제목) 박스 */
+.option_n_title {
+    text-align: center;
+    width: 100%;
+    height: 10%;
+    font-size: 18px;
+    font-weight: bold;
+    border-bottom: 3px double gray;
+    line-height: 40px;
+}
+
+/* 1~3 박스 (내용) 박스 */
+.option_n_text {
+    width: 100%;
+    height: 75%;
+    border-bottom: 1px solid gray;
+}
+
+/* 1~3 박스 (가격) 박스 */
+.option_n_cost {
+    text-align: center;
+    width: 100%;
+    height: 15%;
+    font-size: 18px;
+    font-weight: bold;
+    line-height: 70px;
+}
+
+/* 내용 박스 제목 */
+.title_2 {
+    width: 100%;
+    height: 20px;
+    font-size: 18px;
+    font-weight: bold;
+    padding: 20px 0px 20px 20px;
+    line-height: 10px;
+}
+/* 내용 박스 내용 */
+.text_2 {
+    text-align: left;
+    font-size: 13px;
+    padding: 20px 0px 20px 10px;
+    line-height: 10px;
+}
+
+
+/* --------------------------TAX 및 하단 ------------------------------------------------*/
+
+/* tax 박스 전체*/
+.box_4 {
+    width: 50%;
+    height: 170px;
+    background-color: #dcccac;
+    margin: 0px 7px 0px 48%;
+}
+
+.tax_1_title {
+    font-size: 18px;
+    font-weight: bold;
+    padding: 20px 0px 20px 20px;
+    line-height: 10px;
+}
+
+.tax_n_title {
+    font-size: 23px;
+    font-weight: bold;
+    padding: 20px 0px 20px 20px;
+    line-height: 40px;
+}
+
+.tax_text_1 {
+    float: right;
+    font-size: 18px;
+    font-weight: bold;
+    padding: 0px 20px 20px 0px;
+    line-height: 10px;
+}
+
+.tax_text_n {
+    float: right;
+    font-size: 23px;
+    font-weight: bold;
+    padding: 0px 20px 20px 0px;
+    line-height: 40px;
+}
+
+/* ----------------------------버튼 -----------------------------------------------------------*/
+
+.button_buy {
+    width: 200px;
+    height: 45px;
+    background-color: #e4dcd3; 
+    border-style: none;
+    border-radius: 5px;
+    text-align: center;
+    margin: 0px 10px 0px 59%;
+}
+
+.button_keep {
+    width: 200px;
+    height: 45px;
+    background-color: #e4dcd3; 
+    border-style: none;
+    border-radius: 5px;
+    text-align: center;
+    margin: 0px 16% 0px 10px;
+}

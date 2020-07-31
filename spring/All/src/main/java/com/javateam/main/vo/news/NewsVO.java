@@ -3,28 +3,28 @@ package com.javateam.main.vo.news;
 import java.util.Date;
 
 public class NewsVO {
-	private int news_no;
-	private String news_title;
-	private String news_text;
+	private int newsNo;
+	private String newsTitle;
+	private String newsText;
 	private Date regdate;
 	
-	public int getNews_no() {
-		return news_no;
+	public int getNewsNo() {
+		return newsNo;
 	}
-	public void setNews_no(int news_no) {
-		this.news_no = news_no;
+	public void setNewsNo(int newsNo) {
+		this.newsNo = newsNo;
 	}
-	public String getNews_title() {
-		return news_title;
+	public String getNewsTitle() {
+		return newsTitle;
 	}
-	public void setNews_title(String news_title) {
-		this.news_title = news_title;
+	public void setNewsTitle(String newsTitle) {
+		this.newsTitle = newsTitle;
 	}
-	public String getNews_text() {
-		return news_text;
+	public String getNewsText() {
+		return newsText;
 	}
-	public void setNews_text(String news_text) {
-		this.news_text = news_text;
+	public void setNewsText(String newsText) {
+		this.newsText = newsText;
 	}
 	public Date getRegdate() {
 		return regdate;

@@ -11,5 +11,5 @@ public interface NewsDAO {
 	/** 뉴스 갯수 파악 */
 	public int listCount() throws Exception;
 	/** 뉴스 세부 페이지 */
-	public NewsVO newsDetail(int news_no) throws Exception;
+	public NewsVO newsDetail(int newsNo) throws Exception;
 }

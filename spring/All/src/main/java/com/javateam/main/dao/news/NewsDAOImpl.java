@@ -27,7 +27,7 @@ public class NewsDAOImpl implements NewsDAO {
 	} // 뉴스 갯수 파악
 	/** 뉴스 세부 페이지 */
 	@Override
-	public NewsVO newsDetail(int news_no) throws Exception {
-		return sqlSession.selectOne("newsMainMapper.newsDetail", news_no);
+	public NewsVO newsDetail(int newsNo) throws Exception {
+		return sqlSession.selectOne("newsMainMapper.newsDetail", newsNo);
 	} // 뉴스 세부 페이지
 }

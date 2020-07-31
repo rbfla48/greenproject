@@ -43,10 +43,10 @@ private static final Logger logger = LoggerFactory.getLogger(JoinController.clas
 		logger.info("emailCheck");
 		int result1 = service.emailCheck(userEmail);
 		try {
-			if (result1 == 1) {
+			if (result1 == 1) { 
 				return result1;
 			} else if (result1 == 0) {
-				service.emailCheck(userEmail);
+				service.emailCheck(userEmail); 
 			}
 		} catch (Exception e) {
 			throw new RuntimeException();
