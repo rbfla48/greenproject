@@ -156,3 +156,24 @@ section #search_button {
 }
 
 /***************검색하기 버튼 끝************************************/
+
+#detail_list {
+    width : 1200px;
+    height: 250px;
+    border: 1px grey solid;
+    margin: auto;
+    display: flex;
+}
+
+#car_pic {
+    width: 250px;
+    height: 250px;   
+}
+
+#car_content1 {
+    width : 475px;
+}
+
+#car_content2 {
+    width : 475px;
+}
