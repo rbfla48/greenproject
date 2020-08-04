@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper 
+		PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" 
+		"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<!-- mapper namespace ==> mapper인터페이스 경로로 작성 -->
+<mapper namespace="com.greencar.dao.notice.NoticeMapper">
+
+	<!-- <select id="getList" resultType="com.greencar.prototype.domain.NoticeVO">
+	<![CDATA[
+	select * from notice where notice_no > 0 order by notice_no desc
+	]]>
+	</select> -->
+		
+	<!--검색&페이징기능 sql -->
+	<sql id="criteria">
+		<trim prefix="(" suffix=") AND " prefixOverrides="OR">
+			<foreach item='type' collection="typeArr">
+				<trim prefix="OR">
+					<choose>
+						<when test="type == 'T'.toString()">
+							notice_title like '%'||#{keyword}||'%'
+						</when>
+						<when test="type == 'C'.toString()">
+							notice_text like '%'||#{keyword}||'%'
+						</when>
+						<when test="type == 'W'.toString()">
+							notice_writer like '%'||#{keyword}||'%'
+						</when>
+					</choose>
+				</trim>
+			</foreach>
+		</trim>
+	</sql>
+	
+	<select id="getListWithPage" resultType="com.greencar.vo.notice.NoticeVO">
+		<![CDATA[
+		SELECT * FROM(
+		    SELECT rownum rn, notice_no, notice_title, notice_writer, upload_date, notice_view  
+		    FROM (
+		    	SELECT * FROM notice ORDER BY notice_no DESC)
+		    WHERE 
+		]]>
+		<include refid="criteria"></include>
+		<![CDATA[
+			rownum <= #{pageNum} * #{amount})
+		WHERE rn > (#{pageNum} -1) * #{amount} 
+		]]> 
+	</select>
+	
+	<!-- 페이징할 전체데이터 갯수 카운트 -->
+	<select id="getTotalCount" resultType="int">
+		<![CDATA[
+		SELECT COUNT(*) FROM notice WHERE
+		]]>  
+		<include refid="criteria"></include>
+		<![CDATA[
+		notice_no > 0
+		]]>
+	</select>
+	
+	<insert id="insert">
+	INSERT INTO notice (notice_no, notice_title, notice_text, notice_writer, upload_date, notice_view)
+	VALUES (NOTICE_SEQ.NEXTVAL, #{notice_title}, #{notice_text}, #{notice_writer}, sysdate, 0)
+	</insert>
+	
+	
+	<insert id="insertSelectKey">
+		<selectKey keyProperty="notice_no" order="BEFORE" resultType="int">
+			select notice_seq.nextval from dual
+		</selectKey>
+		
+		insert into notice (notice_no, notice_title, notice_text, notice_writer, upload_date, notice_view)
+		values (#{notice_no}, #{notice_title}, #{notice_text}, #{notice_writer}, sysdate, 0)
+	</insert>
+	
+	
+	<select id="read" resultType="com.greencar.vo.notice.NoticeVO">
+		select * from notice where notice_no = #{notice_no}
+	</select>
+	
+	
+	<delete id="delete">
+		delete from notice where notice_no = #{notice_no}
+	</delete>
+	
+	
+	<update id="update">
+		update notice set 
+		notice_title= #{notice_title},
+		notice_text = #{notice_text},
+		notice_writer=#{notice_writer},
+		upload_date = sysdate
+		where NOTICE_NO = #{notice_no}
+	</update>
+	
+</mapper>

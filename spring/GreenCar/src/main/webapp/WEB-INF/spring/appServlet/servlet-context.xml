@@ -35,7 +35,8 @@
 	</beans:bean>
 
 	<context:component-scan
-		base-package="com.greencar" />
+		base-package="com.greencar.controller" />
+		
 	<context:component-scan
 		base-package="com.greencar.dao.news" />
 	<context:component-scan
@@ -56,5 +57,12 @@
 		base-package="com.greencar.vo.goods" />
 	<context:component-scan
 		base-package="com.greencar.service.goods" />
+		
+	<context:component-scan
+		base-package="com.greencar.dao.notice" />
+	<context:component-scan
+		base-package="com.greencar.vo.notice" />
+	<context:component-scan
+		base-package="com.greencar.service.notice" />
 
 </beans:beans>
