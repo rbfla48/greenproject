@@ -11,6 +11,7 @@
 	<properties>
 		<java-version>1.8</java-version>
 		<org.springframework-version>4.3.27.RELEASE</org.springframework-version>
+		<org.springsecurity-version>4.2.15.RELEASE</org.springsecurity-version>
 		<org.aspectj-version>1.6.10</org.aspectj-version>
 		<org.slf4j-version>1.7.20</org.slf4j-version>
 	</properties>
@@ -213,7 +214,27 @@
 			<version>1.2.2</version>
 		</dependency>
 
-		<!-- 첨부파일 END -->
+		<!-- SpringSecurity -->
+		<dependency>
+		    <groupId>org.springframework.security</groupId>
+		    <artifactId>spring-security-web</artifactId>
+		    <version>${org.springsecurity-version}</version>
+		</dependency>
+		<dependency>
+		    <groupId>org.springframework.security</groupId>
+		    <artifactId>spring-security-config</artifactId>
+		    <version>${org.springsecurity-version}</version>
+		</dependency>
+		<dependency>
+		    <groupId>org.springframework.security</groupId>
+		    <artifactId>spring-security-core</artifactId>
+		    <version>${org.springsecurity-version}</version>
+		</dependency>
+		<dependency>
+		    <groupId>org.springframework.security</groupId>
+		    <artifactId>spring-security-taglibs</artifactId>
+		    <version>${org.springsecurity-version}</version>
+		</dependency>
 
 		<!-- https://mvnrepository.com/artifact/org.projectlombok/lombok -->
 		<dependency>
@@ -221,6 +242,13 @@
 			<artifactId>lombok</artifactId>
 			<version>1.18.12</version>
 			<scope>provided</scope>
+		</dependency>
+		
+		<!--maven-resources-plugin -->
+		<dependency>
+		    <groupId>org.apache.maven.plugins</groupId>
+		    <artifactId>maven-resources-plugin</artifactId>
+		    <version>3.1.0</version>
 		</dependency>
 
 	</dependencies>

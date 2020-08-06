@@ -18,9 +18,10 @@
 			value="oracle.jdbc.OracleDriver" />
 		<property name="url"
 			value="jdbc:oracle:thin:@localhost:1521:xe" />
-		<property name="username" value="greencar" />
-		<property name="password" value="1234" />
+		<property name="username" value="green_admin" />
+		<property name="password" value="green" />
 	</bean>
+	
 	<!-- Mybatis 연동 -->
 	<bean id="sqlSessionFactory"
 		class="org.mybatis.spring.SqlSessionFactoryBean">
@@ -30,6 +31,7 @@
 		<property name="mapperLocations"
 			value="classpath:mappers/**/*Mapper.xml" />
 	</bean>
+	
 	<bean id="sqlSession"
 		class="org.mybatis.spring.SqlSessionTemplate"
 		destroy-method="clearCache">
