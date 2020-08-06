@@ -5,15 +5,16 @@ import java.util.List;
 import javax.inject.Inject;
 
 import org.apache.ibatis.session.SqlSession;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
 import com.greencar.vo.notice.Criteria;
 import com.greencar.vo.notice.NoticeVO;
 
-@Repository
+@Repository("NoticeDAO")
 public class NoticeDAOImpl implements NoticeDAO {
 
-	@Inject
+	@Autowired
 	private SqlSession sqlSession;
 	
 	@Override

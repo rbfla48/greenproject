@@ -5,14 +5,15 @@ import java.util.List;
 import javax.inject.Inject;
 
 import org.apache.ibatis.session.SqlSession;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
 import com.greencar.vo.notice.NoticeCommentVO;
 
-@Repository("commmapperDAO")
+@Repository("NoticeCommentDAO")
 public class NoticeCommentDAOImpl implements NoticeCommentDAO {
 	
-	@Inject
+	@Autowired
 	private SqlSession sqlSession;
 
 	@Override

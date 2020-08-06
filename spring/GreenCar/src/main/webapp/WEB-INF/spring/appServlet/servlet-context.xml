@@ -33,10 +33,23 @@
 		<beans:property name="prefix" value="/WEB-INF/views/" />
 		<beans:property name="suffix" value=".jsp" />
 	</beans:bean>
+	
+	<!-- <beans:bean id="NoticeService" class="com.greencar.service.notice.NoticeServiceImpl" />
+	<beans:bean id="NoticeCommentService" class="com.greencar.service.notice.NoticeCommentServiceImpl" />
+	<beans:bean id="NoticeDAO" class="com.greencar.dao.notice.NoticeDAOImpl" />
+	<beans:bean id="NoticeCommentDAO" class="com.greencar.dao.notice.NoticeCommentDAOImpl" /> -->
 
 	<context:component-scan
 		base-package="com.greencar" />
 	<context:component-scan
+		base-package="com.greencar.dao" />
+	<context:component-scan
+		base-package="com.greencar.service" />
+	<context:component-scan
+		base-package="com.greencar.vo" />
+	<context:component-scan
+		base-package="com.greencar.security" />
+	<!-- <context:component-scan
 		base-package="com.greencar.dao.news" />
 	<context:component-scan
 		base-package="com.greencar.vo.news" />
@@ -55,6 +68,6 @@
 	<context:component-scan
 		base-package="com.greencar.vo.goods" />
 	<context:component-scan
-		base-package="com.greencar.service.goods" />
+		base-package="com.greencar.service.goods" /> -->
 
 </beans:beans>

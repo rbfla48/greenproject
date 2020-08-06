@@ -27,7 +27,7 @@ import lombok.extern.log4j.Log4j;
 public class NoticeController {
 	
 	@Inject
-	private NoticeService service;
+	private NoticeService noticeService;
 	@Inject
 	private NoticeCommentService commService;
 	
@@ -36,10 +36,10 @@ public class NoticeController {
 	public void list(Criteria cri, Model model) {
 
 		log.info("list : " + cri);
-		model.addAttribute("list", service.getListWithPage(cri));
+		model.addAttribute("list", noticeService.getListWithPage(cri));
 		
 		//데이터 전체갯수 연산후 게시판에서 전체갯수만큼 페이징하여 출력
-		int total = service.getTotalCount(cri);
+		int total = noticeService.getTotalCount(cri);
 		log.info("total Data : " + total);
 		model.addAttribute("pageMaker", new PageDTO(cri, total));//페이징 설정
 	}
@@ -49,7 +49,7 @@ public class NoticeController {
 	@GetMapping({"/get", "/modify"})
 	public void get(@RequestParam("notice_no") int notice_no, NoticeCommentVO comment, Model model) {
 		log.info("get or modify" );
-		model.addAttribute("notice",service.get(notice_no));
+		model.addAttribute("notice",noticeService.get(notice_no));
 		model.addAttribute("comment",commService.getComment(notice_no));
 			
 	}

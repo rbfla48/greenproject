@@ -16,7 +16,7 @@ import lombok.extern.log4j.Log4j;
 @Service
 public class NoticeCommentServiceImpl implements NoticeCommentService{
 	
-	@Inject
+	@Autowired
 	private NoticeCommentDAO commmapperDAO;
 
 	@Override
