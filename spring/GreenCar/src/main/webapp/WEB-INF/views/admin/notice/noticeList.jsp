@@ -14,7 +14,7 @@
     <link rel="stylesheet" href="/resources/css/footer.css" /><!--하단footer-->
     <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons"><!--구글머터리얼-->
 <meta charset="UTF-8">
-<title>Insert title here</title>
+<title>greencar_admin notice</title>
 </head>
 <body>
 <script src="//code.jquery.com/jquery-1.11.0.min.js"></script>
@@ -100,7 +100,8 @@
 	        			<option value="TC" <c:out value="${pageMaker.cri.type eq 'TC'?'selected':''}"/>>제목or내용</option>
 	        		</select>
 	        		<input type="text" name="keyword" value="<c:out value="${pageMaker.cri.keyword }"/>"/>
-	        	<!-- 검색후 페이징처리 -->
+	        		
+	        		<!-- 검색후 페이징처리 -->
 	        		<input type="hidden" name="pageNum" value="<c:out value="${pageMaker.cri.pageNum }"/>">
 	        		<input type="hidden" name="amount" value="<c:out value="${pageMaker.cri.amount }"/>">
 	        		<button>검색</button>

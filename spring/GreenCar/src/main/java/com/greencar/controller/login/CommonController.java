@@ -22,7 +22,7 @@ public class CommonController {
 	}
 	
 	//고객 로그인페이지
-	@GetMapping("/greencar/customLogin")
+	@GetMapping("/login/customLogin")
 	public void loginInput(String error, String logout, Model model) {
 		log.info("error : " + error);
 		log.info("logout : " + logout);
@@ -36,7 +36,7 @@ public class CommonController {
 		}
 	}
 	
-	@GetMapping("/greencar/logout")
+	@GetMapping("/login/logout")
 	public String logoutGET(RedirectAttributes rttr) {
 		log.info("logout.....");
 		

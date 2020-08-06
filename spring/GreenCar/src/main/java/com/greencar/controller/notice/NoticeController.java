@@ -33,10 +33,11 @@ public class NoticeController {
 	
 	//공지사항 게시물 리스트 출력
 	@GetMapping("/noticeList")
-	public void list(Criteria cri,Model model) {
+	public void list(Criteria cri, Model model) {
+
 		log.info("list : " + cri);
-		/*model.addAttribute("list",service.getList())*/
-		model.addAttribute("list", service.getListWithPage(cri));//페이징 기능
+		model.addAttribute("list", service.getListWithPage(cri));
+		
 		//데이터 전체갯수 연산후 게시판에서 전체갯수만큼 페이징하여 출력
 		int total = service.getTotalCount(cri);
 		log.info("total Data : " + total);
