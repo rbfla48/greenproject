@@ -1,7 +1,6 @@
 package com.greencar.controller.notice;
 
-import javax.inject.Inject;
-
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -26,22 +25,23 @@ import lombok.extern.log4j.Log4j;
 @AllArgsConstructor
 public class NoticeController {
 	
-	@Inject
+	@Autowired
 	private NoticeService noticeService;
-	@Inject
+	@Autowired
 	private NoticeCommentService commService;
 	
 	//공지사항 게시물 리스트 출력
 	@GetMapping("/noticeList")
 	public void list(Criteria cri, Model model) {
 
-		log.info("list : " + cri);
+		log.debug("list : " + cri);
 		model.addAttribute("list", noticeService.getListWithPage(cri));
 		
 		//데이터 전체갯수 연산후 게시판에서 전체갯수만큼 페이징하여 출력
 		int total = noticeService.getTotalCount(cri);
-		log.info("total Data : " + total);
+		log.debug("total Data : " + total);
 		model.addAttribute("pageMaker", new PageDTO(cri, total));//페이징 설정
+		
 	}
 	
 	
