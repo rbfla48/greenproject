@@ -1,4 +1,4 @@
-package com.greencar.controller.notice;
+package com.greencar.controller.admin;
 
 import javax.inject.Inject;
 
@@ -22,9 +22,9 @@ import lombok.extern.log4j.Log4j;
 
 @Controller
 @Log4j
-@RequestMapping("/notice/*")
+@RequestMapping("/admin/notice/*")
 @AllArgsConstructor
-public class NoticeController {
+public class AdminNoticeController {
 	
 	@Inject
 	private NoticeService service;
@@ -44,6 +44,19 @@ public class NoticeController {
 		model.addAttribute("pageMaker", new PageDTO(cri, total));//페이징 설정
 	}
 	
+	//게시물 등록화면(입력창)
+	@GetMapping("/register")
+	public void register() {}
+	//게시물 입력후 등록(등록후 리스트출력)
+	@PostMapping("/register")
+	public String register(NoticeVO noticeVO, NoticeCommentVO comment, RedirectAttributes rttr) {
+		//게시물등록
+		log.info("register: "+ noticeVO);
+		service.register(noticeVO);
+		rttr.addFlashAttribute("result",noticeVO.getNotice_no());
+		
+		return "redirect:/admin/notice/noticeList";
+	}
 	
 	//특정게시물 조회/수정 페이지 이동
 	@GetMapping({"/get", "/modify"})
@@ -53,6 +66,28 @@ public class NoticeController {
 		model.addAttribute("comment",commService.getComment(notice_no));
 			
 	}
+
+	//게시물 수정
+	@PostMapping("/modify")
+	public String modify(NoticeVO noticeVO, RedirectAttributes rttr, Criteria cri) {
+		log.info("modify : " + noticeVO); 
+		if(service.modify(noticeVO)) {
+			rttr.addFlashAttribute("result","success");
+		}
+		return "redirect:/admin/notice/noticeList" + cri.listLink();
+	}
+	
+	//게시물삭제
+	@PostMapping("/remove")
+	public String remove(@RequestParam("notice_no") int notice_no, RedirectAttributes rttr, Criteria cri) {
+		log.info("remove...." + notice_no);
+		if(service.remove(notice_no)) {
+			rttr.addFlashAttribute("result","success");
+		}
+		return "redirect:/admin/notice/noticeList" + cri.listLink();
+	}
+	
+	
 	
 	//댓글등록
 	@PostMapping("/regComment")
@@ -62,7 +97,7 @@ public class NoticeController {
 		commService.regComment(comment);
 		rttr.addFlashAttribute("comment", comment.getNotice_no());
 			
-		return "redirect:/notice/get?notice_no="+comment.getNotice_no();
+		return "redirect:/admin/notice/get?notice_no="+comment.getNotice_no();
 	}
 	
 	//댓글삭제
@@ -73,7 +108,7 @@ public class NoticeController {
 		rttr.addFlashAttribute("notice", noticeVO.getNotice_no());
 		
 		//댓글 삭제시 commService.getComment()에서 notice_no를 0으로 가져옴
-		return "redirect:/notice/get?notice_no="+noticeVO.getNotice_no();
+		return "redirect:/admin/notice/get?notice_no="+noticeVO.getNotice_no();
 	}
 	 
 }

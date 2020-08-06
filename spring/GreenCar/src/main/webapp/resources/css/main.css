@@ -1,0 +1,464 @@
+
+.wrap{
+    width: 70%;
+    min-width: 1200px;
+    margin: 0 15% 0 15%;
+    height: auto;
+    display: flex;
+    flex-wrap: wrap;
+    background-color: f5f5f5;
+}
+
+
+/*차종선택*/
+.select_car_size{
+    width: 150px;
+    height: 400px;
+    background-color: #333;
+    box-sizing: border-box;
+    border-radius: 5px;
+    margin: 0 0 0 50px;
+    padding: 20px 0 20px 0;
+    position: absolute;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+}
+/*차종선택 링크텍스트*/
+.select_car_size>div>a{
+    width: 100%;
+    text-decoration: none;
+    color: whitesmoke;
+    font-size: 23px;
+    font-weight: bold;
+    text-align: center;
+    opacity: 0.5;
+    
+}
+/*차량선택란 1칸*/
+.size_option>a {
+    opacity: 0.5;
+    border-bottom: 2px solid #fff;
+}
+.size_option>a:hover {
+    opacity: 1;
+}
+
+/*이미지 슬라이드기능 추가해야함*/
+/*상단 슬라이드광고*/
+.slide_ad {
+    width: 100%;
+    height: 650px;
+    box-sizing: border-box;
+}
+/*슬라이드광고이미지*/
+.slide_ad_img {
+    width: 100%;
+    height: 100%;
+}
+
+/*브랜드선택창*/
+.select_car_brand {
+    width: auto;
+    height: 260px;
+    margin-top: 20px;
+    box-sizing: border-box;
+}
+/*브랜드선택표*/
+.select_car_brand>table>tbody>tr>td {
+    border-collapse: collapse;
+    border: 1px solid #000;
+    box-sizing: border-box;
+}
+.select_car_brand>table>tbody>tr>td:hover {
+    border: 2px solid #000;
+}
+/*브랜드이미지*/
+.select_car_brand_img {
+    width: 100%;
+    height: 100px;
+    border: 5px;
+    box-sizing: border-box;
+}
+/*브랜드명*/
+.select_car_brand_text {
+    width:inherit;
+    height: auto;
+    font-size: 16px;
+    text-align: center;
+    font-weight: bold;
+}
+
+
+/*추천검색 버튼*/
+.detail_such_btn {
+    width: 100%;
+    height: 50px;
+    font-size: 23px;
+    color: #333;
+    text-align: center;
+    background-color: #e4dcd3;
+    font-weight: bold;
+    margin: 10px 0 20px 0;
+    border: none;
+    padding: 0;
+    box-sizing: border-box;
+}
+/*하단화살표(구글머터리얼)*/
+.detail_such_btn>span {
+    font-size: 40px;
+    vertical-align: middle;
+}
+
+
+/*상세검색패널 내부영역*/
+.panel_wrap {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+
+.panel_wrap>input[name="rcmd_btn"] {
+    background-color: #444;
+    color: #f5f5f5;
+    font-size: 18px;
+    font-weight: bold;
+    width: 40%;
+    height: 40px;
+    border-radius: 5px;
+}
+.panel_wrap>input[name="detail_btn"] {
+    background-color: lightgray;
+    color: #333;
+    font-size: 18px;
+    font-weight: bold;
+    width: 40%;
+    height: 40px;
+    border-radius: 5px;
+}
+/*패널 옵션선택창 영역*/
+.panel_option{
+    width: 47%;
+    height: 80%;
+    border-top: 2px solid #999;
+    border-bottom: 2px solid #999;
+    box-sizing: border-box;
+}
+/*옵션선택표*/
+.panel_option>table {
+    width: 100%;
+    height: 90%;
+    text-align: center;
+    font-size: 18px;
+    font-weight: bold;
+    color: #444;
+}
+/*옵션 드롭박스(1칸)*/
+.panel_option_one {
+    width: 87%;
+    height: 40px;
+    border-radius: 5px;
+}
+/*옵션 드롭박스(2칸)*/
+.panel_option_two {
+    width: 40%;
+    height: 40px;
+    border-radius: 5px;
+}
+
+/*상세검색 결과창*/
+.panel_result_wrap{
+    width: 50%;
+    height: 80%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    border-top: 2px solid #999;
+    border-bottom: 2px solid #999;
+    box-sizing: border-box;
+}
+/*구글머터리얼(좌우 화살표)*/
+.panel_result_wrap>span{
+    width: 5%;
+    height: 100px;
+    margin: 30% 0 0 0;
+    font-weight: bold;
+    font-size: 40px;
+}
+/*검색결과 내부영역*/
+.panel_result {
+    width: 90%;
+    height: 90%;
+    padding: 50px 0 0 0;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    box-sizing: border-box;
+}
+/*차량제원제목 구분선*/
+.panel_result>hr {
+    margin: 5px 50% 5px 0;
+    width: 50%;
+    border:1px solid #999;
+}
+/*상세검색결과 차량제원(제목)*/
+.panel_result>h2,h5 {
+    width: 100%;
+    margin: 0;
+}
+/*상세검색결과 차량제원(차량상세)*/
+.panel_result_text {
+    width: 48%;
+    height: 50%;
+    box-sizing: border-box;
+    padding: 0 0 0 20px;
+}
+.panel_result_text>table {
+    width: 100%;
+    height: 50%;
+    font-size: 16px;
+    box-sizing: border-box;
+}
+
+/*상세검색 결과이미지영역*/
+.panel_result_img {
+    width: 48%;
+    height: 100%;
+    box-sizing: border-box;
+}
+.panel_result_img>img {
+    width: 100%;
+    height: 50%;
+}
+
+
+/*추천모델 제목*/
+.recommend_car_head {
+    width: 100%;
+    height: 70px;
+    background-color: #e4dcd3;
+    color: #444;
+    font-size: 20px;
+    font-weight: bold;
+    padding: 20px 0 0 15px;
+    box-sizing: border-box;
+    margin: 0 0 50px 0;
+}
+/*추천모델 영역*/
+.recommend_car {
+    width: 100%;
+    height: auto;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;/*좌우균등졍렬*/
+    margin-bottom: 50px;
+}
+/*추천모델 표*/
+.recommend_car>table{
+    width: 30%;
+    height: 420px;
+    border-collapse: collapse;
+    padding: 0;
+    background-color: #fff;
+}
+/*추천모델 표 중제목*/
+.recommend_car_table_head {
+    padding: 0 0 0 15px;
+}
+/*추천모델 목록*/
+.recommend_car>table>tbody>tr>td{
+    border-bottom: 1px solid #999;
+    padding: 0;
+    margin: 0;
+}
+/*추천차량이미지*/
+.recommend_car_table>tbody>tr>td>img {
+    width: 200px;
+    height: 100px;
+    margin: 0;
+}
+
+
+
+/*뉴스&이슈 포스트 분류*/
+.news_kind {
+    width: 100%;
+    height: 70px;
+    background-color: #e4dcd3;
+    font-size: 30px;
+    font-weight: bold;
+    padding: 10px;
+    box-sizing: border-box;
+    margin-bottom: 50px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;/*좌우균등졍렬*/
+}
+/*포스트 제목영역*/
+.news_kind>div {
+    width: 19%;
+    height: 100%;
+    padding: 0;
+    box-sizing: border-box;
+    text-align: center;
+    margin: 0;
+}
+/*포스트제목 링크*/
+.news_kind>div>a {
+    font-size: 23px;
+    font-weight: bold;
+    color: #444;
+    text-decoration: none;
+}
+/*포스트제목 사이 구분선*/
+.news_kind>hr {
+    width: 1;
+    height: 40px;
+    margin: 5px 0 0 0;
+    border: 1px solid #333;
+}
+
+
+/*포스트 컨텐츠 전체영역*/
+.news_wrap {
+    width: 100%;
+    height: 600px;
+    margin-bottom: 200px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+/*메인포스트*/
+.news_main {
+    width: 45%;
+    height: 100%;
+}
+/*메인포스트 이미지*/
+.news_main>img {
+    width: 100%;
+    height: 50%;
+    margin: 0;
+}
+/*메인포스트 제목*/
+.news_main>h3 {
+    width: 100%;/*길이값 지정으로 inline-blok 길이제한*/
+    height: 10%;
+    font-size: 20px;
+    white-space: nowrap;
+    display: inline-block;/*컨텐츠길이에따라 유동적인 길이로 변환*/
+    overflow: hidden;
+    text-overflow: ellipsis;
+    padding: 15px 0 0 0;
+    margin: 0;
+}
+/*메인포스트 본문*/
+.news_main_text {
+    width: 100%;
+    display: -webkit-box;/*여백삽입과같이 톺이의 유연성추가*/
+    -webkit-line-clamp: 7;/*표시할 줄갯수*/
+    -webkit-box-orient: vertical;/*플렉스박스의 방향설정*/
+    overflow: hidden;
+    text-overflow: ellipsis;/*텍스트 영역침범시 '...'표시*/
+    line-height: 2em;/*줄간격*/
+    max-height: 40%;/*최대높이로 제한*/
+    text-align: left;/*말줄임표 숨겨짐 방지*/
+    word-wrap: break-word;/*잘릴 글자를 단어단위로*/
+    margin: 0;
+}
+
+/*우측 서브포스트 영역*/
+.news_sub_wrap {
+    width: 49%;
+    height: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+/*서브포스트 1개*/
+.news_sub {
+    width: 100%;
+    height: 30%;
+    display: flex;
+    flex-wrap: wrap;
+}
+/*서브포스트 이미지*/
+.news_sub>img {
+    width: 40%;
+    height: 100%;
+}
+/*서브포스트 텍스트영역(제목,본문)*/
+.news_sub_textwrap {
+    width: 55%;
+    height: 100%;
+    margin: 0 0 0 20px;
+    padding: 0 0 10px 0;
+    box-sizing: border-box;
+}
+/*서브포스트 제목*/
+.news_sub_textwrap>h3 {
+    width: 100%;/*길이값 지정으로 inline-blok 길이제한*/
+    height: 30%;
+    font-size: 20px;
+    white-space: nowrap;
+    display: inline-block;/*컨텐츠길이에따라 유동적인 길이로 변환*/
+    overflow: hidden;
+    text-overflow: ellipsis;
+    margin: 0;
+}
+/*서브포스트 본문*/
+.news_sub_text {
+    width: 100%;
+    display: -webkit-box;/*여백삽입과같이 톺이의 유연성추가*/
+    -webkit-line-clamp: 7;/*표시할 줄갯수*/
+    -webkit-box-orient: vertical;/*플렉스박스의 방향설정*/
+    overflow: hidden;
+    text-overflow: ellipsis;/*텍스트 영역침범시 '...'표시*/
+    line-height: 1.5em;/*줄간격*/
+    max-height: 68%;/*최대높이로 제한*/
+    text-align: left;/*말줄임표 숨겨짐 방지*/
+    word-wrap: break-word;/*잘릴 글자를 단어단위로*/
+    margin: 0;
+}
+/*최근 본 상품 사이드바*/
+.common_goods {
+    width: 150px;
+    height: auto;
+    background-color: #444;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    border-radius: 10px;
+    float: right;
+    position: fixed;
+    bottom: 20%;
+    right: 3%;
+    padding: 15px 0 15px 0;
+    box-sizing: border-box;
+    overflow: hidden;
+}
+/*최근 본 상품 목록(3개 제한)*/
+.common_goods_index {
+    width: 80%;
+    height: 150px;
+    padding: 20px 0 0 0;
+    box-sizing: border-box;
+}
+.common_goods_index:hover {
+    border: 2px solid #fff;
+}
+/*최근 본 상품 이미지*/
+.common_goods_index>img {
+    width: 100%;
+    height: 70%;
+}
+/*최근 본 상품 상품명*/
+.common_goods_name {
+    width: 100%;
+    height: 30%;
+    font-size: 16px;
+    text-align: center;
+    color: whitesmoke;
+}
