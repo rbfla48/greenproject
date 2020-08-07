@@ -38,8 +38,7 @@
 		<![CDATA[
 		SELECT * FROM(
 		    SELECT rownum rn, notice_no, notice_title, notice_writer, upload_date, notice_view  
-		    FROM (
-		    	SELECT * FROM notice ORDER BY notice_no DESC)
+		    FROM (SELECT * FROM notice ORDER BY notice_no DESC)
 		    WHERE 
 		]]>
 		<include refid="criteria"></include>

@@ -38,9 +38,9 @@
 	<beans:bean id="NoticeCommentService" class="com.greencar.service.notice.NoticeCommentServiceImpl" />
 	<beans:bean id="NoticeDAO" class="com.greencar.dao.notice.NoticeDAOImpl" />
 	<beans:bean id="NoticeCommentDAO" class="com.greencar.dao.notice.NoticeCommentDAOImpl" /> -->
-
+	
 	<context:component-scan
-		base-package="com.greencar" />
+		base-package="com.greencar.controller" />
 	<context:component-scan
 		base-package="com.greencar.dao" />
 	<context:component-scan

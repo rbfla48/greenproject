@@ -26,9 +26,9 @@ public class NoticeServiceImpl implements NoticeService{
 	}
 
 	@Override
-	public NoticeVO get(int notice_no) {
+	public NoticeVO get(int noticeNo) {
 		log.info("read.........");
-		return noticeDAO.read(notice_no);
+		return noticeDAO.read(noticeNo);
 	}
 
 	@Override
@@ -38,9 +38,9 @@ public class NoticeServiceImpl implements NoticeService{
 	}
 
 	@Override
-	public boolean remove(int notice_no) {
+	public boolean remove(int noticeNo) {
 		log.info("delete.......");
-		return noticeDAO.delete(notice_no) == 1;
+		return noticeDAO.delete(noticeNo) == 1;
 	}
 
 	@Override

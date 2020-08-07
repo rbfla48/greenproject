@@ -17,7 +17,7 @@ public class NoticeDAOImpl implements NoticeDAO {
 	
 	@Override
 	public List<NoticeVO> getList() {
-		return sqlSession.selectList("mappers.noticeMapper.getList");
+		return sqlSession.selectList("noticeMapper.getList");
 	}
 
 	@Override
@@ -42,13 +42,13 @@ public class NoticeDAOImpl implements NoticeDAO {
 	}
 
 	@Override
-	public NoticeVO read(int notice_no) {
-		return sqlSession.selectOne("mappers.noticeMapper.read", notice_no);
+	public NoticeVO read(int noticeNo) {
+		return sqlSession.selectOne("mappers.noticeMapper.read", noticeNo);
 	}
 
 	@Override
-	public int delete(int notice_no) {
-		return sqlSession.delete("mappers.noticeMapper.delete", notice_no);
+	public int delete(int noticeNo) {
+		return sqlSession.delete("mappers.noticeMapper.delete", noticeNo);
 	}
 
 	@Override

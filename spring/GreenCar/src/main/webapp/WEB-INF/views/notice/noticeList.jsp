@@ -17,6 +17,9 @@
 <title>greencar_admin notice</title>
 </head>
 <body>
+
+<h2>List : ${list.get(0)}</h2>
+
 <script src="//code.jquery.com/jquery-1.11.0.min.js"></script>
 <script src="/resources/js/pagingFunction.js" type="text/javascript"></script>
 <script src="/resources/js/searchFunction.js" type="text/javascript"></script>
@@ -72,16 +75,16 @@
                 <th class="tbl_txt_view">조회수</th>
             </tr>
             
-            <c:forEach items="${list }" var="notice">
+            <c:forEach items="${list}" var="notice">
 	            <tr>
-	            	<td><c:out value="${notice.notice_no }" /></td>
+	            	<td><c:out value="${notice.noticeNo}" /></td>
 	            	<td>
-	            	<a href='/admin/notice/get?notice_no=<c:out value="${notice.notice_no }"/>'>
-	            	<c:out value="${notice.notice_title }" /></a>
+	            	<a href='/admin/notice/get?notice_no=<c:out value="${notice.noticeNo}"/>'>
+	            	<c:out value="${notice.noticeTitle}" /></a>
 	            	</td>
-	            	<td><c:out value="${notice.notice_writer }" /></td>
-	            	<td><fmt:formatDate pattern="yyyy-MM-dd" value="${notice.upload_date }" /></td>
-	            	<td><c:out value="${notice.notice_view }" /></td>
+	            	<td><c:out value="${notice.noticeWriter}" /></td>
+	            	<td><fmt:formatDate pattern="yyyy-MM-dd" value="${notice.uploadDate}" /></td>
+	            	<td><c:out value="${notice.noticeView}" /></td>
 	            </tr>            
             </c:forEach>
         	</table>
