@@ -71,3 +71,31 @@ function fn_cancel(){
 function fn_search(){
 	this.Keyword = document.querySelector('input[name = "goodsNo"]');	
 }
+
+
+$(function() {
+    $("#update_1").on('change', function(){
+        readURL1(this);
+    });
+    $("#update_2").on('change', function(){
+        readURL2(this);
+    });
+});
+function readURL1(input) {
+    if (input.files && input.files[0]) {
+       var reader = new FileReader();
+       reader.onload = function (e) {
+          $('#preImg1').attr('src', e.target.result);
+       }
+       reader.readAsDataURL(input.files[0]);
+    }
+}
+function readURL2(input) {
+    if (input.files && input.files[0]) {
+       var reader = new FileReader();
+       reader.onload = function (e) {
+          $('#preImg2').attr('src', e.target.result);
+       }
+       reader.readAsDataURL(input.files[0]);
+    }
+}
