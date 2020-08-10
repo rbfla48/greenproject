@@ -48,5 +48,5 @@
 		</property>
 	</bean>
 
-
+	<bean id="memberDAO" class="com.greencar.dao.login.MemberDAOImpl"/>
 </beans>

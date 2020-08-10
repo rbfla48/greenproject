@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
-<mapper namespace="com.greencar.dao.login.MemberDAO">
+<mapper namespace="mappers.memberMapper">
 	
 	<resultMap type="com.greencar.vo.login.MemberVO" id="memberMap">
 		<id property="userEmail" column="usre_email" />

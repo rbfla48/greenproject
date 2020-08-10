@@ -15,7 +15,7 @@ public class MemberDAOImpl implements MemberDAO {
 	
 	@Override
 	public MemberVO read(String user_email) {
-		return sqlSession.selectOne("memberMapper.read",user_email);
+		return sqlSession.selectOne("mappers.memberMapper.read",user_email);
 	}
 
 }
