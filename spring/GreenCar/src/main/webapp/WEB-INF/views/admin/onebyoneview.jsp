@@ -29,21 +29,21 @@
 
 	$(function() {
 
-		$("#answerSubmit").click(function() {
+		$("#answer_submit").click(function() {
 			console.log("전송");
 			$.ajax({
 				url : contextPath + "/admin/onebyoneview",
 				type : "POST",
 				data : {
 					oboNo : oboNo,
-					answerBox : $("#answerBox").val()
+					answerBox : $("#answer_box").val()
 				},
 				success : function(result) {
 					console.log("result : "+result[0]);
 					console.log("1: "+result[1].oboAnswer);
 					console.log("2: "+result[1].oboNo);
 					alert(result[0]);
-					$("#answerBox").val(result[1].oboAnswer);
+					$("#answer_box").val(result[1].oboAnswer);
 				},
 				error : function(xhr, status) {
 					console.log(xhr + " : " + status); // 에러 코드
@@ -97,17 +97,17 @@
 	<!-------------------------------메뉴바END-------------------------------->
 
 	<section>
-		<div id="questionTitle">${onebyoneview.oboCategory} ${onebyoneview.oboTitle}
-			<div id="questionWriter">작성자 : ${onebyoneview.oboWriter}</div>
+		<div id="question_title">${onebyoneview.oboCategory} ${onebyoneview.oboTitle}
+			<div id="question_writer">작성자 : ${onebyoneview.oboWriter}</div>
 		</div>
 
-		<div id="questionContent">${onebyoneview.oboContent}</div>
+		<div id="question_content">${onebyoneview.oboContent}</div>
 		<hr>
-		<input type="text" id="answerBox" name="answerBox" placeholder="내용을 입력해주세요" value="${onebyoneview.oboAnswer}">
+		<input type="text" id="answer_box" name="answer_box" placeholder="내용을 입력해주세요" value="${onebyoneview.oboAnswer}">
 		<hr>
 		<div id="sub">
 			<p>답변을 수정하려면 기존 답변을 지우고 다시 입력하세요</p>
-			<button id="answerSubmit">답변하기</button>
+			<button id="answer_submit">답변하기</button>
 		</div>
 
 	</section>

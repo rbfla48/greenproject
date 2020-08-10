@@ -25,7 +25,7 @@
 	    $("#fuel").val("");
 	    
     	//검색하기 버튼 event handler
-    	$("#searchButton").click(function() {
+    	$("#search_button").click(function() {
     		console.log("검색하기");
     		
     		//6가지 상태변수 할당
@@ -69,7 +69,7 @@
     	});
     	
     	//브랜드 버튼 event handler
-    	$("#brandButton button").click(function(e) {
+    	$("#brand_button button").click(function(e) {
     		console.log("버튼 : "+e.target.id);
     		var id=e.target.id;
     		console.log("값 :" +$("#"+id).attr("title"));
@@ -77,7 +77,7 @@
     	}) 
     	
     	//차종 event handler
-    	$("#sizeButton button").click(function(e) {
+    	$("#size_button button").click(function(e) {
     		console.log("버튼 : "+e.target.id);
     		var id=e.target.id;
     		console.log("값 :" +$("#"+id).attr("title"));
@@ -85,7 +85,7 @@
     	}) 
     	
     	//분류 event handler
-    	$("#typeButton button").click(function(e) {
+    	$("#type_button button").click(function(e) {
     		console.log("버튼 : "+e.target.id);
     		var id=e.target.id;
     		console.log("값 :" +$("#"+id).attr("title"));
@@ -93,7 +93,7 @@
     	}) 
     	
     	//가격 event handler
-    	$("#priceButton button").click(function(e) {
+    	$("#price_button button").click(function(e) {
     		console.log("버튼 : "+e.target.id);
     		var id=e.target.id;
     		console.log("값 :" +$("#"+id).attr("title"));
@@ -101,7 +101,7 @@
     	}) 
     	
     	//연비 event handler
-    	$("#efficientButton button").click(function(e) {
+    	$("#efficient_button button").click(function(e) {
     		console.log("버튼 : "+e.target.id);
     		var id=e.target.id;
     		console.log("값 :" +$("#"+id).attr("title"));
@@ -109,7 +109,7 @@
     	}) 
     	
     	//연료 event handler
-    	$("#fuelButton button").click(function(e) {
+    	$("#fuel_button button").click(function(e) {
     		console.log("버튼 : "+e.target.id);
     		var id=e.target.id;
     		console.log("값 :" +$("#"+id).attr("title"));
@@ -170,13 +170,13 @@
     <!-------------------------------메뉴바END-------------------------------->
 
     <section>
-        <div id="carDetailSearch">차량 상세검색</div>
-        <div id="carDetailSearchBox">
+        <div id="car_detail_search">차량 상세검색</div>
+        <div id="car_detail_search_box">
             <!--브랜드 시작-->
-            <div id="brandBox">
-                <div id="brandText">브랜드 <input type="text" id="brand">  / 브랜드는 꼭 선택해야 합니다. </div>
+            <div id="brand_box">
+                <div id="brand_text">브랜드 <input type="text" id="brand">  / 브랜드는 꼭 선택해야 합니다. </div>
                 <hr>
-                <div id="brandButton">
+                <div id="brand_button">
                     <button id="audi" title="1">
                     </button>
                     <button id="benz" title="2">
@@ -223,10 +223,10 @@
             <!--브랜드 끝-->
             
             <!--차종 시작-->
-            <div id="sizeBox">
-                <div id="sizeText">차종 <input type="text" id="size"></div>
+            <div id="size_box">
+                <div id="size_text">차종 <input type="text" id="size"></div>
                 <hr>
-                <div id="sizeButton">
+                <div id="size_button">
                     <button id="SUV" title="SUV">SUV</button>
                     <button id="경형" title="경형">경형</button>
                     <button id="소형" title="소형">소형</button>
@@ -241,10 +241,10 @@
             <!--차종 끝-->
 
             <!--분류 시작-->
-            <div id="typeBox">
-                <div id="typeText">분류 <input type="text" id="type"></div>
+            <div id="type_box">
+                <div id="type_text">분류 <input type="text" id="type"></div>
                 <hr>
-                <div id="typeButton">
+                <div id="type_button">
                     <button id="경차" title="경차">경차</button>
                     <button id="세단" title="세단">세단</button>
                     <button id="대형" title="대형">대형</button>
@@ -260,10 +260,10 @@
             <!--분류 끝-->
 
             <!--가격 시작-->
-            <div id="priceBox">
-                <div id="priceText">가격 <input type="text" id="price">(이하의 값을 가진 차량이 검색됩니다.)</div>
+            <div id="price_box">
+                <div id="price_text">가격 <input type="text" id="price">(이하의 값을 가진 차량이 검색됩니다.)</div>
                 <hr>
-                <div id="priceButton">
+                <div id="price_button">
                     <button id="2000만원" title="20000000">2000만원</button>
                     <button id="3000만원" title="30000000">3000만원</button>
                     <button id="5000만원" title="50000000">5000만원</button>
@@ -283,10 +283,10 @@
             <!--가격 끝-->
             
             <!--연비 시작-->
-            <div id="efficientBox">
-                <div id="efficientText">연비<input type="text" id="efficient"></div>
+            <div id="efficient_box">
+                <div id="efficient_text">연비<input type="text" id="efficient"></div>
                 <hr>
-                <div id="efficientButton">
+                <div id="efficient_button">
                     <button id="5grade" title="5">5</button>
                     <button id="4grade" title="4">4</button>
                     <button id="3grade" title="3">3</button>
@@ -297,10 +297,10 @@
             <!--연비 끝-->
 
             <!--유종 시작-->
-            <div id="fuelBox">
-                <div id="fuelText">유종<input type="text" id="fuel"></div>
+            <div id="fuel_box">
+                <div id="fuel_text">유종<input type="text" id="fuel"></div>
                 <hr>
-                <div id="fuelButton">
+                <div id="fuel_button">
                     <button id="가솔린" title="가솔린">가솔린</button>
                     <button id="경유" title="경유">경유</button>
                     <button id="디젤" title="디젤">디젤</button>
@@ -311,17 +311,17 @@
             <!-- 유종 끝-->
         </div>
         <!--검색하기 버튼-->
-        <button id="searchButton">검색하기</button>
+        <button id="search_button">검색하기</button>
         <!--검색하기 버튼 끝-->
         
         <!-- 검색 후 리스트 -->
         
     <c:forEach items="${detailList}"  var = "list">
-    <div id="detailList">
-        <div id="carPic">
+    <div id="detail_list">
+        <div id="car_pic">
         	<img src="/resources/image/goodsMain/${list.goodsNo}.png">
         </div>
-        <div id="carContent1">
+        <div id="car_content1">
             <h2>차량명 : <c:out value="${list.goodsName}"/></h2><br>
             <h4>브랜드 : <c:out value="${list.brandCode}"/></h4>
             <h4>차종 : <c:out value="${list.goodsSize}"/></h4>
@@ -329,7 +329,7 @@
             
             
         </div>
-        <div id="carContent2">
+        <div id="car_content2">
             <h4>연비 : <c:out value="${list.goodsEfficient}"/></h4>
             <h4>연료 : <c:out value="${list.goodsFuel}"/></h4><br>
             <h1>가격 : <c:out value="${list.goodsPrice}"/></h1>

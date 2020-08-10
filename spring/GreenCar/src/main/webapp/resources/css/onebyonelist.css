@@ -30,30 +30,30 @@ table {
     border-collapse: collapse;
 }
 
-table #tbTop {
+table #tb_top {
     background-color: #e4dcd3;
 }
 table tr td {
     border: solid grey 2px;
 }
 
-#tbNo {
+#tb_no {
     width: 50px;
 }
 
-#tbCategory {
+#tb_category {
     width: 100px;
 }
 
-#tbTitle {
+#tb_title {
     width: 830px;
 }
 
-#tbWriter {
+#tb_writer {
     width: 130px;
 }
 
-#tbDate {
+#tb_date {
     width: 180px;
 }
 
@@ -65,7 +65,7 @@ table tr td {
 	line-height: 60px;
 }
 
-#paging .pagingButton {
+#paging .paging_button {
 	font-size: 23px;
 }
 
