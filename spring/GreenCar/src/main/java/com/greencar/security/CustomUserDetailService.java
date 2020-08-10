@@ -12,7 +12,10 @@ import com.greencar.vo.login.MemberVO;
 
 import lombok.extern.log4j.Log4j;
 
-
+/**
+ * 실제 db와 연동하여 사용자정보를 인증하는 작업을 수행하며 
+ * 인증이 완료되면 db에서 조회한 VO객체를 UserDetails타입으로 변경하여 리턴(현재는 User타입으로 바로 리턴)
+ */
 @Log4j
 public class CustomUserDetailService implements UserDetailsService{
 	

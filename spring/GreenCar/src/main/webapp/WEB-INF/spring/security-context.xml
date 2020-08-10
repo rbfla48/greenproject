@@ -12,13 +12,13 @@
 	
 	<bean id="customUserDetailService" class="com.greencar.security.CustomUserDetailService"></bean>
 	
-	<security:http auto-config="true" use-expressions="true">
+	<security:http>
 		
 		<security:intercept-url pattern="/login/all" access="permitAll" />
 		
-		<security:intercept-url pattern="/login/member" access="hasRole('ROLE_MEMBER')" />
+		<security:intercept-url pattern="/login/member" access="hasRole('ROLE_MEMBER',ROLE_ADMIN)" />
 		<!-- /greencar/admin 경로의 접근에 대해 ROLE_ADMIN이라는 권한을 가진 ID만을 접근허용 -->
-		<security:intercept-url pattern="/login/admin" access="hasRole('ROLE_ADMIN')"/>
+		<security:intercept-url pattern="/admin/**" access="hasRole('ROLE_ADMIN')"/>
 		
 		<!-- 로그인페이지 경로설정 => 반드시 GET방식으로 접근하는 URI 지정-->
 		<security:form-login login-page="/login/customLogin"/>
@@ -33,16 +33,21 @@
 		
 	</security:http>
 	
+	<!-- 인증을 담당하는 객체로  AuthenticationProvider 를 통해 인증하도록 한다.-->
 	<security:authentication-manager>
 	
-		<!-- 기존의테이블에서  customUserDetailService를 통해 VO데이터 호출 -->
-		<security:authentication-provider user-service-ref="customUserDetailService"> 
+		<!-- customUserDetailService를 통해  DB데이터 호출 하여 비교작업. UserDetailsService => 인증권한에 대한 실제처리 -->
+		<!-- <security:authentication-provider user-service-ref="customUserDetailService">  -->
 			<!-- JDBC 기본쿼리로 인증(username) -->
 			<!-- <security:jdbc-user-service data-source-ref="dataSource" /> -->
 			<!-- 기존테이블에서 쿼리로 호출 -->
-			<!-- <security:jdbc-user-service data-source-ref="dataSource" 
-				users-by-username-query="SELECT user_email, user_pw, enable FROM user_info WHERE user_email = ? "
-				authorities-by-username-query="SELECT user_email, authority FROM auth WHERE user_email = ?"/> -->
+		<security:authentication-provider>
+		
+			<security:jdbc-user-service data-source-ref="dataSource" 
+				users-by-username-query="SELECT user_email, user_pw, enable FROM user_info WHERE user_email = ?"
+										
+				authorities-by-username-query="SELECT user_email, authority FROM auth WHERE user_email = ?"/>
+				
 			
 			
 						
@@ -50,7 +55,7 @@
 			
 			<!-- 수동로그인 -->
 			<!-- <security:user-service>
-				UserDetailsService => 인증권한에 대한 실제처리 
+				 
 				member = ROLE_MEMBER 권한만을 부여
 				<security:user name="member"  password="member" authorities="ROLE_MEMBER"/>
 				admin =  ROLE_MEMBER, ROLE_ADMIN 의 권한부여(member와 admin 모두 접근가능)
