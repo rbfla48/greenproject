@@ -73,14 +73,14 @@
                 <input type="text" value="<c:out value="${notice.noticeWriter }" />" name="noticeWriter" readonly="readonly">
             </div>      
             
-            <form role="form" action="/admin/notice/noticeList" method="GET">
+            <form role="form" action="/notice/noticeList" method="GET">
         		<input type="submit" value="목록으로">
         	</form>
             
             <div id="comment"><!-- 댓글영역 -->
             
             	<c:forEach items="${comment }" var="comment">           	
-		            		<form action="/admin/notice/delComment?rno=<c:out value="${comment.rno }"/>" method="POST">
+		            		<form action="/notice/delComment?rno=<c:out value="${comment.rno }"/>" method="POST">
 		            		<input type="hidden" value="${notice.noticeNo }">
 	            		<li>       		
 		            		<p>
@@ -97,7 +97,7 @@
 
             <!-- 추후 자바스크립트로 수정 -->
         	
-        	<form action="/admin/notice/regComment?noticeNo=<c:out value="${notice.noticeNo }"/>" method="POST">
+        	<form action="/notice/regComment?noticeNo=<c:out value="${notice.noticeNo }"/>" method="POST">
 				<div id="regComment"><!-- 댓글작성영역 -->
 					<input type="text" name="writer" value="테스트유저">
 					<textarea name="content"></textarea>
