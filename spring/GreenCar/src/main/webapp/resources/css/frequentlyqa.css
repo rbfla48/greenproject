@@ -24,13 +24,13 @@ section {
     margin-bottom: 10px;
 }
 
-section #topButtonBox {
+section #top_button_box {
     width: 100%;
     height: 60px;
     margin-left:70px;
 }
 
-section #topButtonBox button {
+section #top_button_box button {
     width: 200px;
     height: 50px;
     background-color: #e4dcd3;
@@ -40,51 +40,51 @@ section #topButtonBox button {
     font-size: 20px;
 }
 
-section #frequentlyBox {
+section #frequently_box {
     width: 1000px;
     margin: 20px auto 0 auto;
 }
 
-section #frequentlyBox hr {
+section #frequently_box hr {
     opacity: 0.5;
 }
 
-section #frequentlyBox #frequentlyText {
+section #frequently_box #frequently_text {
     font-size: 30px;
 }
 
-section #frequentlyBox #question {
+section #frequently_box #question {
     padding-top : 20px;
     font-size:25px;
 }
 
-section #frequentlyBox #question #drop {
+section #frequently_box #question #drop {
     float: right;
 }
 
-section #frequentlyBox #question #contentAnswer {
+section #frequently_box #question #content_answer {
     display: none;
 } 
 
-section #personQuestion {
+section #person_question {
     float: right;
     padding-right: 100px;
 }
 
-section #brandCenterBox {
+section #brand_center_box {
     width: 1000px;
     margin: 100px auto 0 auto;
 }
 
-section #brandCenterBox hr {
+section #brand_center_box hr {
     opacity: 0.5;
 }
 
-section #brandCenterBox #brandCenterText {
+section #brand_center_box #brand_center_text {
     font-size: 30px;
 }
 
-section #brandCenterBox #brandCenterButton button {
+section #brand_center_box #brand_center_button button {
     width: 200px;
     height: 50px;
     background-color: #e4dcd3;

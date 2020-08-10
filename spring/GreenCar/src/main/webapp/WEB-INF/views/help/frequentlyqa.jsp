@@ -16,11 +16,11 @@
     <script>
     window.onload = function() {
     	//질문 답변 초기화 -> 클릭 전 질문내용과 답변 보이지 않게.
-    	var contentAnswers = document.querySelectorAll("[id^=contentAnswer]");
+    	var content_answers = document.querySelectorAll("[id^=content_answer]");
     	
-    	for (var contentAnswer of contentAnswers) {
+    	for (var content_answer of content_answers) {
     		//console.log("id : "+content_answer.id);
-    		document.getElementById(contentAnswer.id).style.display = "none";
+    		document.getElementById(content_answer.id).style.display = "none";
     	}
     	
     	
@@ -29,22 +29,22 @@
 	    console.log("drops : " +drops);
 	    //var conansid = "#content_answer";
 	    
-	    for (var dropBtn of drops) {
+	    for (var drop_btn of drops) {
 	    	
-	    	dropBtn.onclick = function(e) {
+	    	drop_btn.onclick = function(e) {
 	    		console.log("id = " + e.currentTarget.id);
 	    		var idx=e.currentTarget.id.substring(4);
-	    		var conansid = "#contentAnswer"+idx;
+	    		var conansid = "#content_answer"+idx;
 	    		console.log(conansid)
 	    		
 	    		if(isOpens[idx-1]==false) {
 		    		document.querySelector(conansid).style.display = "block";
-		    		dropBtn.innerText = "△";
+		    		drop_btn.innerText = "△";
 		    		isOpens[idx-1]=true;
 		    		console.log("flag : " + isOpens);
 		    	} else {
 		    		document.querySelector(conansid).style.display = "none";
-		    		dropBtn.innerText = "▽";
+		    		drop_btn.innerText = "▽";
 		    		isOpens[idx-1]=false;
 		    		console.log("flag : " + isOpens);
 		    	}//
@@ -52,7 +52,7 @@
 		    	// 전체 질문 박스들 상태 변경 반영
 		    	for(var i=0; i<3; i++) {
 		    		
-					var conansid = "#contentAnswer"+(i+1);
+					var conansid = "#content_answer"+(i+1);
 					
 					// 다른 질문 박스 설정
 					otherId = "#drop"+(i+1); 
@@ -148,7 +148,7 @@
     <!--마이 페이지 끝-->
 
     <section><!--네모 상자-->
-        <div id="topButtonBox">
+        <div id="top_button_box">
             <button id="function" onclick="location.href='/help/frequentlyqaByCate?freCategory=[기능]'">기능</button>
             <button id="homepage" onclick="location.href='/help/frequentlyqaByCate?freCategory=[홈페이지]'">홈페이지</button>
             <button id="payment" onclick="location.href='/help/frequentlyqaByCate?freCategory=[결제]'">결제</button>
@@ -156,14 +156,14 @@
         </div>
         <!-- -------------------------------------- -->
         
-        <div id="frequentlyBox">
-            <div id="frequentlyText">자주묻는 질문</div>
+        <div id="frequently_box">
+            <div id="frequently_text">자주묻는 질문</div>
             <div id="question">
 	            <c:forEach items="${list}" var="frequentlyqa" varStatus="vs">
 	                <p><c:out value="${frequentlyqa.freCategory}"></c:out>
 	                	 <c:out value="${frequentlyqa.freTitle}"></c:out>
 	                	 <span id="drop${vs.count}" >▽</span><hr></p>
-	                <div id="contentAnswer${vs.count}">
+	                <div id="content_answer${vs.count}">
 	                	<p>질문내용 > <c:out value="${frequentlyqa.freContent}"></c:out></p><hr>
 	                    <p>답변 : <c:out value="${frequentlyqa.freAnswer}"></c:out></p>
 	                    <hr>
@@ -172,14 +172,14 @@
             </div>
         </div>
     
-        <div id="personQuestion">
+        <div id="person_question">
             <a href="#">1:1문의로 이동</a>
         </div>
 
-        <div id="brandCenterBox">
-            <div id="brandCenterText">브랜드 고객센터 이동</div>
+        <div id="brand_center_box">
+            <div id="brand_center_text">브랜드 고객센터 이동</div>
             <hr>
-            <div id="brandCenterButton">
+            <div id="brand_center_button">
                 <button id="audi" href="#" />아우디 고객센터</button>
                 <button id="benz" href="#">벤츠 고객센터</button>
                 <button id="cadillac" href="#">캐딜락 고객센터</button>

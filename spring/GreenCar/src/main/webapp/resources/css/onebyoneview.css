@@ -3,22 +3,22 @@ section {
     margin: auto;
 }
 
-section #questionTitle {
+section #question_title {
     font-size: 20px;
 }
 
-section #questionWriter {
+section #question_writer {
 	float :right;
 	padding-right: 20px;
 }
 
-section #questionContent {
+section #question_content {
     border: solid black 1px;
     height: auto;
     padding: 20px 10px 20px 10px;
 }
 
-section #answerBox {
+section #answer_box {
     border: solid black 1px;
     height: 100px;
     width: 1200px;
@@ -28,7 +28,7 @@ section #sub {
 	display: flex;
 }
 
-section #answerSubmit {
+section #answer_submit {
     float : right;
     background-color: #e4dcd3;
     height: 30px;
@@ -49,36 +49,36 @@ table {
     margin-top: 50px;
 }
 
-table #tbTop {
+table #tb_top {
     background-color: #e4dcd3;
 }
 table tr td {
     border: solid grey 2px;
 }
 
-#tbCategory {
+#tb_category {
     width: 150px;
     border: solid grey 2px;
 }
 
-#tbTitle {
+#tb_title {
     width: 800px;
 }
 
-#tbDate {
+#tb_date {
     width: 150px;
 }
 
-#tbCustomer {
+#tb_customer {
     width: 100px;
 }
 
-#pagingBtn {
+#paging_btn {
     display:flex;
     justify-content: center;
 }
 
-#pagingBtn button {
+#paging_btn button {
     border-style:none;
     background-color: #e4dcd3;
     width: 40px;

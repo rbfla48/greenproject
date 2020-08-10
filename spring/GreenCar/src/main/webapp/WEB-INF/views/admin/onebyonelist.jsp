@@ -78,8 +78,8 @@
     </div>
     <!-------------------------------메뉴바END-------------------------------->
     <section>
-        <div id="customerQuestionBox">
-            <div id="customerQuestion">
+        <div id="customer_question_box">
+            <div id="customer_question">
                 <h3>고객문의</h3>
                 <h4>( 답변하지 않은 문의 / 전체 문의 ) ( ${onebyoneNewSize} / ${onebyoneAllSize} )</h4>
                 <select id="category" onchange="moveBoard()">
@@ -93,12 +93,12 @@
                 </select>
             </div>
             <table>
-                <tr id="tbTop">
-                    <td id="tbNo">번호</td>
-                    <td id="tbCategory">카테고리</td>
-                    <td id="tbTitle">제목</td>
-                    <td id="tbWriter">작성자</td>
-                    <td id="tbDate">작성일</td>
+                <tr id="tb_top">
+                    <td id="tb_no">번호</td>
+                    <td id="tb_category">카테고리</td>
+                    <td id="tb_title">제목</td>
+                    <td id="tb_writer">작성자</td>
+                    <td id="tb_date">작성일</td>
                 </tr>
 
                 <c:forEach items="${onebyonelist}" var="list">
@@ -119,7 +119,7 @@
         <!--페이징 버튼 시작-->
         <div id="paging">
 			<c:forEach begin="${pageMaker.startPage}" end="${pageMaker.endPage}" var="idx">
-			    <a class="pagingButton" href="onebyonelist${pageMaker.makeQuery(idx)}">${idx}</a>
+			    <a class="paging_button" href="onebyonelist${pageMaker.makeQuery(idx)}">${idx}</a>
 			</c:forEach>
 		</div>
     </section>
