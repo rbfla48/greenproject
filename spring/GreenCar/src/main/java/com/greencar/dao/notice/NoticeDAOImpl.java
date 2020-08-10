@@ -56,4 +56,11 @@ public class NoticeDAOImpl implements NoticeDAO {
 		return sqlSession.update("mappers.noticeMapper.update", noticeVO);
 	}
 
+	@Override
+	public int viewCount(int noticeNo) {
+		return sqlSession.update("mappers.noticeMapper.viewCount", noticeNo);
+	}
+	
+
+
 }

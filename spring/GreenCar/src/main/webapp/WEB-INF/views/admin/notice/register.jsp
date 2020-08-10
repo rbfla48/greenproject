@@ -58,13 +58,13 @@
             <h3> 공지사항 등록</h3>
         <form role="form" action="/admin/notice/register" method="POST">
             <div class="notice_write_head"><!--제목작성란-->
-                <input type="text" value="제목을 입력하세요" name="notice_title">
+                <input type="text" value="제목을 입력하세요" name="noticeTitle">
             </div>    
             <div class="notice_write_text"><!--본문작성창-->
-                <textarea name="notice_text">본문입력</textarea>
+                <textarea name="noticeText">본문입력</textarea>
             </div>
             <div class="notice_writer"><!--작성자(추후 로그인정보 얻어서 자동전송)-->
-                <input type="text" value="작성자" name="notice_writer">
+                <input type="text" value="작성자" name="noticeWriter">
             </div>   
             <input type="submit" value="등록하기">
             <input type="reset" value="초기화">

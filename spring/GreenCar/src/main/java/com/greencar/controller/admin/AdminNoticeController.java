@@ -53,7 +53,7 @@ public class AdminNoticeController {
 		//게시물등록
 		log.info("register: "+ noticeVO);
 		service.register(noticeVO);
-		rttr.addFlashAttribute("result",noticeVO.getNotice_no());
+		rttr.addFlashAttribute("result",noticeVO.getNoticeNo());
 		
 		return "redirect:/admin/notice/noticeList";
 	}
@@ -95,9 +95,9 @@ public class AdminNoticeController {
 		//게시물등록
 		log.info("regComment.... : "+ comment);
 		commService.regComment(comment);
-		rttr.addFlashAttribute("comment", comment.getNotice_no());
+		rttr.addFlashAttribute("comment", comment.getNoticeNo());
 			
-		return "redirect:/admin/notice/get?notice_no="+comment.getNotice_no();
+		return "redirect:/admin/notice/get?notice_no="+comment.getNoticeNo();
 	}
 	
 	//댓글삭제
@@ -105,10 +105,10 @@ public class AdminNoticeController {
 	public String deleteComment(NoticeVO noticeVO, NoticeCommentVO comment, RedirectAttributes rttr, Criteria cri) {
 		log.info("delete Commen.... : "+ comment);
 		commService.deleteComment(comment);
-		rttr.addFlashAttribute("notice", noticeVO.getNotice_no());
+		rttr.addFlashAttribute("notice", noticeVO.getNoticeNo());
 		
 		//댓글 삭제시 commService.getComment()에서 notice_no를 0으로 가져옴
-		return "redirect:/admin/notice/get?notice_no="+noticeVO.getNotice_no();
+		return "redirect:/admin/notice/get?notice_no="+noticeVO.getNoticeNo();
 	}
 	 
 }

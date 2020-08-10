@@ -60,17 +60,17 @@
             <h3> 공지사항 </h3>          
             
         	<div><!--게시글번호-->
-                <input type="text" value="<c:out value="${notice.notice_no }" />" name="notice_no" readonly="readonly">
+                <input type="text" value="<c:out value="${notice.noticeNo }" />" name="noticeNo" readonly="readonly">
             </div> 
             <div class="notice_write_head"><!--제목-->
             	<!-- 시간되면 제목옆에 댓글수 카운트 -->
-                <input type="text" value="<c:out value="${notice.notice_title }" />"name="notice_title" readonly="readonly">
+                <input type="text" value="<c:out value="${notice.noticeTitle }" />"name="noticeTitle" readonly="readonly">
             </div>    
             <div class="notice_write_text"><!--본문-->
-                <textarea name="notice_text" readonly="readonly"><c:out value="${notice.notice_text }" /></textarea>
+                <textarea name="noticeText" readonly="readonly"><c:out value="${notice.noticeText }" /></textarea>
             </div>
             <div class="notice_writer"><!--작성자(추후 로그인정보 얻어서 자동전송)-->
-                <input type="text" value="<c:out value="${notice.notice_writer }" />" name="notice_writer" readonly="readonly">
+                <input type="text" value="<c:out value="${notice.noticeWriter }" />" name="noticeWriter" readonly="readonly">
             </div>      
             
             <form role="form" action="/admin/notice/noticeList" method="GET">
@@ -81,7 +81,7 @@
             
             	<c:forEach items="${comment }" var="comment">           	
 		            		<form action="/admin/notice/delComment?rno=<c:out value="${comment.rno }"/>" method="POST">
-		            		<input type="hidden" value="${notice.notice_no }">
+		            		<input type="hidden" value="${notice.noticeNo }">
 	            		<li>       		
 		            		<p>
 			            		<c:out value="${comment.writer }"/>
@@ -97,7 +97,7 @@
 
             <!-- 추후 자바스크립트로 수정 -->
         	
-        	<form action="/admin/notice/regComment?notice_no=<c:out value="${notice.notice_no }"/>" method="POST">
+        	<form action="/admin/notice/regComment?noticeNo=<c:out value="${notice.noticeNo }"/>" method="POST">
 				<div id="regComment"><!-- 댓글작성영역 -->
 					<input type="text" name="writer" value="테스트유저">
 					<textarea name="content"></textarea>

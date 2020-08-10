@@ -29,5 +29,8 @@ public interface NoticeDAO {
 	//게시글 수정
 	public int update(NoticeVO notice);
 	
+	//조회수 증가
+	public int viewCount(int noticeNo);
+	
 	
 }

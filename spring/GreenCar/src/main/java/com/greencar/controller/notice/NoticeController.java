@@ -59,6 +59,7 @@ public class NoticeController {
 		log.info("get or modify" );
 		model.addAttribute("notice",noticeService.get(noticeNo));
 		model.addAttribute("comment",commService.getComment(noticeNo));
+		noticeService.viewCount(noticeNo);
 			
 	}
 	

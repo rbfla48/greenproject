@@ -60,6 +60,11 @@ public class NoticeServiceImpl implements NoticeService{
 		log.info("get total data count...");
 		return noticeDAO.getTotalCount(cri);
 	}
+
+	@Override
+	public int viewCount(int noticeNo) {
+		return noticeDAO.viewCount(noticeNo);
+	}
 	
 	
 

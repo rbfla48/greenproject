@@ -18,8 +18,6 @@
 </head>
 <body>
 
-<h2>List : ${list.get(0)}</h2>
-
 <script src="//code.jquery.com/jquery-1.11.0.min.js"></script>
 <script src="/resources/js/pagingFunction.js" type="text/javascript"></script>
 <script src="/resources/js/searchFunction.js" type="text/javascript"></script>
@@ -79,7 +77,7 @@
 	            <tr>
 	            	<td><c:out value="${notice.noticeNo}" /></td>
 	            	<td>
-	            	<a href='/admin/notice/get?notice_no=<c:out value="${notice.noticeNo}"/>'>
+	            	<a href='/notice/get?noticeNo=<c:out value="${notice.noticeNo}"/>'>
 	            	<c:out value="${notice.noticeTitle}" /></a>
 	            	</td>
 	            	<td><c:out value="${notice.noticeWriter}" /></td>
@@ -91,7 +89,7 @@
         	
         	<!-- 검색기능 -->
         	<div>
-	        	<form id="searchForm" action="/admin/notice/noticeList" method="GET">
+	        	<form id="searchForm" action="/notice/noticeList" method="GET">
 	        		<select name="type">
 	        			<option value=""<c:out value="${pageMaker.cri.type == null?'selected':''}"/>>--전체--</option>
 	        			<option value="T" <c:out value="${pageMaker.cri.type eq 'T'?'selected':''}"/>>제목</option>
@@ -108,7 +106,7 @@
 	        	</form>
 	        	
 	        	<!-- 기본 페이징처리 -->
-	        	<form id="actionForm" action="/admin/notice/noticeList" method="GET">
+	        	<form id="actionForm" action="/notice/noticeList" method="GET">
 					<input type="hidden" name="pageNum" value="${pageMaker.cri.pageNum }">
 	        		<input type="hidden" name="amount" value="${pageMaker.cri.amount }">
 	        		<input type="hidden" name="type" value="<c:out value="${pageMaker.cri.type }"/>">

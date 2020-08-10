@@ -94,4 +94,9 @@
 		where NOTICE_NO = #{notice_no}
 	</update>
 	
+	<!-- 조회수 증가 -->
+	<update id="viewCount" parameterType="int">
+		UPDATE notice SET notice_view = notice_view + 1 WHERE notice_no = #{noticeNo}
+	</update>
+	
 </mapper>
