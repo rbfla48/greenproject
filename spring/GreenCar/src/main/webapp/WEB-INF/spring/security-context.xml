@@ -6,17 +6,26 @@
 					http://www.springframework.org/schema/security/spring-security.xsd
 		http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
 	<!-- Error페이지 지정 -->
-	<bean id="customAccessDenied" class="com.greencar.security.CustomAccessDeniedHandler"></bean>
-	<!-- 패스워드 암호화 -->
-	<bean id="bcryptPasswordEncoder" class="org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder"></bean>
+	<bean id="customAccessDenied" 
+		class="com.greencar.security.CustomAccessDeniedHandler"></bean>
+		
+	<!-- 패스워드 암호화(직접적암호화) -->
+	<!-- bean id="bcryptPasswordEncoder" class="org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder"></bean> -->
 	
-	<bean id="customUserDetailService" class="com.greencar.security.CustomUserDetailService"></bean>
+	<!-- 패스워드암호화(간접적암호화) -->
+	<!--<bean id="customPasswordEncoder"
+		class="com.greencar.security.CustomNoPasswordEncoder"></bean>
+		
+	<bean id="customUserDetailService" 
+		class="com.greencar.service.login.CustomUserDetailService"></bean>-->
 	
 	<security:http auto-config="true" use-expressions="true">
 		
 		<security:intercept-url pattern="/login/all" access="permitAll" />
 		
+		
 		<security:intercept-url pattern="/login/member" access="hasRole('ROLE_MEMBER')" />
+		
 		<!-- /greencar/admin 경로의 접근에 대해 ROLE_ADMIN이라는 권한을 가진 ID만을 접근허용 -->
 		<security:intercept-url pattern="/login/admin" access="hasRole('ROLE_ADMIN')"/>
 		
@@ -33,20 +42,28 @@
 		
 	</security:http>
 	
+	<!-- 인증처리를 위한 최상위태그 -->
 	<security:authentication-manager>
 	
 		<!-- 기존의테이블에서  customUserDetailService를 통해 VO데이터 호출 -->
-		<security:authentication-provider user-service-ref="customUserDetailService"> 
+		<!-- 사용자아이디/비밀번호를 제공해중 service등록 -->
+		<security:authentication-provider>
+			<security:user-service>
+				<security:user name="admin@greencar.com" password="admin" authorities="ROLE_ADMIN" />
+			</security:user-service>
+		</security:authentication-provider> 
+		
+		<!-- <security:password-encoder ref="customPasswordEncoder" /> -->
 			<!-- JDBC 기본쿼리로 인증(username) -->
 			<!-- <security:jdbc-user-service data-source-ref="dataSource" /> -->
 			<!-- 기존테이블에서 쿼리로 호출 -->
-			<!-- <security:jdbc-user-service data-source-ref="dataSource" 
+	    <!-- <security:jdbc-user-service data-source-ref="dataSource" 
 				users-by-username-query="SELECT user_email, user_pw, enable FROM user_info WHERE user_email = ? "
 				authorities-by-username-query="SELECT user_email, authority FROM auth WHERE user_email = ?"/> -->
 			
 			
 						
-			<security:password-encoder ref="bcryptPasswordEncoder" />
+			<!-- <security:password-encoder ref="bcryptPasswordEncoder" /> -->
 			
 			<!-- 수동로그인 -->
 			<!-- <security:user-service>
@@ -58,7 +75,6 @@
 				
 			</security:user-service> -->
 			
-		</security:authentication-provider>
 		
 	</security:authentication-manager>
 

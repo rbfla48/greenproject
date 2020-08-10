@@ -47,33 +47,33 @@ public class NoticeController {
 	
 	//특정게시물 조회/수정 페이지 이동
 	@GetMapping({"/get", "/modify"})
-	public void get(@RequestParam("notice_no") int notice_no, NoticeCommentVO comment, Model model) {
+	public void get(@RequestParam("noticeNo") int noticeNo, NoticeCommentVO commentVO, Model model) {
 		log.info("get or modify" );
-		model.addAttribute("notice",noticeService.get(notice_no));
-		model.addAttribute("comment",commService.getComment(notice_no));
+		model.addAttribute("notice",noticeService.get(noticeNo));
+		model.addAttribute("comment",commService.getComment(noticeNo));
 			
 	}
 	
 	//댓글등록
 	@PostMapping("/regComment")
-	public String regComment(NoticeCommentVO comment, Criteria cri,RedirectAttributes rttr) {
+	public String regComment(NoticeCommentVO commentVO, Criteria cri,RedirectAttributes rttr) {
 		//게시물등록
-		log.info("regComment.... : "+ comment);
-		commService.regComment(comment);
-		rttr.addFlashAttribute("comment", comment.getNotice_no());
+		log.info("regComment.... : "+ commentVO);
+		commService.regComment(commentVO);
+		rttr.addFlashAttribute("comment", commentVO.getNoticeNo());
 			
-		return "redirect:/notice/get?notice_no="+comment.getNotice_no();
+		return "redirect:/notice/get?noticeNo="+commentVO.getNoticeNo();
 	}
 	
 	//댓글삭제
 	@PostMapping("/delComment")
-	public String deleteComment(NoticeVO noticeVO, NoticeCommentVO comment, RedirectAttributes rttr, Criteria cri) {
-		log.info("delete Commen.... : "+ comment);
-		commService.deleteComment(comment);
-		rttr.addFlashAttribute("notice", noticeVO.getNotice_no());
+	public String deleteComment(NoticeVO noticeVO, NoticeCommentVO commentVO, RedirectAttributes rttr, Criteria cri) {
+		log.info("delete Commen.... : "+ commentVO);
+		commService.deleteComment(commentVO);
+		rttr.addFlashAttribute("notice", noticeVO.getNoticeNo());
 		
-		//댓글 삭제시 commService.getComment()에서 notice_no를 0으로 가져옴
-		return "redirect:/notice/get?notice_no="+noticeVO.getNotice_no();
+		//댓글 삭제시 commService.getComment()에서 noticeNo를 0으로 가져옴
+		return "redirect:/notice/get?noticeNo="+noticeVO.getNoticeNo();
 	}
 	 
 }

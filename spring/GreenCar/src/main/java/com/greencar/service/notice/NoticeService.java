@@ -9,11 +9,11 @@ public interface NoticeService {
 	
 	public void register(NoticeVO notice);
 	
-	public NoticeVO get(int notice_no);
+	public NoticeVO get(int noticeNo);
 	
 	public boolean modify(NoticeVO notice);
 	
-	public boolean remove(int notice_no);
+	public boolean remove(int noticeNo);
 	
 	public List<NoticeVO> getList();
 	

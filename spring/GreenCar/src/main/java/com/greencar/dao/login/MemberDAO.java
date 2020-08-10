@@ -4,6 +4,6 @@ import com.greencar.vo.login.MemberVO;
 
 public interface MemberDAO {
 	
-	public MemberVO read(String user_email);
+	public MemberVO read(String userEmail);
 	
 }

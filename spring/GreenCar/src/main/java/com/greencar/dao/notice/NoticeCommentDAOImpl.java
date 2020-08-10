@@ -15,8 +15,8 @@ public class NoticeCommentDAOImpl implements NoticeCommentDAO {
 	private SqlSession sqlSession;
 
 	@Override
-	public List<NoticeCommentVO> getComment(int notice_no) {
-		return sqlSession.selectList("mappers.noticeCommentMapper.getComment", notice_no);
+	public List<NoticeCommentVO> getComment(int noticeNo) {
+		return sqlSession.selectList("mappers.noticeCommentMapper.getComment", noticeNo);
 	}
 
 	@Override
