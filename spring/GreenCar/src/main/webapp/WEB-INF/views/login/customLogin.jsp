@@ -37,8 +37,8 @@
                 </div>
                 
                 <div id="login_mid"><!--아이디,비밀번호찾기 영역-->
-                    <a href="such_idpw">아이디|비밀번호 찾기</a>
-                    <a href="join"><span>회원가입</span></a>
+                    <a href="/login/searchIdPw">아이디|비밀번호 찾기</a>
+                    <a href="/join/joinForm"><span>회원가입</span></a>
                 </div>
                 <div id="login_bottom">
                     <div>

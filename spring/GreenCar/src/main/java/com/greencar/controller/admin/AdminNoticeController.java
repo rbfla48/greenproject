@@ -60,10 +60,10 @@ public class AdminNoticeController {
 	
 	//특정게시물 조회/수정 페이지 이동
 	@GetMapping({"/get", "/modify"})
-	public void get(@RequestParam("notice_no") int notice_no, NoticeCommentVO comment, Model model) {
+	public void get(@RequestParam("noticeNo") int noticeNo, NoticeCommentVO comment, Model model) {
 		log.info("get or modify" );
-		model.addAttribute("notice",service.get(notice_no));
-		model.addAttribute("comment",commService.getComment(notice_no));
+		model.addAttribute("notice",service.get(noticeNo));
+		model.addAttribute("comment",commService.getComment(noticeNo));
 			
 	}
 
@@ -79,9 +79,9 @@ public class AdminNoticeController {
 	
 	//게시물삭제
 	@PostMapping("/remove")
-	public String remove(@RequestParam("notice_no") int notice_no, RedirectAttributes rttr, Criteria cri) {
-		log.info("remove...." + notice_no);
-		if(service.remove(notice_no)) {
+	public String remove(@RequestParam("noticeNo") int noticeNo, RedirectAttributes rttr, Criteria cri) {
+		log.info("remove...." + noticeNo);
+		if(service.remove(noticeNo)) {
 			rttr.addFlashAttribute("result","success");
 		}
 		return "redirect:/admin/notice/noticeList" + cri.listLink();
@@ -97,7 +97,7 @@ public class AdminNoticeController {
 		commService.regComment(comment);
 		rttr.addFlashAttribute("comment", comment.getNoticeNo());
 			
-		return "redirect:/admin/notice/get?notice_no="+comment.getNoticeNo();
+		return "redirect:/admin/notice/get?noticeNo="+comment.getNoticeNo();
 	}
 	
 	//댓글삭제
@@ -108,7 +108,7 @@ public class AdminNoticeController {
 		rttr.addFlashAttribute("notice", noticeVO.getNoticeNo());
 		
 		//댓글 삭제시 commService.getComment()에서 notice_no를 0으로 가져옴
-		return "redirect:/admin/notice/get?notice_no="+noticeVO.getNoticeNo();
+		return "redirect:/admin/notice/get?noticeNo="+noticeVO.getNoticeNo();
 	}
 	 
 }
