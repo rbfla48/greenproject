@@ -1,21 +1,21 @@
 package com.greencar.dao.login;
 
-import javax.inject.Inject;
 
 import org.apache.ibatis.session.SqlSession;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
 import com.greencar.vo.login.MemberVO;
 
-@Repository("memberDAO")
+@Repository
 public class MemberDAOImpl implements MemberDAO {
 
-	@Inject
+	@Autowired
 	private SqlSession sqlSession;
 	
 	@Override
-	public MemberVO read(String user_email) {
-		return sqlSession.selectOne("memberMapper.read",user_email);
+	public MemberVO read(String userEmail) {
+		return sqlSession.selectOne("mappers.memberMapper.read",userEmail);
 	}
 
 }

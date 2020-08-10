@@ -17,7 +17,7 @@ public class NoticeDAOImpl implements NoticeDAO {
 	
 	@Override
 	public List<NoticeVO> getList() {
-		return sqlSession.selectList("noticeMapper.getList");
+		return sqlSession.selectList("mappers.noticeMapper.getList");
 	}
 
 	@Override

@@ -8,14 +8,16 @@ import lombok.Data;
 @Data
 public class MemberVO {
 	
-	private int user_no;
-	private String user_email;
-	private String user_pw;
-	private String user_nick;
-	private int user_birth;
-	private int user_ph;
-	private String user_address;
-	private String user_address_detail;
-	private Date user_join_date;
+	private int userNo;
+	private String userEmail;
+	private String userPw;
+	private String userNick;
+	private int userBirth;
+	private int userPh;
+	private String userAddress;
+	private String userAddressDetail;
+	private boolean enable;
+	
+	private Date userJoinDate;
 	private List<AuthVO> authList;
 }
