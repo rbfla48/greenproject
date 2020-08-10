@@ -21,10 +21,10 @@ public interface NoticeDAO {
 	public void insertSelectKey(NoticeVO notice);
 	
 	//게시글 조회	
-	public NoticeVO read(int noticeNo);
+	public NoticeVO read(int notice_no);
 	
 	//게시글 삭제
-	public int delete(int noticeNo);
+	public int delete(int notice_no);
 	
 	//게시글 수정
 	public int update(NoticeVO notice);

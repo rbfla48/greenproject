@@ -23,11 +23,11 @@ public class CustomUserDetailService implements UserDetailsService{
 	public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
 		
 		log.warn("Load User By username : " + username);
-		//username means userEmail
-		MemberVO memberVO = memberDAO.read(username);
+		//username means user_email
+		MemberVO vo = memberDAO.read(username);
 		
-		log.warn("queried by member mapper : " + memberVO);
+		log.warn("queried by member mapper : " + vo);
 		
-		return memberVO == null ? null:new CustomUser(memberVO);
+		return vo == null ? null:new CustomUser(vo);
 	}	
 }

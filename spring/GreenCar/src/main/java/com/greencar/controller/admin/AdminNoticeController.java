@@ -49,21 +49,21 @@ public class AdminNoticeController {
 	public void register() {}
 	//게시물 입력후 등록(등록후 리스트출력)
 	@PostMapping("/register")
-	public String register(NoticeVO noticeVO, NoticeCommentVO commentVO, RedirectAttributes rttr) {
+	public String register(NoticeVO noticeVO, NoticeCommentVO comment, RedirectAttributes rttr) {
 		//게시물등록
 		log.info("register: "+ noticeVO);
 		service.register(noticeVO);
-		rttr.addFlashAttribute("result",noticeVO.getNoticeNo());
+		rttr.addFlashAttribute("result",noticeVO.getNotice_no());
 		
 		return "redirect:/admin/notice/noticeList";
 	}
 	
 	//특정게시물 조회/수정 페이지 이동
 	@GetMapping({"/get", "/modify"})
-	public void get(@RequestParam("noticeNo") int noticeNo, NoticeCommentVO commentVO, Model model) {
+	public void get(@RequestParam("notice_no") int notice_no, NoticeCommentVO comment, Model model) {
 		log.info("get or modify" );
-		model.addAttribute("notice",service.get(noticeNo));
-		model.addAttribute("comment",commService.getComment(noticeNo));
+		model.addAttribute("notice",service.get(notice_no));
+		model.addAttribute("comment",commService.getComment(notice_no));
 			
 	}
 
@@ -79,9 +79,9 @@ public class AdminNoticeController {
 	
 	//게시물삭제
 	@PostMapping("/remove")
-	public String remove(@RequestParam("noticeNo") int noticeNo, RedirectAttributes rttr, Criteria cri) {
-		log.info("remove...." + noticeNo);
-		if(service.remove(noticeNo)) {
+	public String remove(@RequestParam("notice_no") int notice_no, RedirectAttributes rttr, Criteria cri) {
+		log.info("remove...." + notice_no);
+		if(service.remove(notice_no)) {
 			rttr.addFlashAttribute("result","success");
 		}
 		return "redirect:/admin/notice/noticeList" + cri.listLink();
@@ -91,24 +91,24 @@ public class AdminNoticeController {
 	
 	//댓글등록
 	@PostMapping("/regComment")
-	public String regComment(NoticeCommentVO commentVO, Criteria cri,RedirectAttributes rttr) {
+	public String regComment(NoticeCommentVO comment, Criteria cri,RedirectAttributes rttr) {
 		//게시물등록
-		log.info("regComment.... : "+ commentVO);
-		commService.regComment(commentVO);
-		rttr.addFlashAttribute("comment", commentVO.getNoticeNo());
+		log.info("regComment.... : "+ comment);
+		commService.regComment(comment);
+		rttr.addFlashAttribute("comment", comment.getNotice_no());
 			
-		return "redirect:/admin/notice/get?noticeNo="+commentVO.getNoticeNo();
+		return "redirect:/admin/notice/get?notice_no="+comment.getNotice_no();
 	}
 	
 	//댓글삭제
 	@PostMapping("/delComment")
-	public String deleteComment(NoticeVO noticeVO, NoticeCommentVO commentVO, RedirectAttributes rttr, Criteria cri) {
-		log.info("delete Commen.... : "+ commentVO);
-		commService.deleteComment(commentVO);
-		rttr.addFlashAttribute("notice", noticeVO.getNoticeNo());
+	public String deleteComment(NoticeVO noticeVO, NoticeCommentVO comment, RedirectAttributes rttr, Criteria cri) {
+		log.info("delete Commen.... : "+ comment);
+		commService.deleteComment(comment);
+		rttr.addFlashAttribute("notice", noticeVO.getNotice_no());
 		
-		//댓글 삭제시 commService.getComment()에서 noticeNo를 0으로 가져옴
-		return "redirect:/admin/notice/get?noticeNo="+noticeVO.getNoticeNo();
+		//댓글 삭제시 commService.getComment()에서 notice_no를 0으로 가져옴
+		return "redirect:/admin/notice/get?notice_no="+noticeVO.getNotice_no();
 	}
 	 
 }

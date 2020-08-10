@@ -131,7 +131,7 @@ let option3Cost = ${optionDetail3.optionCost3};
 		<!-- 첫째줄 끝-->
 
 		<!-- 큰 차 사진 시작-->
-		<div id="picture_detail" class="picture_3">
+		<div id="picture_detail" class="picture_2">
 			<img
 				src="<spring:url value='/resources/image/goodsIn/${goodsDetail.goodsNo}.jpg'/>" />
 		</div>
@@ -368,7 +368,7 @@ let option3Cost = ${optionDetail3.optionCost3};
 	<!-- 전체 테두리 끝-->
 
 	<!-- 구매 버튼 시작-->
-	<div id="button" class="button">
+	<div id="button" class="button_box">
 		<button type="button" id="button_buy" class="button_buy"
 			name="button_buy" onclick="fn_buy()">구매하기</button>
 	</div>

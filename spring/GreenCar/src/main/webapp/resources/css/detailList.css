@@ -1,0 +1,350 @@
+@charset "UTF-8";
+
+section {
+    width: 1200px;
+    margin: auto;
+}
+
+section #carDetailSearch {
+    font-size: 25px;
+    padding-bottom: 25px;
+}
+
+section #carDetailSearchBox {
+    width: 1200px;
+    height: 900px; 
+    border: grey solid 2px;
+    padding: 20px 50px 0 50px;
+}
+
+section #carDetailSearchBox hr {
+    opacity: .8;
+    width: 1200px;
+}
+
+/**************************브랜드시작********************/
+section #carDetailSearchBox #brandBox #brandButton {
+    width: 100%;
+    height: 160px;
+    padding-left: 30px;
+}
+
+section #carDetailSearchBox #brandBox #brandButton button {
+	width: 110px;
+    height: 70px;
+    background-color: #e4dcd3;
+    border-style: none;
+    border-radius: 5px;
+}
+
+
+ /* 브랜드 버튼 백그라운드 이미지  */
+section #carDetailSearchBox #brandBox #brandButton #audi {
+	background-image: url("../../image/logo/audi.png");
+	background-size: contain;
+	background-repeat : no-repeat;
+	background-position: center;
+}
+
+section #carDetailSearchBox #brandBox #brandButton #benz {
+	background-image: url("../../image/logo/benz.png");
+	background-size: contain;
+	background-repeat : no-repeat;
+	background-position: center;
+}
+
+section #carDetailSearchBox #brandBox #brandButton #cadillac {
+	background-image: url("../../image/logo/cadillac.png");
+	background-size: contain;
+	background-repeat : no-repeat;
+	background-position: center;
+}
+
+section #carDetailSearchBox #brandBox #brandButton #chevrolet {
+	background-image: url("../../image/logo/chevrolet.png");
+	background-size: contain;
+	background-repeat : no-repeat;
+	background-position: center;
+}
+
+section #carDetailSearchBox #brandBox #brandButton #ferrari {
+	background-image: url("../../image/logo/ferrari.png");
+	background-size: contain;
+	background-repeat : no-repeat;
+	background-position: center;
+}
+
+section #carDetailSearchBox #brandBox #brandButton #ford {
+	background-image: url("../../image/logo/ford.png");
+	background-size: contain;
+	background-repeat : no-repeat;
+	background-position: center;
+}
+
+section #carDetailSearchBox #brandBox #brandButton #genesis {
+	background-image: url("../../image/logo/genesis.png");
+	background-size: contain;
+	background-repeat : no-repeat;
+	background-position: center;
+}
+
+section #carDetailSearchBox #brandBox #brandButton #honda {
+	background-image: url("../../image/logo/honda.png");
+	background-size: contain;
+	background-repeat : no-repeat;
+	background-position: center;
+}
+
+section #carDetailSearchBox #brandBox #brandButton #hyundai {
+	background-image: url("../../image/logo/hyundai.png");
+	background-size: contain;
+	background-repeat : no-repeat;
+	background-position: center;
+}
+
+section #carDetailSearchBox #brandBox #brandButton #infiniti {
+	background-image: url("../../image/logo/infiniti.png");
+	background-size: contain;
+	background-repeat : no-repeat;
+	background-position: center;
+}
+
+section #carDetailSearchBox #brandBox #brandButton #jaguar {
+	background-image: url("../../image/logo/jaguar.png");
+	background-size: contain;
+	background-repeat : no-repeat;
+	background-position: center;
+}
+
+section #carDetailSearchBox #brandBox #brandButton #kia {
+	background-image: url("../../image/logo/kia.png");
+	background-size: contain;
+	background-repeat : no-repeat;
+	background-position: center;
+}
+
+section #carDetailSearchBox #brandBox #brandButton #lamborghini {
+	background-image: url("../../image/logo/lamborghini.png");
+	background-size: contain;
+	background-repeat : no-repeat;
+	background-position: center;
+}
+
+section #carDetailSearchBox #brandBox #brandButton #lexus {
+	background-image: url("../../image/logo/lexus.png");
+	background-size: contain;
+	background-repeat : no-repeat;
+	background-position: center;
+}
+
+section #carDetailSearchBox #brandBox #brandButton #mini {
+	background-image: url("../../image/logo/mini.png");
+	background-size: contain;
+	background-repeat : no-repeat;
+	background-position: center;
+}
+
+section #carDetailSearchBox #brandBox #brandButton #ssangyong {
+	background-image: url("../../image/logo/ssangyong.png");
+	background-size: contain;
+	background-repeat : no-repeat;
+	background-position: center;
+}
+
+section #carDetailSearchBox #brandBox #brandButton #teslr {
+	background-image: url("../../image/logo/teslr.png");
+	background-size: contain;
+	background-repeat : no-repeat;
+	background-position: center;
+}
+
+section #carDetailSearchBox #brandBox #brandButton #toyota {
+	background-image: url("../../image/logo/toyota.png");
+	background-size: contain;
+	background-repeat : no-repeat;
+	background-position: center;
+}
+
+section #carDetailSearchBox #brandBox #brandButton #volkswagen {
+	background-image: url("../../image/logo/volkswagen.png");
+	background-size: contain;
+	background-repeat : no-repeat;
+	background-position: center;
+}
+
+section #carDetailSearchBox #brandBox #brandButton #volvo {
+	background-image: url("../../image/logo/volvo.png");
+	background-size: contain;
+	background-repeat : no-repeat;
+	background-position: center;
+}
+
+
+
+
+/*****************************브랜드 끝************************/
+
+/*********************************차종 시작***************************/
+section #carDetailSearchBox #sizeBox {
+    width: 100%;
+    height: 140px;
+    padding-top: 12px;
+}
+
+section #carDetailSearchBox #sizeBox #sizeButton{
+    width: 100%;
+    height: 100px;
+    padding-left: 50px;
+}
+
+section #carDetailSearchBox #sizeBox #sizeButton button {
+    width: 120px;
+    height: 40px;
+    background-color: #e4dcd3;
+    border-radius: 5px;
+    border-style: none;
+    margin-left: 30px;
+    margin-top : 10px;
+}
+
+
+/****************************차종 끝***********************/
+
+/***************************분류 시작***********************/
+
+section #carDetailSearchBox #typeBox {
+    width: 100%;
+    height: 140px;
+    padding-top: 12px;
+}
+
+section #carDetailSearchBox #typeBox #typeButton {
+    width: 100%;
+    height: 100px;
+    padding-left: 50px;
+}
+
+section #carDetailSearchBox #typeBox #typeButton button {
+    width: 120px;
+    height: 40px;
+    background-color: #e4dcd3;
+    border-radius: 5px;
+    border-style: none;
+    margin-left: 30px;
+    margin-top : 10px;
+}
+
+/*********************************분류 끝*******************************/
+
+/***********************************가격 시작********************/
+
+section #carDetailSearchBox #priceBox {
+    width: 100%;
+    height: 140px;
+    padding-top: 12px;
+}
+
+section #carDetailSearchBox #priceBox #priceButton {
+    width: 100%;
+    height: 100px;
+    padding-left: 50px;
+}
+
+section #carDetailSearchBox #priceBox #priceButton button {
+    width: 120px;
+    height: 40px;
+    background-color: #e4dcd3;
+    border-radius: 5px;
+    border-style: none;
+    margin-left: 30px;
+    margin-top : 10px;
+}
+/**********************************가격 끝**************************/
+
+/***********************************연비 시작**********************/
+
+section #carDetailSearchBox #efficientBox {
+    width: 100%;
+    height: 100px;
+    padding-top: 12px;
+}
+
+section #carDetailSearchBox #efficientBox #efficientButton {
+    width: 100%;
+    height: 40px;
+    padding-left: 50px;
+}
+
+section #carDetailSearchBox #efficientBox #efficientButton button {
+    width: 120px;
+    height: 40px;
+    background-color: #e4dcd3;
+    border-radius: 5px;
+    border-style: none;
+    margin-left: 30px;
+}
+/******************연비 끝****************************/
+
+/*********************유종 시작**************************/
+
+section #carDetailSearchBox #fuelBox {
+    width: 100%;
+    height: 130px;
+}
+
+section #carDetailSearchBox #fuelBox #fuelButton {
+    width: 100%;
+    height: 40px;
+    padding-left: 50px;
+}
+
+section #carDetailSearchBox #fuelBox #fuelButton button {
+    width: 120px;
+    height: 40px;
+    background-color: #e4dcd3;
+    border-radius: 5px;
+    border-style: none;
+    margin-left: 30px;
+}
+
+/************************유종 끝*****************************/
+
+/****************검색하기 버튼 시작*******************************/
+
+section #searchButton {
+    width: 1305px;
+    height: 50px;
+    background-color: #e4dcd3;
+    margin-top: 30px;
+    border-style: none;
+    border-radius: 5px;
+}
+
+/***************검색하기 버튼 끝************************************/
+
+/*********상세검색리스트****************/
+#detailList {
+    width : 1200px;
+    height: 250px;
+    border: 1px grey solid;
+    margin: auto;
+    display: flex;
+}
+
+#carPic {
+    width: 400px;
+    height: 250px;   
+    display : flex;
+  	align-items : center; /* 세로 중앙 정렬 */
+  	justify-content : center; /* 가로 중앙 정렬 */
+  	background-image : cover, contain;
+    
+}
+
+#carContent1 {
+    width : 400px;
+}
+
+#carContent2 {
+    width : 400px;
+}

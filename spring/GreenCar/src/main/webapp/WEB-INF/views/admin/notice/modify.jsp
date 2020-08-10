@@ -58,18 +58,18 @@
             <h3> 공지사항 수정</h3>
         <form role="form" action="/admin/notice/modify" method="POST">
         	<div><!--게시글번호-->
-                <input type="text" value="<c:out value="${notice.noticeNo }" />"name="noticeNo" readonly="readonly">
+                <input type="text" value="<c:out value="${notice.notice_no }" />"name="notice_no" readonly="readonly">
             </div> 
             <div class="notice_write_head"><!--제목-->
-                <input type="text" value="<c:out value="${notice.noticeTitle }" />"name="noticeTitle">
+                <input type="text" value="<c:out value="${notice.notice_title }" />"name="notice_title">
             </div>    
             <div class="notice_write_text"><!--본문-->
-                <textarea name="noticeText">
-                	<c:out value="${notice.noticeText }" />
+                <textarea name="notice_text">
+                	<c:out value="${notice.notice_text }" />
                 </textarea>
             </div>
             <div class="notice_writer"><!--작성자(추후 로그인정보 얻어서 자동전송)-->
-                <input type="text" value="<c:out value="${notice.noticeWriter }" />" name="noticeWriter">
+                <input type="text" value="<c:out value="${notice.notice_writer }" />" name="notice_writer">
             </div> 
 
         		<input type="submit" value="수정등록">

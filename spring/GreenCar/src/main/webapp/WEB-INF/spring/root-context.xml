@@ -17,8 +17,8 @@
 			value="oracle.jdbc.OracleDriver" />
 		<property name="url"
 			value="jdbc:oracle:thin:@localhost:1521:xe" />
-		<property name="username" value="green_admin" />
-		<property name="password" value="green" />
+		<property name="username" value="greencar" />
+		<property name="password" value="1234" />
 	</bean>
 	
 	<!-- Mybatis 연동 -->
@@ -28,7 +28,7 @@
 		<property name="configLocation"
 			value="classpath:/mybatis-config.xml"></property>
 		<property name="mapperLocations"
-			value="classpath:mappers/**/*Mapper.xml" />
+			value="classpath*:mappers/**/*Mapper.xml" />
 	</bean>
 	
 	<bean id="sqlSession"
@@ -47,7 +47,6 @@
 			</bean>
 		</property>
 	</bean>
-	
-	<bean id="memberDAO" class="com.greencar.dao.login.MemberDAOImpl" />
+
 
 </beans>

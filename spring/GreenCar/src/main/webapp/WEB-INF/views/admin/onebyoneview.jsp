@@ -1,0 +1,132 @@
+<%@ taglib prefix="spring" uri="http://www.springframework.org/tags"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+	pageEncoding="UTF-8"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>
+<c:set var="contextPath" value="${pageContext.request.contextPath}" />
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" href="<c:url value="/resources/css/menu.css" />">
+<!--상단header-->
+<link rel="stylesheet"
+	href="<c:url value="/resources/css/onebyoneview.css" />">
+<link rel="stylesheet"
+	href="<c:url value="/resources/css/footer.css" />">
+<!--하단footer-->
+<link rel="stylesheet"
+	href="https://fonts.googleapis.com/icon?family=Material+Icons">
+<!--구글머터리얼-->
+<meta charset="UTF-8">
+<script
+	src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<title>1:1 문의글 상세보기</title>
+<script>
+	const contextPath = "${contextPath}";
+	let oboNo = "${param.oboNo}";
+
+	$(function() {
+
+		$("#answerSubmit").click(function() {
+			console.log("전송");
+			$.ajax({
+				url : contextPath + "/admin/onebyoneview",
+				type : "POST",
+				data : {
+					oboNo : oboNo,
+					answerBox : $("#answerBox").val()
+				},
+				success : function(result) {
+					console.log("result : "+result[0]);
+					console.log("1: "+result[1].oboAnswer);
+					console.log("2: "+result[1].oboNo);
+					alert(result[0]);
+					$("#answerBox").val(result[1].oboAnswer);
+				},
+				error : function(xhr, status) {
+					console.log(xhr + " : " + status); // 에러 코드
+				}
+			}); // ajax
+		});
+	});
+</script>
+</head>
+
+<body>
+	<div>
+		<!--메뉴바-->
+		<header>
+			<!--화면 상단 마이페이지, 장바구니 시작-->
+			<div id="top">
+				<ul>
+					<li id="mypage"><a href="#">마이페이지</a></li>
+					<li id="cart"><a href="#">장바구니</a></li>
+				</ul>
+			</div>
+			<!--화면 상단 마이페이지, 장바구니 끝-->
+
+			<hr id="hl">
+			<!--top, nav 분리 줄-->
+		</header>
+		<nav>
+			<!--logo 시작-->
+			<div id="logo">
+				<img src="../image/logo/gclogo.png" alt="greencar_admin_logo">
+			</div>
+			<!--logo 끝-->
+
+			<!-- 네비게이션 바 시작-->
+			<div id="middle">
+				<ul>
+
+					<li id="admin_product"><a href="#">상품관리</a></li>
+					<li id="vl">|</li>
+					<li id="admin_account"><a href="#">정산관리</a></li>
+					<li id="vl">|</li>
+					<li id="admin_customer"><a href="#">고객관리</a></li>
+					<li id="vl">|</li>
+					<li id="admin_write"><a href="#">게시글관리</a></li>
+
+				</ul>
+			</div>
+			<!--네비게이션 바 끝-->
+		</nav>
+	</div>
+	<!-------------------------------메뉴바END-------------------------------->
+
+	<section>
+		<div id="questionTitle">${onebyoneview.oboCategory} ${onebyoneview.oboTitle}
+			<div id="questionWriter">작성자 : ${onebyoneview.oboWriter}</div>
+		</div>
+
+		<div id="questionContent">${onebyoneview.oboContent}</div>
+		<hr>
+		<input type="text" id="answerBox" name="answerBox" placeholder="내용을 입력해주세요" value="${onebyoneview.oboAnswer}">
+		<hr>
+		<div id="sub">
+			<p>답변을 수정하려면 기존 답변을 지우고 다시 입력하세요</p>
+			<button id="answerSubmit">답변하기</button>
+		</div>
+
+	</section>
+
+	<!-------------------------------footer시작------------------------------->
+	<!--하단 회사정보영역-->
+	<footer id="footer">
+		<!--상단회사명-->
+		<br>
+		<p>
+			<b>GREENCAR</b>
+		</p>
+		<hr>
+		<!--하단사업자정보-->
+		<p>사업자 김붕붕 | 사업자번호 211-31-64480 | 사업자 주소 : 서울특별시 관악구 청룡중앙길 42-1 |
+			02 - 1234 - 5678</p>
+		<p>COPYRIGHT © GREEN COMPANY. ALL RIGHTS RESERVED.</p>
+		<!--하단영역end-->
+	</footer>
+
+</body>
+</html>

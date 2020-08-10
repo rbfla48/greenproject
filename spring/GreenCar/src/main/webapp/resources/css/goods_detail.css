@@ -2,7 +2,7 @@
 
 /* 전체 테두리 */
 .wrap {
-	height: 2225px;
+	height: auto;
 	width: 1200px;
 	color: #333;
 	line-height: 10px;
@@ -27,27 +27,18 @@
 .picture_1 {
 	height: 500px;
 	width: 60%;
+	padding: 1px;
 }
 
 .picture_2 {
-	height: 500px;
-	width: 100%;
-	margin: 25px 0px 25px 0px;
-}
-
-.picture_3 {
 	height: 700px;
 	width: 100%;
 	margin: 25px 0px 25px 0px;
+	padding: 1px;
 }
 
 /*전체 사진 사이즈 */
 #picture_main>img {
-	height: 100%;
-	width: 100%;
-}
-
-#picture_vr>img {
 	height: 100%;
 	width: 100%;
 }
@@ -97,9 +88,9 @@
 /* 옵션 전체 창*/
 .box_2 {
 	height: 900px;
-	width: 1200px;
+	width: 100%;
 	background-color: #e4dcd3;
-	margin: 25px 0px 25px 0px;
+	margin: 0px 1px 0px 1px;
 }
 
 .material-icons {
@@ -321,6 +312,12 @@
 }
 
 /* ----------------------------버튼 -----------------------------------------------------------*/
+.button_box {
+	width: 1200px;
+	height: 50px;
+	margin: 0px auto 0px auto;
+}
+
 .button_buy {
 	width: 200px;
 	height: 45px;
@@ -329,5 +326,4 @@
 	border-radius: 5px;
 	text-align: center;
 	float: right;
-	margin: 0px 21.5% 0px 0px;
 }

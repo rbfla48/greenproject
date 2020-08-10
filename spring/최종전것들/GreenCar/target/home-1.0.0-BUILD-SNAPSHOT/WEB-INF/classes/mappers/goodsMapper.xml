@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="goodsMapper">
+	<!-- 상품 목록 조회 -->
+	<select id="listGoods"
+		resultType="com.greencar.vo.goods.GoodsVO">
+		select GOODS_NO
+		,GOODS_NAME
+		,GOODS_SIZE
+		,GOODS_TYPE
+		,GOODS_PRICE
+		,GOODS_EFFICIENT
+		,GOODS_FUEL
+		,BRAND_CODE
+		,GOODS_CODE
+		from
+		goods
+		order by goods_no DESC
+	</select>
+
+	<!-- 상품 조회 -->
+	<select id="readGoods" parameterType="int"
+		resultType="com.greencar.vo.goods.GoodsVO">
+		select goods_no
+		,GOODS_NAME
+		,GOODS_SIZE
+		,GOODS_TYPE
+		,GOODS_PRICE
+		,GOODS_EFFICIENT
+		,GOODS_FUEL
+		,BRAND_CODE
+		,GOODS_CODE
+		from
+		goods
+		where goods_no = #{goodsNo}
+	</select>
+
+	<!-- 상품 수정 -->
+	<update id="updateGoods"
+		parameterType="com.greencar.vo.goods.GoodsVO">
+		update goods
+		set goods_name = #{goodsName},
+		goods_size =
+		#{goodsSize},
+		goods_type = #{goodsType},
+		goods_price = #{goodsPrice},
+		goods_efficient = #{goodsEfficient},
+		goods_fuel = #{goodsFuel}
+		where
+		goods_no = #{goodsNo}
+	</update>
+</mapper>

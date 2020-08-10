@@ -1,0 +1,88 @@
+section {
+    width: 1200px;
+    margin: auto;
+}
+
+section #questionTitle {
+    font-size: 20px;
+}
+
+section #questionWriter {
+	float :right;
+	padding-right: 20px;
+}
+
+section #questionContent {
+    border: solid black 1px;
+    height: auto;
+    padding: 20px 10px 20px 10px;
+}
+
+section #answerBox {
+    border: solid black 1px;
+    height: 100px;
+    width: 1200px;
+}
+
+section #sub {
+	display: flex;
+}
+
+section #answerSubmit {
+    float : right;
+    background-color: #e4dcd3;
+    height: 30px;
+    width: 100px;
+    margin-top : 10px;
+    border: none;
+    margin-left: 700px;
+}
+
+table * {
+    width: auto;
+    height: 10px;
+    text-align: center;
+}
+
+table {
+    border-collapse: collapse;
+    margin-top: 50px;
+}
+
+table #tbTop {
+    background-color: #e4dcd3;
+}
+table tr td {
+    border: solid grey 2px;
+}
+
+#tbCategory {
+    width: 150px;
+    border: solid grey 2px;
+}
+
+#tbTitle {
+    width: 800px;
+}
+
+#tbDate {
+    width: 150px;
+}
+
+#tbCustomer {
+    width: 100px;
+}
+
+#pagingBtn {
+    display:flex;
+    justify-content: center;
+}
+
+#pagingBtn button {
+    border-style:none;
+    background-color: #e4dcd3;
+    width: 40px;
+    height: 40px;
+    margin-top :10px;
+    margin-left: 10px;
+}

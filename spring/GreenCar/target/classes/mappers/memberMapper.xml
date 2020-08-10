@@ -1,30 +1,25 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
-<mapper namespace="mappers.memberMapper">
+<mapper namespace="com.greencar.dao.login.MemberDAO">
 	
 	<resultMap type="com.greencar.vo.login.MemberVO" id="memberMap">
-	
-		<id property="userEmail" column="usre_email" />
-		<result property="userEmail" column="user_email" />
-		<result property="userPw" column="user_pw" />
-		<result property="userNick" column="user_nick" />
-		<result property="userJoinDate" column="user_join_date" />
+		<id property="user_email" column="usre_email" />
+		<result property="user_email" column="user_email" />
+		<result property="user_pw" column="user_pw" />
+		<result property="user_nick" column="user_nick" />
+		<result property="user_join_date" column="user_join_date" />
 		<collection property="authList" resultMap="authMap"/>
-		
 	</resultMap>
 	
-	
 	<resultMap type="com.greencar.vo.login.AuthVO" id="authMap">
-	
-		<result property="userEmail" column="user_email"/>
+		<result property="user_email" column="user_email"/>
 		<result property="authority" column="authority" />
-		
 	</resultMap>
 	
 	
 	<select id="read" resultMap="memberMap">
 		SELECT * FROM user_info LEFT OUTER JOIN auth on user_info.user_email = auth.user_email
-		WHERE user_info.user_email = #{userEmail}
+		WHERE user_info.user_email = #{user_email}
 	</select>
 	
 </mapper>

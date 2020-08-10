@@ -14,9 +14,7 @@ import lombok.extern.log4j.Log4j;
 //접근제한시 리다이렉트 페이지 지정하는 핸들러
 //접근제한시 쿠키나 세션에 특정한 작업을 하거나 HttpServletResponse에 특정한 헤더정보 추가 가능
 @Log4j
-public class CustomAccessDeniedHandler implements AccessDeniedHandler{
-	
-	@Override
+public class CustomAccessDeniedHandler implements AccessDeniedHandler{@Override
 	public void handle(HttpServletRequest request, HttpServletResponse response,
 			AccessDeniedException accessDeniedException) throws IOException, ServletException {
 		
