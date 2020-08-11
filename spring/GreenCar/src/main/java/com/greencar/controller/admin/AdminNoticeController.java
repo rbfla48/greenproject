@@ -78,12 +78,13 @@ public class AdminNoticeController {
 	}
 	
 	//게시물삭제
-	@PostMapping("/remove")
+	@GetMapping("/remove")
 	public String remove(@RequestParam("noticeNo") int noticeNo, RedirectAttributes rttr, Criteria cri) {
-		log.info("remove...." + noticeNo);
-		if(service.remove(noticeNo)) {
+		log.info("---------------remove----------------" + noticeNo);
+		
+		/*if(service.remove(noticeNo)) {
 			rttr.addFlashAttribute("result","success");
-		}
+		}*/
 		return "redirect:/admin/notice/noticeList" + cri.listLink();
 	}
 	

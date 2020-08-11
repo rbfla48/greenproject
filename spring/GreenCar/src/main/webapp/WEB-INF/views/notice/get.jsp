@@ -1,8 +1,10 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
 <%@ taglib prefix="spring" uri="http://www.springframework.org/tags" %>
+<%@ taglib prefix="sec" uri="http://www.springframework.org/security/tags" %>
 <!DOCTYPE html>
 <html>
 <head>
@@ -19,10 +21,20 @@
       <header>
         <!--화면 상단 마이페이지, 장바구니 시작-->
         <div id="top">
-            <ul>
-                <li id="mypage"><a href="login/member">로그인</a></li>
-                <li id="cart"><a href="join/joinForm">회원가입</a></li>
-            </ul>
+            <!-- 로그인정보 없을때 -->
+            	<sec:authorize access="isAnonymous()">
+	                <ul>
+	                    <li id=""><a href="/login/customLogin">로그인</a></li>
+	                    <li id=""><a href="#">마이페이지</a></li>
+	                </ul>
+	            </sec:authorize>
+	            <!-- 로그인 이후 -->
+	            <sec:authorize access="isAuthenticated()">
+	                <ul>
+	                    <li id=""><a href="/login/logout">로그아웃</a></li>
+	                    <li id=""><a href="/join/joinForm">회원가입</a></li>
+	                </ul>
+	            </sec:authorize>
         </div>
         <!--화면 상단 마이페이지, 장바구니 끝-->
 

@@ -23,7 +23,7 @@
         <!--화면 상단 마이페이지, 장바구니 시작-->
         <div id="top">
             <ul>
-                <li id="mypage"><a href="login/member">로그인</a></li>
+                <li id="mypage"><a href="login/customLogin">로그인</a></li>
                 <li id="cart"><a href="join/joinForm">회원가입</a></li>
             </ul>
         </div>

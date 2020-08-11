@@ -1,13 +1,20 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
 <%@ taglib prefix="spring" uri="http://www.springframework.org/tags" %>
+<%@ taglib prefix="sec" uri="http://www.springframework.org/security/tags" %>
 <!DOCTYPE html>
 <html>
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<meta charset="UTF-8">
+<!-- spring security post 전송시 403 문제 패치 -->
+<meta id="_csrf" name="_csrf" content="${_csrf.token}"/>
+<!-- default header name is X-CSRF-TOKEN -->
+<meta id="_csrf_header" name="_csrf_header" content="${_csrf.headerName}"/>
+
     <title>GreenCar Home</title>
     <link rel="stylesheet" href="/resources/css/menu.css" /><!--상단header-->
     <link rel="stylesheet" href="/resources/css/admin_notice_write.css" />
@@ -15,14 +22,27 @@
     <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons"><!--구글머터리얼-->
 </head>
 <body>
+
+    principal : ${principal}
+    
     <div><!--메뉴바-->
         <header>
             <!--화면 상단 마이페이지, 장바구니 시작-->
             <div id="top">
-                <ul>
-                    <li id="logout"><a href="#">로그아웃</a></li>
-                    <li id="aram"><a href="#">알림</a></li>
-                </ul>
+               <!-- 로그인정보 없을때 -->
+            	<sec:authorize access="isAnonymous()">
+	                <ul>
+	                    <li id=""><a href="/login/customLogin">로그인</a></li>
+	                    <li id=""><a href="#">마이페이지</a></li>
+	                </ul>
+	            </sec:authorize>
+	            <!-- 로그인 이후 -->
+	            <sec:authorize access="isAuthenticated()">
+	                <ul>
+	                    <li id=""><a href="/login/logout">로그아웃</a></li>
+	                    <li id=""><a href="/join/joinForm">회원가입</a></li>
+	                </ul>
+	            </sec:authorize>
             </div>
             <!--화면 상단 마이페이지, 장바구니 끝-->
 
@@ -76,7 +96,9 @@
         		<input type="submit" value="수정하기">
         	</form>
             
-            <form role="form" action='/admin/notice/remove?noticeNo=<c:out value="${notice.noticeNo }"/>' method="POST">
+            <!-- hidden으로 넘겨도 됨 -->
+            <form role="form" action="/admin/notice/remove" method="GET">
+            	<input type="hidden" name="noticeNo" value="${notice.noticeNo}"/>
         		<input type="submit" value="삭제하기">
         	</form>
             
@@ -94,7 +116,7 @@
 		            		<c:out value="${comment.content }"/>
 		            		<fmt:formatDate value="${comment.regdate }" pattern="yyyy-MM-dd" />
 	            		</p>
-		            			<button>삭제</button>
+		            		<button>삭제</button>
 	            		</li>
 		            		</form>            		
 				</c:forEach>

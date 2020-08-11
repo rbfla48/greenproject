@@ -1,0 +1,20 @@
+<%@ page contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<c:set var="rootPath" value="${pageContext.request.contextPath}" />
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<!-- google material -->
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+<!-- jquery -->  
+<script src="${rootPath}/webjars/jquery/3.5.1/jquery.min.js"></script>
+
+<!-- jqueryui -->  
+<link rel="stylesheet" href="${rootPath}/webjars/jquery-ui/themes/base/jquery-ui.min.css">
+<script src="${rootPath}/webjars/jquery-ui/jquery-ui.min.js"></script>
+
+<!-- bootstrap -->
+<link rel="stylesheet" href="${rootPath}/webjars/bootstrap/4.5.0/css/bootstrap.min.css">
+<script src="${rootPath}/webjars/popper.js/1.16.0/umd/popper.min.js"></script>
+<script src="${rootPath}/webjars/bootstrap/4.5.0/js/bootstrap.min.js"></script>

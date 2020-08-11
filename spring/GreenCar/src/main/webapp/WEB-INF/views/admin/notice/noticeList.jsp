@@ -1,8 +1,10 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
 <%@ taglib prefix="spring" uri="http://www.springframework.org/tags" %>
+<%@ taglib prefix="sec" uri="http://www.springframework.org/security/tags" %>
 <!DOCTYPE html>
 <html>
 <head>
@@ -13,21 +15,44 @@
     <link rel="stylesheet" href="/resources/css/admin_notice.css" />
     <link rel="stylesheet" href="/resources/css/footer.css" /><!--하단footer-->
     <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons"><!--구글머터리얼-->
+    
 <meta charset="UTF-8">
+<!-- spring security post 전송시 403 문제 패치 -->
+<meta id="_csrf" name="_csrf" content="${_csrf.token}"/>
+<!-- default header name is X-CSRF-TOKEN -->
+<meta id="_csrf_header" name="_csrf_header" content="${_csrf.headerName}"/>
+
 <title>greencar_admin notice</title>
 </head>
 <body>
+
+ 	name : <sec:authentication property="name"/><br>
+    username : <sec:authentication property="principal.username"/><br>
+    role:
+ 	principal : ${principal}
+
+
 <script src="//code.jquery.com/jquery-1.11.0.min.js"></script>
 <script src="/resources/js/pagingFunction.js" type="text/javascript"></script>
 <script src="/resources/js/searchFunction.js" type="text/javascript"></script>
     <div><!--메뉴바-->
         <header>
-            <!--화면 상단 마이페이지, 장바구니 시작-->
+            <!-- 상단 로그인메뉴바 -->
             <div id="top">
-                <ul>
-                    <li id="logout"><a href="#">로그아웃</a></li>
-                    <li id="aram"><a href="#">알림</a></li>
-                </ul>
+            	<!-- 로그인정보 없을때 -->
+            	<sec:authorize access="isAnonymous()">
+	                <ul>
+	                    <li id=""><a href="/login/customLogin">로그인</a></li>
+	                    <li id=""><a href="#">마이페이지</a></li>
+	                </ul>
+	            </sec:authorize>
+	            <!-- 로그인 이후 -->
+	            <sec:authorize access="isAuthenticated()">
+	                <ul>
+	                    <li id=""><a href="/login/logout">로그아웃</a></li>
+	                    <li id=""><a href="/join/joinForm">회원가입</a></li>
+	                </ul>
+	            </sec:authorize>
             </div>
             <!--화면 상단 마이페이지, 장바구니 끝-->
 
@@ -84,57 +109,68 @@
 	            </tr>            
             </c:forEach>
         	</table>
-        	
-        	<form action="/admin/notice/register" method="GET">
-        		<button>공지등록</button>
-        	</form>
-        	
-        	<!-- 검색기능 -->
         	<div>
-	        	<form id="searchForm" action="/admin/notice/noticeList" method="GET">
-	        		<select name="type">
-	        			<option value=""<c:out value="${pageMaker.cri.type == null?'selected':''}"/>>--전체--</option>
-	        			<option value="T" <c:out value="${pageMaker.cri.type eq 'T'?'selected':''}"/>>제목</option>
-	        			<option value="C" <c:out value="${pageMaker.cri.type eq 'C'?'selected':''}"/>>내용</option>
-	        			<option value="W" <c:out value="${pageMaker.cri.type eq 'W'?'selected':''}"/>>작성자</option>
-	        			<option value="TC" <c:out value="${pageMaker.cri.type eq 'TC'?'selected':''}"/>>제목or내용</option>
-	        		</select>
-	        		<input type="text" name="keyword" value="<c:out value="${pageMaker.cri.keyword }"/>"/>
-	        		
-	        		<!-- 검색후 페이징처리 -->
-	        		<input type="hidden" name="pageNum" value="<c:out value="${pageMaker.cri.pageNum }"/>">
-	        		<input type="hidden" name="amount" value="<c:out value="${pageMaker.cri.amount }"/>">
-	        		<button>검색</button>
+	        	<form action="/admin/notice/register" method="GET">
+	        		<button>공지등록</button>
 	        	</form>
 	        	
-	        	<!-- 기본 페이징처리 -->
-	        	<form id="actionForm" action="/admin/notice/noticeList" method="GET">
-					<input type="hidden" name="pageNum" value="${pageMaker.cri.pageNum }">
-	        		<input type="hidden" name="amount" value="${pageMaker.cri.amount }">
-	        		<input type="hidden" name="type" value="<c:out value="${pageMaker.cri.type }"/>">
-	        		<input type="hidden" name="keyword" value="<c:out value="${pageMaker.cri.keyword }"/>">
-	        	</form>
-	        	
-			</div>
-			<c:if test="${pageMaker.prev}"><!-- 이전페이지이동 -->
-			    <a href="${action}?pageNum=${pageMaker.startPage-1}&amount=${pageMaker.cri.amount }&type=${pageMaker.cri.type }&keyword=${pageMaker.cri.keyword }">이전으로</a>
-			</c:if>
-			
-			<c:forEach begin="${pageMaker.startPage}" end="${pageMaker.endPage}" step="1" var="num">
-			    <li class="paginate_btn" value="${pageMaker.cri.pageNum == num ? 'active':''} ">
-			    	<a href="${num }">${num }</a>
-			    </li>	  
-			</c:forEach>
+	        	<div class="notice_search"><!-- 검색기능 -->
+					<form id="searchForm" action="/notice/noticeList" method="GET">
+						<select name="type" class="notice_search_select">
+							<option value=""
+								<c:out value="${pageMaker.cri.type == null?'selected':''}"/>>--전체--</option>
+							<option value="T"
+								<c:out value="${pageMaker.cri.type eq 'T'?'selected':''}"/>>제목</option>
+							<option value="C"
+								<c:out value="${pageMaker.cri.type eq 'C'?'selected':''}"/>>내용</option>
+							<option value="W"
+								<c:out value="${pageMaker.cri.type eq 'W'?'selected':''}"/>>작성자</option>
+							<option value="TC"
+								<c:out value="${pageMaker.cri.type eq 'TC'?'selected':''}"/>>제목or내용</option>
+						</select> 
+				
+						<input type="text" name="keyword" class="notice_search_text" value="<c:out value="${pageMaker.cri.keyword }"/>" />
+	
+						<!-- 검색후 페이징처리 -->
+						<input type="hidden" name="pageNum" value="<c:out value="${pageMaker.cri.pageNum }"/>"> 
+						<input type="hidden" name="amount" value="<c:out value="${pageMaker.cri.amount }"/>">
+						<button class="notice_search_btn">검색</button>
 						
-			<c:if test="${pageMaker.next}"><!-- 다음페이지 이동 -->
-			    <a href="${action}?pageNum=${pageMaker.endPage+1}&amount=${pageMaker.cri.amount }&type=${pageMaker.cri.type }&keyword=${pageMaker.cri.keyword }">다음으로</a>
-			</c:if>
+					</form>
+				</div><!-- 검색기능END -->
 			</div>
+	        	
+	        	
+			<div class="pagenate"><!-- 페이징 -->
+				<div>
+					<c:if test="${pageMaker.prev}">
+						<!-- 이전페이지이동 -->
+						<a href="${action}?pageNum=${pageMaker.startPage-1}&amount=${pageMaker.cri.amount }&type=${pageMaker.cri.type }&keyword=${pageMaker.cri.keyword }">이전으로</a>
+					</c:if>
+				</div>
+				<div>
+					<c:forEach begin="${pageMaker.startPage}" end="${pageMaker.endPage}"
+						step="1" var="num">
+						<li class="paginate_btn" value="${pageMaker.cri.pageNum == num ? 'active':''} ">
+						<a href="${action}?pageNum=${num }">${num }</a></li>
+					</c:forEach>
+				</div>
+				<div>
+					<c:if test="${pageMaker.next}">
+						<!-- 다음페이지 이동 -->
+						<a href="${action}?pageNum=${pageMaker.endPage+1}&amount=${pageMaker.cri.amount }&type=${pageMaker.cri.type }&keyword=${pageMaker.cri.keyword }">다음으로</a>
+					</c:if>
+				</div>
+			</div><!-- 페이징END -->
 				
 
-			<!-- 검색기능 -->
 			<!-- 검색이후 검색결과를 삭제, 등록, 수정 , 조회 후에도 그대로 유지하려면 URI에 searchType, keyword를 달고 다녀야한다-->
-			
+	        <form id="actionForm" action="/admin/notice/noticeList" method="GET">
+				<input type="hidden" name="pageNum" value="${pageMaker.cri.pageNum }">
+	        	<input type="hidden" name="amount" value="${pageMaker.cri.amount }">
+	        	<input type="hidden" name="type" value="<c:out value="${pageMaker.cri.type }"/>">
+	        	<input type="hidden" name="keyword" value="<c:out value="${pageMaker.cri.keyword }"/>">
+	        </form>
     	</div>
     <!-------------------------------footer시작------------------------------->
     <!--하단 회사정보영역-->

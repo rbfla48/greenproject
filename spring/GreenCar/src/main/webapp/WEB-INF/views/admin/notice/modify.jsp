@@ -8,6 +8,11 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- spring security post 전송시 403 문제 패치 -->
+	<meta id="_csrf" name="_csrf" content="${_csrf.token}"/>
+	<!-- default header name is X-CSRF-TOKEN -->
+	<meta id="_csrf_header" name="_csrf_header" content="${_csrf.headerName}"/>
+
     <title>GreenCar Home</title>
     <link rel="stylesheet" href="/resources/css/menu.css" /><!--상단header-->
     <link rel="stylesheet" href="/resources/css/admin_notice_write.css" />

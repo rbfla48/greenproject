@@ -1,8 +1,10 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
 <%@ taglib prefix="spring" uri="http://www.springframework.org/tags" %>
+<%@ taglib prefix="sec" uri="http://www.springframework.org/security/tags" %>
 <!DOCTYPE html>
 <html>
 <head>
@@ -64,7 +66,7 @@
                 <textarea name="noticeText">본문입력</textarea>
             </div>
             <div class="notice_writer"><!--작성자(추후 로그인정보 얻어서 자동전송)-->
-                <input type="text" value="작성자" name="noticeWriter">
+                <input type="text" value="<sec:authentication property="name"/>" name="noticeWriter" readonly="readonly">
             </div>   
             <input type="submit" value="등록하기">
             <input type="reset" value="초기화">
