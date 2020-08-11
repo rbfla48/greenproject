@@ -1,5 +1,7 @@
 package com.greencar.controller.goods;
 
+import java.util.List;
+
 import javax.inject.Inject;
 
 import org.slf4j.Logger;
@@ -19,11 +21,21 @@ public class GoodsController {
 	@Inject
 	GoodsService service;	
 	/** 상품 목록 조회 */
-	@RequestMapping(value = "/goodsList", method = RequestMethod.GET)
-	public String goodsList(Model model) throws Exception {
-		logger.info("goodsList");
-		model.addAttribute("goodsList",service.goodsList());
-		return "/goods/goodsList";
+	@RequestMapping(value = "/detailList", method = RequestMethod.GET)
+	public String list(GoodsVO goodsVO, Model model) throws Exception {
+		List<GoodsVO> carlist =null; 
+		logger.info("goodsVO : " + goodsVO);
+		if(goodsVO.getBrandCode()!=0) {
+			logger.info("1");
+			carlist = service.detailList(goodsVO);
+			logger.info("size : " +carlist.size());
+			logger.info("2");
+			for(GoodsVO v:carlist) {
+				logger.info("v : "+v);
+			}
+			model.addAttribute("detailList", carlist);
+		}
+		return "goods/detailList";
 	} // 상품 목록 조회
 	
 	/** 상품 조회 */

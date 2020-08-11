@@ -97,13 +97,15 @@
 	<!-------------------------------메뉴바END-------------------------------->
 
 	<section>
-		<div id="question_title">${onebyoneview.oboCategory} ${onebyoneview.oboTitle}
+		<div id="question_title">${onebyoneview.oboCategory}
+			${onebyoneview.oboTitle}
 			<div id="question_writer">작성자 : ${onebyoneview.oboWriter}</div>
 		</div>
 
 		<div id="question_content">${onebyoneview.oboContent}</div>
 		<hr>
-		<input type="text" id="answer_box" name="answer_box" placeholder="내용을 입력해주세요" value="${onebyoneview.oboAnswer}">
+		<input type="text" id="answer_box" name="answer_box"
+			placeholder="내용을 입력해주세요" value="${onebyoneview.oboAnswer}">
 		<hr>
 		<div id="sub">
 			<p>답변을 수정하려면 기존 답변을 지우고 다시 입력하세요</p>

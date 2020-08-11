@@ -10,10 +10,11 @@
 		user_no
 		, user_email
 		,
-		user_password
-		, user_nick
+		user_pw
+		,
+		user_nick
 		, user_birth
-		, user_phone
+		, user_ph
 		, user_address
 		,
 		user_address_detail)
@@ -21,11 +22,11 @@
 		user_info_SEQ.NEXTVAL
 		, #{userEmail}
 		,
-		#{userPassword}
+		#{userPw}
 		, #{userNick}
 		,
 		#{userBirthYY}||#{userBirthMM}||#{userBirthDD}
-		, #{userPhone}
+		, #{userPh}
 		,
 		#{userAddress}
 		, #{userAddressDetail})

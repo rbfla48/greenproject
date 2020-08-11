@@ -57,7 +57,7 @@ let option3Cost = ${optionDetail3.optionCost3};
 		<nav>
 			<!--logo 시작-->
 			<div id="logo">
-				<img src="<spring:url value='/resources/image/logo/gclogo_.png'/>"
+				<img src="<spring:url value='/resources/image/logo/gclogo.png'/>"
 					alt="greencar_logo">
 			</div>
 			<!--logo 끝-->
@@ -120,10 +120,6 @@ let option3Cost = ${optionDetail3.optionCost3};
 				<div id="title_15" class="title_1">
 					유종 : <span id="text_15" class="text_1"> <c:out
 							value="${goodsDetail.goodsFuel}" /></span>
-				</div>
-				<div id="title_16" class="title_1">
-					코드 : <span id="text_16" class="text_1"> <c:out
-							value="${goodsDetail.goodsCode}" /></span>
 				</div>
 			</div>
 			<!---- 차 설명 끝 -->

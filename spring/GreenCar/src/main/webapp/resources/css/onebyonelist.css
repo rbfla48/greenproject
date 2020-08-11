@@ -1,17 +1,16 @@
-
 section {
-    width: 1200px;
-    margin: auto;
+	width: 1200px;
+	margin: auto;
 }
 
-a { 
-	text-decoration:none;
-	!important
+a {
+	text-decoration: none;
+	!
+	important
 }
-
 
 #customer_question {
-	display : flex;
+	display: flex;
 }
 
 #category {
@@ -21,40 +20,41 @@ a {
 }
 
 table * {
-    width: auto;
-    height: 10px;
-    text-align: center;
+	width: auto;
+	height: 10px;
+	text-align: center;
 }
 
 table {
-    border-collapse: collapse;
+	border-collapse: collapse;
 }
 
 table #tb_top {
-    background-color: #e4dcd3;
+	background-color: #e4dcd3;
 }
+
 table tr td {
-    border: solid grey 2px;
+	border: solid grey 2px;
 }
 
 #tb_no {
-    width: 50px;
+	width: 50px;
 }
 
 #tb_category {
-    width: 100px;
+	width: 100px;
 }
 
 #tb_title {
-    width: 830px;
+	width: 830px;
 }
 
 #tb_writer {
-    width: 130px;
+	width: 130px;
 }
 
 #tb_date {
-    width: 180px;
+	width: 180px;
 }
 
 #paging {
@@ -68,10 +68,3 @@ table tr td {
 #paging .paging_button {
 	font-size: 23px;
 }
-
-
-
-
-
-
-

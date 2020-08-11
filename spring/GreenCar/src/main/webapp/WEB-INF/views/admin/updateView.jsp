@@ -94,9 +94,10 @@ let priceFlag = false;
 
 				<!-- 기본 차 사진 시작-->
 				<div id="update_pic_1" class="update_pic_1">
-				<img id="preImg1" class="preImg" name="preImg1"
-				src="${contextPath}/saveFile/${noticeVO.filename}" 
-				onerror='this.src="/resources/image/goodsMain/${goodsDetail.goodsNo}.png"'/></div>
+					<img id="preImg1" class="preImg" name="preImg1"
+						src="${contextPath}/saveFile/${noticeVO.filename}"
+						onerror='this.src="/resources/image/goodsMain/${goodsDetail.goodsNo}.png"' />
+				</div>
 				<!-- 기본 차 사진 끝-->
 
 				<!-- 차 설명 시작-->
@@ -177,15 +178,14 @@ let priceFlag = false;
 			<!-- 사진 수정 시작 -->
 
 			<span id="message" class="message">* 600x400 이하의 사진을 첨부해주세요.</span> <input
-				type="file" id="update_1" class="update_pic_button"
-				name="update_1">
+				type="file" id="update_1" class="update_pic_button" name="update_1">
 			<!-- 사진 수정 끝-->
 
 			<!-- 큰 차 사진 시작-->
 			<div id="update_pic_2" class="update_pic_2">
-			<img id="preImg2" class="preImg" name="preImg2"
-				src="${contextPath}/saveFile/${noticeVO.filename}" 
-				onerror='this.src="/resources/image/goodsIn/${goodsDetail.goodsNo}.jpg"'/>
+				<img id="preImg2" class="preImg" name="preImg2"
+					src="${contextPath}/saveFile/${noticeVO.filename}"
+					onerror='this.src="/resources/image/goodsIn/${goodsDetail.goodsNo}.jpg"' />
 				<!-- 사진 수정 시작 -->
 			</div>
 			<span id="message" class="message">* 1000x1000 이하의 사진을 첨부해주세요.</span>
