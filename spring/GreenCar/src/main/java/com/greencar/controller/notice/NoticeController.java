@@ -1,6 +1,9 @@
 package com.greencar.controller.notice;
 
+import java.security.Principal;
 import java.util.List;
+
+import javax.inject.Inject;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -11,8 +14,10 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
+import com.greencar.dao.login.MemberDAO;
 import com.greencar.service.notice.NoticeCommentService;
 import com.greencar.service.notice.NoticeService;
+import com.greencar.vo.login.MemberVO;
 import com.greencar.vo.notice.Criteria;
 import com.greencar.vo.notice.NoticeCommentVO;
 import com.greencar.vo.notice.NoticeVO;
@@ -31,6 +36,8 @@ public class NoticeController {
 	private NoticeService noticeService;
 	@Autowired
 	private NoticeCommentService commService;
+	@Inject
+	private MemberDAO memberDAO;
 	
 	//공지사항 게시물 리스트 출력
 	@GetMapping("/noticeList")
@@ -54,13 +61,19 @@ public class NoticeController {
 	
 	
 	//특정게시물 조회/수정 페이지 이동
-	@GetMapping({"/get", "/modify"})
-	public void get(@RequestParam("noticeNo") int noticeNo, NoticeCommentVO comment, Model model) {
-		log.info("get or modify" );
+	@GetMapping("/get")
+	public void get(@RequestParam("noticeNo") int noticeNo, Principal prin, NoticeCommentVO comment, Model model) {
+		log.info("get" );
 		model.addAttribute("notice",noticeService.get(noticeNo));
 		model.addAttribute("comment",commService.getComment(noticeNo));
 		noticeService.viewCount(noticeNo);
-			
+		
+		//유저아이디 매칭되는 닉네임 가져옴
+		if(prin != null) {
+			MemberVO memberVO = memberDAO.read(prin.getName());
+			log.info("-----userNick---- : " + memberVO.getUserNick());
+			model.addAttribute("nick", memberVO.getUserNick());
+		}
 	}
 	
 	//댓글등록
@@ -74,7 +87,7 @@ public class NoticeController {
 		return "redirect:/notice/get?noticeNo="+comment.getNoticeNo();
 	}
 	
-	//댓글삭제
+	//댓글삭제/get?not
 	@PostMapping("/delComment")
 	public String deleteComment(NoticeVO noticeVO, NoticeCommentVO comment, RedirectAttributes rttr, Criteria cri) {
 		log.info("delete Commen.... : "+ comment);
@@ -82,7 +95,7 @@ public class NoticeController {
 		rttr.addFlashAttribute("notice", noticeVO.getNoticeNo());
 		
 		//댓글 삭제시 commService.getComment()에서 noticeNo를 0으로 가져옴
-		return "redirect:/notice/get?noticeNo="+noticeVO.getNoticeNo();
+		return "redirect:/notice/get?noticeNo="+comment.getNoticeNo();
 	}
 	 
 }

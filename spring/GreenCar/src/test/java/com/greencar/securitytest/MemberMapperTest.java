@@ -25,8 +25,7 @@ public class MemberMapperTest {
 	@Test
 	public void testRead() {
 	MemberVO vo = memberDAO.read("testuser01@greencar.com");
-	log.info("---------------------------------memberVO : " + vo);
-	vo.getAuthList().forEach(AuthVO -> log.info(AuthVO));
+	log.info("---------------------------------memberVO : " + vo.getUserNick());
 	}
 	
 }

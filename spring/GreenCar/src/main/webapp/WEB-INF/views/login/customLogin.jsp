@@ -54,15 +54,14 @@
 					</div>
 					<div id="login_bottom">
 						<div>
-							<input type="checkbox" name="save_id" id="save_id">아이디저장
+							<input type="checkbox" name="remember-me">로그인 유지
 						</div>
 						<div>
 							<button>로그인</button>
 							<!-- <a href="main"><img src="/resources/image/btn_icon/login_btn.png"></a> -->
 						</div>
 					</div>
-					<input type="hidden" name="${_csrf.parameterName }"
-						value="${_csrf.token }" />
+					<input type="hidden" name="${_csrf.parameterName }" value="${_csrf.token }" />
 				</form>
 			</div>
 			<!--로그인영역 END-->

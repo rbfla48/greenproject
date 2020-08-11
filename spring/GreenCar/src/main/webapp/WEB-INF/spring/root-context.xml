@@ -50,4 +50,5 @@
 	</bean>
 
 	<bean id="memberDAO" class="com.greencar.dao.login.MemberDAOImpl" />
+	<bean id="memberVO" class="com.greencar.vo.login.MemberVO" />
 </beans>

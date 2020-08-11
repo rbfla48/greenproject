@@ -30,46 +30,9 @@
 	<script src="//code.jquery.com/jquery-1.11.0.min.js"></script>
 	<script src="/resources/js/pagingFunction.js" type="text/javascript"></script>
 	<script src="/resources/js/searchFunction.js" type="text/javascript"></script>
-	<div>
-		<!--메뉴바-->
-		<header>
-			<!--화면 상단 마이페이지, 장바구니 시작-->
-			<div id="top">
-				<ul>
-					<li id="logout"><a href="#">로그아웃</a></li>
-					<li id="aram"><a href="#">알림</a></li>
-				</ul>
-			</div>
-			<!--화면 상단 마이페이지, 장바구니 끝-->
-
-			<hr id="hl">
-			<!--top, nav 분리 줄-->
-		</header>
-		<nav>
-			<!--logo 시작-->
-			<div id="logo">
-				<img src="/resources/image/logo/gclogo_admin.png">
-
-			</div>
-			<!--logo 끝-->
-
-			<!-- 네비게이션 바 시작-->
-			<div id="middle">
-				<ul>
-
-					<li id="admin_product"><a href="#">상품관리</a></li>
-					<li id="vl">|</li>
-					<li id="admin_account"><a href="#">정산관리</a></li>
-					<li id="vl">|</li>
-					<li id="admin_customer"><a href="#">고객관리</a></li>
-					<li id="vl">|</li>
-					<li id="admin_write"><a href="#">게시글관리</a></li>
-
-				</ul>
-			</div>
-			<!--네비게이션 바 끝-->
-		</nav>
-	</div>
+	
+	<jsp:include page="/resources/jsp/menu.jsp" flush="false" />
+	
 	<!-------------------------------메뉴바END-------------------------------->
 	<div class="wrap">
 		<div class="notice_borad_wrap">
@@ -86,8 +49,7 @@
 				<c:forEach items="${list }" var="notice">
 					<tr>
 						<td><c:out value="${notice.noticeNo }" /></td>
-						<td><a
-							href='/admin/notice/get?noticeNo=<c:out value="${notice.noticeNo }"/>'>
+						<td><a href='/notice/get?noticeNo=<c:out value="${notice.noticeNo }"/>'>
 								<c:out value="${notice.noticeTitle }" />
 						</a></td>
 						<td><c:out value="${notice.noticeWriter }" /></td>
@@ -165,20 +127,8 @@
 
 	</div>
 	<!-------------------------------footer시작------------------------------->
-	<!--하단 회사정보영역-->
-	<footer id="footer">
-		<!--상단회사명-->
-		<br>
-		<p>
-			<b>GREENCAR</b>
-		</p>
-		<hr>
-		<!--하단사업자정보-->
-		<p>사업자 김붕붕 | 사업자번호 211-31-64480 | 사업자 주소 : 서울특별시 관악구 청룡중앙길 42-1 |
-			02 - 1234 - 5678</p>
-		<p>COPYRIGHT © GREEN COMPANY. ALL RIGHTS RESERVED.</p>
-		<!--하단영역end-->
-	</footer>
-	<!--메뉴바END-->
+	
+	<jsp:include page="/resources/jsp/footer.jsp" flush="false" />
+
 </body>
 </html>

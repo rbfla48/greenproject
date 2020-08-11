@@ -39,6 +39,6 @@ public class CommonController {
 	public String logoutGET(RedirectAttributes rttr) {
 		log.info("logout.....");
 		
-		return "redirect:/login/customLogin";
+		return "redirect:/";
 	}
 }

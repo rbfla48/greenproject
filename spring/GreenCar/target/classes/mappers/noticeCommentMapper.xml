@@ -7,13 +7,13 @@
 
 	<select id="getComment" parameterType="int"
 		resultType="com.greencar.vo.notice.NoticeCommentVO">
-		SELECT * FROM notice_comment WHERE notice_no = #{notice_no}
+		SELECT * FROM notice_comment WHERE notice_no = #{noticeNo}
 	</select>
 
 	<insert id="regComment">
 		INSERT INTO notice_comment(content , notice_no ,
 		regdate , rno , writer )
-		VALUES(#{content}, #{notice_no}, SYSDATE,
+		VALUES(#{content}, #{noticeNo}, SYSDATE,
 		NOTICE_COMMENT_SEQ.nextval, #{writer})
 	</insert>
 

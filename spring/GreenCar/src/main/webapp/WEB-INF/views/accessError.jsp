@@ -12,8 +12,8 @@
 </head>
 <body>
 	<h1>Access Denied Page</h1>
-
-
+	<h3>Error403 : 잘못된 접근입니다</h3>
+	
 	<h2>
 		<c:out value="${SPRING_SECURITY_403_EXCEPTION.getMessage() }" />
 	</h2>
