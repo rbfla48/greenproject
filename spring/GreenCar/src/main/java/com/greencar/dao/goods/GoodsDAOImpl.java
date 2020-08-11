@@ -11,6 +11,7 @@ import com.greencar.vo.goods.GoodsVO;
 import com.greencar.vo.option.OptionVO;
 import com.greencar.vo.option.OptionVO2;
 import com.greencar.vo.option.OptionVO3;
+
 @Repository
 public class GoodsDAOImpl implements GoodsDAO {
 
@@ -18,8 +19,8 @@ public class GoodsDAOImpl implements GoodsDAO {
 	private SqlSession sqlSession;
 	/** 상품 목록 조회 */
 	@Override
-	public List<GoodsVO> goodsList() throws Exception {
-		return sqlSession.selectList("goodsMapper.listGoods");
+	public List<GoodsVO> detailList(GoodsVO goodsVO) throws Exception {
+		return sqlSession.selectList("goodsMapper.listGoods", goodsVO);
 	} // 상품 목록 조회
 	/** 상품 조회 */
 	@Override

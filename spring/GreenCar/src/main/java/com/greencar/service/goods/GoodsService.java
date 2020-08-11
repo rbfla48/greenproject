@@ -9,7 +9,7 @@ import com.greencar.vo.option.OptionVO3;
 
 public interface GoodsService {
 	/** 상품 목록 조회 */
-	public List<GoodsVO> goodsList() throws Exception;
+	public List<GoodsVO> detailList(GoodsVO goodsVO) throws Exception;
 	/** 상품 조회 */
 	public GoodsVO goodsDetail(int goodsNo) throws Exception;
 	/** 상품 수정 */

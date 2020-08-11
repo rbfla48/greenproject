@@ -43,7 +43,7 @@
 		<nav>
 			<!--logo 시작-->
 			<div id="logo">
-				<img src="/resources/image/logo/gclogo_.png" alt="greencar_logo">
+				<img src="/resources/image/logo/gclogo.png" alt="greencar_logo">
 			</div>
 			<!--logo 끝-->
 
@@ -95,8 +95,9 @@
 				</c:forEach>
 			</table>
 
-			
-			<div class="notice_search"><!-- 검색기능 -->
+
+			<div class="notice_search">
+				<!-- 검색기능 -->
 				<form id="searchForm" action="/notice/noticeList" method="GET">
 					<select name="type" class="notice_search_select">
 						<option value=""
@@ -109,51 +110,60 @@
 							<c:out value="${pageMaker.cri.type eq 'W'?'selected':''}"/>>작성자</option>
 						<option value="TC"
 							<c:out value="${pageMaker.cri.type eq 'TC'?'selected':''}"/>>제목or내용</option>
-					</select> 
-			
-					<input type="text" name="keyword" class="notice_search_text" value="<c:out value="${pageMaker.cri.keyword }"/>" />
+					</select> <input type="text" name="keyword" class="notice_search_text"
+						value="<c:out value="${pageMaker.cri.keyword }"/>" />
 
 					<!-- 검색후 페이징처리 -->
-					<input type="hidden" name="pageNum" value="<c:out value="${pageMaker.cri.pageNum }"/>"> 
-					<input type="hidden" name="amount" value="<c:out value="${pageMaker.cri.amount }"/>">
+					<input type="hidden" name="pageNum"
+						value="<c:out value="${pageMaker.cri.pageNum }"/>"> <input
+						type="hidden" name="amount"
+						value="<c:out value="${pageMaker.cri.amount }"/>">
 					<button class="notice_search_btn">검색</button>
-					
-				</form>
-			</div><!-- 검색기능END -->
-			
 
-			
-			<div class="pagenate"><!-- 페이징 -->
+				</form>
+			</div>
+			<!-- 검색기능END -->
+
+
+
+			<div class="pagenate">
+				<!-- 페이징 -->
 				<div>
 					<c:if test="${pageMaker.prev}">
 						<!-- 이전페이지이동 -->
-						<a href="${action}?pageNum=${pageMaker.startPage-1}&amount=${pageMaker.cri.amount }&type=${pageMaker.cri.type }&keyword=${pageMaker.cri.keyword }">이전으로</a>
+						<a
+							href="${action}?pageNum=${pageMaker.startPage-1}&amount=${pageMaker.cri.amount }&type=${pageMaker.cri.type }&keyword=${pageMaker.cri.keyword }">이전으로</a>
 					</c:if>
 				</div>
 				<div>
-					<c:forEach begin="${pageMaker.startPage}" end="${pageMaker.endPage}"
-						step="1" var="num">
-						<li class="paginate_btn" value="${pageMaker.cri.pageNum == num ? 'active':''} ">
-						<a href="${action}?pageNum=${num }">${num }</a></li>
+					<c:forEach begin="${pageMaker.startPage}"
+						end="${pageMaker.endPage}" step="1" var="num">
+						<li class="paginate_btn"
+							value="${pageMaker.cri.pageNum == num ? 'active':''} "><a
+							href="${action}?pageNum=${num }">${num }</a></li>
 					</c:forEach>
 				</div>
 				<div>
 					<c:if test="${pageMaker.next}">
 						<!-- 다음페이지 이동 -->
-						<a href="${action}?pageNum=${pageMaker.endPage+1}&amount=${pageMaker.cri.amount }&type=${pageMaker.cri.type }&keyword=${pageMaker.cri.keyword }">다음으로</a>
+						<a
+							href="${action}?pageNum=${pageMaker.endPage+1}&amount=${pageMaker.cri.amount }&type=${pageMaker.cri.type }&keyword=${pageMaker.cri.keyword }">다음으로</a>
 					</c:if>
 				</div>
-			</div><!-- 페이징END -->
-			
+			</div>
+			<!-- 페이징END -->
+
 		</div>
 
 
 		<!-- 검색이후 검색결과를 삭제, 등록, 수정 , 조회 후에도 그대로 유지하려면 URI에 searchType, keyword를 달고 다녀야한다-->
 		<form id="actionForm" action="/notice/noticeList" method="GET">
-			<input type="hidden" name="pageNum" value="${pageMaker.cri.pageNum }"> 
-			<input type="hidden" name="amount" value="${pageMaker.cri.amount }"> 
-			<input type="hidden" name="type" value="<c:out value="${pageMaker.cri.type }"/>"> 
-			<input type="hidden" name="keyword" value="<c:out value="${pageMaker.cri.keyword }"/>">
+			<input type="hidden" name="pageNum" value="${pageMaker.cri.pageNum }">
+			<input type="hidden" name="amount" value="${pageMaker.cri.amount }">
+			<input type="hidden" name="type"
+				value="<c:out value="${pageMaker.cri.type }"/>"> <input
+				type="hidden" name="keyword"
+				value="<c:out value="${pageMaker.cri.keyword }"/>">
 		</form>
 
 	</div>

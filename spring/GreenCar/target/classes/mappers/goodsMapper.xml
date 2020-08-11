@@ -5,8 +5,10 @@
 <mapper namespace="goodsMapper">
 	<!-- 상품 목록 조회 -->
 	<select id="listGoods"
-		resultType="com.greencar.vo.goods.GoodsVO">
-		select GOODS_NO
+		resultType="com.greencar.vo.goods.GoodsVO"
+		parameterType="com.greencar.vo.goods.GoodsVO">
+		SELECT
+		GOODS_NO
 		,GOODS_NAME
 		,GOODS_SIZE
 		,GOODS_TYPE
@@ -15,9 +17,30 @@
 		,GOODS_FUEL
 		,BRAND_CODE
 		,GOODS_CODE
-		from
-		goods
-		order by goods_no DESC
+		FROM
+		GOODS
+		WHERE
+		BRAND_CODE = #{brandCode}
+		<if test="goodsSize!=null">
+			AND
+			GOODS_SIZE = #{goodsSize}
+		</if>
+		<if test="goodsType!=null">
+			AND
+			GOODS_TYPE = #{goodsType}
+		</if>
+		<if test="goodsPrice!=''">
+			AND
+		        <![CDATA[ GOODS_PRICE <= #{goodsPrice} ]]>
+		</if>
+		<if test="goodsEfficient!=''">
+			AND
+			GOODS_EFFICIENT = #{goodsEfficient}
+		</if>
+		<if test="goodsFuel!=null">
+			AND
+			GOODS_FUEL = #{goodsFuel}
+		</if>
 	</select>
 
 	<!-- 상품 조회 -->

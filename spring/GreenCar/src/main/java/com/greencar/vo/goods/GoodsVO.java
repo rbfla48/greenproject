@@ -7,7 +7,7 @@ public class GoodsVO {
 	private String goodsSize;
 	private String goodsType;
 	private int goodsPrice;
-	private String goodsEfficient;
+	private int goodsEfficient;
 	private String goodsFuel;
 	private int goodsCode;
 	private int brandCode;
@@ -41,10 +41,10 @@ public class GoodsVO {
 	public void setGoodsPrice(int goodsPrice) {
 		this.goodsPrice = goodsPrice;
 	}
-	public String getGoodsEfficient() {
+	public int getGoodsEfficient() {
 		return goodsEfficient;
 	}
-	public void setGoodsEfficient(String goodsEfficient) {
+	public void setGoodsEfficient(int goodsEfficient) {
 		this.goodsEfficient = goodsEfficient;
 	}
 	public String getGoodsFuel() {
@@ -71,4 +71,6 @@ public class GoodsVO {
 				"GoodsVO [goodsNo=%s, goodsName=%s, goodsSize=%s, goodsType=%s, goodsPrice=%s, goodsEfficient=%s, goodsFuel=%s, goodsCode=%s, brandCode=%s]",
 				goodsNo, goodsName, goodsSize, goodsType, goodsPrice, goodsEfficient, goodsFuel, goodsCode, brandCode);
 	}
+	
+	
 }

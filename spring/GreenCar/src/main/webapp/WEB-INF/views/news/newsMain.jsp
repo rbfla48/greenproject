@@ -39,7 +39,7 @@
 		<nav>
 			<!--logo 시작-->
 			<div id="logo">
-				<img src="<spring:url value='/resources/image/logo/gclogo_.png'/>"
+				<img src="<spring:url value='/resources/image/logo/gclogo.png'/>"
 					alt="greencar_logo">
 			</div>
 			<!--logo 끝-->
