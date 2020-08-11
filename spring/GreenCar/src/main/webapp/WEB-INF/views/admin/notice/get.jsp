@@ -7,6 +7,12 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<!-- spring security post 전송시 403 문제 패치 -->
+<meta id="_csrf" name="_csrf" content="${_csrf.token}"/>
+<!-- default header name is X-CSRF-TOKEN -->
+<meta id="_csrf_header" name="_csrf_header" content="${_csrf.headerName}"/>
+
 <title>GreenCar Home</title>
 <link rel="stylesheet" href="/resources/css/menu.css" />
 <!--상단header-->
@@ -94,9 +100,8 @@
 				<input type="submit" value="수정하기">
 			</form>
 
-			<form role="form"
-				action='/admin/notice/remove?noticeNo=<c:out value="${notice.noticeNo }"/>'
-				method="POST">
+			<form role="form" action="/admin/notice/remove"method="GET">
+				<input type="hidden" name="noticeNo" value="${notice.noticeNo }">
 				<input type="submit" value="삭제하기">
 			</form>
 

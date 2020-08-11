@@ -64,8 +64,8 @@
 	<insert id="insert">
 		INSERT INTO notice (notice_no, notice_title, notice_text, notice_writer,
 		upload_date, notice_view)
-		VALUES (NOTICE_SEQ.NEXTVAL, #{notice_title}, #{notice_text},
-		#{notice_writer}, sysdate, 0)
+		VALUES (NOTICE_SEQ.NEXTVAL, #{noticeTitle}, #{noticeText},
+		#{noticeWriter}, sysdate, 0)
 	</insert>
 
 
@@ -77,30 +77,29 @@
 
 		insert into notice (notice_no, notice_title, notice_text,
 		notice_writer, upload_date, notice_view)
-		values (#{notice_no},
-		#{notice_title}, #{notice_text}, #{notice_writer}, sysdate, 0)
+		values (#{noticeNo},
+		#{noticeTitle}, #{noticeText}, #{noticeWriter}, sysdate, 0)
 	</insert>
 
 
 	<select id="read" resultType="com.greencar.vo.notice.NoticeVO">
 		select * from notice where
-		notice_no = #{notice_no}
+		notice_no = #{noticeNo}
 	</select>
 
 
 	<delete id="delete">
-		delete from notice where notice_no = #{notice_no}
+		delete from notice where notice_no = #{noticeNo}
 	</delete>
 
 
 	<update id="update">
-		update notice set
-		notice_title= #{notice_title},
-		notice_text = #{notice_text},
-		notice_writer=#{notice_writer},
+		UPDATE notice SET
+		notice_title = #{noticeTitle},
+		notice_text = #{noticeText},
+		notice_writer = #{noticeWriter},
 		upload_date = sysdate
-		where NOTICE_NO =
-		#{notice_no}
+		WHERE notice_no = #{noticeNo}
 	</update>
 
 	<!-- 조회수 증가 -->
