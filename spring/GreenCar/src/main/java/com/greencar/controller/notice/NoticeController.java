@@ -4,6 +4,7 @@ import java.security.Principal;
 import java.util.List;
 
 import javax.inject.Inject;
+import javax.servlet.http.HttpServletRequest;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -89,13 +90,18 @@ public class NoticeController {
 	
 	//댓글삭제/get?not
 	@PostMapping("/delComment")
-	public String deleteComment(NoticeVO noticeVO, NoticeCommentVO comment, RedirectAttributes rttr, Criteria cri) {
+	public String deleteComment(HttpServletRequest request, NoticeVO noticeVO, NoticeCommentVO comment, RedirectAttributes rttr, Criteria cri) {
 		log.info("delete Commen.... : "+ comment);
 		commService.deleteComment(comment);
 		rttr.addFlashAttribute("notice", noticeVO.getNoticeNo());
 		
+		//referer에 URL값 저장 
+		String referer = (String)request.getHeader("REFERER");
 		//댓글 삭제시 commService.getComment()에서 noticeNo를 0으로 가져옴
-		return "redirect:/notice/get?noticeNo="+comment.getNoticeNo();
+		/*return "redirect:/notice/get?noticeNo="+comment.getNoticeNo();*/
+		
+		//삭제후 이전페이지 이동
+		return "redirect:/"+referer;
 	}
 	 
 }
