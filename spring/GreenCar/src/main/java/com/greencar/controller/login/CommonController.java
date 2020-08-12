@@ -1,5 +1,8 @@
 package com.greencar.controller.login;
 
+import javax.servlet.http.HttpSession;
+
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.Authentication;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -11,6 +14,7 @@ import lombok.extern.log4j.Log4j;
 @Log4j
 @Controller
 public class CommonController {
+	
 	
 	//접근권한 에러설정
 	@GetMapping("/accessError")
@@ -36,8 +40,9 @@ public class CommonController {
 	}
 	
 	@GetMapping("/login/logout")
-	public String logoutGET(RedirectAttributes rttr) {
+	public String logout(HttpSession session) {
 		log.info("logout.....");
+		session.invalidate();
 		
 		return "redirect:/";
 	}

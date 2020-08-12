@@ -26,11 +26,25 @@ public class LoginSuccessHandler implements AuthenticationSuccessHandler{
 	public void onAuthenticationSuccess(HttpServletRequest request, HttpServletResponse response,
 			Authentication auth) throws IOException, ServletException {
 
-		HttpSession session = request.getSession();
+		log.info("Login success...//");
 		
-		session.setAttribute("greeting", auth.getName());
+		List<String> roleNames = new ArrayList<>();
 		
-		response.sendRedirect("/main");
+		auth.getAuthorities().forEach(authority->{roleNames.add(authority.getAuthority());
+		
+		});
+		log.info("ROLE_NAME : " + roleNames);
+		
+		if(roleNames.contains("ROLE_ADMIN")) {
+			response.sendRedirect("/admin/notice/noticeList");
+			return;
+		}
+		
+		if(roleNames.contains("ROLE_MEMBER")) {
+			response.sendRedirect("/");
+			return;
+		}
+		response.sendRedirect("/");
 	}
 
 }

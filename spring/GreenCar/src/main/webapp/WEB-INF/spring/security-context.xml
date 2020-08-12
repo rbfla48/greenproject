@@ -41,9 +41,9 @@
 		<security:logout logout-url="/login/logout" invalidate-session="true" />
 		
 		<!-- 세션설정(중복로그인 방지) -->
-		<security:session-management invalid-session-url="/login/customLogin"><!--세션만료시 이동할 경로-->
-			<security:concurrency-control max-sessions="1" expired-url="/accessError"/><!--허용 세션갯수 / 중복로그인시 이동할 페이지 -->
-		</security:session-management>
+		<!-- <security:session-management invalid-session-url="/login/customLogin">세션만료시 이동할 경로
+			<security:concurrency-control max-sessions="1" expired-url="/accessError"/>허용 세션갯수 / 중복로그인시 이동할 페이지
+		</security:session-management> -->
 		
 		<!-- 로그인 유지시간-->
 		<security:remember-me data-source-ref="dataSource" token-validity-seconds="3600"/><!-- 세션 1시간유지 -->
@@ -65,7 +65,7 @@
 			<!-- 기존테이블에서 쿼리로 호출 -->
 			<security:jdbc-user-service
 				data-source-ref="dataSource"
-				users-by-username-query="SELECT * FROM user_info WHERE user_email = ?"
+				users-by-username-query="SELECT * FROM user_view WHERE user_email = ?"
 
 				authorities-by-username-query="SELECT * FROM auth WHERE user_email = ?" />
 
