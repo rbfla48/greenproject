@@ -2,6 +2,7 @@
     pageEncoding="UTF-8"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <%@ taglib prefix="spring" uri="http://www.springframework.org/tags" %>
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>
 <!DOCTYPE html>
 <html lang="ko">
 <head>
@@ -173,8 +174,8 @@
         <div id="car_detail_search">차량 상세검색</div>
         <div id="car_detail_search_box">
             <!--브랜드 시작-->
-            <div id="brand_box">
-                <div id="brand_text">브랜드 <input type="text" id="brand">  / 브랜드는 꼭 선택해야 합니다. </div>
+            <div id="boxs">
+                <div id="texts">브랜드 <input type="text" id="brand">  / 브랜드는 꼭 선택해야 합니다. </div>
                 <hr>
                 <div id="brand_button">
                     <button id="audi" title="1">
@@ -223,11 +224,10 @@
             <!--브랜드 끝-->
             
             <!--차종 시작-->
-            <div id="size_box">
-                <div id="size_text">차종 <input type="text" id="size"></div>
+            <div id="boxs">
+                <div id="texts">차종 <input type="text" id="size"></div>
                 <hr>
-                <div id="size_button">
-                    <button id="SUV" title="SUV">SUV</button>
+                <div id="size_button" class="buttons">
                     <button id="경형" title="경형">경형</button>
                     <button id="소형" title="소형">소형</button>
                     <button id="중형" title="중형">중형</button>
@@ -241,13 +241,12 @@
             <!--차종 끝-->
 
             <!--분류 시작-->
-            <div id="type_box">
-                <div id="type_text">분류 <input type="text" id="type"></div>
+            <div id="boxs">
+                <div id="texts">분류 <input type="text" id="type"></div>
                 <hr>
-                <div id="type_button">
+                <div id="type_button" class="buttons">
                     <button id="경차" title="경차">경차</button>
                     <button id="세단" title="세단">세단</button>
-                    <button id="대형" title="대형">대형</button>
                     <button id="쿠페" title="쿠페">쿠페</button>
                     <button id="SUV" title="SUV">SUV</button>
                     <button id="해치백" title="해치백">해치백</button>
@@ -260,10 +259,10 @@
             <!--분류 끝-->
 
             <!--가격 시작-->
-            <div id="price_box">
-                <div id="price_text">가격 <input type="text" id="price">(이하의 값을 가진 차량이 검색됩니다.)</div>
+            <div id="boxs">
+                <div id="texts">가격 <input type="text" id="price">(이하의 값을 가진 차량이 검색됩니다.)</div>
                 <hr>
-                <div id="price_button">
+                <div id="price_button" class="buttons">
                     <button id="2000만원" title="20000000">2000만원</button>
                     <button id="3000만원" title="30000000">3000만원</button>
                     <button id="5000만원" title="50000000">5000만원</button>
@@ -271,42 +270,42 @@
                     <button id="7000만원" title="70000000">7000만원</button>
                     <button id="8000만원" title="80000000">8000만원</button>
                     <button id="9000만원" title="90000000">9000만원</button>
-                    <button id="10000만원" title="100000000">1억</button>
-                    <button id="15000만원" title="150000000">1억5천</button>
-                    <button id="20000만원" title="200000000">2억</button>
-                    <button id="30000만원" title="300000000">3억</button>
-                    <button id="40000만원" title="400000000">4억</button>
-                    <button id="50000만원" title="500000000">5억</button>
-                    <button id="60000만원" title="600000000">6억</button>
+                    <button id="10000만원" title="100000000">1억원</button>
+                    <button id="15000만원" title="150000000">1억5천만원</button>
+                    <button id="20000만원" title="200000000">2억만원</button>
+                    <button id="30000만원" title="300000000">3억만원</button>
+                    <button id="40000만원" title="400000000">4억만원</button>
+                    <button id="50000만원" title="500000000">5억만원</button>
+                    <button id="60000만원" title="600000000">6억만원</button>
                 </div><hr>
             </div>
             <!--가격 끝-->
             
             <!--연비 시작-->
-            <div id="efficient_box">
-                <div id="efficient_text">연비<input type="text" id="efficient"></div>
+            <div id="boxs">
+                <div id="texts">연비<input type="text" id="efficient"></div>
                 <hr>
-                <div id="efficient_button">
-                    <button id="5grade" title="5">5</button>
-                    <button id="4grade" title="4">4</button>
-                    <button id="3grade" title="3">3</button>
-                    <button id="2grade" title="2">2</button>
-                    <button id="1grade" title="1">1</button>
+                <div id="efficient_button" class="buttons">
+                    <button id="5grade" title="5">5등급</button>
+                    <button id="4grade" title="4">4등급</button>
+                    <button id="3grade" title="3">3등급</button>
+                    <button id="2grade" title="2">2등급</button>
+                    <button id="1grade" title="1">1등급</button>
                 </div><hr>
             </div>
             <!--연비 끝-->
 
             <!--유종 시작-->
-            <div id="fuel_box">
-                <div id="fuel_text">유종<input type="text" id="fuel"></div>
+            <div id="boxs">
+                <div id="texts">유종<input type="text" id="fuel"></div>
                 <hr>
-                <div id="fuel_button">
+                <div id="fuel_button" class="buttons">
                     <button id="가솔린" title="가솔린">가솔린</button>
                     <button id="경유" title="경유">경유</button>
                     <button id="디젤" title="디젤">디젤</button>
                     <button id="전기" title="전기">전기</button>
                     <button id="휘발유" title="휘발유">휘발유</button>
-                </div><hr>
+                </div>
             </div>
             <!-- 유종 끝-->
         </div>
@@ -317,22 +316,22 @@
         <!-- 검색 후 리스트 -->
         
     <c:forEach items="${detailList}"  var = "list">
-    <div id="detail_list">
+    <div id="detail_list" onclick="location.href='${contextPath}/goods/goodsDetailView?goodsNo=${list.goodsNo}';">
         <div id="car_pic">
         	<img src="/resources/image/goodsMain/${list.goodsNo}.png">
         </div>
         <div id="car_content1">
             <h2>차량명 : <c:out value="${list.goodsName}"/></h2><br>
-            <h4>브랜드 : <c:out value="${list.brandCode}"/></h4>
             <h4>차종 : <c:out value="${list.goodsSize}"/></h4>
             <h4>타입 : <c:out value="${list.goodsType}"/></h4>
-            
             
         </div>
         <div id="car_content2">
             <h4>연비 : <c:out value="${list.goodsEfficient}"/></h4>
             <h4>연료 : <c:out value="${list.goodsFuel}"/></h4><br>
-            <h1>가격 : <c:out value="${list.goodsPrice}"/></h1>
+            <h1>가격 : ￦<fmt:formatNumber
+							value="${(list.goodsPrice)}" type="currency"
+							pattern="###,###" /></h1>
         </div>
         </div>
         </c:forEach>
