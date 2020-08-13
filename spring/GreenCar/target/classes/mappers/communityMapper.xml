@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper 
+		PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" 
+		"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+		
+<!-- mapper namespace ==> mapper인터페이스 경로로 작성 -->
+<mapper namespace="mappers.communityMapper">
+	
+	<!-- 전체목록조회(페이징X) -->
+	<select id="getList" resultType="com.greencar.vo.community.CommunityVO">
+	<![CDATA[
+	select * from community where commu_no > 0 order by commu_no desc
+	]]>
+	</select>
+		
+	<!--검색&페이징기능 sql -->
+	<sql id="criteria">
+		<trim prefix="(" suffix=") AND " prefixOverrides="OR">
+			<foreach item='type' collection="typeArr">
+				<trim prefix="OR">
+					<choose>
+						<when test="type == 'T'.toString()">
+							commuTitle like '%'||#{keyword}||'%'
+						</when>
+						<when test="type == 'C'.toString()">
+							commuText like '%'||#{keyword}||'%'
+						</when>
+						<when test="type == 'W'.toString()">
+							commuWriter like '%'||#{keyword}||'%'
+						</when>
+					</choose>
+				</trim>
+			</foreach>
+		</trim>
+	</sql>
+	
+	<select id="getListWithPage" resultType="com.greencar.vo.community.CommunityVO">
+		<![CDATA[
+		SELECT * FROM(
+		    SELECT rownum rn, commu_no,commu_tag,commu_title,commu_writer,commu_text,commu_date,commu_view  
+		    FROM (
+		    	SELECT * FROM community ORDER BY commu_no DESC)
+		    WHERE 
+		]]>
+		<include refid="criteria"></include>
+		<![CDATA[
+			rownum <= #{pageNum} * #{amount})
+		WHERE rn > (#{pageNum} -1) * #{amount} 
+		]]> 
+	</select>
+	
+	<!-- 페이징할 전체데이터 갯수 카운트 -->
+	<select id="getTotalCount" resultType="int">
+		<![CDATA[
+		SELECT COUNT(*) FROM community WHERE
+		]]>  
+		<include refid="criteria"></include>
+		<![CDATA[
+		commu_no > 0
+		]]>
+	</select>
+	
+	<insert id="insert">
+	INSERT INTO community (commu_no,commu_tag,commu_title,commu_writer,commu_text,commu_date,commu_view)
+	VALUES (NOTICE_SEQ.NEXTVAL, #{commuNo},#{commuTag},#{commuTitle},#{commuWriter}, #{commuText},  sysdate, 0)
+	</insert>
+	
+	
+	<insert id="insertSelectKey">
+		<selectKey keyProperty="commue_no" order="BEFORE" resultType="int">
+			select commu_seq.nextval from dual
+		</selectKey>
+		
+		insert into community (commu_no,commu_tag,commu_title,commu_writer,commu_text,commu_date,commu_view)
+		values (#{commuNo}, #{commuTag}, #{#{commuTitle},#{commuWriter}, #{commuText},  sysdate, 0)
+	</insert>
+	
+	
+	<select id="read" resultType="com.greencar.vo.community.CommunityVO">
+		select * from community where commu_no = #{commNo}
+	</select>
+	
+	
+	<delete id="delete">
+		delete from community where commu_no = #{commNo}
+	</delete>
+	
+	
+	<update id="update">
+		update community set 
+		commu_title= #{commuTitle},
+		commu_text = #{commuText},
+		commu_writer=#{commuWriter},
+		commu_date = sysdate
+		where COMMUNITY_NO = #{commuNo}
+	</update>
+	
+</mapper>

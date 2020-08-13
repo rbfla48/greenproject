@@ -7,6 +7,7 @@ import javax.inject.Inject;
 import org.springframework.stereotype.Service;
 
 import com.greencar.dao.goods.GoodsDAO;
+import com.greencar.vo.community.Criteria;
 import com.greencar.vo.goods.GoodsVO;
 import com.greencar.vo.option.OptionVO;
 import com.greencar.vo.option.OptionVO2;
@@ -54,4 +55,42 @@ public class GoodsServiceImpl implements GoodsService {
 	public OptionVO3 optionDetail3(int optionNo3) throws Exception {
 		return dao.optionDetail3(optionNo3);
 	} // 옵션 조회
+	
+	
+	@Override
+	public List<GoodsVO> getList() {
+		
+		return dao.getList();
+	}
+
+	@Override
+	public GoodsVO get(int GoodsNo) {
+	
+		return dao.read(GoodsNo);
+	}
+
+
+	@Override
+	public List<GoodsVO> getListWithPage(Criteria cri) {
+
+		return dao.getListWithPage(cri);
+	}
+
+	@Override
+	public int getTotalCount(Criteria cri) {
+	
+		return dao.getTotalCount(cri);
+	}
+
+	@Override
+	public List<GoodsVO> listByBrand(int brandCode) {
+		
+		return dao.listByBrand(brandCode);
+	}
+	
+	@Override
+	public List<GoodsVO> listByType(String goodsType) {
+		
+		return dao.listByType(goodsType);
+	}
 }

@@ -1,0 +1,137 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+	pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+<%@ taglib prefix="spring" uri="http://www.springframework.org/tags"%>
+<!--  <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>>
+<<c:set var="contextPath" value="${pageContext.request.contextPath}" /> -->
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>GreenCar Home</title>
+<link rel="stylesheet" href="/resources/css/menu.css">
+<!--상단header-->
+<link rel="stylesheet" href="/resources/css/mypage_mywrite.css">
+<link rel="stylesheet" href="/resources/css/footer.css">
+<!--하단footer-->
+<link rel="stylesheet"
+	href="https://fonts.googleapis.com/icon?family=Material+Icons">
+<!--구글머터리얼-->
+</head>
+<body>
+	<script src="//code.jquery.com/jquery-1.11.0.min.js"></script>
+	<jsp:include page="/resources/jsp/menu.jsp" flush="false" />
+	
+	<script src="/resources/js/memberUpdate.js" type="text/javascript"></script>
+	<!-------------------------------메뉴바END-------------------------------->
+
+	<section><!--마이 페이지 시작-->
+		
+		<div class="wrap">
+			<!--마이페이지 전체영역-->
+			<aside class="mypage_category">
+				<ul>
+					마이페이지
+				</ul>
+				<ul>
+					<button id="function"
+						onclick="location.href='/mypage/memberUpdateView?='">회원정보
+						수정</button>
+				</ul>
+				<ul>
+					1:1 문의내역
+					<span id="new"> new</span>
+				</ul>
+				<ul>
+					내가쓴 글 보기
+					<span id="how_much"> 5</span>
+				</ul>
+				<ul>회원탈퇴
+				</ul>
+			</aside>
+
+
+			<!--내가 쓴 글 시작-->
+			<table class="board">
+				<thead>
+					<tr class="board_head">
+						<th>No.</th>
+						<th>말머리</th>
+						<th class="subject">제목</th>
+						<th>작성일</th>
+						<th>조회수</th>
+					</tr>
+				</thead>
+				<c:forEach items="${list}" var="mypage">
+					<tr>
+						<!-- 글번호 -->
+						<td class="head_section"><c:out value="${mypage.commuNo}" />
+							<a href="/community/community_read?commuNo=${mypage.commuNo}"></a>
+						</td>
+						<!-- 글태그(말머리) -->
+						<td class="head_section"><c:out value="${mypage.commuTag}" /></td>
+						<!-- 글제목 -->
+						<td class="tit">
+						<a href="/community/community_read?commuNo=${mypage.commuNo}"><c:out value="${mypage.commuTitle}" /></a></td>
+						<!-- 게시일 -->
+						<td><fmt:formatDate pattern="yyyy-MM-dd"
+								value="${mypage.commuDate}" /></td>
+						<!-- 조회수 -->
+						<td><c:out value="${mypage.commuView}" /></td>
+
+					</tr>
+				</c:forEach>
+			</table>
+			
+			
+			<!-- 페이징 설정 -->
+			<form id="actionForm" action="/community/community_main" method="GET">
+					<input type="hidden" name="pageNum" value="${pageMaker.cri.pageNum}">
+	        		<input type="hidden" name="amount" value="${pageMaker.cri.amount}">
+	        		<input type="hidden" name="type" value="<c:out value="${pageMaker.cri.type}"/>">
+	        		<input type="hidden" name="keyword" value="<c:out value="${pageMaker.cri.keyword}"/>">
+	        	</form>
+	        	
+			</div>
+			<c:if test="${pageMaker.prev}"><!-- 이전페이지이동 -->
+			    <a href="${action}?pageNum=${pageMaker.startPage-1}&amount=${pageMaker.cri.amount}&type=${pageMaker.cri.type}&keyword=${pageMaker.cri.keyword}">이전으로</a>
+			</c:if>
+			
+			<c:forEach begin="${pageMaker.startPage}" end="${pageMaker.endPage}" step="1" var="num">
+			    <li class="paginate_btn" value="${pageMaker.cri.pageNum == num ? 'active':''} ">
+			    	<a href="${num}">${num}</a>
+			    </li>	  
+			</c:forEach>
+						
+			<c:if test="${pageMaker.next}"><!-- 다음페이지 이동 -->
+			    <a href="${action}?pageNum=${pageMaker.endPage+1}&amount=${pageMaker.cri.amount}&type=${pageMaker.cri.type}&keyword=${pageMaker.cri.keyword}">다음으로</a>
+			</c:if>
+			</div>
+			
+	</section>
+
+
+
+
+
+
+
+
+	<!-------------------------------footer시작------------------------------->
+	<!--하단 회사정보영역-->
+	<footer id="footer">
+		<!--상단회사명-->
+		<br>
+		<p>
+			<b>GREENCAR</b>
+		</p>
+		<hr>
+		<!--하단사업자정보-->
+		<p>사업자 김붕붕 | 사업자번호 211-31-64480 | 사업자 주소 : 서울특별시 관악구 청룡중앙길 42-1 |
+			02 - 1234 - 5678</p>
+		<p>COPYRIGHT © GREEN COMPANY. ALL RIGHTS RESERVED.</p>
+		<!--하단영역end-->
+	</footer>
+	<script src="../js/such_id.js"></script>
+	<!--메뉴바END-->
