@@ -27,7 +27,7 @@
 				<sec:authorize access="isAuthenticated()">
 					<ul>
 						<li id="logout"><a href="/login/logout">로그아웃</a></li>
-						<li id="mypage"><a href="#">마이페이지</a></li>
+						<li id="mypage"><a href="/mypage/mypageMain">마이페이지</a></li>
 					</ul>
 				</sec:authorize>
 			</div><!--화면 상단 로그인정보 END-->

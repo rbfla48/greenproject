@@ -12,8 +12,8 @@ public class MemberVO {
 	private String userEmail;
 	private String userPw;
 	private String userNick;
-	private int userBirth;
-	private int userPh;
+	private String userBirth;
+	private String userPh;
 	private String userAddress;
 	private String userAddressDetail;
 	private Date userJoinDate;

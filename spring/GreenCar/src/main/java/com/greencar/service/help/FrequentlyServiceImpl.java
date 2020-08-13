@@ -22,7 +22,6 @@ public class FrequentlyServiceImpl implements FrequentlyService {
 
 	@Override
 	public List<FrequentlyVO> getList() {
-		// TODO Auto-generated method stub
 		log.info("help");
 		return dao.getList();
 	}

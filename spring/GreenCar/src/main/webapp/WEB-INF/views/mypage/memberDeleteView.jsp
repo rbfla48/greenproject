@@ -2,6 +2,7 @@
 	pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <%@taglib prefix="spring" uri="http://www.springframework.org/tags"%>
+<%@ taglib prefix="sec" uri="http://www.springframework.org/security/tags"%>
 <c:set var="contextPath" value="${pageContext.request.contextPath}" />
 <html>
 <html lang="ko">
@@ -15,45 +16,10 @@
     <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons"><!--구글머터리얼-->
 </head>
 <body>
-    <div><!--메뉴바-->
-        <header>
-            <!--화면 상단 마이페이지, 장바구니 시작-->
-            <div id="top">
-                <ul>
-                    <li id="mypage"><a href="#">마이페이지</a></li>
-                    <li id="cart"><a href="#">장바구니</a></li>
-                </ul>
-            </div>
-            <!--화면 상단 마이페이지, 장바구니 끝-->
 
-            <hr id="hl"> <!--top, nav 분리 줄-->
-        </header>
-            <nav>
-                <!--logo 시작-->
-                <div id="logo">
-                    <img src="../image/logo/gclogo_.png" alt="greencar_logo">
-                </div>
-                <!--logo 끝-->
-
-                <!-- 네비게이션 바 시작-->
-                <div id="middle">
-                    <ul>
-                        
-                        <li id="notice"> <a href="#">공지사항</a></li>
-                        <li id="vl">|</li>
-                        <li id="products"> <a href="#">상품페이지</a></li>
-                        <li id="vl">|</li>
-                        <li id="community" > <a href="#">커뮤니티</a></li>
-                        <li id="vl">|</li>
-                        <li id="newsandissue" > <a href="#">뉴스&이슈</a></li>
-                        <li id="vl">|</li>
-                        <li id="user_advice" > <a href="#">고객지원</a></li>
-                        
-                    </ul>
-                </div>
-                <!--네비게이션 바 끝-->
-            </nav>
-    </div>
+    <script src="//code.jquery.com/jquery-1.11.0.min.js"></script>
+	<jsp:include page="/resources/jsp/menu.jsp" flush="false" />
+	
     <!-------------------------------메뉴바END-------------------------------->
   
   <script type="text/javascript">
@@ -71,20 +37,32 @@
 <!--마이 페이지 시작-->
     
 <div class="wrap"><!--마이페이지 전체영역-->
-    <aside class="mypage_category">   
-        <ul>마이페이지</ul>
-        <ul>회원정보 수정</ul>
-        <ul>1:1 문의내역<span id="new"> new</span></ul>
-        <ul>내가쓴 글 보기<span id="how_much"> 5</span></ul>
-        <ul>회원탈퇴</ul>     
-    </aside>  
+    <aside class="mypage_category">
+				<ul>
+					마이페이지
+				</ul>
+				<ul>
+					<a href="/mypage/memberUpdateView">회원정보 수정</a>
+				</ul>
+				<ul>
+					<a href="/mypage/QnAList">1:1 문의내역</a>
+					<span id="new">new</span>
+				</ul>
+				<ul>
+					<a href="/mypage/mypageMywrite">내가쓴 글 보기</a>
+					<span id="how_much"></span>
+				</ul>
+				<ul>
+					<a href="/mypage/memberDeleteView">회원탈퇴</a>
+				</ul>
+			</aside>
 
     <div class="section_wrap"><!--탈퇴처리영역-->
 
         <div class="section_img_wrap"><!--GC로고이미지영역-->
             <img src="/resources/image/logo/gclogo_.png">
         </div>
-
+		<h2><sec:authentication property="principal.username"/></h2>
         <div class="input_password"><!--비밀번호입력텍스트-->
             <b>탈퇴하려면 비밀번호를 입력하세요.</b>
         </div>
@@ -105,16 +83,7 @@
     </div><!--탈퇴처리영역END-->
     </div><!--마이페이지 전체영역 END-->
     <!--마이 페이지 끝-->
+    
     <!-------------------------------footer시작------------------------------->
-    <!--하단 회사정보영역-->
-    <footer id="footer">
-        <!--상단회사명-->
-        <br>
-        <p><b>GREENCAR</b></p>
-        <hr>
-        <!--하단사업자정보-->
-        <p>사업자  김붕붕  |  사업자번호 211-31-64480 | 사업자 주소 : 서울특별시 관악구 청룡중앙길 42-1 | 02 - 1234 - 5678 </p>
-        <p>COPYRIGHT © GREEN COMPANY. ALL RIGHTS RESERVED.</p>
-        <!--하단영역end-->
-    </footer>
-<!--메뉴바END-->
+
+   <jsp:include page="/resources/jsp/footer.jsp" flush="false" />

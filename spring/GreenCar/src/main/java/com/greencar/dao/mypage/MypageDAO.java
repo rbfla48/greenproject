@@ -1,7 +1,9 @@
 package com.greencar.dao.mypage;
 
+import java.security.Principal;
 import java.util.List;
 
+import com.greencar.vo.admin.OnebyoneVO;
 import com.greencar.vo.community.CommunityVO;
 import com.greencar.vo.community.Criteria;
 import com.greencar.vo.mypage.MypageVO;
@@ -17,10 +19,10 @@ public interface MypageDAO {
 	public int getTotalCount(Criteria cri);
 	//내가 쓴 글 조회	
 	public MypageVO read(int commuNo);
+	
 	//1:1 문의 글쓰기 
-	public void insert(MypageVO mypageVO);
-	//insert문이 실행되고 생성된 pk값을 알아야하는경우
-	public void insertSelectKey(MypageVO mypageVO);
+	public void QnAinsert(OnebyoneVO oneVO);
+
 		
 	
 	

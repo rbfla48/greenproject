@@ -34,20 +34,22 @@
 		<div class="wrap">
 			<!--마이페이지 전체영역-->
 			<aside class="mypage_category">
-				<ul>마이페이지
+				<ul>
+					마이페이지
 				</ul>
 				<ul>
-					<button id="function" onclick="location.href='/mypage/memberUpdateView?='">회원정보 수정</button>
+					<a href="/mypage/memberUpdateView">회원정보 수정</a>
 				</ul>
 				<ul>
-					1:1 문의내역
-					<span id="new"> new</span>
+					<a href="/mypage/QnAList">1:1 문의내역</a>
+					<span id="new">new</span>
 				</ul>
 				<ul>
-					내가쓴 글 보기
-					<span id="how_much"> 5</span>
+					<a href="/mypage/mypageMywrite">내가쓴 글 보기</a>
+					<span id="how_much"></span>
 				</ul>
-				<ul>회원탈퇴
+				<ul>
+					<a href="/mypage/memberDeleteView">회원탈퇴</a>
 				</ul>
 			</aside>
 
@@ -55,7 +57,7 @@
 			<!--메인-->
 			<div class="mypage_wrap"><!-- 마이페이지 메인화면 -->
 				<div><!-- 웰컴이미지&회원정보 -->
-					<sec:authentication property="username"/><!-- 회원정보(이메일) -->
+					${user.userNick} 님 안녕하세요<!-- 회원정보(이메일) -->
 				</div>
 			</div>
 	</section>

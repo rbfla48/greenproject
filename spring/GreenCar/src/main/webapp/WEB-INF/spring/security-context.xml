@@ -14,10 +14,8 @@
 	<!-- <bean id="bcryptPasswordEncoder" class="org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder"></bean> -->
 	<!-- <bean id="customUserDetailService" class="com.greencar.security.CustomUserDetailService"></bean> -->
 	<!-- css,js,image 파일에 대해서는 시큐리티적용 해제 -->
-	<security:http pattern="/js/*" security="none" />
-	<security:http pattern="/css/*" security="none" />
-	<security:http pattern="/jsp/*" security="none" />
-	<security:http pattern="/image/*" security="none" />
+	<security:http pattern="/resources/**" security="none" />
+
 
 	<security:http auto-config="true" use-expressions="true">
 

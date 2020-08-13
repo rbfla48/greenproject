@@ -7,6 +7,12 @@
 <html>
 <head>
 <meta charset="UTF-8">
+
+<!-- spring security post 전송시 403 문제 패치 -->
+<meta id="_csrf" name="_csrf" content="${_csrf.token}"/>
+<!-- default header name is X-CSRF-TOKEN -->
+<meta id="_csrf_header" name="_csrf_header" content="${_csrf.headerName}"/>
+
 <title>join_form</title>
 <link rel="stylesheet"
 	href="<c:url value="/resources/css/join_form.css" />">
@@ -23,43 +29,23 @@
 <!-- js 경로 고정 -->
 <script> 
 const contextPath="${contextPath}";
-let emailFlag = false;
 let nickFlag = false;
-let passFlag = false;
 </script>
 
-<script type="text/javascript"
-	src="<c:url value="/resources/js/join_form.js"/>" charset="UTF-8"></script>
+<script type="text/javascript" src="<c:url value="/resources/js/join_form.js"/>" charset="UTF-8"></script>
 
 </head>
 
 <body>
-	<header>
-		<!--화면 상단 로그인, 회원가입 시작-->
-		<div id="top">
-			<ul>
-				<li id="login"><a href="#">로그인</a></li>
-				<li id="join_form"><a href="#">회원가입</a></li>
-			</ul>
-		</div>
-		<!--화면 상단 로그인, 회원가입 끝-->
-		<hr id="hl">
-		<!--top, nav 분리 줄-->
-	</header>
+	<script src="//code.jquery.com/jquery-1.11.0.min.js"></script>
 
-	<nav>
-		<!-- 네비게이션 바 시작-->
-		<div id="middle">
-			<ul>
-				<li id="notice"><a href="#">GREEN CAR</a></li>
-			</ul>
-		</div>
-		<!--네비게이션 바 끝-->
-	</nav>
+	<jsp:include page="/resources/jsp/menu.jsp" flush="false" />
 
 	<!-- -----------------------중앙 시작-------------------------------------------------------------------- -->
-	<form role="form" id="memberUpadte" class="join" name="memberUpadte" method="post"
-		action="${contextPath}/join/memberUpadte">
+	<form role="form" id="memberUpadte" class="join" name="memberUpadte" method="POST"
+		action="/mypage/memberUpdate">
+		<input type="hidden" name="${_csrf.parameterName }" value="${_csrf.token }" />
+		<h2>회원정보 수정</h2>
 		<!-- 테두리 시작 -->
 		<div id="wrap" class="wrap">
 			<!-- 표 시작-->
@@ -67,23 +53,20 @@ let passFlag = false;
 
 				<!-- 이메일 시작-->
 				<tr>
-					<td class="td1"><span class="required_1">*</span></td>
+					<td class="td1"><span class="required_1"></span></td>
 					<td class="td2">이메일</td>
 					<td class="td2"><input type="email" id="userEmail"
 						class="member_field" name="userEmail" size="35" maxlength="50" value="${user.userEmail}"
 						 readonly="readonly"></td>
-					<td class="td2"><button id="emailCheck" class="button_1"
-							name="emailCheck" value="N" onclick="fn_emailCheck()">중복
-							확인하기</button></td>
+					<td class="td2"></td>
 				</tr>
 				<!-- 이메일 끝-->
 				<!-- 비밀번호 시작 (비활성화)-->
 				<tr>
 					<td class="td1"><span class="required_1">*</span></td>
 					<td class="td2">비밀번호</td>
-					<td class="td2"><input type="password" id="userPw"
-						class="member_field" name="userPw" size="35" maxlength="20"
-						pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*\W).{8,20}" required></td>
+					<td class="td2">
+					<input type="password" value="${user.userPw}" class="member_field" readonly="readonly"></td>
 					<td class="td2"></td>
 				</tr>
 				<!-- 비밀번호 끝-->
@@ -91,33 +74,30 @@ let passFlag = false;
 				<tr>
 					<td class="td1"></td>
 					<td class="td2"></td>
-					<td class="td3"><span class="required_2">*
-							영문대소문자/특수문자/숫자 조합하여 8~20자로 입력.</span></td>
+					<td class="td3"><span class="required_2"></span></td>
 					<td class="td2"></td>
 				</tr>
 
 				<!-- 재확인 시작(비활성화) -->
 				<tr>
-					<td class="td1"><span class="required_1">*</span></td>
+					<td class="td1"><span class="required_1"></span></td>
 					<td class="td2">비밀번호 재확인</td>
-					<td class="td2"><input type="password" id="userPwRe"
-						class="member_field" name="userPwRe" maxlength="20"
-						size="35" required></td>
+					<td class="td2">
+					<input type="password" value="${user.userPw}" class="member_field" readonly="readonly">
+					</td>
 					<td class="td2"></td>
 				</tr>
 				<!-- 재확인 끝-->
 
 
 				<!-- 닉네임 시작 -->
+				<!-- 요청한 양식에 맟추라는 메세지 반복=> 중복점검 삭제 -->
 				<tr>
 					<td class="td1"><span class="required_1">*</span></td>
 					<td class="td2">닉네임</td>
 					<td class="td2"><input type="text" id="userNick"
-						class="member_field" name="userNick" maxlength="50" size="35"
-						pattern="[가-힣]{2,25}|[a-zA-Z]{2,50}|\s[a-zA-Z]{2,50}" required value="${user.userNick}"></td>
-					<td class="td2"><button id="nickCheck" class="button_1"
-							name="nickCheck" value="N" onclick="fn_nickCheck()">중복
-							확인하기</button></td>
+						class="member_field" name="userNick" maxlength="50" size="35"></td>
+					</td>
 				</tr>
 				<!-- 닉네임 끝-->
 
@@ -155,8 +135,9 @@ let passFlag = false;
 				<tr>
 					<td class="td1"></td>
 					<td class="td2">연락처</td>
-					<td class="td2"><input type="tel" id="userPh"
-						class="member_field" name="userPhone" maxlength="13" size="35" value="${user.userPh}"></td>
+					<td class="td2"><input type="text" id="userPh"
+						class="member_field" name="userPh" maxlength="13" size="35" 
+						readonly="readonly" value="0${user.userPh}"></td>
 					<td class="td2"></td>
 				</tr>
 				<!-- 연락처 끝-->
@@ -174,7 +155,8 @@ let passFlag = false;
 					<td class="td2">기본주소</td>
 					<td class="td2"><input type="text" id="userAddress"
 						class="member_field" name="userAddress" maxlength="200" size="35"
-						pattern="[\w | \W | 가-힣 | / | - | (  |  ) | ,]{2,200}" ></td>
+						pattern="[\w | \W | 가-힣 | / | - | (  |  ) | ,]{2,200}" 
+						value="${user.userAddress}"></td>
 					<td class="td2"><input type="button" id="address_button"
 						class="button_1" name="address_button" value="주소 검색하기"
 						onclick="searchPost()"></td>
@@ -187,7 +169,8 @@ let passFlag = false;
 					<td class="td2">상세주소</td>
 					<td class="td2"><input type="text" id="userAddressDetail"
 						class="member_field" name="userAddressDetail" maxlength="100"
-						size="35" pattern="[\w | \W | 가-힣 | / | - | (  |  ) | ,]{2,200}"></td>
+						size="35" pattern="[\w | \W | 가-힣 | / | - | (  |  ) | ,]{2,200}"
+						value="${user.userAddressDetail}"></td>
 					<td class="td2"></td>
 				</tr>
 				<!-- 상세주소 끝-->
@@ -199,14 +182,14 @@ let passFlag = false;
 		</div>
 		<!-- 테두리 끝-->
 
-		<!-- 가입 버튼 시작-->
+		<!-- 정보수정 버튼 시작-->
 		<div id="join_form_button" class="button">
-			<!-- 가입하기 -->
-			<button type="button" id="join_button" class="button_2"
-				name="join_button" onclick="fn_submit()">가입하기</button>
-			<!--가입하기 끝-->
-
+			<!-- 수정하기 -->
+			<button type="submit" id="join_button" class="button_2" name="join_button">수정하기</button>
+			<!--수정하기 끝-->
 		</div>
+		<!-- POST방식전송 토큰추가(403Error방지) -->
+		<input type="hidden" name="${_csrf.parameterName }" value="${_csrf.token }" />
 	</form>
 	<!-- ----------------------------중앙 끝 ---------------------------------------------------------------------------------------->
 

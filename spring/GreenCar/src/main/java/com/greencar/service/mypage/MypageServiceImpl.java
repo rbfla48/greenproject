@@ -1,5 +1,6 @@
 package com.greencar.service.mypage;
 
+import java.security.Principal;
 import java.util.List;
 
 import javax.inject.Inject;
@@ -7,6 +8,7 @@ import javax.inject.Inject;
 import org.springframework.stereotype.Service;
 
 import com.greencar.dao.mypage.MypageDAO;
+import com.greencar.vo.admin.OnebyoneVO;
 import com.greencar.vo.community.CommunityVO;
 import com.greencar.vo.community.Criteria;
 import com.greencar.vo.mypage.MypageVO;
@@ -39,25 +41,14 @@ public class MypageServiceImpl implements MypageService {
 	public MypageVO get(int commuNo) {
 		return dao.read(commuNo);
 	}
+	
 	// 1:1 문의 작성
 	@Override
-	public void register(MypageVO mypageVO) {
-		dao.insert(mypageVO);
+	public void QnAinsert(OnebyoneVO oneVO) {
+		dao.QnAinsert(oneVO);
 	}
 
 
-	
-	/** 회원 가입 가입 */
-	@Override
-	public void joinForm(MypageVO mypageVO) throws Exception {
-		dao.joinForm(mypageVO);
-	} // 회원 가입 가입	
-	/** 이메일 중복 점검 */
-	@Override
-	public int emailCheck(String email) throws Exception {
-		int result1 = dao.emailCheck(email);
-		return result1;
-	} // 이메일 중복 점검
 	/** 닉네임 중복 점검 */
 	@Override
 	public int nickCheck(String nick) throws Exception {
@@ -76,4 +67,5 @@ public class MypageServiceImpl implements MypageService {
 		
 		dao.memberDelete(mypageVO);
 	}
+	
 }
