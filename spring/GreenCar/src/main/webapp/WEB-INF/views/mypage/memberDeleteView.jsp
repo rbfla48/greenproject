@@ -55,25 +55,25 @@
 				<ul>
 					<a href="/mypage/memberDeleteView">회원탈퇴</a>
 				</ul>
-			</aside>
+	</aside>
 
     <div class="section_wrap"><!--탈퇴처리영역-->
 
         <div class="section_img_wrap"><!--GC로고이미지영역-->
-            <img src="/resources/image/logo/gclogo_.png">
+            <img src="/resources/image/logo/gclogo.png">
         </div>
 		<h2><sec:authentication property="principal.username"/></h2>
         <div class="input_password"><!--비밀번호입력텍스트-->
             <b>탈퇴하려면 비밀번호를 입력하세요.</b>
-        </div>
-        <form action="/member/memberDelete" method="post">
-        <input type="hidden" name="${_csrf.parameterName }" value="${_csrf.token }" />
+            <input type="hidden" name="${_csrf.parameterName }" value="${_csrf.token }" />
         	<div class="out_password"><!--비밀번호 입력-->
         		<input class="form-control" type="password" id="userPw" name="userPw" />
         	</div>
-
+        </div>
+        <form action="/member/memberDelete" method="post">
+        
         <div class="btn_wrap">
-        	<button class="btn btn-success" type="submit" id="submit">탈퇴하기</button>
+        	<button class="btn_success" type="submit" id="submit">탈퇴하기</button>
         </div><!--탈퇴버튼영역-->
         </form>  
         <div>

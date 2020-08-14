@@ -61,7 +61,7 @@ public class MypageController {
 	
 	// 리스트 출력
 	@GetMapping("/mypageMywrite")
-	public void list(Criteria cri,Model model) {
+	public void list (MypageVO myVO, Principal prin, Criteria cri,Model model) {
 		log.info("/mypage_list");
 		log.info("list : " + cri);
 		
@@ -72,7 +72,11 @@ public class MypageController {
 		int total = myService.getTotalCount(cri);
 		log.info("total Data : " + total);
 		model.addAttribute("pageMaker", new PageDTO(cri, total));//페이징 설정
+		model.addAttribute("writer", myVO.getCommuWriter());
+		log.info("----------writer----------"+myVO.getCommuWriter());
 		
+		MemberVO memberVO = memberDAO.read(prin.getName());
+		model.addAttribute("user", memberVO);
 		
 	}
 	

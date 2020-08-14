@@ -20,6 +20,7 @@
 <!--구글머터리얼-->
 </head>
 <body>
+
 	<script src="//code.jquery.com/jquery-1.11.0.min.js"></script>
 	<jsp:include page="/resources/jsp/menu.jsp" flush="false" />
 	
@@ -64,6 +65,7 @@
 					</tr>
 				</thead>
 				<c:forEach items="${list}" var="mypage">
+					<c:if test="${mypage.commuWriter eq user.userNick}">
 					<tr>
 						<!-- 글번호 -->
 						<td class="head_section"><c:out value="${mypage.commuNo}" />
@@ -81,6 +83,7 @@
 						<td><c:out value="${mypage.commuView}" /></td>
 
 					</tr>
+					</c:if>
 				</c:forEach>
 			</table>
 			
