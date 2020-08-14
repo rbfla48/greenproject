@@ -23,9 +23,9 @@
 <script> 
 const contextPath="${contextPath}";
 let emailFlag = false;
-let passFlag = false;
+let pwFlag = false;
 let nickFlag = false;
-let phoneFlag = false;
+let phFlag = false;
 let address1Flag = false;
 let address2Flag = false;
 let agreeFlag = false;
@@ -84,8 +84,8 @@ let agreeFlag = false;
 				<tr>
 					<td class="td1"><span class="required_1">*</span></td>
 					<td class="td2">비밀번호</td>
-					<td class="td2"><input type="password" id="userPassword"
-						class="member_field" name="userPassword" size="40" maxlength="20"
+					<td class="td2"><input type="password" id="userPw"
+						class="member_field" name="userPw" size="40" maxlength="20"
 						required></td>
 					<td class="td2"></td>
 				</tr>
@@ -103,9 +103,9 @@ let agreeFlag = false;
 				<tr>
 					<td class="td1"><span class="required_1">*</span></td>
 					<td class="td2">비밀번호 재확인</td>
-					<td class="td2"><input type="password" id="userPasswordRe"
-						class="member_field" name="userPasswordRe" maxlength="20"
-						size="40" required></td>
+					<td class="td2"><input type="password" id="userPwRe"
+						class="member_field" name="userPwRe" maxlength="20" size="40"
+						required></td>
 					<td class="td2"></td>
 				</tr>
 				<!-- 재확인 끝-->
@@ -158,8 +158,8 @@ let agreeFlag = false;
 				<tr>
 					<td class="td1"></td>
 					<td class="td2">연락처</td>
-					<td class="td2"><input type="tel" id="userPhone"
-						class="member_field" name="userPhone" maxlength="11" size="40"></td>
+					<td class="td2"><input type="tel" id="userPh"
+						class="member_field" name="userPh" maxlength="11" size="40"></td>
 					<td class="td2"></td>
 				</tr>
 				<!-- 연락처 끝-->

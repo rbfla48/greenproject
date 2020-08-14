@@ -1,0 +1,121 @@
+@charset "UTF-8";
+/* * {
+    border: 1px dotted #000;
+} */
+
+/*마이페이지 전체영역*/
+.wrap {
+    width: 100%;
+    min-width: 1500px;
+	margin: 0 0 0 10%;
+    height: auto;
+    display: flex;
+    flex-wrap: wrap;
+} 
+/*카테고리*/
+.mypage_category{
+     background-color: #e4dcd3;
+    font-size: 15px;
+    text-align: left;
+    width: 15%;
+    height: 250px;
+    box-sizing: border-box;
+}
+/*카테고리 알림텍스트*/
+.mypage_category>ul>span {
+    color:red;
+}
+
+.wrap .mypage_category>a {
+	text-decoration: none;
+}
+/* 마이페이지 끝 */
+
+section {
+    width: 1200px;
+    height: auto;
+}
+
+section #inquery_box {
+    display:flex;
+    flex-wrap: wrap;
+}
+
+section #inquery_box #inquery_text {
+    background-color: #e4dcd3;
+    width: 100px;
+    height: 40px;
+    text-align: center;
+    border-radius: 5px;
+    margin: auto 50px auto 10px;
+}
+
+section #inquery_box ul {
+    list-style: none;
+    display:block;
+    position:relative;
+    float:left;
+}
+
+section #inquery_title {
+    display:flex;
+    flex-wrap: wrap;
+}
+
+section #inquery_title #title_text {
+    background-color: #e4dcd3;
+    width: 100px;
+    height: 40px;
+    text-align: center;
+    border-radius: 5px;
+    margin: auto 50px auto 10px;
+}
+
+section #inquery_title #title_input {
+    width: 900px;
+}
+
+section #inquery_content {
+    margin-top :20px;
+    margin-left: 10px;
+    width: 1100px;
+    height: 500px;
+    border: solid black 1px;
+}
+
+.oboWriter {
+	margin-left: 10px;
+}
+
+section #btns {
+    margin-right: 150px;
+    float: right;
+}
+
+section #btns button{
+    width: 100px;
+    height: 30px;
+    background-color: #e4dcd3;
+    border-style: none;
+}
+
+.notice{
+    float: right;
+    margin: 120px 250px 0 0;
+    height: auto;
+    width:200px;
+    border: solid black 1px;
+}
+
+.notice h {
+    font-size: 25px;
+}
+
+.notice span {
+    padding-left: 30px;
+    font-size: 10pt;
+}
+
+.notice ul li a {
+    text-decoration: none;
+}

@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper 
+		PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" 
+		"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="mappers.communityCommentMapper">
+	
+	<select id="getComment" parameterType="int" resultType="com.greencar.vo.community.CommunityCommentVO">
+		SELECT * FROM community_comment WHERE commu_no = #{commuNo}
+	</select>
+	
+	<insert id="regComment">
+		INSERT INTO community_comment(comm_text,commu_no, comm_date,comm_no,comm_writer)
+		VALUES(#{commText}, #{commuNo}, SYSDATE,  COMMUNITY_COMMENT_SEQ.nextval, #{CommWriter})
+	</insert>
+	
+	<delete id="deleteComment">
+		DELETE FROM community_comment WHERE comm_no = #{commNo}
+	</delete>
+		
+	<update id="updateComment">
+		update community_comment set 
+		comm_text = #{commText},
+		comm_date = sysdate
+		WHERE comm_no = #{commNo}
+	</update>
+	
+</mapper>

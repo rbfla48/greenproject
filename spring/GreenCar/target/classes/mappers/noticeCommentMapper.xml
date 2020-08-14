@@ -4,25 +4,28 @@
 		"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 
 <mapper namespace="mappers.noticeCommentMapper">
-	
-	<select id="getComment" parameterType="int" resultType="com.greencar.vo.notice.NoticeCommentVO">
-		SELECT * FROM notice_comment WHERE notice_no = #{notice_no}
+
+	<select id="getComment" parameterType="int"
+		resultType="com.greencar.vo.notice.NoticeCommentVO">
+		SELECT * FROM notice_comment WHERE notice_no = #{noticeNo}
 	</select>
-	
+
 	<insert id="regComment">
-		INSERT INTO notice_comment(content , notice_no , regdate , rno , writer )
-		VALUES(#{content}, #{notice_no}, SYSDATE,  NOTICE_COMMENT_SEQ.nextval, #{writer})
+		INSERT INTO notice_comment(content , notice_no ,
+		regdate , rno , writer )
+		VALUES(#{content}, #{noticeNo}, SYSDATE,
+		NOTICE_COMMENT_SEQ.nextval, #{writer})
 	</insert>
-	
+
 	<delete id="deleteComment">
 		DELETE FROM notice_comment WHERE rno = #{rno}
 	</delete>
-		
+
 	<update id="updateComment">
-		update notice_comment set 
+		update notice_comment set
 		content = #{content},
 		regdate = sysdate
 		WHERE rno = #{rno}
 	</update>
-	
+
 </mapper>

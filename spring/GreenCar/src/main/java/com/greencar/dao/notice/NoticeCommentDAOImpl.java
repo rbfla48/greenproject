@@ -2,15 +2,13 @@ package com.greencar.dao.notice;
 
 import java.util.List;
 
-import javax.inject.Inject;
-
 import org.apache.ibatis.session.SqlSession;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
 import com.greencar.vo.notice.NoticeCommentVO;
 
-@Repository("NoticeCommentDAO")
+@Repository("commmentDAO")
 public class NoticeCommentDAOImpl implements NoticeCommentDAO {
 	
 	@Autowired

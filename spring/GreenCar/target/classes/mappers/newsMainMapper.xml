@@ -7,31 +7,31 @@
 	<select id="newsMain"
 		parameterType="com.greencar.vo.news.NewsCriteria"
 		resultType="com.greencar.vo.news.NewsVO">
-		SELECT
-		news_no
+		SELECT news_no
 		, news_TITLE
 		, news_text
-
+		, news_cate
 		FROM (
-		select news_no,
-		news_title,
-		news_text,
-		ROW_NUMBER() OVER(ORDER BY news_no) as RNUM
-		from
-		news
+		select news_no
+		,
+		news_title
+		, news_text
+		, news_cate
+		, ROW_NUMBER() OVER(ORDER BY news_no)
+		as RNUM
+		from news
+		<if test="newsCate==1 || newsCate==2 || newsCate==3|| newsCate==4">
+			where news_cate=#{newsCate}
+		</if>
 		) news
-
 		where RNUM between #{rowStart} and #{rowEnd}
 		ORDER BY news_no
 	</select>
 
 	<!-- 뉴스 갯수 파악 -->
 	<select id="listCount" resultType="int">
-	<![CDATA[
 		SELECT COUNT(news_no)
-		  FROM news
-		 WHERE news_no > 0
-	]]>
+		FROM news
 	</select>
 
 	<!-- 뉴스 세부 페이지 -->

@@ -1,0 +1,137 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="onebyoneMapper">
+
+	<!-- 1:1문의 리스트 출력 + 페이징 -->
+	<select id="listPage"
+		resultType="com.greencar.vo.admin.OnebyoneVO"
+		parameterType="com.greencar.vo.admin.Criteria">
+		SELECT
+		obo_no,
+		obo_title,
+		obo_writer,
+		obo_date,
+		obo_category
+		FROM (
+		SELECT
+		obo_no,
+		obo_title,
+		obo_writer,
+		obo_date,
+		obo_category,
+		ROW_NUMBER() OVER(ORDER BY obo_no DESC) AS RNUM
+		FROM
+		onebyone_tbl
+		) onebyone_tbl
+		WHERE
+		RNUM BETWEEN #{rowStart} AND #{rowEnd}
+		ORDER BY
+		obo_no DESC
+	</select>
+
+	<!-- 게시물 총 갯수 -->
+	<select id="listCount" resultType="int">
+		SELECT COUNT(*) FROM onebyone_tbl
+	</select>
+
+	<!-- 답변하지 않은 1:1문의 갯수 -->
+	<select id="newListCount" resultType="int">
+		SELECT
+		COUNT(*)
+		FROM
+		onebyone_tbl
+		WHERE
+		obo_answer is null
+	</select>
+
+
+	<!-- 1:1문의 상세보기 -->
+	<select id="read" resultType="com.greencar.vo.admin.OnebyoneVO">
+		SELECT
+		obo_no,
+		obo_title,
+		obo_content,
+		obo_writer,
+		obo_answer,
+		obo_category
+		FROM
+		onebyone_tbl
+		WHERE
+		obo_no = #{oboNo}
+	</select>
+
+	<!-- 1:1문의 답변하기 -->
+	<update id="answer">
+		UPDATE
+		onebyone_tbl
+		SET
+		obo_answer=#{oboAnswer}
+		WHERE
+		obo_no = #{oboNo}
+	</update>
+
+	<!-- 1:1문의 카테고리 별로 불러오기 -->
+	<select id="listPageByCate"
+		resultType="com.greencar.vo.admin.OnebyoneVO"
+		parameterType="com.greencar.vo.admin.SubCriteria">
+		SELECT
+		obo_no,
+		obo_title,
+		obo_writer,
+		obo_date,
+		obo_category
+		FROM (
+		SELECT
+		obo_no,
+		obo_title,
+		obo_writer,
+		obo_date,
+		obo_category,
+		ROW_NUMBER() OVER(ORDER BY obo_no DESC) AS RNUM
+		FROM
+		onebyone_tbl
+		) onebyone_tbl
+		WHERE
+		RNUM BETWEEN #{rowStart} AND #{rowEnd}
+		AND obo_category = #{oboCategory}
+		ORDER BY
+		obo_no DESC
+	</select>
+
+	<!-- 1:1문의 리스트 답변하지 않은 질문 -->
+	<select id="listPageNoAnswer"
+		resultType="com.greencar.vo.admin.OnebyoneVO"
+		parameterType="com.greencar.vo.admin.Criteria">
+		SELECT
+		obo_no,
+		obo_title,
+		obo_writer,
+		obo_date,
+		obo_category,
+		obo_answer
+		FROM (
+		SELECT
+		obo_no,
+		obo_title,
+		obo_writer,
+		obo_date,
+		obo_category,
+		obo_answer,
+		ROW_NUMBER() OVER(ORDER BY obo_no DESC) AS RNUM
+		FROM
+		onebyone_tbl
+		) onebyone_tbl
+		WHERE
+		RNUM BETWEEN #{rowStart} AND #{rowEnd}
+		AND obo_answer is null
+		ORDER BY
+		obo_no DESC
+	</select>
+
+
+
+
+
+
+
+</mapper>

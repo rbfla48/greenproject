@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper 
+		PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" 
+		"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+		
+<!-- mapper namespace ==> mapper인터페이스 경로로 작성 -->
+<mapper namespace="mappers.goodsMapper">
+	
+	<!-- 전체목록조회(페이징X) -->
+	<select id="getList" resultType="com.greencar.vo.goods.GoodsVO">
+	<![CDATA[
+	select * from goods where goods_no > 0 order by goods_no desc
+	]]>
+	</select>
+		
+	<!--검색&페이징기능 sql -->
+	<sql id="criteria">
+		<trim prefix="(" suffix=") AND " prefixOverrides="OR">
+			<foreach item='type' collection="typeArr">
+				<trim prefix="OR">
+					<choose>
+						<when test="type == 'T'.toString()">
+							commuTitle like '%'||#{keyword}||'%'
+						</when>
+						<when test="type == 'C'.toString()">
+							commuText like '%'||#{keyword}||'%'
+						</when>
+						<when test="type == 'W'.toString()">
+							commuWriter like '%'||#{keyword}||'%'
+						</when>
+					</choose>
+				</trim>
+			</foreach>
+		</trim>
+	</sql>
+	
+	<select id="getListWithPage" resultType="com.greencar.vo.goods.GoodsVO">
+		<![CDATA[
+		SELECT * FROM(
+		    SELECT rownum rn, goods_no,goods_name,goods_price,goods_efficient,goods_fuel,goods_type
+		    FROM (
+		    	SELECT * FROM goods ORDER BY goods_no DESC)
+		    WHERE 
+		]]>
+		<include refid="criteria"></include>
+		<![CDATA[
+			rownum <= #{pageNum} * #{amount})
+		WHERE rn > (#{pageNum} -1) * #{amount} 
+		]]> 
+	</select>
+	
+	<!-- 페이징할 전체데이터 갯수 카운트 -->
+	<select id="getTotalCount" resultType="int">
+		<![CDATA[
+		SELECT COUNT(*) FROM goods WHERE
+		]]>  
+		<include refid="criteria"></include>
+		<![CDATA[
+		goods_no > 0
+		]]>
+	</select>
+	
+
+	<!-- 브랜드별 조회 -->
+	<select id="listByBrand" resultType="com.greencar.vo.goods.GoodsVO">
+	select * from goods where brand_code = #{brandCode}
+	</select>
+	
+	<!-- 차종별 조회 -->
+	<select id="listByType" resultType="com.greencar.vo.goods.GoodsVO">
+	select * from goods where goods_type = #{goodsType}
+	</select>
+	
+</mapper>

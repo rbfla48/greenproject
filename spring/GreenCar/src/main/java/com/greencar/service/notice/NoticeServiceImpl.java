@@ -2,10 +2,7 @@ package com.greencar.service.notice;
 
 import java.util.List;
 
-import javax.inject.Inject;
-
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Repository;
 import org.springframework.stereotype.Service;
 
 import com.greencar.dao.notice.NoticeDAO;
@@ -29,9 +26,9 @@ public class NoticeServiceImpl implements NoticeService{
 	}
 
 	@Override
-	public NoticeVO get(int notice_no) {
+	public NoticeVO get(int noticeNo) {
 		log.info("read.........");
-		return noticeDAO.read(notice_no);
+		return noticeDAO.read(noticeNo);
 	}
 
 	@Override
@@ -41,9 +38,9 @@ public class NoticeServiceImpl implements NoticeService{
 	}
 
 	@Override
-	public boolean remove(int notice_no) {
+	public boolean remove(int noticeNo) {
 		log.info("delete.......");
-		return noticeDAO.delete(notice_no) == 1;
+		return noticeDAO.delete(noticeNo) == 1;
 	}
 
 	@Override
@@ -62,6 +59,11 @@ public class NoticeServiceImpl implements NoticeService{
 	public int getTotalCount(Criteria cri) {
 		log.info("get total data count...");
 		return noticeDAO.getTotalCount(cri);
+	}
+
+	@Override
+	public int viewCount(int noticeNo) {
+		return noticeDAO.viewCount(noticeNo);
 	}
 	
 	

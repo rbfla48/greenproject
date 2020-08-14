@@ -1,10 +1,9 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%>
-<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+	pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>
+<%@ taglib prefix="spring" uri="http://www.springframework.org/tags"%>
 <%@ taglib prefix="sec" uri="http://www.springframework.org/security/tags" %>
-<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
-<%@ taglib prefix="spring" uri="http://www.springframework.org/tags" %>
-<%@ page import="java.util.*" %>
 <!DOCTYPE html>
 <html lang="ko">
 <head>
@@ -17,46 +16,52 @@
     <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons"><!--구글머터리얼-->
 </head>
 <body>
-<script src="//code.jquery.com/jquery-1.11.0.min.js"></script>
-<script src="/resources/js/main_detailsuch.js" type="text/javascript"></script>
-    <header>
-        <!--화면 상단 마이페이지, 장바구니 시작-->
-        <div id="top">
-            <ul>
-                <li id="mypage"><a href="login/member">로그인</a></li>
-                <li id="cart"><a href="join/joinForm">회원가입</a></li>
-            </ul>
-        </div>
-        <!--화면 상단 마이페이지, 장바구니 끝-->
+   	<script>
+   	$('.tab_menu_btn').on('click',function(){
+   	  $('.tab_menu_btn').removeClass('on');
+   	  $(this).addClass('on')
+   	});
+   	
+  //1번 컨텐츠
+   	$('.tab_menu_btn1').on('click',function(){
+   	  $('.news_main').hide();
+   	  $('.news_sub').hide();
+   	  $('.news_main').show();
+   	  $('.news_sub').show();
+   	});
 
-        <hr id="hl"> <!--top, nav 분리 줄-->
-    </header>
-        <nav>
-            <!--logo 시작-->
-            <div id="logo">
-                <img src="/resources/image/logo/gclogo_.png" alt="greencar_logo">
-            </div>
-            <!--logo 끝-->
+   	//2번 컨텐츠
+   	$('.tab_menu_btn2').on('click',function(){
+   	  $('.tab_box').hide();
+   	  $('.tab_box2').show();
+   	});
 
-            <!-- 네비게이션 바 시작-->
-            <div id="middle">
-                <ul>
-                    
-                    <li id="notice"> <a href="/notice/noticeList">공지사항</a></li>
-                    <li id="vl">|</li>
-                    <li id="products"> <a href="/goods/goodsList">상품페이지</a></li>
-                    <li id="vl">|</li>
-                    <li id="community" > <a href="#">커뮤니티</a></li>
-                    <li id="vl">|</li>
-                    <li id="newsandissue" > <a href="/news/newsMain?page=1">뉴스&이슈</a></li>
-                    <li id="vl">|</li>
-                    <li id="user_advice" > <a href="#">고객지원</a></li>
-                    
-                </ul>
-            </div>
-            <!--네비게이션 바 끝-->
-        </nav>
-    <!--메뉴바END-->
+
+   	//3번 컨텐츠
+   	$('.tab_menu_btn3').on('click',function(){
+   	  $('.tab_box').hide();
+   	  $('.tab_box3').show();
+   	});
+
+
+   	//4번 컨텐츠
+   	$('.tab_menu_btn4').on('click',function(){
+   	  $('.tab_box').hide();
+   	  $('.tab_box4').show();
+   	});
+
+
+   	//5번 컨텐츠
+   	$('.tab_menu_btn5').on('click',function(){
+   	  $('.tab_box').hide();
+   	  $('.tab_box5').show();
+   	});
+   	</script>
+    <script src="/resources/js/main_detailsuch.js"></script>
+   
+	<script src="//code.jquery.com/jquery-1.11.0.min.js"></script>
+
+	<jsp:include page="/resources/jsp/menu.jsp" flush="false"/> 
     
 <!------------------------------------------------------------------------------------------------------------------------------>
     
@@ -77,47 +82,47 @@
         <div class="select_car_brand"><!--브랜드선택창-->
                 <table>
                     <tr>
-                    <td><img src="/resources/image/logo/audi.png" class="select_car_brand_img" alt="brand_logo">
+                    <td><img src="../image/logo/audi.png" class="select_car_brand_img" alt="brand_logo">
                         <div class="select_car_brand_text">AUDI</div></td>
-                    <td><img src="/resources/image/logo/benz.png" class="select_car_brand_img" alt="brand_logo">
+                    <td><img src="../image/logo/benz.png" class="select_car_brand_img" alt="brand_logo">
                         <div class="select_car_brand_text">BENZ</div></td>
-                    <td><img src="/resources/image/logo/cadillac.png" class="select_car_brand_img" alt="brand_logo">
+                    <td><img src="../image/logo/cadillac.png" class="select_car_brand_img" alt="brand_logo">
                         <div class="select_car_brand_text">CADILLAC</div></td>
-                    <td><img src="/resources/image/logo/chevrolet.png" class="select_car_brand_img" alt="brand_logo">
+                    <td><img src="../image/logo/chevrolet.png" class="select_car_brand_img" alt="brand_logo">
                         <div class="select_car_brand_text">CHEVROLET</div></td>
-                    <td><img src="/resources/image/logo/ferrari.png" class="select_car_brand_img" alt="brand_logo">
+                    <td><img src="../image/logo/ferrari.png" class="select_car_brand_img" alt="brand_logo">
                         <div class="select_car_brand_text">FERRARI</div></td>
-                    <td><img src="/resources/image/logo/ford.png" class="select_car_brand_img" alt="brand_logo">
+                    <td><img src="../image/logo/ford.png" class="select_car_brand_img" alt="brand_logo">
                         <div class="select_car_brand_text">FORD</div></td>
-                    <td><img src="/resources/image/logo/genesis.png" class="select_car_brand_img" alt="brand_logo">
+                    <td><img src="../image/logo/genesis.png" class="select_car_brand_img" alt="brand_logo">
                         <div class="select_car_brand_text">GENESIS</div></td>
-                    <td><img src="/resources/image/logo/honda.png" class="select_car_brand_img" alt="brand_logo">
+                    <td><img src="../image/logo/honda.png" class="select_car_brand_img" alt="brand_logo">
                         <div class="select_car_brand_text">HONDA</div></td>
-                    <td><img src="/resources/image/logo/hyundai.png" class="select_car_brand_img" alt="brand_logo">
+                    <td><img src="../image/logo/hyundai.png" class="select_car_brand_img" alt="brand_logo">
                         <div class="select_car_brand_text">HYUNDAI</div></td>
-                    <td><img src="/resources/image/logo/infiniti.png" class="select_car_brand_img" alt="brand_logo">
+                    <td><img src="../image/logo/infiniti.png" class="select_car_brand_img" alt="brand_logo">
                         <div class="select_car_brand_text">INFINITI</div></td>
                     </tr>
                     <tr>
-                    <td><img src="/resources/image/logo/jaguar.png" class="select_car_brand_img" alt="brand_logo">
+                    <td><img src="../image/logo/jaguar.png" class="select_car_brand_img" alt="brand_logo">
                         <div class="select_car_brand_text">JAGUAR</div></td>
-                    <td><img src="/resources/image/logo/kia.PNG" class="select_car_brand_img" alt="brand_logo">
+                    <td><img src="../image/logo/kia.PNG" class="select_car_brand_img" alt="brand_logo">
                         <div class="select_car_brand_text">KIA</div></td>
-                    <td><img src="/resources/image/logo/Lamborghini.png" class="select_car_brand_img" alt="brand_logo">
+                    <td><img src="../image/logo/Lamborghini.png" class="select_car_brand_img" alt="brand_logo">
                         <div class="select_car_brand_text">LAMBORGHINI</div></td>
-                    <td><img src="/resources/image/logo/lexus.png" class="select_car_brand_img" alt="brand_logo">
+                    <td><img src="../image/logo/lexus.png" class="select_car_brand_img" alt="brand_logo">
                         <div class="select_car_brand_text">LEXUS</div></td>
-                    <td><img src="/resources/image/logo/mini.png" class="select_car_brand_img" alt="brand_logo">
+                    <td><img src="../image/logo/mini.png" class="select_car_brand_img" alt="brand_logo">
                         <div class="select_car_brand_text">MINI</div></td>
-                    <td><img src="/resources/image/logo/ssangyong.png" class="select_car_brand_img" alt="brand_logo">
+                    <td><img src="../image/logo/ssangyong.png" class="select_car_brand_img" alt="brand_logo">
                         <div class="select_car_brand_text">SSANGYONG</div></td>
-                    <td><img src="/resources/image/logo/teslr.png" class="select_car_brand_img" alt="brand_logo">
+                    <td><img src="../image/logo/teslr.png" class="select_car_brand_img" alt="brand_logo">
                         <div class="select_car_brand_text">TESLR</div></td>
-                    <td><img src="/resources/image/logo/toyota.png" class="select_car_brand_img" alt="brand_logo">
+                    <td><img src="../image/logo/toyota.png" class="select_car_brand_img" alt="brand_logo">
                         <div class="select_car_brand_text">TOYOTA</div></td>
-                    <td><img src="/resources/image/logo/volkswagen.png" class="select_car_brand_img" alt="brand_logo">
+                    <td><img src="../image/logo/volkswagen.png" class="select_car_brand_img" alt="brand_logo">
                         <div class="select_car_brand_text">VOLKSWAGEN</div></td>
-                    <td><img src="/resources/image/logo/volvo.png" class="select_car_brand_img" alt="brand_logo">
+                    <td><img src="../image/logo/volvo.png" class="select_car_brand_img" alt="brand_logo">
                         <div class="select_car_brand_text">VOLVO</div></td>
                     </tr>
                 </table>
@@ -166,11 +171,11 @@
                                 <td>연비</td>
                                 <td>
                                     <select class="panel_option_two"><!--연비(최소연비)-->
-                                        <option>1등급</option>
+                                        <option>10Km/L</option>
                                     </select>
                                     ~
                                     <select class="panel_option_two"><!--연비(최대연비)-->
-                                        <option>5등급</option>
+                                        <option>20Km/L</option>
                                     </select>
                                 </td>
                             </tr>
@@ -410,49 +415,27 @@
             </div><!--추천모델영역END-->
 
             <div class="news_kind"><!--포스트 선택메뉴-->
-                    <div><a href=#>테크</a></div><hr>
-                    <div><a href=#>디자인</a></div><hr>
-                    <div><a href=#>법률</a></div><hr>
-                    <div><a href=#>경제</a></div><hr>
-                    <div><a href=#>라이프</a></div>
+                    <div><button type="button" class="tab_menu_btn1 tab_menu_btn on">테크</button></div><hr>
+                    <div><button type="button" class="tab_menu_btn2 tab_menu_btn">디자인</button></div><hr>
+                    <div><button type="button" class="tab_menu_btn3 tab_menu_btn">법률</button></div><hr>
+                    <div><button type="button" class="tab_menu_btn4 tab_menu_btn">경제</button></div><hr>
+                    <div><button type="button" class="tab_menu_btn5 tab_menu_btn">라이프</button></div>
             </div><!--포스트 선택메뉴END-->
 
             <div class="news_wrap"><!--포스트 전체영역-->
-                <div class="news_main"><!--메인포스트 영역-->
+                <div class="news_main on"><!--메인포스트 영역-->
                     <img src="../image/other/morning_img.jpg"><!--메인포스트이미지-->
                     <h3>기아자동차 모닝출시</h3>
-                    <p class="news_main_text">2004년 2월 18일에 비스토의 후속 차종으로 출시되었다. 
-                        출시 당시에는 대한민국의 경차 기준을 초과하여 소형차로 분류되었으나, 
-                        2008년 이후로 시행이 보류된 대한민국의 경차 기준 개정안을 감안하여 그대로 출시되었다.
-                         대만에서는 차명이 유로스타였다. 대한민국에서는 현대자동차의 1.0ℓ 입실론 가솔린 엔진이 장착되었다. 
-                         2005년 5월 3일에 선보인 2005년형은 라디에이터 그릴과 엠블럼 등이 바뀌고 2인승 밴이 추가되었다. 
-                         2008년 1월 1일부터 대한민국의 경차 기준 개정안이 시행되면서 경차로 편입되었다.
-                         2004년 2월 18일에 비스토의 후속 차종으로 출시되었다. 
-                         출시 당시에는 대한민국의 경차 기준을 초과하여 소형차로 분류되었으나, 
-                         2008년 이후로 시행이 보류된 대한민국의 경차 기준 개정안을 감안하여 그대로 출시되었다.
-                          대만에서는 차명이 유로스타였다. 대한민국에서는 현대자동차의 1.0ℓ 입실론 가솔린 엔진이 장착되었다. 
-                          2005년 5월 3일에 선보인 2005년형은 라디에이터 그릴과 엠블럼 등이 바뀌고 2인승 밴이 추가되었다. 
-                          2008년 1월 1일부터 대한민국의 경차 기준 개정안이 시행되면서 경차로 편입되었다.</p>
+                    <p class="news_main_text"></p>
                 </div><!--메인포스트영역END-->
 
                 <div class="news_sub_wrap"><!--우측 서브포스트 전체영역-->
 
-                    <div class="news_sub"><!--서브포스트 1개 영역-->
+                    <div class="news_sub on"><!--서브포스트 1개 영역-->
                         <img src="../image/other/morning_img.jpg"><!--서브포스트이미지-->
                             <div class="news_sub_textwrap"><!--서브포스트 텍스트영역(제목,본문)-->
                             <h3>기아자동차 모닝출시</h3>
-                            <p class="news_sub_text">2004년 2월 18일에 비스토의 후속 차종으로 출시되었다. 
-                            출시 당시에는 대한민국의 경차 기준을 초과하여 소형차로 분류되었으나, 
-                            2008년 이후로 시행이 보류된 대한민국의 경차 기준 개정안을 감안하여 그대로 출시되었다.
-                             대만에서는 차명이 유로스타였다. 대한민국에서는 현대자동차의 1.0ℓ 입실론 가솔린 엔진이 장착되었다. 
-                             2005년 5월 3일에 선보인 2005년형은 라디에이터 그릴과 엠블럼 등이 바뀌고 2인승 밴이 추가되었다. 
-                             2008년 1월 1일부터 대한민국의 경차 기준 개정안이 시행되면서 경차로 편입되었다.
-                             2004년 2월 18일에 비스토의 후속 차종으로 출시되었다. 
-                             출시 당시에는 대한민국의 경차 기준을 초과하여 소형차로 분류되었으나, 
-                             2008년 이후로 시행이 보류된 대한민국의 경차 기준 개정안을 감안하여 그대로 출시되었다.
-                              대만에서는 차명이 유로스타였다. 대한민국에서는 현대자동차의 1.0ℓ 입실론 가솔린 엔진이 장착되었다. 
-                              2005년 5월 3일에 선보인 2005년형은 라디에이터 그릴과 엠블럼 등이 바뀌고 2인승 밴이 추가되었다. 
-                              2008년 1월 1일부터 대한민국의 경차 기준 개정안이 시행되면서 경차로 편입되었다.</p>
+                            <p class="news_sub_text"></p>
                             </div>
                     </div><!--서브포스트 1개 영역END-->
 
@@ -460,18 +443,7 @@
                         <img src="../image/other/morning_img.jpg"><!--서브포스트이미지-->
                             <div class="news_sub_textwrap"><!--서브포스트 텍스트영역(제목,본문)-->
                             <h3>기아자동차 모닝출시</h3>
-                            <p class="news_sub_text">2004년 2월 18일에 비스토의 후속 차종으로 출시되었다. 
-                            출시 당시에는 대한민국의 경차 기준을 초과하여 소형차로 분류되었으나, 
-                            2008년 이후로 시행이 보류된 대한민국의 경차 기준 개정안을 감안하여 그대로 출시되었다.
-                             대만에서는 차명이 유로스타였다. 대한민국에서는 현대자동차의 1.0ℓ 입실론 가솔린 엔진이 장착되었다. 
-                             2005년 5월 3일에 선보인 2005년형은 라디에이터 그릴과 엠블럼 등이 바뀌고 2인승 밴이 추가되었다. 
-                             2008년 1월 1일부터 대한민국의 경차 기준 개정안이 시행되면서 경차로 편입되었다.
-                             2004년 2월 18일에 비스토의 후속 차종으로 출시되었다. 
-                             출시 당시에는 대한민국의 경차 기준을 초과하여 소형차로 분류되었으나, 
-                             2008년 이후로 시행이 보류된 대한민국의 경차 기준 개정안을 감안하여 그대로 출시되었다.
-                              대만에서는 차명이 유로스타였다. 대한민국에서는 현대자동차의 1.0ℓ 입실론 가솔린 엔진이 장착되었다. 
-                              2005년 5월 3일에 선보인 2005년형은 라디에이터 그릴과 엠블럼 등이 바뀌고 2인승 밴이 추가되었다. 
-                              2008년 1월 1일부터 대한민국의 경차 기준 개정안이 시행되면서 경차로 편입되었다.</p>
+                            <p class="news_sub_text"></p>
                             </div>
                     </div>
 
@@ -479,18 +451,7 @@
                         <img src="../image/other/morning_img.jpg"><!--서브포스트이미지-->
                             <div class="news_sub_textwrap"><!--서브포스트 텍스트영역(제목,본문)-->
                             <h3>기아자동차 모닝출시</h3>
-                            <p class="news_sub_text">2004년 2월 18일에 비스토의 후속 차종으로 출시되었다. 
-                            출시 당시에는 대한민국의 경차 기준을 초과하여 소형차로 분류되었으나, 
-                            2008년 이후로 시행이 보류된 대한민국의 경차 기준 개정안을 감안하여 그대로 출시되었다.
-                             대만에서는 차명이 유로스타였다. 대한민국에서는 현대자동차의 1.0ℓ 입실론 가솔린 엔진이 장착되었다. 
-                             2005년 5월 3일에 선보인 2005년형은 라디에이터 그릴과 엠블럼 등이 바뀌고 2인승 밴이 추가되었다. 
-                             2008년 1월 1일부터 대한민국의 경차 기준 개정안이 시행되면서 경차로 편입되었다.
-                             2004년 2월 18일에 비스토의 후속 차종으로 출시되었다. 
-                             출시 당시에는 대한민국의 경차 기준을 초과하여 소형차로 분류되었으나, 
-                             2008년 이후로 시행이 보류된 대한민국의 경차 기준 개정안을 감안하여 그대로 출시되었다.
-                              대만에서는 차명이 유로스타였다. 대한민국에서는 현대자동차의 1.0ℓ 입실론 가솔린 엔진이 장착되었다. 
-                              2005년 5월 3일에 선보인 2005년형은 라디에이터 그릴과 엠블럼 등이 바뀌고 2인승 밴이 추가되었다. 
-                              2008년 1월 1일부터 대한민국의 경차 기준 개정안이 시행되면서 경차로 편입되었다.</p>
+                            <p class="news_sub_text"></p>
                             </div>
                     </div>
 
@@ -498,36 +459,10 @@
             </div><!--포스트전체영역END-->
 
     </div><!--메인페이지END-->
-
-    <!-- <div class="common_goods">최근 본 상품
-        <div class="common_goods_name">최근 본 상품</div>
-        <div class="common_goods_index" onclick="location.href='#'">최근상품 1
-            <img src="../image/other/ad_img_camaro.jpg">
-            <div class="common_goods_name">카마로SS</div>
-        </div>
-        <div class="common_goods_index" onclick="location.href='#'">최근상품 2
-            <img src="../image/other/ad_img_camaro.jpg">
-            <div class="common_goods_name">카마로SS</div>
-        </div>
-        <div class="common_goods_index" onclick="location.href='#'">최근상품 3
-            <img src="../image/other/ad_img_camaro.jpg">
-            <div class="common_goods_name">카마로SS</div>
-        </div>
-    </div> -->
     
 <!------------------------------------------------------------------------------------------------------------------------------>
 
-    <!--하단footer-->
-    <footer id="footer">
-        <!--상단회사명-->
-        <br>
-        <p><b>GREENCAR</b></p>
-        <hr>
-        <!--하단사업자정보-->
-        <p>사업자  김붕붕  |  사업자번호 211-31-64480 | 사업자 주소 : 서울특별시 관악구 청룡중앙길 42-1 | 02 - 1234 - 5678 </p>
-        <p>COPYRIGHT © GREEN COMPANY. ALL RIGHTS RESERVED.</p>
-        <!--하단영역end-->
-    </footer>
-    <!--하단footer END-->
+   <jsp:include page="/resources/jsp/footer.jsp" flush="false" />
+   
 </body>
 </html>

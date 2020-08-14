@@ -115,20 +115,20 @@ function fn_submit(){
 	var pattern2 = /^(?=.*[a-zA-Z])((?=.*\d)|(?=.*\W)).{8,20}$/;
 	var pattern4 = /^[0-9]{10,11}$/;
 	var pattern5 = /^[\w | \W | 가-힣  | / | - |  (  |  ) | , | ]{5,100}$/;
-	var pass = $("#userPassword").val();
-	var re = $("#userPasswordRe").val();
-	var phone = $("#userPhone").val();
+	var pw = $("#userPw").val();
+	var re = $("#userPwRe").val();
+	var ph = $("#userPh").val();
 	var add1 = $("#userAddress").val();
 	var add2 = $("#userAddressDetail").val();
 	/** 조건 */
 	console.log("emailFlag: " +emailFlag);
-	if (pattern2.test(pass) == true && pass == re){
-		passFlag = true;
-	} console.log("passFlag: "+passFlag);
+	if (pattern2.test(pw) == true && pw == re){
+		pwFlag = true;
+	} console.log("pwFlag: "+pwFlag);
 	console.log("nickFlag: " +nickFlag);
-	if (pattern4.test(phone) == true || phone == ''){
-		phoneFlag = true;
-	} console.log("phoneFlag: "+phoneFlag);
+	if (pattern4.test(ph) == true || ph == ''){
+		phFlag = true;
+	} console.log("phFlag: "+phFlag);
 	if (pattern5.test(add1) == true || add1 =='' ){
 		address1Flag = true;
 	} console.log("add1Flag: "+address1Flag);
@@ -140,35 +140,35 @@ function fn_submit(){
 	} console.log("agreeFlag:" +agreeFlag);
 	
 	/** 비정상 */
-	if (emailFlag == false || passFlag == false || nickFlag == false || phoneFlag == false || address1Flag == false || address2Flag == false || agreeFlag == false){
+	if (emailFlag == false || pwFlag == false || nickFlag == false || phFlag == false || address1Flag == false || address2Flag == false || agreeFlag == false){
 		if (emailFlag == false){
 			$("#userEmail").focus();
 			alert("이메일 중복 확인을 해주세요.");
 			console.log("이메일 중복 확인 요망");
 		}
-		if (passFlag == false){
-			if (pass == ''){
-				$("#userPassword").focus();
+		if (pwFlag == false){
+			if (pw == ''){
+				$("#userPw").focus();
 				alert("비밀번호를 입력해 주세요.");
 				console.log("비밀번호 없음");
 			} else if (re == ''){
-				$("#userPasswordRe").focus();
+				$("#userPwRe").focus();
 				alert("재확인 비밀번호를 입력해 주세요.");
 				console.log("비밀번호 없음");
-			} else if (pass.length <8){
-				$("#userPassword").focus();
+			} else if (pw.length <8){
+				$("#userPw").focus();
 				alert("비밀번호가 너무 짧습니다.");
 				console.log("비밀번호 짧음");
-			} else if (pass.length >20){
-				$("#userPassword").focus();
+			} else if (pw.length >20){
+				$("#userPw").focus();
 				alert("비밀번호가 너무 깁니다.");
 				console.log("비밀번호 김");
-			} else if (pattern2.test(pass) == false){
-				$("#userPassword").focus();
+			} else if (pattern2.test(pw) == false){
+				$("#userPw").focus();
 				alert("옳바르지 않은 비밀번호 형식입니다.");
 				console.log("비밀번호 이상함");
-			} else if (pass != re){
-				$("#userPasswordRe").focus();
+			} else if (pw != re){
+				$("#userPwRe").focus();
 				alert("비밀번호가 다릅니다.");
 				console.log("비밀번호 다름");
 			}
@@ -178,17 +178,17 @@ function fn_submit(){
 			alert("닉네임 중복 확인을 해주세요.");
 			console.log("닉네임 중복 확인 요망");
 		}
-		if (phoneFlag == false){
-			if (phone.length <10){
-				$("#userPhone").focus();
+		if (phFlag == false){
+			if (ph.length <10){
+				$("#userPh").focus();
 				alert("연락처가 너무 짧습니다.");
 				console.log("연락처 짧음");
-			} else if (phone.length >11){
-				$("#userPhone").focus();
+			} else if (ph.length >11){
+				$("#userPh").focus();
 				alert("연락처가 너무 깁니다.");
 				console.log("연락처 김");
-			} else if (pattern4.test(phone) == false){
-				$("#userPhone").focus();
+			} else if (pattern4.test(ph) == false){
+				$("#userPh").focus();
 				alert("옳바르지 않은 연락처 형식 입니다.");
 				console.log("연락처 이상함");
 			}
@@ -228,7 +228,7 @@ function fn_submit(){
 			alert("약관에 동의 해주세요.");
 			console.log("약관 미동의");
 		}
-	} else if (emailFlag == true && passFlag == true && nickFlag == true && phoneFlag == true && address1Flag == true && address2Flag == true && agreeFlag == true){
+	} else if (emailFlag == true && pwFlag == true && nickFlag == true && phFlag == true && address1Flag == true && address2Flag == true && agreeFlag == true){
 		alert("회원가입이 완료 되었습니다.");
 		console.log("회원가입 완료");
 		document.join.submit();

@@ -1,0 +1,70 @@
+section {
+	width: 1200px;
+	margin: auto;
+}
+
+a {
+	text-decoration: none;
+	!
+	important
+}
+
+#customer_question {
+	display: flex;
+}
+
+#category {
+	height: 30px;
+	margin-left: 700px;
+	margin-top: 15px;
+}
+
+table * {
+	width: auto;
+	height: 10px;
+	text-align: center;
+}
+
+table {
+	border-collapse: collapse;
+}
+
+table #tb_top {
+	background-color: #e4dcd3;
+}
+
+table tr td {
+	border: solid grey 2px;
+}
+
+#tb_no {
+	width: 50px;
+}
+
+#tb_category {
+	width: 100px;
+}
+
+#tb_title {
+	width: 830px;
+}
+
+#tb_writer {
+	width: 130px;
+}
+
+#tb_date {
+	width: 180px;
+}
+
+#paging {
+	width: 100%;
+	height: 5%;
+	margin: 10px auto 10px auto;
+	text-align: center;
+	line-height: 60px;
+}
+
+#paging .paging_button {
+	font-size: 23px;
+}

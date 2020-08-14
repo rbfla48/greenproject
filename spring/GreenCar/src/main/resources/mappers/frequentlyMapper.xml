@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper 
+		PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" 
+		"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.greencar.mappers.FrequentlyMapper">
+
+	<select id="getList"
+		resultType="com.greencar.vo.help.FrequentlyVO">
+		select * from frequentlyqa_tbl where fre_category = '[기능]'
+	</select>
+
+	<select id="getCateList"
+		resultType="com.greencar.vo.help.FrequentlyVO" parameterType="String">
+		select
+		*
+		from
+		frequentlyqa_tbl
+		where
+		fre_category = #{freCategory}
+	</select>
+
+
+</mapper>

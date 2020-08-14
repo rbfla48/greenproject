@@ -1,0 +1,409 @@
+@charset "UTF-8";
+
+/*상품페이지 전체영역*/
+.goods_page_wrap {
+    width: 1200px;
+    min-width: 1200px;
+    height: auto;
+    margin: auto;
+}
+/*브랜드/차종선택창 영역*/
+.select_car_wrap{
+    display: flex;
+    flex-wrap: wrap;
+    width: 1200px;
+    height: 450px;
+    box-sizing: border-box;
+}
+/*표 제목*/
+.goods_page_wrap>div>div>table>tbody>tr>th {
+    background-color: #e4dcd3;
+    color: #444;
+    height: 40px;
+    font-size: 23px;
+}
+
+
+/*브랜드선택창*/
+.select_car_brand {
+    width: 850px;
+    height:100%;
+    box-sizing: border-box;
+}
+/*브랜드선택표*/
+.select_car_brand>table>tbody>tr>td {
+	height: 131px;
+	width: 139px;
+	border:solid 1px #000;
+	box-sizing: border-box;
+}
+.select_car_brand>table>tbody>tr>td:hover {
+    border: 2px solid #000;
+    box-sizing: border-box;
+}
+.select_car_brand_text {
+    width:inherit;
+    height: auto;
+    font-size: 16px;
+    font-weight: bold;
+    padding-top: 100px;
+    text-align: center;
+}
+
+/*------------------------------------------*/
+
+/*브랜드이미지*/
+/* .select_car_brand_img {
+    width: 100%;
+    height: 100px;
+    border: 5px;
+    box-sizing: border-box;
+} */
+/*브랜드명*/
+.select_car_brand_text {
+    width:inherit;
+    height: auto;
+    font-size: 16px;
+    font-weight: bold;
+    padding-top: 100px;
+    text-align: center;
+}
+/*----------------------------------------------*/
+
+/*차종선택창*/
+/* .select_car_size {
+    width: 30%;
+    height: 410px;
+    box-sizing: border-box;
+    background-color: yellow;
+}
+.select_car_size>table {
+    table-layout:fixed;
+    width: 100%;
+    height: 100%;
+    box-sizing: border-box;
+}
+.select_car_size>table>tbody>tr>td {
+    border: 1px solid #000;
+}
+
+차종선택창 차종 구분
+.select_car_size_text {
+    width: 100%;
+    height: 100%;
+    font-size: 23px;
+    text-align: center;
+}
+
+차종선택 이미지
+.select_car_size>table>tbody>td>img{
+    width: 100%;
+    height: 100px;
+    border: 5px;
+    box-sizing: border-box;
+} */
+
+/*상품 정렬옵션 영역*/
+.array_goods_option {
+    width: 100%;
+    height: 40px;
+    margin: 10px 0 10px 0;
+    display: flex;
+    padding: 0 0 0 80%;
+}
+/*구글 머터리얼요소*/
+.array_goods_option>span {
+    font-size: 40px;
+    margin-left: 10px;
+}
+/*목록형 정렬*/
+.material_icons_1 :active {
+    
+}
+/*정렬기준 드롭박스*/
+.array_goods_option>select {
+    width: 120px;
+    height: 40px;
+    margin-left: 10px;
+    border-radius: 5px;
+}
+
+/*상품리스트 전체영역*/
+.goods_list_wrap {
+    width: 100%;
+    height: auto;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    margin-bottom: 100px;
+}
+/*상품타일 1개*/
+.goods_list {
+    width: 24%;
+    height: 300px;
+    border: 1px solid #000;
+    padding: 15px;
+    box-sizing: border-box;
+}
+
+/* .goods_list:active{
+    width: 100%;
+    height: 300px;
+    border: 1px solid #000;
+    box-sizing: border-box;
+} */
+
+/*상품이미지 영역*/
+.goods_list_img {
+    width: 100%;
+    height: 50%;
+}
+.goods_list_img>img {
+    width: 100%;
+    height: 100%;
+    box-sizing: border-box;
+}
+/*차량이름*/
+.goods_list_name {
+    width: 100%;
+    height: 10%;
+    font-size: 18px;
+    font-weight: bold;
+}
+/*차량가격*/
+.goods_list_price {
+    width: 100%;
+    height: 10%;
+    margin-top: 10px;
+}
+/*연비*/
+.goods_list_mileage {
+    width: 100%;
+    height: 10%;
+}
+/*차종*/
+.goods_list_kind {
+    width: 100%;
+    height: 10%;
+}
+
+/*최근 본 상품 사이드바*/
+.common_goods {
+    width: 150px;
+    height: auto;
+    background-color: #444;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    border-radius: 10px;
+    float: right;
+    position: fixed;
+    bottom: 20%;
+    right: 3%;
+    padding: 15px 0 15px 0;
+    box-sizing: border-box;
+    overflow: hidden;
+}
+/*최근 본 상품 목록(3개 제한)*/
+.common_goods_index {
+    width: 80%;
+    height: 150px;
+    padding: 20px 0 0 0;
+    box-sizing: border-box;
+}
+.common_goods_index:hover {
+    border: 2px solid #fff;
+}
+/*최근 본 상품 이미지*/
+.common_goods_index>img {
+    width: 100%;
+    height: 70%;
+}
+/*최근 본 상품 상품명*/
+.common_goods_name {
+    width: 100%;
+    height: 30%;
+    font-size: 16px;
+    text-align: center;
+    color: whitesmoke;
+}
+
+
+/* 브랜드 버튼 백그라운드 이미지  */
+ #audi {
+	background-image: url("../../image/logo/audi.png");
+	background-size: contain;
+	background-repeat : no-repeat;
+	background-position: center;
+}
+
+ #benz {
+	background-image: url("../../image/logo/benz.png");
+	background-size: contain;
+	background-repeat : no-repeat;
+	background-position: center;
+}
+
+ #cadillac {
+	background-image: url("../../image/logo/cadillac.png");
+	background-size: contain;
+	background-repeat : no-repeat;
+	background-position: center;
+}
+
+ #chevrolet {
+	background-image: url("../../image/logo/chevrolet.png");
+	background-size: contain;
+	background-repeat : no-repeat;
+	background-position: center;
+}
+
+ #ferrari {
+	background-image: url("../../image/logo/ferrari.png");
+	background-size: contain;
+	background-repeat : no-repeat;
+	background-position: center;
+}
+
+ #ford {
+	background-image: url("../../image/logo/ford.png");
+	background-size: contain;
+	background-repeat : no-repeat;
+	background-position: center;
+}
+
+ #genesis {
+	background-image: url("../../image/logo/genesis.png");
+	background-size: contain;
+	background-repeat : no-repeat;
+	background-position: center;
+}
+
+ #honda {
+	background-image: url("../../image/logo/honda.png");
+	background-size: contain;
+	background-repeat : no-repeat;
+	background-position: center;
+}
+
+ #hyundai {
+	background-image: url("../../image/logo/hyundai.png");
+	background-size: contain;
+	background-repeat : no-repeat;
+	background-position: center;
+}
+
+ #infiniti {
+	background-image: url("../../image/logo/infiniti.png");
+	background-size: contain;
+	background-repeat : no-repeat;
+	background-position: center;
+}
+
+ #jaguar {
+	background-image: url("../../image/logo/jaguar.png");
+	background-size: contain;
+	background-repeat : no-repeat;
+	background-position: center;
+}
+
+ #kia {
+	background-image: url("../../image/logo/kia.png");
+	background-size: contain;
+	background-repeat : no-repeat;
+	background-position: center;
+}
+
+ #lamborghini {
+	background-image: url("../../image/logo/lamborghini.png");
+	background-size: contain;
+	background-repeat : no-repeat;
+	background-position: center;
+}
+
+ #lexus {
+	background-image: url("../../image/logo/lexus.png");
+	background-size: contain;
+	background-repeat : no-repeat;
+	background-position: center;
+}
+
+ #mini {
+	background-image: url("../../image/logo/mini.png");
+	background-size: contain;
+	background-repeat : no-repeat;
+	background-position: center;
+}
+
+ #ssangyong {
+	background-image: url("../../image/logo/ssangyong.png");
+	background-size: contain;
+	background-repeat : no-repeat;
+	background-position: center;
+}
+
+ #teslr {
+	background-image: url("../../image/logo/teslr.png");
+	background-size: contain;
+	background-repeat : no-repeat;
+	background-position: center;
+}
+
+ #toyota {
+	background-image: url("../../image/logo/toyota.png");
+	background-size: contain;
+	background-repeat : no-repeat;
+	background-position: center;
+}
+
+ #volkswagen {
+	background-image: url("../../image/logo/volkswagen.png");
+	background-size: contain;
+	background-repeat : no-repeat;
+	background-position: center;
+}
+
+ #volvo {
+	background-image: url("../../image/logo/volvo.png");
+	background-size: contain;
+	background-repeat : no-repeat;
+	background-position: center;
+}
+
+ #convertible {
+	background-image: url("../../image/goodsMain/40.png");
+	background-size: contain;
+	background-repeat : no-repeat;
+	background-position: center;
+}
+ #sedan {
+	background-image: url("../../image/goodsMain/58.png");
+	background-size: contain;
+	background-repeat : no-repeat;
+	background-position: center;
+}
+ #suv {
+	background-image: url("../../image/goodsMain/79.png");
+	background-size: contain;
+	background-repeat : no-repeat;
+	background-position: center;
+}
+ #ben {
+	background-image: url("../../image/goodsMain/99.png");
+	background-size: contain;
+	background-repeat : no-repeat;
+	background-position: center;
+}
+ #coup {
+	background-image: url("../../image/goodsMain/83.png");
+	background-size: contain;
+	background-repeat : no-repeat;
+	background-position: center;
+}
+ #etc {
+	background-image: url("../../image/goodsMain/92.png");
+	background-size: contain;
+	background-repeat : no-repeat;
+	background-position: center;
+}
+

@@ -1,0 +1,95 @@
+.mypage {
+	border: black;
+	background-color: #e4dcd3;
+	font-size: 15px;
+	float: left;
+	text-align: left;
+	margin: 0 0 0 130px;;
+	height: 40%;
+	width: 200px;
+}
+
+.mypage span {
+	color: red;
+}
+/* 마이페이지 끝 */
+section {
+	width: 1200px;
+	height: auto; /*완성 후 수정*/
+	margin: auto;
+	border: solid 1px grey;
+	padding-top: 10px;
+	padding-bottom: 10px;
+	margin-bottom: 10px;
+}
+
+section #top_button_box {
+	width: 100%;
+	height: 60px;
+	margin-left: 70px;
+}
+
+section #top_button_box button {
+	width: 200px;
+	height: 50px;
+	background-color: #e4dcd3;
+	border-radius: 2px;
+	border-style: none;
+	margin-left: 50px;
+	font-size: 20px;
+}
+
+section #frequently_box {
+	width: 1000px;
+	margin: 20px auto 0 auto;
+}
+
+section #frequently_box hr {
+	opacity: 0.5;
+}
+
+section #frequently_box #frequently_text {
+	font-size: 30px;
+}
+
+section #frequently_box #question {
+	padding-top: 20px;
+	font-size: 25px;
+}
+
+section #frequently_box #question #drop {
+	float: right;
+}
+
+section #frequently_box #question #content_answer {
+	display: none;
+}
+
+section #person_question {
+	float: right;
+	padding-right: 100px;
+}
+
+section #brand_center_box {
+	width: 1000px;
+	margin: 100px auto 0 auto;
+}
+
+section #brand_center_box hr {
+	opacity: 0.5;
+}
+
+section #brand_center_box #brand_center_text {
+	font-size: 30px;
+}
+
+section #brand_center_box #brand_center_button button {
+	width: 200px;
+	height: 50px;
+	background-color: #e4dcd3;
+	border-radius: 2px;
+	border-style: none;
+	font-size: 20px;
+	margin-top: 15px;
+	margin-left: 40px;
+}

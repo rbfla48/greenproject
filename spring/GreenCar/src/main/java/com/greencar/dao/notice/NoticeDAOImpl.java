@@ -2,8 +2,6 @@ package com.greencar.dao.notice;
 
 import java.util.List;
 
-import javax.inject.Inject;
-
 import org.apache.ibatis.session.SqlSession;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
@@ -11,7 +9,7 @@ import org.springframework.stereotype.Repository;
 import com.greencar.vo.notice.Criteria;
 import com.greencar.vo.notice.NoticeVO;
 
-@Repository("NoticeDAO")
+@Repository
 public class NoticeDAOImpl implements NoticeDAO {
 
 	@Autowired
@@ -19,7 +17,7 @@ public class NoticeDAOImpl implements NoticeDAO {
 	
 	@Override
 	public List<NoticeVO> getList() {
-		return sqlSession.selectList("mappers.noticeMapper.getList");
+		return sqlSession.selectList("noticeMapper.getList");
 	}
 
 	@Override
@@ -44,18 +42,25 @@ public class NoticeDAOImpl implements NoticeDAO {
 	}
 
 	@Override
-	public NoticeVO read(int notice_no) {
-		return sqlSession.selectOne("mappers.noticeMapper.read", notice_no);
+	public NoticeVO read(int noticeNo) {
+		return sqlSession.selectOne("mappers.noticeMapper.read", noticeNo);
 	}
 
 	@Override
-	public int delete(int notice_no) {
-		return sqlSession.delete("mappers.noticeMapper.delete", notice_no);
+	public int delete(int noticeNo) {
+		return sqlSession.delete("mappers.noticeMapper.delete", noticeNo);
 	}
 
 	@Override
 	public int update(NoticeVO noticeVO) {
 		return sqlSession.update("mappers.noticeMapper.update", noticeVO);
 	}
+
+	@Override
+	public int viewCount(int noticeNo) {
+		return sqlSession.update("mappers.noticeMapper.viewCount", noticeNo);
+	}
+	
+
 
 }

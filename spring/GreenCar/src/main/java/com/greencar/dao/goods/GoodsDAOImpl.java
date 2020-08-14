@@ -7,39 +7,96 @@ import javax.inject.Inject;
 import org.apache.ibatis.session.SqlSession;
 import org.springframework.stereotype.Repository;
 
+import com.greencar.vo.community.Criteria;
+import com.greencar.vo.goods.BrandVO;
 import com.greencar.vo.goods.GoodsVO;
 import com.greencar.vo.option.OptionVO;
 import com.greencar.vo.option.OptionVO2;
 import com.greencar.vo.option.OptionVO3;
+
 @Repository
 public class GoodsDAOImpl implements GoodsDAO {
 
 	@Inject
 	private SqlSession sqlSession;
+	
 	/** 상품 목록 조회 */
 	@Override
-	public List<GoodsVO> goodsList() throws Exception {
-		return sqlSession.selectList("goodsMapper.listGoods");
-	} // 상품 목록 조회
+	public List<GoodsVO> detailList(GoodsVO goodsVO) throws Exception {
+		return sqlSession.selectList("goodsMapper.listGoods", goodsVO);
+	} 
+	
 	/** 상품 조회 */
 	@Override
 	public GoodsVO goodsDetail(int goodsNo) throws Exception {
 		return sqlSession.selectOne("goodsMapper.readGoods",goodsNo);
-	} // 상품 조회
+	} 
 	/** 상품 수정 */
 	@Override
 	public void goodsUpdate(GoodsVO goodsVO) throws Exception {
 		sqlSession.update("goodsMapper.updateGoods", goodsVO);
-	} // 상품 수정
+	} 
+	
+	
+	
 	/** 옵션 조회 */
+	// 상품 목록 조회
 	@Override
 	public OptionVO optionDetail(int optionNo) throws Exception {
 		return sqlSession.selectOne("optionMapper.readOption1",optionNo);} 
+	
+	// 상품 조회
 	@Override
 	public OptionVO2 optionDetail2(int optionNo2) throws Exception {
 		return sqlSession.selectOne("optionMapper.readOption2",optionNo2);} 
+	
+	// 상품 수정
 	@Override
 	public OptionVO3 optionDetail3(int optionNo3) throws Exception {
 		return sqlSession.selectOne("optionMapper.readOption3",optionNo3);
 	} // 옵션 조회 */
+	
+	
+	
+	// 상품 목록 조회	
+		@Override
+		public List<GoodsVO> getList() {		
+			return sqlSession.selectList("mappers.goodsMapper.list");
+		}
+		
+		
+		//전체목록조회(페이징 추가)
+		@Override
+		public List<GoodsVO> getListWithPage(Criteria cri) {		
+			return sqlSession.selectList("mappers.goodsMapper.getListWithPage", cri);
+		}
+		
+		//상품 갯수 연산(페이징)
+		@Override
+		public int getTotalCount(Criteria cri) {		
+			return sqlSession.selectOne("mappers.goodsMapper.getTotalCount", cri);
+		}
+
+		// 상품 조회
+		@Override
+		public GoodsVO read(int goodsNo) {		
+			return sqlSession.selectOne("mappers.goodsMapper.read", goodsNo);
+		}
+
+		//브랜드 별 상품 출력
+		@Override
+		public List<GoodsVO> listByBrand(int brandCode) {		
+			return sqlSession.selectList("mappers.goodsMapper.listByBrand", brandCode);
+		}
+		//차종 별 상품 출력
+		@Override
+		public List<GoodsVO> listByType(String goodsType) {		
+			return sqlSession.selectList("mappers.goodsMapper.listByType", goodsType);
+		}
+
+		@Override
+		public List<GoodsVO> getRecommend(GoodsVO goodsVO) {
+			return sqlSession.selectOne("mappers.goodsMapper.getRecommend", goodsVO);
+		}
+
 }

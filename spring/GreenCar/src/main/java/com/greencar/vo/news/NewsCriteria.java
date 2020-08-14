@@ -6,6 +6,7 @@ public class NewsCriteria {
 	private int perPageNum;
 	private int rowStart;
 	private int rowEnd;
+	private int newsCate;
 	
 	public NewsCriteria() {
 		this.page = 1;
@@ -41,6 +42,13 @@ public class NewsCriteria {
 	public int getRowEnd() {
 		rowEnd = rowStart + perPageNum - 1;
 		return rowEnd;
+	}
+	
+	public int getNewsCate() {
+		return newsCate;
+	}
+	public void setNewsCate(int newsCate) {
+		this.newsCate = newsCate;
 	}
 	@Override
 	public String toString() {
