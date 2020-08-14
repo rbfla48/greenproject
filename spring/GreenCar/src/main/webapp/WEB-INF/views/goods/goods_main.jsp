@@ -60,103 +60,91 @@
         <div class="select_car_brand"><!--브랜드선택창-->
             <table>
                 <tr>
-                    <th colspan="6">브랜드별로 보기</th> 
+                    <th colspan="6">브랜드별로 보기</th>       
+                    <th colspan="2">차종별로 보기</th>
                 </tr>
                 <tr>
-                <td onclick="location.href='/goods/listByBrand?brandCode=6'"> <img src="/resources/image/logo/audi.png" class="select_car_brand_img">
+                <td onclick="location.href='/goods/listByBrand?brandCode=6'" id="audi"> 
                     <div class="select_car_brand_text">	AUDI
 				</div></td>             
-                <td onclick="location.href='/goods/listByBrand?brandCode=7'"><img src="/resources/image/logo/benz.png" class="select_car_brand_img" alt="brand_logo">
+                <td onclick="location.href='/goods/listByBrand?brandCode=7'" id="benz">
                     <div class="select_car_brand_text">	BENZ
                     </div></td>
-                <td onclick="location.href='/goods/listByBrand?brandCode=8'"><img src="/resources/image/logo/cadillac.png" class="select_car_brand_img" alt="brand_logo">
+                <td onclick="location.href='/goods/listByBrand?brandCode=8'"  id="cadillac">
                     <div class="select_car_brand_text">CADILLAC 
                     </div></td>
-                <td onclick="location.href='/goods/listByBrand?brandCode=9'"><img src="/resources/image/logo/chevrolet.png" class="select_car_brand_img" alt="brand_logo">
+                <td onclick="location.href='/goods/listByBrand?brandCode=9'" id="chevrolet">
                     <div class="select_car_brand_text">                   
 				CHEVROLET </div></td>                   
-                <td onclick="location.href='/goods/listByBrand?brandCode=10'"><img src="/resources/image/logo/ferrari.png" class="select_car_brand_img" alt="brand_logo">
+                <td onclick="location.href='/goods/listByBrand?brandCode=10'" id="ferrari" >
                     <div class="select_car_brand_text">	FERRARI
                     </div></td>
-                <td onclick="location.href='/goods/listByBrand?brandCode=1'"><img src="/resources/image/logo/ford.png" class="select_car_brand_img" alt="brand_logo">
+                <td onclick="location.href='/goods/listByBrand?brandCode=1'" id="ford">
                     <div class="select_car_brand_text">FORD                    
                     </div></td>
+                <td onclick="location.href='/goods/listByType?goodsType=컨버터블'" id="convertible">
+                	<div class="select_car_brand_text">컨버터블 
+					</div></td>
+                <td onclick="location.href='/goods/listByType?goodsType=세단'" id="sedan">
+                	<div class="select_car_brand_text">세단
+					</div></td>
                 </tr>
                 <tr>
-                <td onclick="location.href='/goods/listByBrand?brandCode=2'"><img src="/resources/image/logo/genesis.png" class="select_car_brand_img" alt="brand_logo">
+                <td onclick="location.href='/goods/listByBrand?brandCode=2'" id="genesis">
                     <div class="select_car_brand_text">GENESIS
                     </div></td>
-                <td onclick="location.href='/goods/listByBrand?brandCode=4'"><img src="/resources/image/logo/hyundai.png" class="select_car_brand_img" alt="brand_logo">
+                <td onclick="location.href='/goods/listByBrand?brandCode=4'" id="hyundai">
                     <div class="select_car_brand_text">HYUNDAI
                     </div></td>
-                <td onclick="location.href='/goods/listByBrand?brandCode=5'"><img src="/resources/image/logo/infiniti.png" class="select_car_brand_img" alt="brand_logo">
+                <td onclick="location.href='/goods/listByBrand?brandCode=5'" id="infiniti">
                     <div class="select_car_brand_text">INFINITI
                     </div></td>
-                <td onclick="location.href='/goods/listByBrand?brandCode=12'"><img src="/resources/image/logo/jaguar.png" class="select_car_brand_img" alt="brand_logo">
+                <td onclick="location.href='/goods/listByBrand?brandCode=12'" id="jaguar">
                     <div class="select_car_brand_text">JAGUAR
                     </div></td>
-                <td onclick="location.href='/goods/listByBrand?brandCode=11'"><img src="/resources/image/logo/kia.PNG" class="select_car_brand_img" alt="brand_logo">
+                <td onclick="location.href='/goods/listByBrand?brandCode=11'" id="kia">
                     <div class="select_car_brand_text">KIA
 				</div></td>
-                <td onclick="location.href='/goods/listByBrand?brandCode=13'"><img src="/resources/image/logo/Lamborghini.png" class="select_car_brand_img" alt="brand_logo">
+                <td onclick="location.href='/goods/listByBrand?brandCode=13'" id="lamborghini">
                     <div class="select_car_brand_text">LAMBORGHINI
+				</div></td>
+				<td onclick="location.href='/goods/listByType?goodsType=SUV'"  id="suv">
+				<div class="select_car_brand_text">SUV             
+				</div></td>
+                <td onclick="location.href='/goods/listByType?goodsType=픽업밴'" id="ben">
+                <div class="select_car_brand_text"> 밴 
 				</div></td>
                 </tr>
                 <tr>
-                <td onclick="location.href='/goods/listByBrand?brandCode=15'"><img src="/resources/image/logo/lexus.png" class="select_car_brand_img" alt="brand_logo">
+                <td onclick="location.href='/goods/listByBrand?brandCode=15'" id="lexus">
                     <div class="select_car_brand_text">LEXUS
                     </div></td>
-                <td onclick="location.href='/goods/listByBrand?brandCode=14'"><img src="/resources/image/logo/mini.png" class="select_car_brand_img" alt="brand_logo">
+                <td onclick="location.href='/goods/listByBrand?brandCode=14'" id="mini">
                     <div class="select_car_brand_text">MINI
                     </div></td>
-                <td onclick="location.href='/goods/listByBrand?brandCode=16'"><img src="/resources/image/logo/ssangyong.png" class="select_car_brand_img" alt="brand_logo">
+                <td onclick="location.href='/goods/listByBrand?brandCode=16'" id="ssangyong">
                     <div class="select_car_brand_text">SSANGYONG
                     </div></td>
-                <td onclick="location.href='/goods/listByBrand?brandCode=17'"><img src="/resources/image/logo/teslr.png" class="select_car_brand_img" alt="brand_logo">
+                <td onclick="location.href='/goods/listByBrand?brandCode=17'" id="teslr">
                     <div class="select_car_brand_text">TESLR
                     </div></td>
-                <td onclick="location.href='/goods/listByBrand?brandCode=19'"><img src="/resources/image/logo/volkswagen.png" class="select_car_brand_img" alt="brand_logo">
+                <td onclick="location.href='/goods/listByBrand?brandCode=19'" id="volkswagen">
                     <div class="select_car_brand_text">VOLKSWAGEN
                     </div></td>
-                <td onclick="location.href='/goods/listByBrand?brandCode=20'"><img src="/resources/image/logo/volvo.png" class="select_car_brand_img" alt="brand_logo">
+                <td onclick="location.href='/goods/listByBrand?brandCode=20'" id="volvo">
                     <div class="select_car_brand_text">VOLVO
                     </div></td>
+                     <td onclick="location.href='/goods/listByType?goodsType=쿠페'" id="coup">
+                     <div class="select_car_brand_text">쿠페
+                	</div></td>
+                <td onclick="location.href='/goods/listByType?goodsType=기타'" id="etc">
+                <div class="select_car_brand_text">기타
+                	</div></td>
                 </tr>
             </table>
         </div><!--브랜드선택창 END-->
     
-        <div class="select_car_size"><!--차종선택창-->
-        <table>
-            <tr>
-            <th colspan="2">차종별로 보기</th>
-            </tr>
-            <tr>
-                <td onclick="location.href='/goods/listByType?goodsType=컨버터블'"><div class="select_car_size_text">
-                <img src="/resources/image/goodsMain/54.png" class="select_car_brand_img" >컨버터블
-				</div></td>
-                <td onclick="location.href='/goods/listByType?goodsType=세단'"><div class="select_car_size_text">
-                <div class="select_car_size_text">
-                <img src="/resources/image/goodsMain/58.png" class="select_car_brand_img" >세단
-				</div></td>
-            </tr>
-            <tr>
-                <td onclick="location.href='/goods/listByType?goodsType=SUV'"><div class="select_car_size_text">
-                <img src="/resources/image/goodsMain/79.png" class="select_car_brand_img" >SUV
-				</div></td>
-                <td onclick="location.href='/goods/listByType?goodsType=픽업밴'"><div class="select_car_size_text">
-                <img src="/resources/image/goodsMain/99.png" class="select_car_brand_img" >밴
-				</div></td>
-            </tr>
-            <tr>
-                <td onclick="location.href='/goods/listByType?goodsType=쿠페'"><div class="select_car_size_text">
-                <img src="/resources/image/goodsMain/83.png" class="select_car_brand_img" >쿠페
-                	</div></td>
-                <td onclick="location.href='/goods/listByType?goodsType=기타'"><div class="select_car_size_text">
-                <img src="/resources/image/goodsMain/92.png" class="select_car_brand_img" >기타
-                	</div></td>
-            </tr>
-        </table>
-        </div>
+        
     </div><!--브랜드/차종선택창 영역END-->
 
     <div class="array_goods_option"><!--상품 정렬옵션 영역-->
