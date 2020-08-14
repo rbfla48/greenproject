@@ -26,7 +26,7 @@
 
 	<script src="//code.jquery.com/jquery-1.11.0.min.js"></script>
 
-	<jsp:include page="/resources/jsp/menu.jsp" flush="false" />
+	<jsp:include page="/resources/jsp/admin_menu.jsp" flush="false"/>
 	
 	<!-------------------------------메뉴바END-------------------------------->
 	<div class="wrap">

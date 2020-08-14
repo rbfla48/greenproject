@@ -94,9 +94,10 @@ public class GoodsServiceImpl implements GoodsService {
 		
 		return dao.listByType(goodsType);
 	}
+	
 	@Override
-	public List<String> getBrand() {
-		
-		return dao.getBrand();
+	public List<GoodsVO> getRecommend(GoodsVO goodsVO) {
+		return dao.getRecommend(goodsVO);
 	}
+	
 }

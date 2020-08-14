@@ -31,7 +31,7 @@
 	<script src="/resources/js/pagingFunction.js" type="text/javascript"></script>
 	<script src="/resources/js/searchFunction.js" type="text/javascript"></script>
 	
-	<jsp:include page="/resources/jsp/menu.jsp" flush="false" />
+	<jsp:include page="/resources/jsp/admin_menu.jsp" flush="false"/>
 	
 	<!-------------------------------메뉴바END-------------------------------->
 	<div class="wrap">

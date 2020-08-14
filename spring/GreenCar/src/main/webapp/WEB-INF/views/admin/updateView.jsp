@@ -60,7 +60,7 @@ let priceFlag = false;
 			<!-- 네비게이션 바 시작-->
 			<div id="middle">
 				<ul>
-					<li id="admin_goods"><a href="#">상품관리</a></li>
+					<li id="/admin/updateView"><a href="#">상품관리</a></li>
 					<li id="vl">|</li>
 					<li id="admin_account"><a href="#">정산관리</a></li>
 					<li id="vl">|</li>

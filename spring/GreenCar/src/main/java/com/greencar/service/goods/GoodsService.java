@@ -34,6 +34,6 @@ public interface GoodsService {
 	
 	public List<GoodsVO> listByType(String goodsType);
 	
-	public List<String> getBrand();
+	public List<GoodsVO> getRecommend(GoodsVO goodsVO);
 	
 }

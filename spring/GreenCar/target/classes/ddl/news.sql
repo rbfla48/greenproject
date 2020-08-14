@@ -1,7 +1,8 @@
 create table news (
 news_no number,
 news_title varchar2(500),
-news_text clob)
+news_text clob,
+news_cate number)
 
 CREATE SEQUENCE news_seq
 START WITH 1

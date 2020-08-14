@@ -148,10 +148,8 @@
 						<tr>
 							<td>선호브랜드</td>
 							<td>
-								<select class="panel_option_one" name="brandName"><!--선호브랜드-->							
-										<c:forEach items="${goods}" var="goods">
-											<option>${goods.brandName}</option>
-										</c:forEach>
+								<select class="panel_option_one" name="brandCode"><!--선호브랜드-->							
+					
 								</select>
 							</td>
 						</tr>

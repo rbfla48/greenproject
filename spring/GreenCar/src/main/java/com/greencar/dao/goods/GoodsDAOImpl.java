@@ -95,8 +95,8 @@ public class GoodsDAOImpl implements GoodsDAO {
 		}
 
 		@Override
-		public List<String> getBrand() {
-			return sqlSession.selectList("mappers.goodsMapper.getBrand");
+		public List<GoodsVO> getRecommend(GoodsVO goodsVO) {
+			return sqlSession.selectOne("mappers.goodsMapper.getRecommend", goodsVO);
 		}
 
 }

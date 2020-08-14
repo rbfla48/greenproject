@@ -77,7 +77,16 @@
 	
 	
 	<!-- 브랜드조회 -->
-	<select id="getBrand" resultType="com.greencar.vo.goods.BrandVO">
-		SELECT brand_name FROM brand; 
+	<select id="getRecommend" resultType="com.greencar.vo.goods.GoodsVO">
+	<![CDATA[
+		SELECT * FROM goods
+		WHERE
+			brand_code = #{brandCode} AND
+			(goods_price BETWEEN #{goodsPrice1} AND #{goodsPrice2}) AND
+			goods_size = #{goodsSize} AND
+			goods_efficient = #{goodsEfficient} AND
+			goods_Fuel = #{goodsFuel} AND
+			rownum <= 1;
+	]]>
 	</select>
 </mapper>
