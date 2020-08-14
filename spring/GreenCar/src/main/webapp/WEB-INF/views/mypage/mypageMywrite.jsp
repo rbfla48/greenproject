@@ -36,9 +36,7 @@
 					마이페이지
 				</ul>
 				<ul>
-					<button id="function"
-						onclick="location.href='/mypage/memberUpdateView?='">회원정보
-						수정</button>
+					<a href='location.href="/mypage/memberUpdateView?="'>회원정보수정</a>
 				</ul>
 				<ul>
 					1:1 문의내역
@@ -81,37 +79,11 @@
 								value="${mypage.commuDate}" /></td>
 						<!-- 조회수 -->
 						<td><c:out value="${mypage.commuView}" /></td>
-
 					</tr>
 					</c:if>
 				</c:forEach>
 			</table>
-			
-			
-			<!-- 페이징 설정 -->
-			<form id="actionForm" action="/community/community_main" method="GET">
-					<input type="hidden" name="pageNum" value="${pageMaker.cri.pageNum}">
-	        		<input type="hidden" name="amount" value="${pageMaker.cri.amount}">
-	        		<input type="hidden" name="type" value="<c:out value="${pageMaker.cri.type}"/>">
-	        		<input type="hidden" name="keyword" value="<c:out value="${pageMaker.cri.keyword}"/>">
-	        	</form>
-	        	
 			</div>
-			<c:if test="${pageMaker.prev}"><!-- 이전페이지이동 -->
-			    <a href="${action}?pageNum=${pageMaker.startPage-1}&amount=${pageMaker.cri.amount}&type=${pageMaker.cri.type}&keyword=${pageMaker.cri.keyword}">이전으로</a>
-			</c:if>
-			
-			<c:forEach begin="${pageMaker.startPage}" end="${pageMaker.endPage}" step="1" var="num">
-			    <li class="paginate_btn" value="${pageMaker.cri.pageNum == num ? 'active':''} ">
-			    	<a href="${num}">${num}</a>
-			    </li>	  
-			</c:forEach>
-						
-			<c:if test="${pageMaker.next}"><!-- 다음페이지 이동 -->
-			    <a href="${action}?pageNum=${pageMaker.endPage+1}&amount=${pageMaker.cri.amount}&type=${pageMaker.cri.type}&keyword=${pageMaker.cri.keyword}">다음으로</a>
-			</c:if>
-			</div>
-			
 	</section>
 
 

@@ -10,8 +10,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>GreenCar Home</title>
-    <link rel="stylesheet" href="/resources/menu.css" type="text/css"><!--상단header-->
-    <link rel="stylesheet" href="/resources/Q&A_write.css" type="text/css">
+    <link rel="stylesheet" href="/resources/css/Q&A_write.css" type="text/css">
     <link rel="stylesheet" href="/resources/footer.css" type="text/css"><!--하단footer-->
     <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons"><!--구글머터리얼-->
 </head>
@@ -23,7 +22,7 @@
     <!-------------------------------메뉴바END-------------------------------->
 
     <!--마이 페이지 시작-->
-    
+    <div class="wrap">
    <aside class="mypage_category">
 		<ul>
 			마이페이지	
@@ -68,7 +67,7 @@
 
         <input type="text" id="inquery_content" name="oboContent" value="문의를 작성하세요">
 
-		<div>
+		<div class="oboWriter">
 			<input type="text" name="oboWriter" value="${user.userNick}" readonly="readonly">
 		</div>
         <div id="btns">
@@ -77,6 +76,7 @@
         </div>
 	</form>
     </section>
+    </div>
 
     
 

@@ -15,7 +15,7 @@
 
 <title>join_form</title>
 <link rel="stylesheet"
-	href="<c:url value="/resources/css/join_form.css" />">
+	href="<c:url value="/resources/css/memberUpdateView.css" />">
 <link rel="stylesheet"
 	href="<c:url value="/resources/css/footer.css" />">
 
