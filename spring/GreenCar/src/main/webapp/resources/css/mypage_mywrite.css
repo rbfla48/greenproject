@@ -5,17 +5,16 @@
 
 /*마이페이지 전체영역*/
 .wrap {
-    width: 60%;
+    width: 100%;
     min-width: 1500px;
-    margin: 0 20% 0 20%;
+	margin: 0 0 0 10%;
     height: auto;
     display: flex;
     flex-wrap: wrap;
-    justify-content: space-between;
 } 
 /*카테고리*/
 .mypage_category{
-    background-color: #e4dcd3;
+     background-color: #e4dcd3;
     font-size: 15px;
     text-align: left;
     width: 15%;
@@ -26,16 +25,16 @@
 .mypage_category>ul>span {
     color:red;
 }
-/* 내가 쓴글 시작*/
-table{
-    width: 100%;
-    
+
+a {
+	text-decoration: none;
 }
+/* 내가 쓴글 시작*/
+
 .board{
     border: 1px solid black;
-    width: 78%;
-    height: 100%;
-    margin: 0 0 0 20px;
+    width: 1200px;
+    height: auto;
     text-align: center;
      
    
@@ -46,6 +45,6 @@ table{
 
 .tit{ 
     width: 50%;
-    text-align: left;
+    text-align: center;
     
 }

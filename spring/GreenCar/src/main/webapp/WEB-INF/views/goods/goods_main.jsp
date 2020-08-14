@@ -63,115 +63,63 @@
                     <th colspan="6">브랜드별로 보기</th> 
                 </tr>
                 <tr>
-                <td> <img src="/resources/image/logo/audi.png" class="select_car_brand_img">
-                    <div class="select_car_brand_text">
-                    <button id="function"
-				onclick="location.href='/goods/listByBrand?brandCode=6'">AUDI</button>
+                <td onclick="location.href='/goods/listByBrand?brandCode=6'"> <img src="/resources/image/logo/audi.png" class="select_car_brand_img">
+                    <div class="select_car_brand_text">	AUDI
 				</div></td>             
-              
-                <td><img src="/resources/image/logo/benz.png" class="select_car_brand_img" alt="brand_logo">
-                    <div class="select_car_brand_text">
-                     <button id="function"
-				onclick="location.href='/goods/listByBrand?brandCode=7'">BENZ</button>
+                <td onclick="location.href='/goods/listByBrand?brandCode=7'"><img src="/resources/image/logo/benz.png" class="select_car_brand_img" alt="brand_logo">
+                    <div class="select_car_brand_text">	BENZ
                     </div></td>
-                <td><img src="/resources/image/logo/cadillac.png" class="select_car_brand_img" alt="brand_logo">
-                    <div class="select_car_brand_text">
-                      <button id="function"
-				onclick="location.href='/goods/listByBrand?brandCode=8'">CADILLAC</button>                    
+                <td onclick="location.href='/goods/listByBrand?brandCode=8'"><img src="/resources/image/logo/cadillac.png" class="select_car_brand_img" alt="brand_logo">
+                    <div class="select_car_brand_text">CADILLAC 
                     </div></td>
-                <td><img src="/resources/image/logo/chevrolet.png" class="select_car_brand_img" alt="brand_logo">
-                    <div class="select_car_brand_text">
-                       <button id="function"
-				onclick="location.href='/goods/listByBrand?brandCode=9'">CHEVROLET</button> 
-                    
+                <td onclick="location.href='/goods/listByBrand?brandCode=9'"><img src="/resources/image/logo/chevrolet.png" class="select_car_brand_img" alt="brand_logo">
+                    <div class="select_car_brand_text">                   
+				CHEVROLET </div></td>                   
+                <td onclick="location.href='/goods/listByBrand?brandCode=10'"><img src="/resources/image/logo/ferrari.png" class="select_car_brand_img" alt="brand_logo">
+                    <div class="select_car_brand_text">	FERRARI
                     </div></td>
-                <td><img src="/resources/image/logo/ferrari.png" class="select_car_brand_img" alt="brand_logo">
-                    <div class="select_car_brand_text">
-                       <button id="function"
-				onclick="location.href='/goods/listByBrand?brandCode=10'">FERRARI</button> 
-                  
-                    </div></td>
-                <td><img src="/resources/image/logo/ford.png" class="select_car_brand_img" alt="brand_logo">
-                    <div class="select_car_brand_text">
-                       <button id="function"
-				onclick="location.href='/goods/listByBrand?brandCode=1'">FORD</button> 
-                    
+                <td onclick="location.href='/goods/listByBrand?brandCode=1'"><img src="/resources/image/logo/ford.png" class="select_car_brand_img" alt="brand_logo">
+                    <div class="select_car_brand_text">FORD                    
                     </div></td>
                 </tr>
                 <tr>
-                <td><img src="/resources/image/logo/genesis.png" class="select_car_brand_img" alt="brand_logo">
-                    <div class="select_car_brand_text">
-                       <button id="function"
-				onclick="location.href='/goods/listByBrand?brandCode=2'">GENESIS</button> 
-                    
+                <td onclick="location.href='/goods/listByBrand?brandCode=2'"><img src="/resources/image/logo/genesis.png" class="select_car_brand_img" alt="brand_logo">
+                    <div class="select_car_brand_text">GENESIS
                     </div></td>
-                <td><img src="/resources/image/logo/hyundai.png" class="select_car_brand_img" alt="brand_logo">
-                    <div class="select_car_brand_text">
-                       <button id="function"
-				onclick="location.href='/goods/listByBrand?brandCode=4'">HYUNDAI</button> 
-                    
+                <td onclick="location.href='/goods/listByBrand?brandCode=4'"><img src="/resources/image/logo/hyundai.png" class="select_car_brand_img" alt="brand_logo">
+                    <div class="select_car_brand_text">HYUNDAI
                     </div></td>
-                <td><img src="/resources/image/logo/infiniti.png" class="select_car_brand_img" alt="brand_logo">
-                    <div class="select_car_brand_text">
-                       <button id="function"
-				onclick="location.href='/goods/listByBrand?brandCode=5'">INFINITI</button> 
-                    
+                <td onclick="location.href='/goods/listByBrand?brandCode=5'"><img src="/resources/image/logo/infiniti.png" class="select_car_brand_img" alt="brand_logo">
+                    <div class="select_car_brand_text">INFINITI
                     </div></td>
-                <td><img src="/resources/image/logo/jaguar.png" class="select_car_brand_img" alt="brand_logo">
-                    <div class="select_car_brand_text">
-                       <button id="function"
-				onclick="location.href='/goods/listByBrand?brandCode=12'">JAGUAR</button> 
-                    
+                <td onclick="location.href='/goods/listByBrand?brandCode=12'"><img src="/resources/image/logo/jaguar.png" class="select_car_brand_img" alt="brand_logo">
+                    <div class="select_car_brand_text">JAGUAR
                     </div></td>
-                <td><img src="/resources/image/logo/kia.PNG" class="select_car_brand_img" alt="brand_logo">
-                    <div class="select_car_brand_text">
-                       <button id="function"
-				onclick="location.href='/goods/listByBrand?brandCode=11'">KIA</button> 
-				
+                <td onclick="location.href='/goods/listByBrand?brandCode=11'"><img src="/resources/image/logo/kia.PNG" class="select_car_brand_img" alt="brand_logo">
+                    <div class="select_car_brand_text">KIA
 				</div></td>
-                <td><img src="/resources/image/logo/Lamborghini.png" class="select_car_brand_img" alt="brand_logo">
-                    <div class="select_car_brand_text">
-                       <button id="function"
-				onclick="location.href='/goods/listByBrand?brandCode=13'">LAMBORGHINI</button> 
-				
+                <td onclick="location.href='/goods/listByBrand?brandCode=13'"><img src="/resources/image/logo/Lamborghini.png" class="select_car_brand_img" alt="brand_logo">
+                    <div class="select_car_brand_text">LAMBORGHINI
 				</div></td>
                 </tr>
                 <tr>
-                <td><img src="/resources/image/logo/lexus.png" class="select_car_brand_img" alt="brand_logo">
-                    <div class="select_car_brand_text">
-                       <button id="function"
-				onclick="location.href='/goods/listByBrand?brandCode=15'">LEXUS</button> 
-                    
+                <td onclick="location.href='/goods/listByBrand?brandCode=15'"><img src="/resources/image/logo/lexus.png" class="select_car_brand_img" alt="brand_logo">
+                    <div class="select_car_brand_text">LEXUS
                     </div></td>
-                <td><img src="/resources/image/logo/mini.png" class="select_car_brand_img" alt="brand_logo">
-                    <div class="select_car_brand_text">
-                       <button id="function"
-				onclick="location.href='/goods/listByBrand?brandCode=14'">MINI</button> 
-                    
+                <td onclick="location.href='/goods/listByBrand?brandCode=14'"><img src="/resources/image/logo/mini.png" class="select_car_brand_img" alt="brand_logo">
+                    <div class="select_car_brand_text">MINI
                     </div></td>
-                <td><img src="/resources/image/logo/ssangyong.png" class="select_car_brand_img" alt="brand_logo">
-                    <div class="select_car_brand_text">
-                       <button id="function"
-				onclick="location.href='/goods/listByBrand?brandCode=16'">SSANGYONG</button> 
-                    
+                <td onclick="location.href='/goods/listByBrand?brandCode=16'"><img src="/resources/image/logo/ssangyong.png" class="select_car_brand_img" alt="brand_logo">
+                    <div class="select_car_brand_text">SSANGYONG
                     </div></td>
-                <td><img src="/resources/image/logo/teslr.png" class="select_car_brand_img" alt="brand_logo">
-                    <div class="select_car_brand_text">
-                       <button id="function"
-				onclick="location.href='/goods/listByBrand?brandCode=17'">TESLR</button> 
-                    
+                <td onclick="location.href='/goods/listByBrand?brandCode=17'"><img src="/resources/image/logo/teslr.png" class="select_car_brand_img" alt="brand_logo">
+                    <div class="select_car_brand_text">TESLR
                     </div></td>
-                <td><img src="/resources/image/logo/volkswagen.png" class="select_car_brand_img" alt="brand_logo">
-                    <div class="select_car_brand_text">
-                       <button id="function"
-				onclick="location.href='/goods/listByBrand?brandCode=19'">VOLKSWAGEN</button> 
-                    
+                <td onclick="location.href='/goods/listByBrand?brandCode=19'"><img src="/resources/image/logo/volkswagen.png" class="select_car_brand_img" alt="brand_logo">
+                    <div class="select_car_brand_text">VOLKSWAGEN
                     </div></td>
-                <td><img src="/resources/image/logo/volvo.png" class="select_car_brand_img" alt="brand_logo">
-                    <div class="select_car_brand_text">
-                       <button id="function"
-				onclick="location.href='/goods/listByBrand?brandCode=20'">VOLVO</button> 
-                    
+                <td onclick="location.href='/goods/listByBrand?brandCode=20'"><img src="/resources/image/logo/volvo.png" class="select_car_brand_img" alt="brand_logo">
+                    <div class="select_car_brand_text">VOLVO
                     </div></td>
                 </tr>
             </table>
@@ -183,40 +131,28 @@
             <th colspan="2">차종별로 보기</th>
             </tr>
             <tr>
-                <td><div class="select_car_size_text">
-                <img src="/resources/image/goodsMain/54.png" class="select_car_brand_img" >
-                <button id="function"
-				onclick="location.href='/goods/listByType?goodsType=컨버터블'">컨버터블</button>
+                <td onclick="location.href='/goods/listByType?goodsType=컨버터블'"><div class="select_car_size_text">
+                <img src="/resources/image/goodsMain/54.png" class="select_car_brand_img" >컨버터블
 				</div></td>
-                <td><div class="select_car_size_text">
+                <td onclick="location.href='/goods/listByType?goodsType=세단'"><div class="select_car_size_text">
                 <div class="select_car_size_text">
-                <img src="/resources/image/goodsMain/58.png" class="select_car_brand_img" >
-                <button id="function"
-				onclick="location.href='/goods/listByType?goodsType=세단'">세단</button>
+                <img src="/resources/image/goodsMain/58.png" class="select_car_brand_img" >세단
 				</div></td>
             </tr>
             <tr>
-                <td><div class="select_car_size_text">
-                <img src="/resources/image/goodsMain/79.png" class="select_car_brand_img" >
-                	<button id="function"
-				onclick="location.href='/goods/listByType?goodsType=SUV'">SUV</button>
+                <td onclick="location.href='/goods/listByType?goodsType=SUV'"><div class="select_car_size_text">
+                <img src="/resources/image/goodsMain/79.png" class="select_car_brand_img" >SUV
 				</div></td>
-                <td><div class="select_car_size_text">
-                <img src="/resources/image/goodsMain/99.png" class="select_car_brand_img" >
-                	<button id="function"
-				onclick="location.href='/goods/listByType?goodsType=픽업밴'">밴</button>
+                <td onclick="location.href='/goods/listByType?goodsType=픽업밴'"><div class="select_car_size_text">
+                <img src="/resources/image/goodsMain/99.png" class="select_car_brand_img" >밴
 				</div></td>
             </tr>
             <tr>
-                <td><div class="select_car_size_text">
-                <img src="/resources/image/goodsMain/83.png" class="select_car_brand_img" >
-                	<button id="function"
-				onclick="location.href='/goods/listByType?goodsType=쿠페'">쿠페</button>
+                <td onclick="location.href='/goods/listByType?goodsType=쿠페'"><div class="select_car_size_text">
+                <img src="/resources/image/goodsMain/83.png" class="select_car_brand_img" >쿠페
                 	</div></td>
-                <td><div class="select_car_size_text">
-                <img src="/resources/image/goodsMain/92.png" class="select_car_brand_img" >
-                	<button id="function"
-				onclick="location.href='/goods/listByType?goodsType=기타'">기타</button>
+                <td onclick="location.href='/goods/listByType?goodsType=기타'"><div class="select_car_size_text">
+                <img src="/resources/image/goodsMain/92.png" class="select_car_brand_img" >기타
                 	</div></td>
             </tr>
         </table>

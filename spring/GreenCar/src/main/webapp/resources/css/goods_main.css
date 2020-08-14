@@ -26,7 +26,7 @@
 /*브랜드선택창*/
 .select_car_brand {
     width: 70%;
-    height: auto;
+    height: 100px;
     box-sizing: border-box;
 }
 /*브랜드선택표*/
