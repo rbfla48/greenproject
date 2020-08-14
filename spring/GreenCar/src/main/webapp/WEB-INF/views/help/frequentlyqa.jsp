@@ -171,19 +171,17 @@
 		</div>
 
 		<div id="brand_center_box">
-			<div id="brand_center_text">브랜드 고객센터 이동</div>
+			<div id="brand_center_text">브랜드 홈페이지 이동</div>
 			<hr>
 			<div id="brand_center_button">
-				<button id="audi" href="#" />
-				아우디 고객센터
-				</button>
-				<button id="benz" href="#">벤츠 고객센터</button>
-				<button id="cadillac" href="#">캐딜락 고객센터</button>
-				<button id="chevrolet" href="#">쉐보레 고객센터</button>
-				<button id="ferrari" href="#">페라리 고객센터</button>
-				<button id="ford" href="#">포드 고객센터</button>
-				<button id="genesis" href="#">제네시스 고객센터</button>
-				<button id="honda" href="#">혼다 고객센터</button>
+				<button id="audi" onclick='location.href="https://www.audi.co.kr/kr/web/ko/company/customerinfo.html"'>아우디</button>
+				<button id="benz" onclick='location.href="https://www.mercedes-benz.co.kr/passengercars.html?group=all&subgroup=see-all&view=BODYTYPE"'>벤츠 </button>
+				<button id="cadillac" onclick="https://www.cadillac.co.kr/index.php">캐딜락</button>
+				<button id="chevrolet" onclick="https://www.chevrolet.co.kr/index.jsp">쉐보레</button>
+				<button id="ferrari" onclick="https://seoul.ferraridealers.com/ko_kr/">페라리</button>
+				<button id="ford" onclick="https://www.ford.co.kr/">포드</button>
+				<button id="genesis" onclick="https://www.genesis.com/kr/ko/genesis.html">제네시스</button>
+				<button id="honda" onclick="https://www.hondakorea.co.kr/">혼다</button>
 			</div>
 
 		</div>
