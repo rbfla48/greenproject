@@ -46,45 +46,9 @@
 	</script>
 </head>
 <body>
-	<div>
-		<!--메뉴바-->
-		<header>
-			<!--화면 상단 마이페이지, 장바구니 시작-->
-			<div id="top">
-				<ul>
-					<li id="mypage"><a href="#">마이페이지</a></li>
-					<li id="cart"><a href="#">장바구니</a></li>
-				</ul>
-			</div>
-			<!--화면 상단 마이페이지, 장바구니 끝-->
-
-			<hr id="hl">
-			<!--top, nav 분리 줄-->
-		</header>
-		<nav>
-			<!--logo 시작-->
-			<div id="logo">
-				<img src="../image/logo/gclogo.png" alt="greencar_admin_logo">
-			</div>
-			<!--logo 끝-->
-
-			<!-- 네비게이션 바 시작-->
-			<div id="middle">
-				<ul>
-
-					<li id="adminProduct"><a href="#">상품관리</a></li>
-					<li id="vl">|</li>
-					<li id="adminAccount"><a href="#">정산관리</a></li>
-					<li id="vl">|</li>
-					<li id="adminCustomer"><a href="/admin/onebyonelist">고객관리</a></li>
-					<li id="vl">|</li>
-					<li id="adminWrite"><a href="#">게시글관리</a></li>
-
-				</ul>
-			</div>
-			<!--네비게이션 바 끝-->
-		</nav>
-	</div>
+	<script src="//code.jquery.com/jquery-1.11.0.min.js"></script>
+	
+	<jsp:include page="/resources/jsp/menu.jsp" flush="false"/>
 	<!-------------------------------메뉴바END-------------------------------->
 	<section>
 		<div id="customer_question_box">

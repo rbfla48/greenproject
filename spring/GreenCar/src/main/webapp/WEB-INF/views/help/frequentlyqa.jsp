@@ -99,47 +99,9 @@
 
 </head>
 <body>
-	<div>
-		<!--메뉴바-->
-		<header>
-			<!--화면 상단 마이페이지, 장바구니 시작-->
-			<div id="top">
-				<ul>
-					<li id="mypage"><a href="#">마이페이지</a></li>
-					<li id="cart"><a href="#">장바구니</a></li>
-				</ul>
-			</div>
-			<!--화면 상단 마이페이지, 장바구니 끝-->
-
-			<hr id="hl">
-			<!--top, nav 분리 줄-->
-		</header>
-		<nav>
-			<!--logo 시작-->
-			<div id="logo">
-				<img src="/resources/image/gclogo.png" alt="greencar_logo">
-			</div>
-			<!--logo 끝-->
-
-			<!-- 네비게이션 바 시작-->
-			<div id="middle">
-				<ul>
-
-					<li id="notice"><a href="#">공지사항</a></li>
-					<li id="vl">|</li>
-					<li id="products"><a href="#">상품페이지</a></li>
-					<li id="vl">|</li>
-					<li id="community"><a href="#">커뮤니티</a></li>
-					<li id="vl">|</li>
-					<li id="newsandissue"><a href="#">뉴스&이슈</a></li>
-					<li id="vl">|</li>
-					<li id="userAdvice"><a href="#">고객지원</a></li>
-
-				</ul>
-			</div>
-			<!--네비게이션 바 끝-->
-		</nav>
-	</div>
+	<script src="//code.jquery.com/jquery-1.11.0.min.js"></script>
+	
+	<jsp:include page="/resources/jsp/menu.jsp" flush="false"/>
 	<!-------------------------------메뉴바END-------------------------------->
 
 	<!--마이 페이지 시작-->
