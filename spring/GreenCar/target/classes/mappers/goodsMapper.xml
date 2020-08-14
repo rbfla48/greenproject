@@ -74,4 +74,10 @@
 		where
 		goods_no = #{goodsNo}
 	</update>
+	
+	
+	<!-- 브랜드조회 -->
+	<select id="getBrand" resultType="com.greencar.vo.goods.BrandVO">
+		SELECT brand_name FROM brand; 
+	</select>
 </mapper>

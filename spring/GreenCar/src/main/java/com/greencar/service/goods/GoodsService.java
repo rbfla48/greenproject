@@ -3,6 +3,7 @@ package com.greencar.service.goods;
 import java.util.List;
 
 import com.greencar.vo.community.Criteria;
+import com.greencar.vo.goods.BrandVO;
 import com.greencar.vo.goods.GoodsVO;
 import com.greencar.vo.option.OptionVO;
 import com.greencar.vo.option.OptionVO2;
@@ -32,5 +33,7 @@ public interface GoodsService {
 	public List<GoodsVO> listByBrand(int brandCode);
 	
 	public List<GoodsVO> listByType(String goodsType);
+	
+	public List<String> getBrand();
 	
 }

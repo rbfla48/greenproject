@@ -8,6 +8,7 @@ import org.apache.ibatis.session.SqlSession;
 import org.springframework.stereotype.Repository;
 
 import com.greencar.vo.community.Criteria;
+import com.greencar.vo.goods.BrandVO;
 import com.greencar.vo.goods.GoodsVO;
 import com.greencar.vo.option.OptionVO;
 import com.greencar.vo.option.OptionVO2;
@@ -91,6 +92,11 @@ public class GoodsDAOImpl implements GoodsDAO {
 		@Override
 		public List<GoodsVO> listByType(String goodsType) {		
 			return sqlSession.selectList("mappers.goodsMapper.listByType", goodsType);
+		}
+
+		@Override
+		public List<String> getBrand() {
+			return sqlSession.selectList("mappers.goodsMapper.getBrand");
 		}
 
 }

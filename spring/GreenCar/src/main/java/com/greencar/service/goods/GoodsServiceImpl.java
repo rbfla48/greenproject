@@ -8,6 +8,7 @@ import org.springframework.stereotype.Service;
 
 import com.greencar.dao.goods.GoodsDAO;
 import com.greencar.vo.community.Criteria;
+import com.greencar.vo.goods.BrandVO;
 import com.greencar.vo.goods.GoodsVO;
 import com.greencar.vo.option.OptionVO;
 import com.greencar.vo.option.OptionVO2;
@@ -92,5 +93,10 @@ public class GoodsServiceImpl implements GoodsService {
 	public List<GoodsVO> listByType(String goodsType) {
 		
 		return dao.listByType(goodsType);
+	}
+	@Override
+	public List<String> getBrand() {
+		
+		return dao.getBrand();
 	}
 }

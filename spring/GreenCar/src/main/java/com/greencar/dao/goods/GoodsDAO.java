@@ -3,6 +3,7 @@ package com.greencar.dao.goods;
 import java.util.List;
 
 import com.greencar.vo.community.Criteria;
+import com.greencar.vo.goods.BrandVO;
 import com.greencar.vo.goods.GoodsVO;
 import com.greencar.vo.option.OptionVO;
 import com.greencar.vo.option.OptionVO2;
@@ -37,6 +38,7 @@ public interface GoodsDAO {
 		
 	//차종별 조회
 	public List<GoodsVO> listByType(String goodsType); 
-		
-
+	
+	//브랜드검색
+	public List<String> getBrand();
 }

@@ -139,57 +139,80 @@
 
 
 		<!--상세검색 창(클릭시 아래로 덮으며 구현)-->
-		<div id="panel">
-			<!--상세검색 패널창-->
-			<div class="panel_wrap">
-				<!--패널창 내부영역-->
-				<div class="panel_option">
-					<!--패널창 옵션선택영역-->
+		<form action="/recommend" method="POST">
+		<input type="hidden" name="${_csrf.parameterName }" value="${_csrf.token }" />
+		<div id="panel"><!--상세검색 패널창-->
+			<div class="panel_wrap"><!--패널창 내부영역-->
+				<div class="panel_option"><!--패널창 옵션선택영역-->
 					<table>
 						<tr>
 							<td>선호브랜드</td>
-							<td><select class="panel_option_one">
-									<!--선호브랜드-->
-									<option>BMW</option>
-							</select></td>
+							<td>
+								<select class="panel_option_one" name="brandName"><!--선호브랜드-->							
+										<c:forEach items="${goods}" var="goods">
+											<option>${goods.brandName}</option>
+										</c:forEach>
+								</select>
+							</td>
 						</tr>
 						<tr>
 							<td>가격대</td>
-							<td><select class="panel_option_two">
+							<td>
+								<select class="panel_option_two" name="goodsPrice1">
 									<!--가격대(최소가격)-->
-									<option>1000</option>
-							</select> ~ <select class="panel_option_two">
-									<!--가격대(최대가격)-->
-									<option>4000</option>
-							</select></td>
+									<c:forEach begin=0 end=100000000 step="10000000">
+										<option>0</option>
+									</c:forEach>
+								</select>
+							 	~ 
+							 	<select class="panel_option_two" name="goodsPrice2">
+									<!--가격대(최소가격)-->
+									<c:forEach begin=10000000 end=100000000 step="10000000">
+										<option>0</option>
+									</c:forEach>
+								</select>
+							</td>
 						</tr>
 						<tr>
 							<td>선호차종</td>
-							<td><select class="panel_option_one">
-									<!--선호차종-->
+							<td>
+								<select class="panel_option_one" name="goodsSize"><!--선호차종-->
 									<option>대형</option>
-							</select></td>
+									<option>준대형</option>
+									<option>중형</option>
+									<option>준중형</option>
+									<option>소형</option>
+									<option>경차</option>
+								</select>
+							</td>
 						</tr>
 						<tr>
-							<td>연비</td>
-							<td><select class="panel_option_two">
-									<!--연비(최소연비)-->
-									<option>1등급</option>
-							</select> ~ <select class="panel_option_two">
-									<!--연비(최대연비)-->
-									<option>5등급</option>
-							</select></td>
+							<td>연비등급</td>
+							<td>
+								<select class="panel_option_two" name="goodsEfficient"><!--연비-->
+										<option>1등급</option>
+										<option>2등급</option>
+										<option>3등급</option>
+										<option>4등급</option>
+										<option>5등급</option>
+								</select> 
+							</td>
 						</tr>
 						<tr>
 							<td>연료</td>
-							<td><select class="panel_option_one">
-									<!--연료-->
-									<option>휘발유</option>
-							</select></td>
+							<td>
+								<select class="panel_option_one" name="goodsFuel">
+										<!--연료-->
+										<option>휘발유</option>
+										<option>디젤</option>
+										<option>가솔린</option>
+										<option>전기</option>
+								</select>
+							</td>
 						</tr>
 					</table>
-				</div>
-				<!--패널창 옵션선택영역END-->
+				</div><!--패널창 옵션선택영역end-->
+
 
 				<div class="panel_result_wrap">
 					<!--상세검색 결과창 영역-->
@@ -232,11 +255,11 @@
 				</div>
 				<!--상세검색결과창 영역ENd-->
 
-				<input type="button" value="검색" name="rcmd_btn"> <input
-					type="button" value="상세하게 검색" name="detail_btn">
+				<button type="submit" name="rcmd_btn" >검색</button> 
+				<button type="button" name="detail_btn" onclick="location.href='/goods/goods_main">상세하게 검색</button>
 			</div>
 			<!--상세검색 패널내부영역END-->
-		</div>
+		</form>
 		<!--상세검색 패널창 END-->
 
 

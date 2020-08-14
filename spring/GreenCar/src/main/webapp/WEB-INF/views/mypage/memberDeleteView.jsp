@@ -67,6 +67,7 @@
             <b>탈퇴하려면 비밀번호를 입력하세요.</b>
         </div>
         <form action="/member/memberDelete" method="post">
+        <input type="hidden" name="${_csrf.parameterName }" value="${_csrf.token }" />
         	<div class="out_password"><!--비밀번호 입력-->
         		<input class="form-control" type="password" id="userPw" name="userPw" />
         	</div>
