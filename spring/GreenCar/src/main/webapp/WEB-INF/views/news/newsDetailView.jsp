@@ -71,7 +71,7 @@
 	<div id="wrap" class="wrap">
 		<!-- 타이틀 (1) 시작-->
 		<div id="title_1" class="title_1">
-			<a href="${contextPath}/news/newsMain?page=1"> 뉴스 & 이슈</a>
+			<a href="${contextPath}/news/newsMain"> 뉴스 & 이슈</a>
 		</div>
 		<!-- 타이틀 (1) 끝-->
 
@@ -82,19 +82,19 @@
 			</div>
 			<div id="category_1" class="category_field">
 				<span class="material-icons"> keyboard_arrow_right </span><a
-					href="${contextPath}/news/newsMain?page=1"> 라이프</a>
+					href="${contextPath}/news/newsMain?newsCate=1"> 라이프</a>
 			</div>
 			<div id="category_2" class="category_field">
 				<span class="material-icons"> keyboard_arrow_right </span><a
-					href="${contextPath}/news/newsMain?page=1"> 디자인</a>
+					href="${contextPath}/news/newsMain?newsCate=2"> 디자인</a>
 			</div>
 			<div id="category_3" class="category_field">
 				<span class="material-icons"> keyboard_arrow_right </span><a
-					href="${contextPath}/news/newsMain?page=1"> 테크</a>
+					href="${contextPath}/news/newsMain?newsCate=3"> 테크</a>
 			</div>
 			<div id="category_4" class="category_field">
 				<span class="material-icons"> keyboard_arrow_right </span><a
-					href="${contextPath}/news/newsMain?page=1"> 경제</a>
+					href="${contextPath}/news/newsMain?newsCate=4"> 경제</a>
 			</div>
 		</div>
 		<!-- 타이틀 (2) 끝-->

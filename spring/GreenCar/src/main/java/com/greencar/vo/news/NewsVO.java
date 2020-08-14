@@ -4,6 +4,7 @@ public class NewsVO {
 	private int newsNo;
 	private String newsTitle;
 	private String newsText;
+	private int newsCate;
 	public int getNewsNo() {
 		return newsNo;
 	}
@@ -22,8 +23,15 @@ public class NewsVO {
 	public void setNewsText(String newsText) {
 		this.newsText = newsText;
 	}
+	public int getNewsCate() {
+		return newsCate;
+	}
+	public void setNewsCate(int newsCate) {
+		this.newsCate = newsCate;
+	}
 	@Override
 	public String toString() {
-		return String.format("NewsVO [newsNo=%s, newsTitle=%s, newsText=%s]", newsNo, newsTitle, newsText);
+		return String.format("NewsVO [newsNo=%s, newsTitle=%s, newsText=%s, newsCate=%s]", newsNo, newsTitle, newsText,
+				newsCate);
 	}
 }

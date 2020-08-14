@@ -23,14 +23,13 @@ private static final Logger logger = LoggerFactory.getLogger(NewsController.clas
 	NewsService service;
 	/** 뉴스 메인 페이지 */
 	@RequestMapping(value = "/newsMain", method = RequestMethod.GET)
-	public String newsMain(@RequestParam("page") int page,Model model, NewsCriteria cri) throws Exception{
+	public String newsMain(Model model, NewsCriteria cri) throws Exception{
 		logger.info("newsMain");
 		model.addAttribute("newsMain",service.newsMain(cri));
 		NewsPageMaker newsPageMaker = new NewsPageMaker();
 		newsPageMaker.setCri(cri);
 		newsPageMaker.setTotalCount(service.listCount());
 		model.addAttribute("newsPageMaker", newsPageMaker);
-		model.addAttribute("page", page);
 		return "/news/newsMain";
 	} // 뉴스 메인 페이지
 	

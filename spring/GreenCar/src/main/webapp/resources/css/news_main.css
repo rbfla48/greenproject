@@ -72,7 +72,6 @@ a {
 	height: 84.5%;
 	display: flex;
 	flex-wrap: wrap;
-	justify-content: space-around;
 }
 
 /* 1개 박스*/
