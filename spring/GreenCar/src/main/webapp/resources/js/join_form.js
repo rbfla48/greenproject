@@ -1,7 +1,32 @@
 /**
- * 회원 가입 폼
- */
+ 
 
+* 
+* 회원 가입 폼
+ */
+/**spring-security 403에러방지*/
+$(document).ready(function(){
+
+
+    // spring  security post 전송시 403 에러 대처 패치
+
+    var token = $("meta[name='_csrf']").attr("content");
+
+    var header = $("meta[name='_csrf_header']").attr("content");
+
+   
+
+    $(function() {
+
+        $(document).ajaxSend(function(e, xhr, options) {
+
+            xhr.setRequestHeader(header, token);
+
+        });
+
+    });
+});
+    
 /** 주소 검색 */
 function searchPost() {
   new daum.Postcode({
@@ -65,7 +90,6 @@ function fn_emailCheck() {
 			console.log("emailCheck : 끝");
 		}
 	});
-	
 }
 /** 닉네임 중복 확인 */
 function fn_nickCheck() { 
@@ -209,7 +233,7 @@ function fn_submit(){
 			}
 		}
 		if (address2Flag == false){
-			if (add2.length <5){
+			if (add2.length <2){
 				$("#userAddressDetail").focus();
 				alert("상세주소가 너무 짧습니다.");
 				console.log("상세 주소 짧음");
@@ -234,3 +258,5 @@ function fn_submit(){
 		document.join.submit();
 	}	
 }
+
+

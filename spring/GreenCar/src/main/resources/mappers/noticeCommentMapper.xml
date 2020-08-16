@@ -11,10 +11,8 @@
 	</select>
 
 	<insert id="regComment">
-		INSERT INTO notice_comment(content , notice_no ,
-		regdate , rno , writer )
-		VALUES(#{content}, #{noticeNo}, SYSDATE,
-		NOTICE_COMMENT_SEQ.nextval, #{writer})
+		INSERT INTO notice_comment(content , notice_no , regdate , rno , writer )
+		VALUES(#{content}, #{noticeNo}, SYSDATE, NOTICE_COMMENT_SEQ.nextval, #{writer})
 	</insert>
 
 	<delete id="deleteComment">

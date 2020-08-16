@@ -40,15 +40,53 @@ let nickFlag = false;
 	<script src="//code.jquery.com/jquery-1.11.0.min.js"></script>
 
 	<jsp:include page="/resources/jsp/menu.jsp" flush="false" />
+	
+<!--마이페이지  시작-->	
+	<script type="text/javascript">
+		$(document).ready(function(){
+		
+			$("#submit").on("click", function(){
+				if($("#userPw").val()==""){
+					alert("비밀번호를 입력해주세요.");
+					$("#userPw").focus();
+					return false;
+				}	
+			});
+		})
+	</script>	
+<!--마이 페이지 박스 부분-->
+    
+<div class="wrap"><!--마이페이지 전체영역-->
+    <aside class="mypage_category">
+				<ul>
+					마이페이지
+				</ul>
+				<ul>
+					<a href="/mypage/memberUpdateView">회원정보 수정</a>
+				</ul>
+				<ul>
+					<a href="/mypage/QnAList">1:1 문의내역</a>
+					<span id="new">new</span>
+				</ul>
+				<ul>
+					<a href="/mypage/mypageMywrite">내가쓴 글 보기</a>
+					<span id="how_much"></span>
+				</ul>
+				<ul>
+					<a href="/mypage/memberDeleteView">회원탈퇴</a>
+				</ul>
+	</aside>
+	
 
 	<!-- -----------------------중앙 시작-------------------------------------------------------------------- -->
 	<form role="form" id="memberUpadte" class="join" name="memberUpadte" method="POST"
 		action="/mypage/memberUpdate">
 		<input type="hidden" name="${_csrf.parameterName }" value="${_csrf.token }" />
-		<h2>회원정보 수정</h2>
+		
 		<!-- 테두리 시작 -->
-		<div id="wrap" class="wrap">
+		<div id="updatewrap" class="updatewrap">
 			<!-- 표 시작-->
+			<h2>회원정보 수정</h2>
 			<table id="join_form" class="join_form">
 
 				<!-- 이메일 시작-->
@@ -191,22 +229,11 @@ let nickFlag = false;
 		<!-- POST방식전송 토큰추가(403Error방지) -->
 		<input type="hidden" name="${_csrf.parameterName }" value="${_csrf.token }" />
 	</form>
+	</div>
 	<!-- ----------------------------중앙 끝 ---------------------------------------------------------------------------------------->
 
-	<!--하단 회사정보영역-->
-	<footer id="footer">
-		<!--상단회사명-->
-		<br>
-		<p>
-			<b>GREENCAR</b>
-		</p>
-		<hr>
-		<!--하단사업자정보-->
-		<p>사업자 김붕붕 | 사업자번호 211-31-64480 | 사업자 주소 : 서울특별시 관악구 청룡중앙길 42-1 |
-			02 - 1234 - 5678</p>
-		<p>COPYRIGHT © GREEN COMPANY. ALL RIGHTS RESERVED.</p>
-		<!--하단영역end-->
-	</footer>
+	<jsp:include page="/resources/jsp/footer.jsp" flush="false" />
+	
 </body>
 
 </html>

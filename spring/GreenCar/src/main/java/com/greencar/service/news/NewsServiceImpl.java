@@ -29,4 +29,9 @@ public class NewsServiceImpl implements NewsService {
 	public NewsVO newsDetail(int newsNo) throws Exception {
 		return dao.newsDetail(newsNo);
 	} // 뉴스 세부 페이지	
+	
+	@Override
+	public List<NewsVO> getNews() {
+		return dao.getNews();
+	};
 }

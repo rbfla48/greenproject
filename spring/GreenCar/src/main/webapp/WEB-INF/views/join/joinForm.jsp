@@ -6,6 +6,11 @@
 <html>
 <head>
 <meta charset="UTF-8">
+<!-- spring security post 전송시 403 문제 패치 -->
+<meta id="_csrf" name="_csrf" content="${_csrf.token}"/>
+<!-- default header name is X-CSRF-TOKEN -->
+<meta id="_csrf_header" name="_csrf_header" content="${_csrf.headerName}"/>
+
 <title>join_form</title>
 <link rel="stylesheet"
 	href="<c:url value="/resources/css/join_form.css" />">
@@ -37,32 +42,13 @@ let agreeFlag = false;
 </head>
 
 <body>
-	<header>
-		<!--화면 상단 로그인, 회원가입 시작-->
-		<div id="top">
-			<ul>
-				<li id="login"><a href="#">로그인</a></li>
-				<li id="join_form"><a href="#">회원가입</a></li>
-			</ul>
-		</div>
-		<!--화면 상단 로그인, 회원가입 끝-->
-		<hr id="hl">
-		<!--top, nav 분리 줄-->
-	</header>
-
-	<nav>
-		<!-- 네비게이션 바 시작-->
-		<div id="middle">
-			<ul>
-				<li id="notice"><a href="#">GREEN CAR</a></li>
-			</ul>
-		</div>
-		<!--네비게이션 바 끝-->
-	</nav>
+	<script src="//code.jquery.com/jquery-1.11.0.min.js"></script>	
+	<jsp:include page="/resources/jsp/menu.jsp" flush="false"/>
 
 	<!-- -----------------------중앙 시작-------------------------------------------------------------------- -->
 	<form role="form" id="join" class="join" name="join" method="post"
 		action="${contextPath}/join/joinProc">
+	<input type="hidden" name="${_csrf.parameterName }" value="${_csrf.token }" />
 		<!-- 테두리 시작 -->
 		<div id="wrap" class="wrap">
 			<!-- 표 시작-->
@@ -244,20 +230,8 @@ let agreeFlag = false;
 	</form>
 	<!-- ----------------------------중앙 끝 ---------------------------------------------------------------------------------------->
 
-	<!--하단 회사정보영역-->
-	<footer id="footer">
-		<!--상단회사명-->
-		<br>
-		<p>
-			<b>GREENCAR</b>
-		</p>
-		<hr>
-		<!--하단사업자정보-->
-		<p>사업자 김붕붕 | 사업자번호 211-31-64480 | 사업자 주소 : 서울특별시 관악구 청룡중앙길 42-1 |
-			02 - 1234 - 5678</p>
-		<p>COPYRIGHT © GREEN COMPANY. ALL RIGHTS RESERVED.</p>
-		<!--하단영역end-->
-	</footer>
+	<jsp:include page="/resources/jsp/footer.jsp" flush="false" />
+	
 </body>
 
 </html>

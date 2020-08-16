@@ -40,45 +40,9 @@ let option3Cost = ${optionDetail3.optionCost3};
 </head>
 
 <body>
-	<div>
-		<!--메뉴바-->
-		<header>
-			<!--화면 상단 마이페이지, 장바구니 시작-->
-			<div id="top">
-				<ul>
-					<li id="mypage"><a href="#">마이페이지</a></li>
-					<li id="cart"><a href="#">장바구니</a></li>
-				</ul>
-			</div>
-			<!--화면 상단 마이페이지, 장바구니 끝-->
-			<hr id="hl">
-			<!--top, nav 분리 줄-->
-		</header>
-		<nav>
-			<!--logo 시작-->
-			<div id="logo">
-				<img src="<spring:url value='/resources/image/logo/gclogo.png'/>"
-					alt="greencar_logo">
-			</div>
-			<!--logo 끝-->
-			<!-- 네비게이션 바 시작-->
-			<div id="middle">
-				<ul>
-					<li id="notice"><a href="#">공지사항</a></li>
-					<li id="vl">|</li>
-					<li id="goodss"><a href="#">상품페이지</a></li>
-					<li id="vl">|</li>
-					<li id="community"><a href="#">커뮤니티</a></li>
-					<li id="vl">|</li>
-					<li id="newsandissue"><a href="#">뉴스&이슈</a></li>
-					<li id="vl">|</li>
-					<li id="user_advice"><a href="#">고객지원</a></li>
-				</ul>
-			</div>
-			<!--네비게이션 바 끝-->
-		</nav>
-	</div>
-	<!--메뉴바END-->
+	<script src="//code.jquery.com/jquery-1.11.0.min.js"></script>	
+	<jsp:include page="/resources/jsp/menu.jsp" flush="false"/>
+	
 	<!-- -----------------------중앙 시작-------------------------------------------------------------------- -->
 	<!-- 전체 테두리 시작-->
 	<div id="wrap" class="wrap">
@@ -372,20 +336,8 @@ let option3Cost = ${optionDetail3.optionCost3};
 
 	<!-- ----------------------------중앙 끝 ---------------------------------------------------------------------------------------->
 
-	<!--하단 회사정보영역-->
-	<footer id="footer">
-		<!--상단회사명-->
-		<br>
-		<p>
-			<b>GREENCAR</b>
-		</p>
-		<hr>
-		<!--하단사업자정보-->
-		<p>사업자 김붕붕 | 사업자번호 211-31-64480 | 사업자 주소 : 서울특별시 관악구 청룡중앙길 42-1 |
-			02 - 1234 - 5678</p>
-		<p>COPYRIGHT © GREEN COMPANY. ALL RIGHTS RESERVED.</p>
-		<!--하단영역end-->
-	</footer>
+	<jsp:include page="/resources/jsp/footer.jsp" flush="false" />
+	
 </body>
 
 </html>

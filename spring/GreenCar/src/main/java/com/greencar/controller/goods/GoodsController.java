@@ -28,6 +28,8 @@ public class GoodsController {
 	
 	@Inject 
 	private CommunityService commuService;
+	@Inject
+	private GoodsService goodsService;
 	
 	private static final Logger logger = LoggerFactory.getLogger(GoodsController.class);
 	
@@ -70,7 +72,7 @@ public class GoodsController {
 		public void list(Criteria cri,Model model) {
 			log.info("list : " + cri);
 			/*model.addAttribute("list",service.getList());*/
-			model.addAttribute("list", commuService.getListWithPage(cri));//페이징 기능
+			model.addAttribute("list", goodsService.getListWithPage(cri));//페이징 기능
 
 			
 		

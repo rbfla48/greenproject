@@ -100,7 +100,7 @@
 			<input type="hidden" name="${_csrf.parameterName }" value="${_csrf.token }" />
 				<div id="regComment">
 					<!-- 댓글작성영역 -->
-					<input type="text" name="writer" value="<c:out value="${nick}"/>">
+					<input type="text" name="writer" value="<c:out value="${nick}"/>" readonly="readonly">
 					<textarea name="content"></textarea>
 					<button type="submit">댓글등록</button>
 				</div>

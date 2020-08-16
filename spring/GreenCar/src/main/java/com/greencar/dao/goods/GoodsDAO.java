@@ -40,5 +40,5 @@ public interface GoodsDAO {
 	public List<GoodsVO> listByType(String goodsType); 
 	
 	//브랜드검색
-	public List<GoodsVO> getRecommend(GoodsVO goodsVO);
+	public List<GoodsVO> getRecommend();
 }

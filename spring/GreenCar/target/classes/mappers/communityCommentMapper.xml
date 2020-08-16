@@ -11,7 +11,7 @@
 	
 	<insert id="regComment">
 		INSERT INTO community_comment(comm_text,commu_no, comm_date,comm_no,comm_writer)
-		VALUES(#{commText}, #{commuNo}, SYSDATE,  COMMUNITY_COMMENT_SEQ.nextval, #{CommWriter})
+		VALUES(#{commText}, #{commuNo}, SYSDATE, COMM_SEQ.nextval, #{commWriter})
 	</insert>
 	
 	<delete id="deleteComment">

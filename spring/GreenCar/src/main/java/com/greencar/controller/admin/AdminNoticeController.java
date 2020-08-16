@@ -3,6 +3,7 @@ package com.greencar.controller.admin;
 import java.security.Principal;
 
 import javax.inject.Inject;
+import javax.servlet.http.HttpServletRequest;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -75,11 +76,14 @@ public class AdminNoticeController {
 	
 	//특정게시물 조회/수정 페이지 이동
 	@GetMapping({"/get", "/modify"})
-	public void get(@RequestParam("noticeNo") int noticeNo, NoticeCommentVO comment, Model model) {
+	public void get(@RequestParam("noticeNo") int noticeNo, NoticeCommentVO comment, Model model, Principal prin) {
 		log.info("get or modify" );
 		model.addAttribute("notice",noticeService.get(noticeNo));
 		model.addAttribute("comment",commService.getComment(noticeNo));
 		noticeService.viewCount(noticeNo);
+		
+		MemberVO memberVO = memberDAO.read(prin.getName());
+		model.addAttribute("nick", memberVO.getUserNick());
 	}
 
 	//게시물 수정
@@ -118,12 +122,13 @@ public class AdminNoticeController {
 	
 	//댓글삭제
 	@PostMapping("/delComment")
-	public String deleteComment(NoticeVO noticeVO, NoticeCommentVO comment, RedirectAttributes rttr, Criteria cri) {
+	public String deleteComment(HttpServletRequest request, NoticeVO noticeVO, NoticeCommentVO comment, RedirectAttributes rttr, Criteria cri) {
 		log.info("delete Commen.... : "+ comment);
 		commService.deleteComment(comment);
 		rttr.addFlashAttribute("notice", noticeVO.getNoticeNo());
 		
-		return "redirect:/admin/notice/get?noticeNo="+noticeVO.getNoticeNo();
+		String referer = (String)request.getHeader("REFERER");
+		return "redirect:/"+referer;
 	}
 	 
 }

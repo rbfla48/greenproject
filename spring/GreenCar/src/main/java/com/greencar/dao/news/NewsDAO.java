@@ -12,4 +12,6 @@ public interface NewsDAO {
 	public int listCount() throws Exception;
 	/** 뉴스 세부 페이지 */
 	public NewsVO newsDetail(int newsNo) throws Exception;
+	/*전체목록조회*/
+	public List<NewsVO> getNews();
 }

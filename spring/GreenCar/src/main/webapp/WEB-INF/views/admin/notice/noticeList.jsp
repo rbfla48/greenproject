@@ -49,7 +49,7 @@
 				<c:forEach items="${list }" var="notice">
 					<tr>
 						<td><c:out value="${notice.noticeNo }" /></td>
-						<td><a href='/notice/get?noticeNo=<c:out value="${notice.noticeNo }"/>'>
+						<td><a href='/admin/notice/get?noticeNo=<c:out value="${notice.noticeNo }"/>'>
 								<c:out value="${notice.noticeTitle }" />
 						</a></td>
 						<td><c:out value="${notice.noticeWriter }" /></td>

@@ -24,6 +24,8 @@
 	src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 <title>1:1 문의글 상세보기</title>
 <script>
+
+
 	const contextPath = "${contextPath}";
 	let oboNo = "${param.oboNo}";
 

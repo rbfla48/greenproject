@@ -101,7 +101,7 @@ public class NoticeController {
 		/*return "redirect:/notice/get?noticeNo="+comment.getNoticeNo();*/
 		
 		//삭제후 이전페이지 이동
-		return "redirect:/"+referer;
+		return "redirect:"+referer;
 	}
 	 
 }

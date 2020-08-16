@@ -81,7 +81,7 @@ public class CommunityController {
 		if(service.modify(communityVO)) {
 			rttr.addFlashAttribute("result","success");
 		}
-		return "redirect:/community/community_read" + cri.listLink();
+		return "redirect:/community/community_read?commuNo="+communityVO.getCommuNo();
 	}
 	
 	//게시물삭제

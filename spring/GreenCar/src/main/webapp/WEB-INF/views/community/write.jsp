@@ -15,50 +15,20 @@
     <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons"><!--구글머터리얼-->
 </head>
 <body>
-    <div><!--메뉴바-->
-        <header>
-            <!--화면 상단 마이페이지, 장바구니 시작-->
-            <div id="top">
-                <ul>
-                    <li id="mypage"><a href="#">마이페이지</a></li>
-                    <li id="cart"><a href="#">장바구니</a></li>
-                </ul>
-            </div>
-            <!--화면 상단 마이페이지, 장바구니 끝-->
-
-            <hr id="hl"> <!--top, nav 분리 줄-->
-        </header>
-            <nav>
-                <!--logo 시작-->
-                <div id="logo">
-                    <img src="/resources/image/logo/gclogo_.png" alt="greencar_logo">
-                </div>
-                <!--logo 끝-->
-
-                <!-- 네비게이션 바 시작-->
-                <div id="middle">
-                    <ul>
-                        
-                        <li id="notice"> <a href="#">공지사항</a></li>
-                        <li id="vl">|</li>
-                        <li id="products"> <a href="#">상품페이지</a></li>
-                        <li id="vl">|</li>
-                        <li id="community" > <a href="#">커뮤니티</a></li>
-                        <li id="vl">|</li>
-                        <li id="newsandissue" > <a href="#">뉴스&이슈</a></li>
-                        <li id="vl">|</li>
-                        <li id="user_advice" > <a href="#">고객지원</a></li>
-                        
-                    </ul>
-                </div>
-                <!--네비게이션 바 끝-->
-            </nav>
-    </div>
+    <script src="//code.jquery.com/jquery-1.11.0.min.js"></script>	
+	<jsp:include page="/resources/jsp/menu.jsp" flush="false"/>
     <!-------------------------------메뉴바END-------------------------------->
     <div class="wrap"><!--전체영역-->
         <div class="notice_write"><!--작성창 영역-->
-            <h3> 공지사항 등록</h3>
-        <form role="form" action="/admin/notice/write" method="POST">
+            <h3>글쓰기</h3>
+        <form role="form" action="/community/write" method="POST">
+        <input type="hidden" name="${_csrf.parameterName }" value="${_csrf.token }" />
+        	<select name="commuTag">
+        		<option>시승기</option>
+        		<option>유머</option>
+        		<option>구매후기</option>
+        		<option>비교/견적</option>
+        	</select>
             <div class="notice_write_head"><!--제목작성란-->
                 <input type="text" value="제목을 입력하세요" name="commuTitle">
             </div>    
@@ -66,7 +36,7 @@
                 <textarea name="commuText">본문입력</textarea>
             </div>
             <div class="notice_writer"><!--작성자(추후 로그인정보 얻어서 자동전송)-->
-                <input type="text" value="작성자" name="commuWriter">
+                <input type="text" value="테스트유저" name="commuWriter">
             </div>   
             <input type="submit" value="등록하기">
             <input type="reset" value="초기화">
@@ -75,17 +45,8 @@
     </div>
 
     <!-------------------------------footer시작------------------------------->
-    <!--하단 회사정보영역-->
-    <footer id="footer">
-        <!--상단회사명-->
-        <br>
-        <p><b>GREENCAR</b></p>
-        <hr>
-        <!--하단사업자정보-->
-        <p>사업자  김붕붕  |  사업자번호 211-31-64480 | 사업자 주소 : 서울특별시 관악구 청룡중앙길 42-1 | 02 - 1234 - 5678 </p>
-        <p>COPYRIGHT © GREEN COMPANY. ALL RIGHTS RESERVED.</p>
-        <!--하단영역end-->
-    </footer>
-<!--메뉴바END-->
+    
+    <jsp:include page="/resources/jsp/footer.jsp" flush="false" />
+    
     </body>
 </html>

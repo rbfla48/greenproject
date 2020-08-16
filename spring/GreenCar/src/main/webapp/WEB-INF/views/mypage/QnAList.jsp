@@ -10,9 +10,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>GreenCar Home</title>
-    <link rel="stylesheet" href="/resources/menu.css" type="text/css"><!--상단header-->
-    <link rel="stylesheet" href="/resources/Q&A_write.css" type="text/css">
-    <link rel="stylesheet" href="/resources/footer.css" type="text/css"><!--하단footer-->
+    <link rel="stylesheet" href="/resources/css/Q&AList.css" type="text/css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons"><!--구글머터리얼-->
 </head>
 <body>
@@ -23,7 +21,7 @@
     <!-------------------------------메뉴바END-------------------------------->
 
     <!--마이 페이지 시작-->
-    
+    <div class="wrap">
     <aside class="mypage_category">
 				<ul>
 					마이페이지
@@ -60,7 +58,7 @@
 						<tr>
 							<td><c:out value="${list.oboNo}" /></td>
 							<td><c:out value="${list.oboCategory}" /></td>
-							<td><a href="/admin/onebyoneview?oboNo=${list.oboNo}"><c:out
+							<td class="tit"><a href="/admin/onebyoneview?oboNo=${list.oboNo}"><c:out
 										value="${list.oboTitle}"></c:out></a></td>
 							<td><c:out value="${list.oboWriter}" /></td>
 							<td><fmt:formatDate value="${list.oboDate}"
@@ -70,11 +68,12 @@
 				</c:forEach>
 			</table>
 		</div>
-		<form action="/mypage/QnAwrite"></form>
+		<form action="/mypage/QnAwrite">
 		<button>문의작성</button>
+		</form>
 		<!--게시판 끝-->
 	</section>
-
+</div>
     
 
     <!-------------------------------footer시작------------------------------->

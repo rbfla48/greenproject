@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>
 <%@ taglib prefix="spring" uri="http://www.springframework.org/tags"%>
 <!DOCTYPE html>
 <html>
@@ -13,45 +14,9 @@
     <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons"><!--구글머터리얼-->
 </head>
 <body>
-    <div><!--메뉴바-->
-        <header>
-            <!--화면 상단 마이페이지, 장바구니 시작-->
-            <div id="top">
-                <ul>
-                    <li id="mypage"><a href="#">마이페이지</a></li>
-                    <li id="cart"><a href="#">장바구니</a></li>
-                </ul>
-            </div>
-            <!--화면 상단 마이페이지, 장바구니 끝-->
+    <script src="//code.jquery.com/jquery-1.11.0.min.js"></script>	
+	<jsp:include page="/resources/jsp/menu.jsp" flush="false"/>
 
-            <hr id="hl"> <!--top, nav 분리 줄-->
-        </header>
-            <nav>
-                <!--logo 시작-->
-                <div id="logo">
-                    <img src="/resources/image/logo/gclogo_.png" alt="greencar_logo">
-                </div>
-                <!--logo 끝-->
-
-                <!-- 네비게이션 바 시작-->
-                <div id="middle">
-                    <ul>
-                        
-                        <li id="notice"> <a href="#">공지사항</a></li>
-                        <li id="vl">|</li>
-                        <li id="products"> <a href="#">상품페이지</a></li>
-                        <li id="vl">|</li>
-                        <li id="community" > <a href="#">커뮤니티</a></li>
-                        <li id="vl">|</li>
-                        <li id="newsandissue" > <a href="#">뉴스&이슈</a></li>
-                        <li id="vl">|</li>
-                        <li id="user_advice" > <a href="#">고객지원</a></li>
-                        
-                    </ul>
-                </div>
-                <!--네비게이션 바 끝-->
-            </nav>
-    </div><!--메뉴바END-->
 <!-------------------------------메뉴바END-------------------------------->
 <div class="goods_page_wrap"><!--상품페이지 전체영역-->
 
@@ -82,7 +47,7 @@
                 <td onclick="location.href='/goods/listByBrand?brandCode=1'" id="ford">
                     <div class="select_car_brand_text">FORD                    
                     </div></td>
-                <td onclick="location.href='/goods/listByType?goodsType=컨버터블'" id="convertible">
+                <td onclick="location.href='/goods/listByType?goodsType='컨버터블''" id="convertible">
                 	<div class="select_car_brand_text">컨버터블 
 					</div></td>
                 <td onclick="location.href='/goods/listByType?goodsType=세단'" id="sedan">
@@ -157,15 +122,16 @@
             <option>연비순</option>
         </select>
     </div><!--상품 정렬옵션 영역END-->
-    
-    <div class="goods_list_wrap"><!--상품페이지 영역-->
+
+   <div class="goods_list_wrap" ><!--상품페이지 영역-->
     
 		<c:forEach items="${list}" var = "list">    
-	        <div class="goods_list"><!--상품타일1개-->
+	        <div class="goods_list" onclick="location.href='${contextPath}/goods/goodsDetailView?goodsNo=${list.goodsNo}';"><!--상품타일1개-->
 	            <div class="goods_list_img"><img src="/resources/image/goodsMain/${list.goodsNo}.png"></div><!--상품 이미지-->
 	            <div class="goods_list_name"><c:out value="${list.goodsName}"/></div><!--차량이름-->
-	            <div class="goods_list_price">가격:<c:out value="${list.goodsPrice}"/></div><!--차량가격-->
-	            <div class="goods_list_mileage">연비:<c:out value="${list.goodsEfficient}"/></div><!--연비-->
+	            <div class="goods_list_price">가격: ￦<fmt:formatNumber value="${list.goodsPrice}" 
+	            		type="currency" pattern="###,###" /></div><!--차량가격-->
+	            <div class="goods_list_mileage">연비:<c:out value="${list.goodsEfficient}"/>등급</div><!--연비-->
 	            <div class="goods_list_kind">차종:<c:out value="${list.goodsType}"/></div><!--차종-->
 	            
 	        </div>
@@ -216,16 +182,7 @@
  -->
 <!-------------------------------footer시작------------------------------->
     <!--하단 회사정보영역-->
-<footer id="footer">
-        <!--상단회사명-->
-        <br>
-        <p><b>GREENCAR</b></p>
-        <hr>
-        <!--하단사업자정보-->
-        <p>사업자  김붕붕  |  사업자번호 211-31-64480 | 사업자 주소 : 서울특별시 관악구 청룡중앙길 42-1 | 02 - 1234 - 5678 </p>
-        <p>COPYRIGHT © GREEN COMPANY. ALL RIGHTS RESERVED.</p>
-        <!--하단영역end-->
-</footer>
+	<jsp:include page="/resources/jsp/footer.jsp" flush="false" />
 
-</body>
+	</body>
 </html>

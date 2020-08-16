@@ -27,54 +27,16 @@ let nameFlag = false;
 let priceFlag = false;
 </script>
 
-<script type="text/javascript"
-	src="<c:url value="/resources/js/admin_goods_detail.js"/>"
-	charset="UTF-8"></script>
+<script type="text/javascript" src="<c:url value="/resources/js/admin_goods_detail.js"/>" charset="UTF-8"></script>
 </head>
 
 <body>
-	<div>
-		<!--메뉴바-->
-		<header>
-			<!--화면 상단 로그아웃, 알림 시작-->
-			<div id="top">
-				<ul>
-					<li id="logout"><a href="#">로그아웃</a></li>
-					<li id="alarm"><a href="#">알림</a></li>
-				</ul>
-			</div>
-			<!--화면 상단 로그아웃,알림 끝-->
-
-			<hr id="hl">
-			<!--top, nav 분리 줄-->
-		</header>
-		<nav>
-			<!--logo 시작-->
-			<div id="logo">
-				<img
-					src="<spring:url value='/resources/image/logo/gclogo_admin.png'/>"
-					alt="greencar_admin_logo">
-			</div>
-			<!--logo 끝-->
-
-			<!-- 네비게이션 바 시작-->
-			<div id="middle">
-				<ul>
-					<li id="/admin/updateView"><a href="#">상품관리</a></li>
-					<li id="vl">|</li>
-					<li id="admin_account"><a href="#">정산관리</a></li>
-					<li id="vl">|</li>
-					<li id="admin_customer"><a href="#">고객관리</a></li>
-					<li id="vl">|</li>
-					<li id="admin_write"><a href="#">게시글관리</a></li>
-				</ul>
-			</div>
-			<!--네비게이션 바 끝-->
-		</nav>
-	</div>
+	<script src="//code.jquery.com/jquery-1.11.0.min.js"></script>	
+	<jsp:include page="/resources/jsp/admin_menu.jsp" flush="false"/>
 	<!-- -----------------------중앙 시작-------------------------------------------------------------------- -->
 
 	<form id="search_box" class="search_box" name="search_box">
+	
 		<input type="search" id="search" class="search" name="goodsNo">
 		<button type="submit" id="search_button" class="search_button"
 			onclick="fn_search()">상품 검색</button>
@@ -82,6 +44,8 @@ let priceFlag = false;
 	<!-- 전체 테두리 시작-->
 	<form role="form" id="update" class="update" name="update"
 		method="post" action="${contextPath}/admin/goodsUpdate">
+		<input type="hidden" name="${_csrf.parameterName }" value="${_csrf.token }" />
+		
 		<!-- 상품 넘버 & 코드 -->
 		<input type="hidden" name="goodsNo" value="${goodsUpdate.goodsNo}" />
 		<input type="hidden" name="goodsCode" value="${goodsUpdate.goodsCode}" />
@@ -209,20 +173,8 @@ let priceFlag = false;
 
 	<!-- ----------------------------중앙 끝 ---------------------------------------------------------------------------------------->
 
-	<!--하단 회사정보영역-->
-	<footer id="footer">
-		<!--상단회사명-->
-		<br>
-		<p>
-			<b>GREENCAR</b>
-		</p>
-		<hr>
-		<!--하단사업자정보-->
-		<p>사업자 김붕붕 | 사업자번호 211-31-64480 | 사업자 주소 : 서울특별시 관악구 청룡중앙길 42-1 |
-			02 - 1234 - 5678</p>
-		<p>COPYRIGHT © GREEN COMPANY. ALL RIGHTS RESERVED.</p>
-		<!--하단영역end-->
-	</footer>
+	<jsp:include page="/resources/jsp/footer.jsp" flush="false" />
+	
 </body>
 
 </html>

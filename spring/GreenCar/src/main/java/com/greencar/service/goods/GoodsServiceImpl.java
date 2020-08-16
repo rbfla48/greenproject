@@ -96,8 +96,8 @@ public class GoodsServiceImpl implements GoodsService {
 	}
 	
 	@Override
-	public List<GoodsVO> getRecommend(GoodsVO goodsVO) {
-		return dao.getRecommend(goodsVO);
+	public List<GoodsVO> getRecommend() {
+		return dao.getRecommend();
 	}
 	
 }

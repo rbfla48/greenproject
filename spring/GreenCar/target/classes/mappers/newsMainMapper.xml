@@ -44,4 +44,10 @@
 		WHERE news_no
 		= #{newsNo}
 	</select>
+	
+	<!-- 전체목록 조회 -->
+	<select id="getNews" resultType="com.greencar.vo.news.NewsVO">
+		SELECT * FROM news
+	</select>
+	
 </mapper>

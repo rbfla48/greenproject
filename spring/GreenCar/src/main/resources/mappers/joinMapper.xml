@@ -6,18 +6,8 @@
 	<!-- 회원 가입 -->
 	<insert id="joinForm"
 		parameterType="com.greencar.vo.join.JoinVO">
-		INSERT INTO user_info (
-		user_no
-		, user_email
-		,
-		user_pw
-		,
-		user_nick
-		, user_birth
-		, user_ph
-		, user_address
-		,
-		user_address_detail)
+		INSERT INTO user_info(
+		user_no, user_email, user_pw, user_nick, user_birth, user_ph, user_address ,user_address_detail)
 		VALUES(
 		user_info_SEQ.NEXTVAL
 		, #{userEmail}
@@ -30,6 +20,7 @@
 		,
 		#{userAddress}
 		, #{userAddressDetail})
+
 	</insert>
 	<!-- 이메일 중복 점검 -->
 	<select id="emailCheck" resultType="int" parameterType="String">

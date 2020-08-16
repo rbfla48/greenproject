@@ -336,15 +336,15 @@ button {
 	flex-wrap: wrap;
 	justify-content: space-between;
 }
+
+.news_wrap.on {
+	display: block;
+}
+
 /*메인포스트*/
 .news_main {
 	width: 45%;
 	height: 100%;
-	display:none;
-}
-
-.news_main.on {
-	display:block;
 }
 
 /*메인포스트 이미지*/
@@ -388,19 +388,13 @@ button {
 	flex-wrap: wrap;
 	justify-content: space-around;
 }
+
+
 /*서브포스트 1개*/
 .news_sub {
 	width: 100%;
 	height: 30%;
-
-	display:none;
-	
-}
-
-.news_sub.on {
 	display: flex;
-	flex-wrap: wrap;
-	
 }
 
 /*서브포스트 이미지*/
@@ -410,7 +404,7 @@ button {
 }
 /*서브포스트 텍스트영역(제목,본문)*/
 .news_sub_textwrap {
-	width: 55%;
+	width: 50%;
 	height: 100%;
 	margin: 0 0 0 20px;
 	padding: 0 0 10px 0;
@@ -419,7 +413,7 @@ button {
 /*서브포스트 제목*/
 .news_sub_textwrap>h3 {
 	width: 100%; /*길이값 지정으로 inline-blok 길이제한*/
-	height: 30%;
+	height: 20%;
 	font-size: 20px;
 	white-space: nowrap;
 	display: inline-block; /*컨텐츠길이에따라 유동적인 길이로 변환*/
@@ -429,6 +423,7 @@ button {
 }
 /*서브포스트 본문*/
 .news_sub_text {
+	height:70%;
 	width: 100%;
 	display: -webkit-box; /*여백삽입과같이 톺이의 유연성추가*/
 	-webkit-line-clamp: 7; /*표시할 줄갯수*/

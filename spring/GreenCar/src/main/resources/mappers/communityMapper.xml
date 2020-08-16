@@ -62,7 +62,7 @@
 	
 	<insert id="insert">
 	INSERT INTO community (commu_no,commu_tag,commu_title,commu_writer,commu_text,commu_date,commu_view)
-	VALUES (NOTICE_SEQ.NEXTVAL, #{commuNo},#{commuTag},#{commuTitle},#{commuWriter}, #{commuText},  sysdate, 0)
+	VALUES (commu_seq.NEXTVAL, #{commuTag}, #{commuTitle}, #{commuWriter}, #{commuText},  sysdate, 0)
 	</insert>
 	
 	
@@ -77,12 +77,12 @@
 	
 	
 	<select id="read" resultType="com.greencar.vo.community.CommunityVO">
-		select * from community where commu_no = #{commNo}
+		select * from community where commu_no = #{commuNo}
 	</select>
 	
 	
 	<delete id="delete">
-		delete from community where commu_no = #{commNo}
+		delete from community where commu_no = #{commuNo}
 	</delete>
 	
 	
@@ -92,7 +92,7 @@
 		commu_text = #{commuText},
 		commu_writer=#{commuWriter},
 		commu_date = sysdate
-		where COMMUNITY_NO = #{commuNo}
+		where commu_no = #{commuNo}
 	</update>
 	
 </mapper>

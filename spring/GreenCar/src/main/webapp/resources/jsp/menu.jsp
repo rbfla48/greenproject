@@ -38,7 +38,7 @@
 		</header>
 		<nav>
 			<!--logo 시작-->
-			<div id="logo">
+			<div id="logo" onclick="location.href='/'">
 				<img src="/resources/image/logo/gclogo.png" alt="greencar_logo">
 			</div>
 			<!--logo 끝-->
@@ -48,7 +48,7 @@
 				<ul>
 					<li id="notice"><a href="/notice/noticeList">공지사항</a></li>
 					<li id="vl">|</li>
-					<li id="products"><a href="/goods/goodsList">상품페이지</a></li>
+					<li id="products"><a href="/goods/goods_main">상품페이지</a></li>
 					<li id="vl">|</li>
 					<li id="community"><a href="/community/community_main">커뮤니티</a></li>
 					<li id="vl">|</li>
